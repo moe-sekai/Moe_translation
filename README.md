@@ -32,19 +32,27 @@ translate.py → translations/*.json (本地) → Go 后端管理
 
 ```bash
 docker build -t sekai-translate .
-docker run -p 9090:9090 \
+docker run -p 8080:8080 \
+  -e PORT=8080 \
+  -e TRANSLATION_PATH=/app/translations \
+  -e STATIC_DIR=/app/proofreading-ui \
   -e TRANSLATOR_ACCOUNTS="user1:pass1,user2:pass2" \
+  -e AUTH_SECRET="sekai-translate-secret" \
   -e GITHUB_TOKEN="ghp_xxx" \
   -e GITHUB_REPO="moe-sekai/MoeSekai-Hub" \
+  -e GITHUB_PUSH_PATH="translation" \
+  -e GITHUB_BRANCH="main" \
   -e AUTO_PUSH_ENABLED=true \
   sekai-translate
 ```
+
+如果用容器编排变量（如 `${WEB_PORT}`），请确保 `PORT` 最终是具体数字（例如 `8080`）。
 
 环境变量:
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
 | `PORT` | `9090` | 服务端口 |
-| `TRANSLATION_PATH` | `./translations` | 翻译数据目录 |
+| `TRANSLATION_PATH` | `./translations` | 翻译数据目录（容器内建议 `/app/translations`） |
 | `TRANSLATOR_ACCOUNTS` | - | 校对账号 `user:pass,...` |
 | `AUTH_SECRET` | `sekai-translate-secret` | Token 签名密钥 |
 | `GITHUB_TOKEN` | - | GitHub PAT (push 用) |
@@ -52,7 +60,7 @@ docker run -p 9090:9090 \
 | `GITHUB_PUSH_PATH` | `translation` | 仓库内路径 |
 | `GITHUB_BRANCH` | `main` | 推送分支 |
 | `AUTO_PUSH_ENABLED` | `false` | 开启定时推送 (1h) |
-| `STATIC_DIR` | `./proofreading/out` | 校对 UI 静态文件目录 |
+| `STATIC_DIR` | `./proofreading/out` | 校对 UI 静态文件目录（容器内应为 `/app/proofreading-ui`） |
 
 URL:
 - `/api/*` → 校对 API

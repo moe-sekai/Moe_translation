@@ -6,6 +6,7 @@ import {
     login, getCategories, getEntries, updateEntry, pushToHub, getPushStatus,
     type CategoryInfo, type TranslationEntry, type PushStatus,
 } from "@/lib/api";
+import { useTheme } from "next-themes";
 
 // ============================================================================
 // Labels
@@ -123,6 +124,10 @@ export default function ProofreadingClient() {
     // Toast
     const { toasts, show: showToast } = useToast();
 
+    // Theme
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
     // Computed
     const filteredEntries = useMemo(() => {
         if (!searchQuery) return entries;
@@ -142,6 +147,7 @@ export default function ProofreadingClient() {
 
     // ---- Auth check on mount ----
     useEffect(() => {
+        setMounted(true);
         const token = getToken();
         if (!token) { setLoggedIn(false); return; }
         getCategories()
@@ -396,6 +402,16 @@ export default function ProofreadingClient() {
                         {pushStatus?.lastError && (
                             <div className="push-status" style={{ color: "#ef4444" }}>
                                 错误: {pushStatus.lastError}
+                            </div>
+                        )}
+                        {mounted && (
+                            <div className="theme-container">
+                                <span>主题模式</span>
+                                <select className="theme-select" value={theme} onChange={e => setTheme(e.target.value)}>
+                                    <option value="system">跟随系统</option>
+                                    <option value="light">亮色</option>
+                                    <option value="dark">深色</option>
+                                </select>
                             </div>
                         )}
                         <button className="btn-logout" onClick={handleLogout}>退出登录</button>

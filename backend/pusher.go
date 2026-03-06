@@ -119,12 +119,19 @@ func (p *Pusher) PushAll(store *Store, username string) error {
 func (p *Pusher) pushFile(path string, content []byte, message string) error {
 	apiURL := fmt.Sprintf("https://api.github.com/repos/%s/contents/%s", p.repo, path)
 
-	// Get current file SHA (needed for updates)
-	sha := p.getFileSHA(apiURL)
+	// Get current file info (SHA and content)
+	sha, existingContent := p.getFileInfo(apiURL)
+	newBase64 := base64.StdEncoding.EncodeToString(content)
+
+	// Check if the content is exactly the same to avoid useless commits
+	if sha != "" && existingContent == newBase64 {
+		fmt.Printf("[push] Skipping %s (no changes)\n", path)
+		return nil
+	}
 
 	body := map[string]string{
 		"message": message,
-		"content": base64.StdEncoding.EncodeToString(content),
+		"content": newBase64,
 		"branch":  p.branch,
 	}
 	if sha != "" {
@@ -150,20 +157,30 @@ func (p *Pusher) pushFile(path string, content []byte, message string) error {
 	return nil
 }
 
-func (p *Pusher) getFileSHA(apiURL string) string {
+// getFileInfo retrieves the SHA and base64 encoded content of a file from GitHub.
+func (p *Pusher) getFileInfo(apiURL string) (string, string) {
 	req, _ := http.NewRequest(http.MethodGet, apiURL+"?ref="+p.branch, nil)
 	req.Header.Set("Authorization", "Bearer "+p.token)
 	req.Header.Set("Accept", "application/vnd.github+json")
 
 	resp, err := p.client.Do(req)
 	if err != nil || resp.StatusCode != 200 {
-		return ""
+		return "", ""
 	}
 	defer resp.Body.Close()
 
 	var result struct {
-		SHA string `json:"sha"`
+		SHA     string `json:"sha"`
+		Content string `json:"content"`
 	}
 	json.NewDecoder(resp.Body).Decode(&result)
-	return result.SHA
+	
+	// GitHub API returns Content with newlines (\n), so we remove them for comparison
+	cleanContent := ""
+	for _, c := range result.Content {
+		if c != '\n' && c != '\r' {
+			cleanContent += string(c)
+		}
+	}
+	return result.SHA, cleanContent
 }
