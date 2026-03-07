@@ -67,6 +67,11 @@ func main() {
 	// Serve proofreading UI at /translation/editor/ (matches Next.js basePath)
 	fs := http.FileServer(http.Dir(staticDir))
 	mux.Handle("/translation/editor/", http.StripPrefix("/translation/editor/", fs))
+
+	// Serve translation JSON files at /translation/ (matches dataPath)
+	dataFs := http.FileServer(http.Dir(dataPath))
+	mux.Handle("/translation/", http.StripPrefix("/translation/", dataFs))
+
 	// Root redirect
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" || r.URL.Path == "" {
