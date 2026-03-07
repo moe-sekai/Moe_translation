@@ -4029,12 +4029,12 @@
   },
   "vocalCaption": {
     "25時、ナイトコードで。ver.": {
-      "text": "25时，在夜之代码。ver.",
-      "source": "unknown"
+      "text": "25点，Nightcord见。ver.",
+      "source": "human"
     },
     "COLORFUL LIVE ver.": {
-      "text": "COLORFUL LIVE 版",
-      "source": "unknown"
+      "text": "COLORFUL LIVE ver.",
+      "source": "human"
     },
     "Inst.ver.": {
       "text": "Inst.ver.",
@@ -4053,8 +4053,8 @@
       "source": "human"
     },
     "「劇場版プロジェクトセカイ」ver.": {
-      "text": "《剧场版 Project SEKAI》ver.",
-      "source": "unknown"
+      "text": "「世界计划剧场版」ver.",
+      "source": "human"
     },
     "あんさんぶるスターズ！！コラボver.": {
       "text": "「偶像梦幻祭！！」联动 ver.",
@@ -4062,11 +4062,11 @@
     },
     "アナザーボーカルver.": {
       "text": "Another Vocal ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "エイプリルフールver.": {
       "text": "愚人节 ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "コネクトライブ(DAY1夜)ver.": {
       "text": "Connect Live (DAY1 夜场) ver.",
@@ -4074,7 +4074,7 @@
     },
     "コネクトライブ(DAY1昼)ver.": {
       "text": "Connect Live (DAY1 午场) ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "コネクトライブ(DAY2夜)ver.": {
       "text": "Connect Live (DAY2 夜场) ver.",
@@ -4082,7 +4082,7 @@
     },
     "コネクトライブ(DAY2昼)ver.": {
       "text": "Connect Live (DAY2 午场) ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "コネクトライブver.": {
       "text": "Connect Live ver.",
@@ -4090,7 +4090,7 @@
     },
     "セカイver.": {
       "text": "SEKAI ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "バーチャル・シンガーver.": {
       "text": "虚拟歌手 ver.",
@@ -4098,7 +4098,7 @@
     },
     "ワンダーランズ×ショウタイム ver.": {
       "text": "Wonderlands×Showtime ver.",
-      "source": "unknown"
+      "source": "human"
     }
   }
 }
