@@ -45,7 +45,7 @@ ENV STATIC_DIR=/app/proofreading-ui
 ENV GIT_WORKSPACE=/app/git-workspace
 ENV GIT_PUSH_BRANCH=backup-translations
 
-VOLUME ["/data/translations"]
+
 
 EXPOSE 9090
 
