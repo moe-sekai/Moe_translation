@@ -1060,6 +1060,7 @@ func (t *Translator) syncEventStoriesCNOnly() (int, error) {
 		lastCheckedEventID = eventID
 
 		if state, ok := localStates[eventID]; ok && state.IsOfficialCN {
+			emptyCNStreak = 0
 			continue
 		}
 
@@ -1085,6 +1086,10 @@ func (t *Translator) syncEventStoriesCNOnly() (int, error) {
 
 		episodes, hasTalkData, hasTitleOnly, errs := t.buildOfficialCNEpisodes(jpStory, cnStory)
 		scenarioErrors += errs
+		if errs > 0 {
+			fmt.Printf("  [CN] Event %d: scenario fetch failed (%d), skip overwrite this round\n", eventID, errs)
+			continue
+		}
 		if !hasTalkData {
 			emptyCNStreak++
 			reason := "empty"
@@ -1202,6 +1207,7 @@ func isLegacyEventStoryFormat(raw []byte) bool {
 		return false
 	}
 	hasEpisode := false
+	hasCNContent := false
 	for key, ep := range obj {
 		if key == "meta" || key == "episodes" {
 			return false
@@ -1214,8 +1220,20 @@ func isLegacyEventStoryFormat(raw []byte) bool {
 		if scenarioID != "" || hasTalkData {
 			hasEpisode = true
 		}
+		if rawTalkData, ok := ep["talkData"]; ok {
+			talkData, ok := rawTalkData.(map[string]any)
+			if ok {
+				for _, v := range talkData {
+					cnText, ok := v.(string)
+					if ok && strings.TrimSpace(cnText) != "" {
+						hasCNContent = true
+						break
+					}
+				}
+			}
+		}
 	}
-	return hasEpisode
+	return hasEpisode && hasCNContent
 }
 
 func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (map[string]eventStoryEpisodePayload, bool, bool, int) {
