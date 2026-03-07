@@ -8994,15 +8994,15 @@
     },
     "Leo/need": {
       "text": "Leo/need",
-      "source": "llm"
+      "source": "human"
     },
     "MORE MORE JUMP！": {
       "text": "MORE MORE JUMP！",
-      "source": "llm"
+      "source": "human"
     },
     "Vivid BAD SQUAD": {
       "text": "Vivid BAD SQUAD",
-      "source": "llm"
+      "source": "human"
     },
     "すべて": {
       "text": "全部",
@@ -9082,7 +9082,7 @@
     },
     "地面": {
       "text": "地面",
-      "source": "llm"
+      "source": "human"
     },
     "壁": {
       "text": "墙壁",
@@ -9094,7 +9094,7 @@
     },
     "家": {
       "text": "家",
-      "source": "llm"
+      "source": "human"
     },
     "小物": {
       "text": "小物品",
@@ -9110,7 +9110,7 @@
     },
     "植物": {
       "text": "植物",
-      "source": "llm"
+      "source": "human"
     },
     "道": {
       "text": "道路",
