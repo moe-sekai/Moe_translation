@@ -176,10 +176,19 @@ func (h *Handler) handleCNSync(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
 		return
 	}
+	user := r.Header.Get("X-Username")
+	fmt.Printf("[translate] cn-sync requested by %s\n", user)
 	if err := h.scheduler.RunOnce("manual-cn-sync"); err != nil {
+		if isAlreadyRunningError(err) {
+			fmt.Printf("[translate] cn-sync already running (user=%s): %v\n", user, err)
+			http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusConflict)
+			return
+		}
+		fmt.Printf("[translate] cn-sync failed (user=%s): %v\n", user, err)
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("[translate] cn-sync completed (user=%s)\n", user)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
 }
@@ -189,16 +198,25 @@ func (h *Handler) handleTranslateAI(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
 		return
 	}
+	user := r.Header.Get("X-Username")
 	var req AITranslateRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
 		return
 	}
+	fmt.Printf("[translate] ai requested by %s: category=%s field=%s provider=%s\n", user, req.Category, req.Field, req.Provider)
 	result, err := h.translator.ManualAITranslate(req)
 	if err != nil {
+		if isAlreadyRunningError(err) {
+			fmt.Printf("[translate] ai already running (user=%s): %v\n", user, err)
+			http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusConflict)
+			return
+		}
+		fmt.Printf("[translate] ai failed (user=%s): %v\n", user, err)
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("[translate] ai completed (user=%s): translated=%d skipped=%d\n", user, result.Translated, result.SkippedExisting)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)
 }
@@ -246,6 +264,7 @@ func (h *Handler) handleTranslateAIAll(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
 		return
 	}
+	user := r.Header.Get("X-Username")
 	var req struct {
 		Provider string `json:"provider"`
 	}
@@ -253,13 +272,29 @@ func (h *Handler) handleTranslateAIAll(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
 		return
 	}
+	fmt.Printf("[translate] ai-all requested by %s: provider=%s\n", user, req.Provider)
 	result, err := h.translator.AITranslateAll(req.Provider)
 	if err != nil {
+		if isAlreadyRunningError(err) {
+			fmt.Printf("[translate] ai-all already running (user=%s): %v\n", user, err)
+			http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusConflict)
+			return
+		}
+		fmt.Printf("[translate] ai-all failed (user=%s): %v\n", user, err)
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("[translate] ai-all completed (user=%s): translated=%d candidates=%d errors=%d\n", user, result.TotalTranslated, result.TotalCandidates, result.Errors)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)
+}
+
+func isAlreadyRunningError(err error) bool {
+	if err == nil {
+		return false
+	}
+	msg := strings.ToLower(err.Error())
+	return strings.Contains(msg, "already running")
 }
 
 func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request) {

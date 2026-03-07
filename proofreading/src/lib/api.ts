@@ -52,6 +52,17 @@ export interface AITranslateAllResult {
     errors: number;
 }
 
+export interface TranslateRuntimeStatus {
+    running: boolean;
+    lastRun?: string;
+    lastError?: string;
+}
+
+export interface TranslateStatusResponse {
+    translator: TranslateRuntimeStatus;
+    scheduler: TranslateRuntimeStatus;
+}
+
 export interface EventStorySummary {
     eventId: number;
     source: string;
@@ -182,6 +193,10 @@ export async function triggerAITranslateAll(provider: "gemini" | "openai") {
 
 export async function runCNSync() {
     return apiFetch<{ status: string }>("/translate/cn-sync", { method: "POST" });
+}
+
+export async function getTranslateStatus() {
+    return apiFetch<TranslateStatusResponse>("/translate/status");
 }
 
 export async function getEventStories() {

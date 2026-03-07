@@ -4,10 +4,10 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import {
     getToken, setToken, clearToken, getUsername, setUsername,
     login, getCategories, getEntries, updateEntry, pushToHub, getPushStatus,
-    triggerAITranslateAll, getEventStories, getEventStory, runCNSync,
+    triggerAITranslateAll, getEventStories, getEventStory, runCNSync, getTranslateStatus,
     updateEventStoryLine,
     type CategoryInfo, type TranslationEntry, type PushStatus,
-    type EventStorySummary, type EventStoryDetail,
+    type EventStorySummary, type EventStoryDetail, type TranslateStatusResponse,
 } from "@/lib/api";
 import { useTheme } from "next-themes";
 
@@ -122,10 +122,13 @@ export default function ProofreadingClient() {
     const [pushing, setPushing] = useState(false);
     const [pushStatus, setPushStatus] = useState<PushStatus | null>(null);
     const [syncingCN, setSyncingCN] = useState(false);
+    const syncingCNRef = useRef(false);
 
     // AI translation
     const [aiProvider, setAIProvider] = useState<"gemini" | "openai">("gemini");
     const [aiTranslating, setAITranslating] = useState(false);
+    const aiTranslatingRef = useRef(false);
+    const [translateStatus, setTranslateStatus] = useState<TranslateStatusResponse | null>(null);
 
     // Event story block
     const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
@@ -156,6 +159,8 @@ export default function ProofreadingClient() {
         () => (selectedKey ? filteredEntries.findIndex(e => e.key === selectedKey) : -1),
         [selectedKey, filteredEntries]
     );
+    const backendTranslatorRunning = Boolean(translateStatus?.translator?.running);
+    const backendSchedulerRunning = Boolean(translateStatus?.scheduler?.running);
 
     // ---- Auth check on mount ----
     useEffect(() => {
@@ -236,6 +241,14 @@ export default function ProofreadingClient() {
             .catch(() => {
                 setEventStories([]);
             });
+    }, [loggedIn]);
+
+    useEffect(() => {
+        if (!loggedIn) return;
+        const fetchStatus = () => getTranslateStatus().then(setTranslateStatus).catch(() => { });
+        fetchStatus();
+        const iv = setInterval(fetchStatus, 5000);
+        return () => clearInterval(iv);
     }, [loggedIn]);
 
 
@@ -363,6 +376,11 @@ export default function ProofreadingClient() {
     };
 
     const handleCNSync = async () => {
+        if (syncingCNRef.current || backendSchedulerRunning || backendTranslatorRunning) {
+            showToast("已有翻译任务在运行，请稍后再试", "err");
+            return;
+        }
+        syncingCNRef.current = true;
         setSyncingCN(true);
         try {
             await runCNSync();
@@ -378,13 +396,25 @@ export default function ProofreadingClient() {
             const stories = await getEventStories();
             setEventStories(stories);
         } catch (err) {
-            showToast(err instanceof Error ? err.message : "数据更新失败", "err");
+            const message = err instanceof Error ? err.message : "数据更新失败";
+            if (message.includes("already running")) {
+                showToast("已有同步任务在运行，请稍后查看状态", "err");
+            } else {
+                showToast(message, "err");
+            }
+            getTranslateStatus().then(setTranslateStatus).catch(() => { });
         } finally {
+            syncingCNRef.current = false;
             setSyncingCN(false);
         }
     };
 
     const handleAITranslateAll = async () => {
+        if (aiTranslatingRef.current || backendTranslatorRunning || backendSchedulerRunning) {
+            showToast("已有翻译任务在运行，请稍后再试", "err");
+            return;
+        }
+        aiTranslatingRef.current = true;
         setAITranslating(true);
         try {
             const result = await triggerAITranslateAll(aiProvider);
@@ -397,8 +427,15 @@ export default function ProofreadingClient() {
                 setEntries(data);
             }
         } catch (err) {
-            showToast(err instanceof Error ? err.message : "AI翻译失败", "err");
+            const message = err instanceof Error ? err.message : "AI翻译失败";
+            if (message.includes("already running")) {
+                showToast("已有翻译任务在运行，请稍后再试", "err");
+            } else {
+                showToast(message, "err");
+            }
+            getTranslateStatus().then(setTranslateStatus).catch(() => { });
         } finally {
+            aiTranslatingRef.current = false;
             setAITranslating(false);
         }
     };
@@ -525,11 +562,11 @@ export default function ProofreadingClient() {
                         <button className="push-btn" onClick={handlePush} disabled={pushing}>
                             {pushing ? "备份中..." : "备份"}
                         </button>
-                        <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pushing || aiTranslating}>
-                            {syncingCN ? "更新中..." : "数据更新"}
+                        <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pushing || aiTranslating || backendSchedulerRunning || backendTranslatorRunning}>
+                            {(syncingCN || backendSchedulerRunning) ? "更新中..." : "数据更新"}
                         </button>
-                        <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN}>
-                            {aiTranslating ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
+                        <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || backendTranslatorRunning || backendSchedulerRunning}>
+                            {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
                         </button>
                         {pushStatus?.lastPush && (
                             <div className="push-status">
