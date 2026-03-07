@@ -19,6 +19,7 @@ const CATEGORY_LABELS: Record<string, string> = {
     cards: "卡牌", events: "活动", music: "音乐", gacha: "卡池",
     virtualLive: "虚拟Live", sticker: "贴纸", comic: "漫画",
     mysekai: "我的世界", costumes: "服装", characters: "角色", units: "团体",
+    eventStory: "活动剧情",
 };
 
 const FIELD_LABELS: Record<string, string> = {
@@ -128,9 +129,6 @@ export default function ProofreadingClient() {
 
     // Event story block
     const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
-    const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
-    const [selectedStoryDetail, setSelectedStoryDetail] = useState<EventStoryDetail | null>(null);
-    const [storyLoading, setStoryLoading] = useState(false);
 
     // Sidebar (mobile)
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -176,6 +174,34 @@ export default function ProofreadingClient() {
         setSelectedKey(null);
         setIsEditing(false);
 
+        if (selectedCategory === "eventStory") {
+            const eventId = Number(selectedField);
+            getEventStory(eventId)
+                .then(detail => {
+                    const newEntries: TranslationEntry[] = [];
+                    Object.entries(detail.episodes)
+                        .sort((a, b) => Number(a[0]) - Number(b[0]))
+                        .forEach(([episodeNo, ep]) => {
+                            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
+                                newEntries.push({
+                                    key: `${episodeNo}|${jp}`,
+                                    text: cn,
+                                    source: "human" // Event stories use human translation for now
+                                });
+                            });
+                        });
+                    setEntries(newEntries);
+                    if (newEntries.length > 0) {
+                        setSelectedKey(newEntries[0].key);
+                        setEditValue(newEntries[0].text);
+                        setIsEditing(false);
+                    }
+                })
+                .catch(err => showToast(err.message, "err"))
+                .finally(() => setLoadingEntries(false));
+            return;
+        }
+
         getEntries(selectedCategory, selectedField, sourceFilter || undefined)
             .then(data => {
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
@@ -206,27 +232,13 @@ export default function ProofreadingClient() {
         getEventStories()
             .then(data => {
                 setEventStories(data);
-                if (data.length > 0) {
-                    setSelectedEventId(prev => prev ?? data[0].eventId);
-                }
             })
             .catch(() => {
                 setEventStories([]);
             });
     }, [loggedIn]);
 
-    // ---- Event story detail ----
-    useEffect(() => {
-        if (!loggedIn || !selectedEventId) {
-            setSelectedStoryDetail(null);
-            return;
-        }
-        setStoryLoading(true);
-        getEventStory(selectedEventId)
-            .then(setSelectedStoryDetail)
-            .catch(() => setSelectedStoryDetail(null))
-            .finally(() => setStoryLoading(false));
-    }, [loggedIn, selectedEventId]);
+
 
     // ---- Focus textarea on selection ----
     useEffect(() => {
@@ -282,17 +294,29 @@ export default function ProofreadingClient() {
         const src = overrideSource || "human";
 
         try {
-            const result = await updateEntry(selectedCategory, selectedField, selectedKey, editValue, src);
+            if (selectedCategory === "eventStory") {
+                const parts = selectedKey.split("|");
+                const episodeNo = parts[0];
+                const jp = parts.slice(1).join("|");
+                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue);
 
-            // Update local state
-            setEntries(prev => prev.map(e =>
-                e.key === selectedKey ? { ...e, text: editValue, source: src } : e
-            ));
-
-            if (result.status !== "noop") {
-                showToast("保存成功", "ok");
+                setEntries(prev => prev.map(e =>
+                    e.key === selectedKey ? { ...e, text: editValue, source: src } : e
+                ));
+                showToast("剧情翻译已保存", "ok");
             } else {
-                showToast("内容未变化", "ok");
+                const result = await updateEntry(selectedCategory, selectedField, selectedKey, editValue, src);
+
+                // Update local state
+                setEntries(prev => prev.map(e =>
+                    e.key === selectedKey ? { ...e, text: editValue, source: src } : e
+                ));
+
+                if (result.status !== "noop") {
+                    showToast("保存成功", "ok");
+                } else {
+                    showToast("内容未变化", "ok");
+                }
             }
 
             // Move to next entry
@@ -313,7 +337,7 @@ export default function ProofreadingClient() {
     }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
-        if (!selectedCategory || !selectedField) return;
+        if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
         const entry = entries.find(e => e.key === key);
         if (!entry) return;
         try {
@@ -379,17 +403,7 @@ export default function ProofreadingClient() {
         }
     };
 
-    const handleStoryLineUpdate = async (eventId: number, episodeNo: string, jpKey: string, cnText: string) => {
-        try {
-            await updateEventStoryLine(eventId, episodeNo, jpKey, cnText);
-            showToast("剧情翻译已保存", "ok");
-            // Refresh the story detail
-            const detail = await getEventStory(eventId);
-            setSelectedStoryDetail(detail);
-        } catch (err) {
-            showToast(err instanceof Error ? err.message : "保存失败", "err");
-        }
-    };
+
 
     // ---- Keyboard ----
 
@@ -486,76 +500,27 @@ export default function ProofreadingClient() {
                     </div>
 
                     <div className="sidebar-footer">
-                        {/* Event Stories Section — collapsible */}
-                        <details className="sidebar-stories">
-                            <summary className="sidebar-stories-summary">
-                                活动剧情翻译 <span className="badge llm">{eventStories.length}</span>
-                            </summary>
-                            {eventStories.length === 0 ? (
-                                <div className="empty" style={{ padding: "0.5rem" }}>
-                                    <p style={{ fontSize: "0.8rem" }}>暂无活动剧情翻译文件</p>
+                        {eventStories.length > 0 && (
+                            <details className="category-group" open={selectedCategory === "eventStory"}>
+                                <summary className="category-name" style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <span>活动剧情翻译 <span className="badge llm" style={{ marginLeft: "4px" }}>{eventStories.length}</span></span>
+                                </summary>
+                                <div style={{ maxHeight: "30vh", overflowY: "auto", marginTop: "0.5rem", borderTop: "1px solid var(--border)", paddingTop: "0.5rem" }}>
+                                    {eventStories.map(story => (
+                                        <div
+                                            key={`eventStory-${story.eventId}`}
+                                            className={`field-item ${selectedCategory === "eventStory" && selectedField === String(story.eventId) ? "active" : ""}`}
+                                            onClick={() => handleFieldSelect("eventStory", String(story.eventId))}
+                                        >
+                                            <span>Event #{story.eventId}</span>
+                                            <div className="field-stats">
+                                                <span className="badge cn">{story.episodeCount}章</span>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ) : (
-                                <div className="sidebar-story-content">
-                                    <select
-                                        className="sidebar-story-select"
-                                        value={selectedEventId ?? ""}
-                                        onChange={e => setSelectedEventId(Number(e.target.value))}
-                                    >
-                                        {eventStories.map(story => (
-                                            <option key={story.eventId} value={story.eventId}>
-                                                Event #{story.eventId} · {story.source} · {story.episodeCount} 章
-                                            </option>
-                                        ))}
-                                    </select>
-                                    {storyLoading ? (
-                                        <div className="loading" style={{ height: "auto", padding: "0.5rem" }}>
-                                            <div className="spinner" />加载中...
-                                        </div>
-                                    ) : !selectedStoryDetail ? (
-                                        <div className="empty" style={{ padding: "0.5rem" }}>
-                                            <p style={{ fontSize: "0.8rem" }}>未找到详情</p>
-                                        </div>
-                                    ) : (
-                                        <div className="sidebar-story-episodes">
-                                            {Object.entries(selectedStoryDetail.episodes)
-                                                .sort((a, b) => Number(a[0]) - Number(b[0]))
-                                                .map(([episodeNo, ep]) => (
-                                                    <details key={episodeNo} className="sidebar-story-episode">
-                                                        <summary>
-                                                            第 {episodeNo} 章 {ep.title ? `· ${ep.title}` : ""}
-                                                            <span>{Object.keys(ep.talkData || {}).length} 条</span>
-                                                        </summary>
-                                                        <div className="sidebar-story-lines">
-                                                            {Object.entries(ep.talkData || {}).map(([jp, cn]) => (
-                                                                <div key={`${episodeNo}-${jp}`} className="sidebar-story-line">
-                                                                    <div className="jp">{jp}</div>
-                                                                    <input
-                                                                        type="text"
-                                                                        className="story-line-input"
-                                                                        defaultValue={cn}
-                                                                        onBlur={e => {
-                                                                            const val = e.target.value;
-                                                                            if (val !== cn && selectedEventId) {
-                                                                                handleStoryLineUpdate(selectedEventId, episodeNo, jp, val);
-                                                                            }
-                                                                        }}
-                                                                        onKeyDown={e => {
-                                                                            if (e.key === "Enter") {
-                                                                                (e.target as HTMLInputElement).blur();
-                                                                            }
-                                                                        }}
-                                                                    />
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                    </details>
-                                                ))}
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </details>
+                            </details>
+                        )}
 
                         <button className="push-btn" onClick={handlePush} disabled={pushing}>
                             {pushing ? "备份中..." : "备份"}
@@ -607,7 +572,7 @@ export default function ProofreadingClient() {
                     ) : (
                         <>
                             <div className="main-header">
-                                <h1>{CATEGORY_LABELS[selectedCategory] || selectedCategory} / {FIELD_LABELS[selectedField] || selectedField}</h1>
+                                <h1>{CATEGORY_LABELS[selectedCategory] || selectedCategory} / {selectedCategory === "eventStory" ? `Event #${selectedField}` : (FIELD_LABELS[selectedField] || selectedField)}</h1>
                                 <span className="entry-count">
                                     {selectedIndex >= 0 ? `${selectedIndex + 1} / ` : ""}{filteredEntries.length} 条
                                     {currentFieldInfo && ` (total: ${currentFieldInfo.total})`}
@@ -623,7 +588,14 @@ export default function ProofreadingClient() {
                                 <div className="proof-panel">
                                     <div className="proof-original">
                                         <label>日文原文</label>
-                                        <div className="proof-jp">{selectedEntry.key}</div>
+                                        <div className="proof-jp">
+                                            {selectedCategory === "eventStory" ? selectedEntry.key.split("|").slice(1).join("|") : selectedEntry.key}
+                                        </div>
+                                        {selectedCategory === "eventStory" && (
+                                            <div style={{ fontSize: "0.85em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                                [第 {selectedEntry.key.split("|")[0]} 章]
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="proof-edit">
                                         <div className="proof-edit-header">
@@ -697,7 +669,14 @@ export default function ProofreadingClient() {
                                                             ))}
                                                         </select>
                                                     </td>
-                                                    <td><div className="jp-text">{entry.key}</div></td>
+                                                    <td><div className="jp-text">
+                                                        {selectedCategory === "eventStory" ? entry.key.split("|").slice(1).join("|") : entry.key}
+                                                        {selectedCategory === "eventStory" && (
+                                                            <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                                                第 {entry.key.split("|")[0]} 章
+                                                            </div>
+                                                        )}
+                                                    </div></td>
                                                     <td><div className="cn-text">{entry.text}</div></td>
                                                 </tr>
                                             ))}

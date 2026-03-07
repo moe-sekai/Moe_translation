@@ -605,7 +605,7 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 				}
 				next = TranslationEntry{Text: cn, Source: SourceCN}
 			} else {
-				if has && (old.Source == SourcePinned || old.Source == SourceHuman) {
+				if has && old.Text != "" {
 					continue
 				}
 				next = TranslationEntry{Text: "", Source: SourceUnknown}
