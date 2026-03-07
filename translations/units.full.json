@@ -28,7 +28,7 @@
   "unitName": {
     "25時、ナイトコードで。": {
       "text": "25点，Nightcord见。",
-      "source": "cn"
+      "source": "human"
     },
     "Leo/need": {
       "text": "Leo/need",
@@ -44,11 +44,11 @@
     },
     "バーチャル・シンガー": {
       "text": "虚拟歌手",
-      "source": "cn"
+      "source": "human"
     },
     "ワンダーランズ×ショウタイム": {
       "text": "Wonderlands×Showtime",
-      "source": "cn"
+      "source": "human"
     }
   }
 }
