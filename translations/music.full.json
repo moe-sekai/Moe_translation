@@ -1435,16 +1435,16 @@
       "source": "llm"
     },
     "1000年生きてる": {
-      "text": "已活千年",
-      "source": "unknown"
+      "text": "存活千年",
+      "source": "human"
     },
     "1925": {
       "text": "1925",
       "source": "llm"
     },
     "25時の情熱": {
-      "text": "25点的激情",
-      "source": "unknown"
+      "text": "25点的情热",
+      "source": "human"
     },
     "39": {
       "text": "39",
@@ -1675,8 +1675,8 @@
       "source": "llm"
     },
     "Intergalactic Bound": {
-      "text": "星间飞行",
-      "source": "unknown"
+      "text": "Intergalactic Bound",
+      "source": "human"
     },
     "Internet Junk Junkie": {
       "text": "Internet Junk Junkie",
@@ -1959,8 +1959,8 @@
       "source": "llm"
     },
     "potatoになっていく": {
-      "text": "逐渐变成土豆",
-      "source": "unknown"
+      "text": "变身土豆",
+      "source": "human"
     },
     "purpose": {
       "text": "purpose",
@@ -2079,8 +2079,8 @@
       "source": "unknown"
     },
     "きゅうくらりん": {
-      "text": "Kyu-kurarin",
-      "source": "unknown"
+      "text": "心跳不止",
+      "source": "human"
     },
     "きょうもハレバレ": {
       "text": "今天也晴空万里",
@@ -2207,8 +2207,8 @@
       "source": "unknown"
     },
     "のだ": {
-      "text": "的说",
-      "source": "unknown"
+      "text": "のだ",
+      "source": "human"
     },
     "はぐ": {
       "text": "拥抱",
@@ -2295,8 +2295,8 @@
       "source": "unknown"
     },
     "アイロニ": {
-      "text": "Irony",
-      "source": "unknown"
+      "text": "反话",
+      "source": "human"
     },
     "アクセラレイト": {
       "text": "Accelerate",
@@ -2331,8 +2331,8 @@
       "source": "unknown"
     },
     "アンノウン・マザーグース": {
-      "text": "Unknown Mother-Goose",
-      "source": "unknown"
+      "text": "不为人知的鹅妈妈",
+      "source": "human"
     },
     "アンハッピーリフレイン": {
       "text": "Unhappy Refrain",
@@ -2767,8 +2767,8 @@
       "source": "unknown"
     },
     "ド屑": {
-      "text": "烂泥",
-      "source": "unknown"
+      "text": "人渣",
+      "source": "human"
     },
     "ナンセンス文学": {
       "text": "荒诞文学",
@@ -2880,7 +2880,7 @@
     },
     "ビターチョコデコレーション": {
       "text": "苦巧克力装饰",
-      "source": "unknown"
+      "source": "human"
     },
     "ビバハピ": {
       "text": "Viva Happy",
@@ -2915,8 +2915,8 @@
       "source": "unknown"
     },
     "フォニイ": {
-      "text": "Phony",
-      "source": "unknown"
+      "text": "伪物",
+      "source": "human"
     },
     "フューエル": {
       "text": "Fuel",
@@ -2975,8 +2975,8 @@
       "source": "unknown"
     },
     "プロセカULTIMATE楽曲メドレー": {
-      "text": "Project SEKAI ULTIMATE 歌曲联唱",
-      "source": "unknown"
+      "text": "Project SEKAI ULTIMATE 混合曲",
+      "source": "human"
     },
     "プロトディスコ": {
       "text": "原型迪斯科",
@@ -3087,8 +3087,8 @@
       "source": "unknown"
     },
     "メルト": {
-      "text": "融化",
-      "source": "unknown"
+      "text": "melt",
+      "source": "human"
     },
     "モア！ジャンプ！モア！": {
       "text": "More! Jump! More!",
@@ -3255,8 +3255,8 @@
       "source": "unknown"
     },
     "ヴィラン": {
-      "text": "Villain",
-      "source": "unknown"
+      "text": "反派",
+      "source": "human"
     },
     "ヴィーナス": {
       "text": "维纳斯",
@@ -3319,8 +3319,8 @@
       "source": "unknown"
     },
     "六兆年と一夜物語": {
-      "text": "六兆年零一夜的故事",
-      "source": "unknown"
+      "text": "六兆年零一夜的物语",
+      "source": "human"
     },
     "円尾坂の仕立屋": {
       "text": "圆尾坂的裁缝店",
@@ -3355,8 +3355,8 @@
       "source": "llm"
     },
     "化けの花": {
-      "text": "妖花",
-      "source": "unknown"
+      "text": "诡异之花",
+      "source": "human"
     },
     "十六歳の心臓": {
       "text": "十六岁的心脏",
@@ -3403,8 +3403,8 @@
       "source": "unknown"
     },
     "君の夜をくれ": {
-      "text": "把你的夜晚给我",
-      "source": "unknown"
+      "text": "予我你的长夜",
+      "source": "human"
     },
     "君色マリンスノウ": {
       "text": "君色海雪",
@@ -3515,8 +3515,8 @@
       "source": "llm"
     },
     "少女レイ": {
-      "text": "少女Ray",
-      "source": "unknown"
+      "text": "少女Rei",
+      "source": "human"
     },
     "帝国少女": {
       "text": "帝国少女",
@@ -3591,8 +3591,8 @@
       "source": "llm"
     },
     "怪獣になりたい": {
-      "text": "好想变成怪兽",
-      "source": "unknown"
+      "text": "想变成怪兽",
+      "source": "human"
     },
     "恋は戦争": {
       "text": "恋爱是战争",
@@ -3603,8 +3603,8 @@
       "source": "unknown"
     },
     "悔やむと書いてミライ": {
-      "text": "写作悔恨读作未来",
-      "source": "unknown"
+      "text": "写作悔恨的未来",
+      "source": "human"
     },
     "悪ノ召使": {
       "text": "恶之召使",
@@ -3808,7 +3808,7 @@
     },
     "神っぽいな": {
       "text": "像神一样呐",
-      "source": "unknown"
+      "source": "human"
     },
     "神のまにまに": {
       "text": "随神之侧",
@@ -3823,8 +3823,8 @@
       "source": "unknown"
     },
     "私は雨": {
-      "text": "我是雨",
-      "source": "unknown"
+      "text": "我既是雨",
+      "source": "human"
     },
     "笑えたらえーやん！": {
       "text": "能笑出来就好了！",
@@ -3852,7 +3852,7 @@
     },
     "群青讃歌": {
       "text": "群青赞歌",
-      "source": "unknown"
+      "source": "human"
     },
     "脱法ロック": {
       "text": "脱法摇滚",
@@ -3935,8 +3935,8 @@
       "source": "unknown"
     },
     "転生林檎": {
-      "text": "转生林檎",
-      "source": "unknown"
+      "text": "转生苹果",
+      "source": "human"
     },
     "透明なパレット": {
       "text": "透明调色盘",
@@ -3955,8 +3955,8 @@
       "source": "unknown"
     },
     "金時計": {
-      "text": "金表",
-      "source": "unknown"
+      "text": "金时针",
+      "source": "human"
     },
     "金木犀": {
       "text": "金木樨",
@@ -3971,8 +3971,8 @@
       "source": "unknown"
     },
     "限りなく灰色へ": {
-      "text": "无限接近灰色",
-      "source": "unknown"
+      "text": "向着无尽之灰",
+      "source": "human"
     },
     "陽だまりのセツナ": {
       "text": "向阳处的刹那",
@@ -4041,24 +4041,24 @@
       "source": "human"
     },
     "Leo/need ver.": {
-      "text": "Leo/need 版",
-      "source": "unknown"
+      "text": "Leo/need ver.",
+      "source": "human"
     },
     "MORE MORE JUMP！ ver.": {
       "text": "MORE MORE JUMP！ ver.",
       "source": "human"
     },
     "Vivid BAD SQUAD ver.": {
-      "text": "Vivid BAD SQUAD 版",
-      "source": "unknown"
+      "text": "Vivid BAD SQUAD ver.",
+      "source": "human"
     },
     "「劇場版プロジェクトセカイ」ver.": {
       "text": "《剧场版 Project SEKAI》ver.",
       "source": "unknown"
     },
     "あんさんぶるスターズ！！コラボver.": {
-      "text": "《偶像梦幻祭！！》联动 ver.",
-      "source": "unknown"
+      "text": "「偶像梦幻祭！！」联动 ver.",
+      "source": "human"
     },
     "アナザーボーカルver.": {
       "text": "Another Vocal ver.",
