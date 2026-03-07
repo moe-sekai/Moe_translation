@@ -147,8 +147,16 @@ func (t *Translator) markStart(mode string) error {
 	t.status.Running = true
 	t.status.LastMode = mode
 	t.status.LastError = ""
-	t.status.LastNote = "running"
+	t.status.LastNote = "running: " + mode
 	return nil
+}
+
+func (t *Translator) setRunningNote(note string) {
+	t.mu.Lock()
+	defer t.mu.Unlock()
+	if t.status.Running {
+		t.status.LastNote = note
+	}
 }
 
 func (t *Translator) markEnd(note string, err error) {
@@ -168,9 +176,21 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 	if err := t.markStart("cn-sync"); err != nil {
 		return TranslateResult{}, err
 	}
+	startAt := time.Now()
+	fmt.Printf("[translate] cn-sync started\n")
 	result := TranslateResult{Mode: "cn-sync"}
 	var runErr error
-	defer func() { t.markEnd("cn sync complete", runErr) }()
+	defer func() {
+		note := "cn sync complete"
+		if runErr != nil {
+			note = "cn sync failed"
+			fmt.Printf("[translate] cn-sync failed after %s: %v\n", time.Since(startAt).Round(time.Millisecond), runErr)
+		} else {
+			fmt.Printf("[translate] cn-sync completed in %s: categories=%d updated=%d eventStories=%d\n",
+				time.Since(startAt).Round(time.Millisecond), result.Categories, result.UpdatedEntries, result.EventStoryFiles)
+		}
+		t.markEnd(note, runErr)
+	}()
 
 	all := []struct {
 		category string
@@ -189,7 +209,10 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 		{"music", t.extractMusic},
 	}
 
-	for _, item := range all {
+	for idx, item := range all {
+		stepNote := fmt.Sprintf("cn-sync %d/%d: %s", idx+1, len(all), item.category)
+		t.setRunningNote(stepNote)
+		fmt.Printf("[translate] %s started\n", stepNote)
 		fields, err := item.fn()
 		if err != nil {
 			runErr = fmt.Errorf("%s: %w", item.category, err)
@@ -202,14 +225,18 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 		}
 		result.Categories++
 		result.UpdatedEntries += updated
+		fmt.Printf("[translate] %s completed, updated=%d\n", stepNote, updated)
 	}
 
+	t.setRunningNote("cn-sync event stories")
+	fmt.Printf("[translate] cn-sync event stories started\n")
 	storyCount, err := t.syncEventStoriesCNOnly()
 	if err != nil {
 		runErr = err
 		return result, runErr
 	}
 	result.EventStoryFiles = storyCount
+	fmt.Printf("[translate] cn-sync event stories completed, files=%d\n", storyCount)
 	return result, nil
 }
 

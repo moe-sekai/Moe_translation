@@ -526,8 +526,6 @@ export default function ProofreadingClient() {
                                             <span>{FIELD_LABELS[field.name] || field.name}</span>
                                             <div className="field-stats">
                                                 {needsWork > 0 && <span className="badge llm">{needsWork}</span>}
-                                                {field.humanCount > 0 && <span className="badge human">{field.humanCount}</span>}
-                                                {field.pinnedCount > 0 && <span className="badge pinned">{field.pinnedCount}</span>}
                                             </div>
                                         </div>
                                     );

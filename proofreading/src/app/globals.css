@@ -419,6 +419,7 @@ body {
     align-items: baseline;
     flex-wrap: wrap;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .main-header h1 {
@@ -428,6 +429,10 @@ body {
 .entry-count {
     color: var(--text-dim);
     font-size: 0.85rem;
+}
+
+.search-bar {
+    flex-shrink: 0;
 }
 
 .search-bar input {
@@ -462,6 +467,7 @@ body {
     border: 1px solid var(--border);
     border-radius: 10px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .proof-original {

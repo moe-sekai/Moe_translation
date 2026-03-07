@@ -154,7 +154,9 @@ func (s *Scheduler) tick() {
 	if elapsed <= 3*time.Hour && attempts < 3 {
 		fmt.Printf("[scheduler] triggering sync (attempt %d/3, %.0f min since change)\n",
 			attempts+1, elapsed.Minutes())
-		_ = s.RunOnce("hash-change")
+		if err := s.RunOnce("hash-change"); err != nil {
+			fmt.Printf("[scheduler] run once failed on hash-change: %v\n", err)
+		}
 
 		s.mu.Lock()
 		s.attemptsUsed++
@@ -207,29 +209,47 @@ func (s *Scheduler) fetchBranchHash() (string, error) {
 	return strings.TrimSpace(string(raw)), nil
 }
 
-func (s *Scheduler) RunOnce(_ string) error {
+func (s *Scheduler) RunOnce(trigger string) error {
+	if strings.TrimSpace(trigger) == "" {
+		trigger = "unknown"
+	}
+	startAt := time.Now()
+	fmt.Printf("[scheduler] run requested (trigger=%s)\n", trigger)
+
 	s.mu.Lock()
 	if s.status.Running {
 		s.mu.Unlock()
+		fmt.Printf("[scheduler] run rejected (trigger=%s): already running\n", trigger)
 		return fmt.Errorf("scheduler job already running")
 	}
 	s.status.Running = true
 	s.mu.Unlock()
+	fmt.Printf("[scheduler] run started (trigger=%s)\n", trigger)
+
+	var runErr error
 
 	defer func() {
 		s.mu.Lock()
 		s.status.Running = false
 		s.status.LastRun = time.Now().UTC().Format(time.RFC3339)
 		s.mu.Unlock()
+		if runErr != nil {
+			fmt.Printf("[scheduler] run failed (trigger=%s, duration=%s): %v\n", trigger, time.Since(startAt).Round(time.Millisecond), runErr)
+			return
+		}
+		fmt.Printf("[scheduler] run finished (trigger=%s, duration=%s)\n", trigger, time.Since(startAt).Round(time.Millisecond))
 	}()
 
-	_, err := s.translator.SyncCNOnly()
+	result, err := s.translator.SyncCNOnly()
 	if err != nil {
+		runErr = err
 		s.mu.Lock()
 		s.status.LastError = err.Error()
 		s.mu.Unlock()
 		return err
 	}
+	fmt.Printf("[scheduler] run result (trigger=%s): categories=%d updated=%d eventStories=%d\n",
+		trigger, result.Categories, result.UpdatedEntries, result.EventStoryFiles)
 
 	s.mu.Lock()
 	s.status.LastError = ""
