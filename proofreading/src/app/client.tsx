@@ -447,15 +447,15 @@ export default function ProofreadingClient() {
     const handleTextareaKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSave(); }
         if (e.key === "Escape") { e.preventDefault(); setSelectedKey(null); setIsEditing(false); }
-        if (e.ctrlKey && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
-        if (e.ctrlKey && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
+        if ((e.ctrlKey || e.metaKey) && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
+        if ((e.ctrlKey || e.metaKey) && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
     }, [handleSave, navigateEntry]);
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
             const tag = (e.target as HTMLElement).tagName;
             if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
-            if (e.ctrlKey && e.key === "s") { e.preventDefault(); handleSave(); }
+            if ((e.ctrlKey || e.metaKey) && e.key === "s") { e.preventDefault(); handleSave(); }
             if (e.key === "ArrowDown" || e.key === "j") { e.preventDefault(); navigateEntry(1); }
             if (e.key === "ArrowUp" || e.key === "k") { e.preventDefault(); navigateEntry(-1); }
             if (e.key === "Enter" && selectedKey) { e.preventDefault(); editRef.current?.focus(); }
@@ -660,7 +660,7 @@ export default function ProofreadingClient() {
                                             <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
                                             <button className="btn-cancel" onClick={() => { setSelectedKey(null); setIsEditing(false); }}>取消</button>
                                             <div className="proof-hints">
-                                                <kbd>Enter</kbd> 保存 <kbd>Ctrl+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
+                                                <kbd>Enter</kbd> 保存 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
                                             </div>
                                         </div>
                                     </div>
