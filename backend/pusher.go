@@ -2,6 +2,7 @@ package backend
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io"
 	"os"
@@ -9,6 +10,7 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 )
 
@@ -273,20 +275,45 @@ func (p *Pusher) replaceDataDir(src string) error {
 	_ = os.RemoveAll(backupPath)
 
 	if _, err := os.Stat(p.dataPath); err == nil {
-		if err := os.Rename(p.dataPath, backupPath); err != nil {
+		if err := moveDirWithFallback(p.dataPath, backupPath); err != nil {
 			return err
 		}
 	}
 
-	if err := os.Rename(incomingPath, p.dataPath); err != nil {
+	if err := moveDirWithFallback(incomingPath, p.dataPath); err != nil {
+		_ = os.RemoveAll(p.dataPath)
 		if _, rollbackErr := os.Stat(backupPath); rollbackErr == nil {
-			_ = os.Rename(backupPath, p.dataPath)
+			_ = moveDirWithFallback(backupPath, p.dataPath)
 		}
 		return err
 	}
 
 	_ = os.RemoveAll(backupPath)
 	return nil
+}
+
+func moveDirWithFallback(src, dst string) error {
+	if err := os.Rename(src, dst); err == nil {
+		return nil
+	} else if !isCrossDeviceErr(err) {
+		return err
+	}
+
+	if err := copyDir(src, dst); err != nil {
+		return err
+	}
+	if err := os.RemoveAll(src); err != nil {
+		return err
+	}
+	return nil
+}
+
+func isCrossDeviceErr(err error) bool {
+	var linkErr *os.LinkError
+	if errors.As(err, &linkErr) {
+		return errors.Is(linkErr.Err, syscall.EXDEV)
+	}
+	return errors.Is(err, syscall.EXDEV)
 }
 
 func copyDir(src, dst string) error {
