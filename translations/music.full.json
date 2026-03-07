@@ -4038,7 +4038,7 @@
     },
     "Inst.ver.": {
       "text": "Inst. ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "Leo/need ver.": {
       "text": "Leo/need 版",
@@ -4066,7 +4066,7 @@
     },
     "エイプリルフールver.": {
       "text": "愚人节 ver.",
-      "source": "unknown"
+      "source": "human"
     },
     "コネクトライブ(DAY1夜)ver.": {
       "text": "Connect Live (DAY1 夜场) ver.",
