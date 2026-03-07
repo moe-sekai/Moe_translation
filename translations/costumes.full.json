@@ -1,20 +1,20 @@
 {
   "colorName": {
     "アナザー1": {
-      "text": "",
-      "source": "unknown"
+      "text": "其他颜色1",
+      "source": "cn"
     },
     "アナザー2": {
-      "text": "",
-      "source": "unknown"
+      "text": "其他颜色2",
+      "source": "cn"
     },
     "アナザー3": {
-      "text": "",
-      "source": "unknown"
+      "text": "其他颜色3",
+      "source": "cn"
     },
     "オリジナル": {
-      "text": "",
-      "source": "unknown"
+      "text": "原版颜色",
+      "source": "cn"
     },
     "ノーマル": {
       "text": "普通",
@@ -23,512 +23,512 @@
   },
   "designer": {
     "634": {
-      "text": "",
-      "source": "unknown"
+      "text": "634",
+      "source": "llm"
     },
     "82": {
-      "text": "",
-      "source": "unknown"
+      "text": "82",
+      "source": "llm"
     },
     "87*saku": {
-      "text": "",
-      "source": "unknown"
+      "text": "87*saku",
+      "source": "llm"
     },
     "@eggw0v0wegg": {
-      "text": "",
-      "source": "unknown"
+      "text": "@eggw0v0wegg",
+      "source": "llm"
     },
     "@pnnt_000": {
-      "text": "",
-      "source": "unknown"
+      "text": "@pnnt_000",
+      "source": "llm"
     },
     "BUZZ": {
-      "text": "",
-      "source": "unknown"
+      "text": "BUZZ",
+      "source": "llm"
     },
     "DECO": {
-      "text": "",
-      "source": "unknown"
+      "text": "DECO",
+      "source": "llm"
     },
     "Dove": {
-      "text": "",
-      "source": "unknown"
+      "text": "Dove",
+      "source": "llm"
     },
     "Ei-Flow": {
-      "text": "",
-      "source": "unknown"
+      "text": "Ei-Flow",
+      "source": "llm"
     },
     "IYORI": {
-      "text": "",
-      "source": "unknown"
+      "text": "IYORI",
+      "source": "llm"
     },
     "KOJIN": {
-      "text": "",
-      "source": "unknown"
+      "text": "KOJIN",
+      "source": "llm"
     },
     "LAM": {
-      "text": "",
-      "source": "unknown"
+      "text": "LAM",
+      "source": "llm"
     },
     "MAiCO": {
-      "text": "",
-      "source": "unknown"
+      "text": "MAiCO",
+      "source": "llm"
     },
     "Mika Pikazo": {
-      "text": "",
-      "source": "unknown"
+      "text": "Mika Pikazo",
+      "source": "llm"
     },
     "OLUOLI": {
-      "text": "",
-      "source": "unknown"
+      "text": "OLUOLI",
+      "source": "llm"
     },
     "PARTY GO ON!": {
-      "text": "",
-      "source": "unknown"
+      "text": "PARTY GO ON!",
+      "source": "llm"
     },
     "POKImari": {
-      "text": "",
-      "source": "unknown"
+      "text": "POKImari",
+      "source": "llm"
     },
     "Rella": {
-      "text": "",
-      "source": "unknown"
+      "text": "Rella",
+      "source": "llm"
     },
     "SASAYORU": {
-      "text": "",
-      "source": "unknown"
+      "text": "SASAYORU",
+      "source": "llm"
     },
     "Sonyeo": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sonyeo",
+      "source": "llm"
     },
     "TNSK": {
-      "text": "",
-      "source": "unknown"
+      "text": "TNSK",
+      "source": "llm"
     },
     "Tiv": {
-      "text": "",
-      "source": "unknown"
+      "text": "Tiv",
+      "source": "llm"
     },
     "apapico": {
-      "text": "",
-      "source": "unknown"
+      "text": "apapico",
+      "source": "llm"
     },
     "domco.": {
-      "text": "",
-      "source": "unknown"
+      "text": "domco.",
+      "source": "llm"
     },
     "furokirai": {
-      "text": "",
-      "source": "unknown"
+      "text": "furokirai",
+      "source": "llm"
     },
     "gzz": {
-      "text": "",
-      "source": "unknown"
+      "text": "gzz",
+      "source": "llm"
     },
     "iXima": {
-      "text": "",
-      "source": "unknown"
+      "text": "iXima",
+      "source": "llm"
     },
     "kouri.": {
-      "text": "",
-      "source": "unknown"
+      "text": "kouri.",
+      "source": "llm"
     },
     "mell°": {
-      "text": "",
-      "source": "unknown"
+      "text": "mell°",
+      "source": "llm"
     },
     "momoco。": {
-      "text": "",
-      "source": "unknown"
+      "text": "momoco。",
+      "source": "llm"
     },
     "moo": {
-      "text": "",
-      "source": "unknown"
+      "text": "moo_",
+      "source": "llm"
     },
     "naco": {
-      "text": "",
-      "source": "unknown"
+      "text": "naco",
+      "source": "llm"
     },
     "ndr": {
-      "text": "",
-      "source": "unknown"
+      "text": "ndr",
+      "source": "llm"
     },
     "nezuki": {
-      "text": "",
-      "source": "unknown"
+      "text": "nezuki",
+      "source": "llm"
     },
     "saeko": {
-      "text": "",
-      "source": "unknown"
+      "text": "saeko",
+      "source": "llm"
     },
     "saino": {
-      "text": "",
-      "source": "unknown"
+      "text": "saino",
+      "source": "llm"
     },
     "tokiwa.": {
-      "text": "",
-      "source": "unknown"
+      "text": "tokiwa.",
+      "source": "llm"
     },
     "toori": {
-      "text": "",
-      "source": "unknown"
+      "text": "toori",
+      "source": "llm"
     },
     "△○□×": {
-      "text": "",
-      "source": "unknown"
+      "text": "△○□×",
+      "source": "llm"
     },
     "あかもく": {
-      "text": "",
-      "source": "unknown"
+      "text": "Akamoku",
+      "source": "llm"
     },
     "あさしら": {
-      "text": "",
-      "source": "unknown"
+      "text": "asashira",
+      "source": "llm"
     },
     "あるてら": {
-      "text": "",
-      "source": "unknown"
+      "text": "Arutera",
+      "source": "llm"
     },
     "いる": {
-      "text": "",
-      "source": "unknown"
+      "text": "いる",
+      "source": "llm"
     },
     "いわき": {
-      "text": "",
-      "source": "unknown"
+      "text": "Iwaki",
+      "source": "llm"
     },
     "うごんば": {
-      "text": "",
-      "source": "unknown"
+      "text": "うごんば",
+      "source": "llm"
     },
     "うみのかいせん": {
-      "text": "",
-      "source": "unknown"
+      "text": "Umi no Kaisen",
+      "source": "llm"
     },
     "うりゅ": {
-      "text": "",
-      "source": "unknown"
+      "text": "uryu",
+      "source": "llm"
     },
     "えすかるご": {
-      "text": "",
-      "source": "unknown"
+      "text": "Escargot",
+      "source": "llm"
     },
     "えもん": {
-      "text": "",
-      "source": "unknown"
+      "text": "Emon",
+      "source": "llm"
     },
     "およ": {
-      "text": "",
-      "source": "unknown"
+      "text": "およ",
+      "source": "llm"
     },
     "からながれ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Karanagare",
+      "source": "llm"
     },
     "きぬみやこ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Kinumiyako",
+      "source": "llm"
     },
     "きの": {
-      "text": "",
-      "source": "unknown"
+      "text": "Kino",
+      "source": "llm"
     },
     "くーぜ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Kuze",
+      "source": "llm"
     },
     "こむ": {
-      "text": "",
-      "source": "unknown"
+      "text": "こむ",
+      "source": "llm"
     },
     "こゆと": {
-      "text": "",
-      "source": "unknown"
+      "text": "Koyuto",
+      "source": "llm"
     },
     "さくこ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sakuko",
+      "source": "llm"
     },
     "ささき": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sasaki",
+      "source": "llm"
     },
     "しゅがお": {
-      "text": "",
-      "source": "unknown"
+      "text": "Shugao",
+      "source": "llm"
     },
     "しろ": {
-      "text": "",
-      "source": "unknown"
+      "text": "しろ",
+      "source": "llm"
     },
     "たま": {
-      "text": "",
-      "source": "unknown"
+      "text": "-",
+      "source": "cn"
     },
     "ちり": {
-      "text": "",
-      "source": "unknown"
+      "text": "Chiri",
+      "source": "llm"
     },
     "ってwake！？": {
-      "text": "",
-      "source": "unknown"
+      "text": "就是这么回事！？",
+      "source": "llm"
     },
     "てん": {
-      "text": "",
-      "source": "unknown"
+      "text": "Ten",
+      "source": "llm"
     },
     "でつ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Detsu",
+      "source": "llm"
     },
     "どこかののの": {
-      "text": "",
-      "source": "unknown"
+      "text": "Dokoka no Nono",
+      "source": "llm"
     },
     "なぎと ふう": {
-      "text": "",
-      "source": "unknown"
+      "text": "なぎと ふう",
+      "source": "llm"
     },
     "なしこ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Nashiko",
+      "source": "llm"
     },
     "なすび": {
-      "text": "",
-      "source": "unknown"
+      "text": "Nasubi",
+      "source": "llm"
     },
     "ねい": {
-      "text": "",
-      "source": "unknown"
+      "text": "nei",
+      "source": "llm"
     },
     "ねこたねこすけ": {
-      "text": "",
-      "source": "unknown"
+      "text": "猫田猫助",
+      "source": "llm"
     },
     "はやみ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Hayami",
+      "source": "llm"
     },
     "はるおみ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Haruomi",
+      "source": "llm"
     },
     "はるとうと": {
-      "text": "",
-      "source": "unknown"
+      "text": "harutouto",
+      "source": "llm"
     },
     "ぱせり": {
-      "text": "",
-      "source": "unknown"
+      "text": "Paseri",
+      "source": "llm"
     },
     "ひなつ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Hinatsu",
+      "source": "llm"
     },
     "ふのこ": {
-      "text": "",
-      "source": "unknown"
+      "text": "funoko",
+      "source": "llm"
     },
     "ふわ太": {
-      "text": "",
-      "source": "unknown"
+      "text": "Fuwata",
+      "source": "llm"
     },
     "へいわ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Heiwa",
+      "source": "llm"
     },
     "へちま": {
-      "text": "",
-      "source": "unknown"
+      "text": "へちま",
+      "source": "llm"
     },
     "へぼ": {
-      "text": "",
-      "source": "unknown"
+      "text": "へぼ",
+      "source": "llm"
     },
     "ぺむら": {
-      "text": "",
-      "source": "unknown"
+      "text": "Pemura",
+      "source": "llm"
     },
     "まめまめ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Mamemame",
+      "source": "llm"
     },
     "みっ君": {
-      "text": "",
-      "source": "unknown"
+      "text": "みっ君",
+      "source": "llm"
     },
     "みゅん": {
-      "text": "",
-      "source": "unknown"
+      "text": "みゅん",
+      "source": "llm"
     },
     "もふ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Mofu",
+      "source": "llm"
     },
     "ゆーきゃん様": {
-      "text": "",
-      "source": "unknown"
+      "text": "ゆーきゃん",
+      "source": "llm"
     },
     "りゅ": {
-      "text": "",
-      "source": "unknown"
+      "text": "ryu",
+      "source": "llm"
     },
     "わいん": {
-      "text": "",
-      "source": "unknown"
+      "text": "Wain",
+      "source": "llm"
     },
     "わたぬき": {
-      "text": "",
-      "source": "unknown"
+      "text": "Watanuki",
+      "source": "llm"
     },
     "ゐ透": {
-      "text": "",
-      "source": "unknown"
+      "text": "ゐ透",
+      "source": "llm"
     },
     "アザカ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Azaka",
+      "source": "llm"
     },
     "アシマ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Ashima",
+      "source": "llm"
     },
     "エラソート": {
-      "text": "",
-      "source": "unknown"
+      "text": "Erasooto",
+      "source": "llm"
     },
     "オム": {
-      "text": "",
-      "source": "unknown"
+      "text": "Omu",
+      "source": "llm"
     },
     "コゲ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Koge",
+      "source": "llm"
     },
     "コチュジャンのもの": {
-      "text": "",
-      "source": "unknown"
+      "text": "韩式辣酱之物",
+      "source": "llm"
     },
     "サニー": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sunny",
+      "source": "llm"
     },
     "シロ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Shiro",
+      "source": "llm"
     },
     "スオウ": {
-      "text": "",
-      "source": "unknown"
+      "text": "スオウ",
+      "source": "llm"
     },
     "スオウ \u0026 Rella": {
-      "text": "",
-      "source": "unknown"
+      "text": "Suou \u0026 Rella",
+      "source": "llm"
     },
     "スミカラ喫茶": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sumikara咖啡厅",
+      "source": "llm"
     },
     "チェリ子": {
-      "text": "",
-      "source": "unknown"
+      "text": "チェリ子",
+      "source": "llm"
     },
     "ノズ": {
-      "text": "",
-      "source": "unknown"
+      "text": "ノズ",
+      "source": "llm"
     },
     "ヒイノ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Hiino",
+      "source": "llm"
     },
     "フィルハモ": {
-      "text": "",
-      "source": "unknown"
+      "text": "フィルハモ",
+      "source": "llm"
     },
     "マスもふﾌﾟﾝ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Masumofupun",
+      "source": "llm"
     },
     "モゲラッタ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Mogeratta",
+      "source": "llm"
     },
     "ライカ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Raika",
+      "source": "llm"
     },
     "レヅキ": {
-      "text": "",
-      "source": "unknown"
+      "text": "レヅキ",
+      "source": "llm"
     },
     "ワーワー言うとりま助℃": {
-      "text": "",
-      "source": "unknown"
+      "text": "ワーワー言うとりま助℃",
+      "source": "llm"
     },
     "ヲタ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Wota",
+      "source": "llm"
     },
     "一登": {
-      "text": "",
-      "source": "unknown"
+      "text": "一登",
+      "source": "llm"
     },
     "三月": {
-      "text": "",
-      "source": "unknown"
+      "text": "三月",
+      "source": "llm"
     },
     "上倉エク": {
-      "text": "",
-      "source": "unknown"
+      "text": "上仓Eku",
+      "source": "llm"
     },
     "不知丸": {
-      "text": "",
-      "source": "unknown"
+      "text": "不知丸",
+      "source": "llm"
     },
     "井倉": {
-      "text": "",
-      "source": "unknown"
+      "text": "井仓",
+      "source": "llm"
     },
     "優": {
-      "text": "",
-      "source": "unknown"
+      "text": "优",
+      "source": "llm"
     },
     "先崎真琴": {
-      "text": "",
-      "source": "unknown"
+      "text": "先崎真琴",
+      "source": "llm"
     },
     "千寿": {
-      "text": "",
-      "source": "unknown"
+      "text": "千寿",
+      "source": "llm"
     },
     "増殖型うどん屋": {
-      "text": "",
-      "source": "unknown"
+      "text": "增殖型乌冬面店",
+      "source": "llm"
     },
     "夏炉": {
-      "text": "",
-      "source": "unknown"
+      "text": "夏炉",
+      "source": "llm"
     },
     "夢回廊るら": {
-      "text": "",
-      "source": "unknown"
+      "text": "梦回廊Rura",
+      "source": "llm"
     },
     "家上": {
-      "text": "",
-      "source": "unknown"
+      "text": "家上",
+      "source": "llm"
     },
     "左脳": {
-      "text": "",
-      "source": "unknown"
+      "text": "左脑",
+      "source": "llm"
     },
     "掘泉インコ": {
-      "text": "",
-      "source": "unknown"
+      "text": "掘泉Inko",
+      "source": "llm"
     },
     "日々花": {
-      "text": "",
-      "source": "unknown"
+      "text": "日日花",
+      "source": "llm"
     },
     "星屑.": {
       "text": "",
@@ -539,134 +539,134 @@
       "source": "llm"
     },
     "村上ゆいち": {
-      "text": "",
-      "source": "unknown"
+      "text": "村上Yuichi",
+      "source": "llm"
     },
     "杜本": {
-      "text": "",
-      "source": "unknown"
+      "text": "杜本",
+      "source": "llm"
     },
     "桃タルト": {
-      "text": "",
-      "source": "unknown"
+      "text": "桃子塔",
+      "source": "llm"
     },
     "森倉円": {
-      "text": "",
-      "source": "unknown"
+      "text": "森仓圆",
+      "source": "llm"
     },
     "横向き親知らず": {
-      "text": "",
-      "source": "unknown"
+      "text": "横向智齿",
+      "source": "llm"
     },
     "沢良宜": {
-      "text": "",
-      "source": "unknown"
+      "text": "-",
+      "source": "cn"
     },
     "海月くらげ": {
-      "text": "",
-      "source": "unknown"
+      "text": "海月水母",
+      "source": "llm"
     },
     "澪月せろ": {
-      "text": "",
-      "source": "unknown"
+      "text": "澪月Sero",
+      "source": "llm"
     },
     "白夜 零月": {
-      "text": "",
-      "source": "unknown"
+      "text": "白夜 零月",
+      "source": "llm"
     },
     "秋寄": {
-      "text": "",
-      "source": "unknown"
+      "text": "_000\".",
+      "source": "llm"
     },
     "立花": {
-      "text": "",
-      "source": "unknown"
+      "text": "立花",
+      "source": "llm"
     },
     "米室": {
-      "text": "",
-      "source": "unknown"
+      "text": "米室",
+      "source": "llm"
     },
     "紅茶マジ太郎": {
-      "text": "",
-      "source": "unknown"
+      "text": "红茶Maji太郎",
+      "source": "llm"
     },
     "羽紫おり": {
-      "text": "",
-      "source": "unknown"
+      "text": "羽紫ori",
+      "source": "llm"
     },
     "肴": {
-      "text": "",
-      "source": "unknown"
+      "text": "肴",
+      "source": "llm"
     },
     "藤ちょこ": {
-      "text": "",
-      "source": "unknown"
+      "text": "藤Choco",
+      "source": "llm"
     },
     "赤倉": {
-      "text": "",
-      "source": "unknown"
+      "text": "赤仓",
+      "source": "llm"
     },
     "隊長": {
-      "text": "",
-      "source": "unknown"
+      "text": "队长",
+      "source": "llm"
     },
     "雨月ユキ": {
-      "text": "",
-      "source": "unknown"
+      "text": "雨月ユキ",
+      "source": "llm"
     },
     "青鳥パラン": {
-      "text": "",
-      "source": "unknown"
+      "text": "青鸟Paran",
+      "source": "llm"
     },
     "風李たゆ": {
-      "text": "",
-      "source": "unknown"
+      "text": "风李Tayu",
+      "source": "llm"
     },
     "鴨ひれ": {
-      "text": "",
-      "source": "unknown"
+      "text": "Kamohire",
+      "source": "llm"
     },
     "ｓｋｃ": {
-      "text": "",
-      "source": "unknown"
+      "text": "skc",
+      "source": "llm"
     }
   },
   "name": {
     "39PUNK": {
-      "text": "",
-      "source": "unknown"
+      "text": "39PUNK",
+      "source": "llm"
     },
     "=esprit": {
-      "text": "",
-      "source": "unknown"
+      "text": "=灵气",
+      "source": "llm"
     },
     "ASTRO FES COSTUME（KAITO）": {
-      "text": "",
-      "source": "unknown"
+      "text": "ASTRO FES服装（KAITO）",
+      "source": "llm"
     },
     "ASTRO FES COSTUME（レン）": {
       "text": "ASTRO FES COSTUME（镜音连）",
       "source": "cn"
     },
     "ASTRO FES COSTUME（冬弥）": {
-      "text": "",
-      "source": "unknown"
+      "text": "ASTRO FES服装（冬弥）",
+      "source": "llm"
     },
     "ASTRO FES COSTUME（司）": {
-      "text": "",
-      "source": "unknown"
+      "text": "太空节服装（司）",
+      "source": "llm"
     },
     "ASTRO FES COSTUME（彰人）": {
-      "text": "",
-      "source": "unknown"
+      "text": "ASTRO FES服装（彰人）",
+      "source": "llm"
     },
     "ASTRO FES COSTUME（類）": {
       "text": "ASTRO FES COSTUME（类）",
       "source": "cn"
     },
     "Adorable steps": {
-      "text": "",
-      "source": "unknown"
+      "text": "萌动舞步",
+      "source": "llm"
     },
     "Alive with music": {
       "text": "与音乐共存",
@@ -677,224 +677,224 @@
       "source": "cn"
     },
     "Attend Your Dream": {
-      "text": "",
-      "source": "unknown"
+      "text": "伴你之梦",
+      "source": "llm"
     },
     "Attend Your Future": {
-      "text": "",
-      "source": "unknown"
+      "text": "迈向未来",
+      "source": "llm"
     },
     "Attract attention": {
-      "text": "",
-      "source": "unknown"
+      "text": "瞩目焦点",
+      "source": "llm"
     },
     "Awesome Clover": {
-      "text": "",
-      "source": "unknown"
+      "text": "精彩三叶草",
+      "source": "llm"
     },
     "Awesome Player": {
       "text": "Awesome  Player",
       "source": "cn"
     },
     "Awesome Ribbon": {
-      "text": "",
-      "source": "unknown"
+      "text": "绝赞缎带",
+      "source": "llm"
     },
     "Awesome Star": {
-      "text": "",
-      "source": "unknown"
+      "text": "了不起的明星",
+      "source": "llm"
     },
     "Awesome Wings": {
-      "text": "",
-      "source": "unknown"
+      "text": "威风之翼",
+      "source": "llm"
     },
     "Awesome vivid": {
-      "text": "",
-      "source": "unknown"
+      "text": "精彩活力",
+      "source": "llm"
     },
     "BAD Argyle": {
-      "text": "",
-      "source": "unknown"
+      "text": "BAD 菱格纹",
+      "source": "llm"
     },
     "BRILLIANT COWBOY!!": {
-      "text": "",
-      "source": "unknown"
+      "text": "闪耀牛仔！！",
+      "source": "llm"
     },
     "Bear in pocket": {
-      "text": "",
-      "source": "unknown"
+      "text": "口袋里的熊",
+      "source": "llm"
     },
     "Beat Rider": {
-      "text": "",
-      "source": "unknown"
+      "text": "节奏骑士",
+      "source": "llm"
     },
     "Become an ally": {
       "text": "坚定后盾",
       "source": "cn"
     },
     "Believe in・Style": {
-      "text": "",
-      "source": "unknown"
+      "text": "坚信・风格",
+      "source": "llm"
     },
     "Biggest Bluff": {
-      "text": "",
-      "source": "unknown"
+      "text": "Biggest Bluff",
+      "source": "llm"
     },
     "Bittersweet Guardian": {
       "text": "绽放的圆舞曲",
       "source": "cn"
     },
     "Bond of Sparkle": {
-      "text": "",
-      "source": "unknown"
+      "text": "闪耀之绊",
+      "source": "llm"
     },
     "Bond of belief": {
-      "text": "",
-      "source": "unknown"
+      "text": "信念之绊",
+      "source": "llm"
     },
     "Bond of flame": {
-      "text": "",
-      "source": "unknown"
+      "text": "火焰之绊",
+      "source": "llm"
     },
     "Bond of memory": {
-      "text": "",
-      "source": "unknown"
+      "text": "记忆的羁绊",
+      "source": "llm"
     },
     "Bright flame": {
-      "text": "",
-      "source": "unknown"
+      "text": "灿烂之火",
+      "source": "llm"
     },
     "Brilliant Tender": {
-      "text": "",
-      "source": "unknown"
+      "text": "璀璨温柔",
+      "source": "llm"
     },
     "Brush of Solitude": {
-      "text": "",
-      "source": "unknown"
+      "text": "孤独画笔",
+      "source": "llm"
     },
     "Bビットボーイ": {
-      "text": "",
-      "source": "unknown"
+      "text": "B比特男孩",
+      "source": "llm"
     },
     "CHECK IT!!": {
-      "text": "",
-      "source": "unknown"
+      "text": "CHECK IT!!",
+      "source": "llm"
     },
     "CHEERFUL PROJECT!!": {
-      "text": "",
-      "source": "unknown"
+      "text": "欢快计划！！",
+      "source": "llm"
     },
     "CLOUDY magician": {
       "text": "阴云魔术师",
       "source": "cn"
     },
     "COOL SURVIVOR": {
-      "text": "",
-      "source": "unknown"
+      "text": "酷炫幸存者",
+      "source": "llm"
     },
     "Calm Rider": {
-      "text": "",
-      "source": "unknown"
+      "text": "沉稳骑手",
+      "source": "llm"
     },
     "Calm Wisdom": {
       "text": "Happy Anniversary Miku",
       "source": "cn"
     },
     "Casual Painter": {
-      "text": "",
-      "source": "unknown"
+      "text": "休闲画师",
+      "source": "llm"
     },
     "Cat in pocket": {
-      "text": "",
-      "source": "unknown"
+      "text": "兜中猫",
+      "source": "llm"
     },
     "Cheer of neighbor": {
-      "text": "",
-      "source": "unknown"
+      "text": "邻里应援",
+      "source": "llm"
     },
     "Cheerful Streamer": {
-      "text": "",
-      "source": "unknown"
+      "text": "开朗的主播",
+      "source": "llm"
     },
     "Cherish regret": {
       "text": "怀抱悔恨",
       "source": "cn"
     },
     "Chill-Out Marine": {
-      "text": "",
-      "source": "unknown"
+      "text": "悠闲海洋",
+      "source": "llm"
     },
     "Classical Blush": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典羞涩",
+      "source": "llm"
     },
     "Classical Butterfly": {
       "text": "古典金斑蝶",
       "source": "cn"
     },
     "Classical Eyeshadow": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典眼影",
+      "source": "llm"
     },
     "Classical Gloss": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典亮泽",
+      "source": "llm"
     },
     "Classical Lipstick": {
-      "text": "",
-      "source": "unknown"
+      "text": "经典口红",
+      "source": "llm"
     },
     "Classical Nails": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典美甲",
+      "source": "llm"
     },
     "Classical Perfume": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典香氛",
+      "source": "llm"
     },
     "Close to heart": {
       "text": "贴近心灵",
       "source": "cn"
     },
     "Code name: Joker": {
-      "text": "",
-      "source": "unknown"
+      "text": "代号：Joker",
+      "source": "llm"
     },
     "Code name: Violet": {
-      "text": "",
-      "source": "unknown"
+      "text": "代号：紫罗兰",
+      "source": "llm"
     },
     "Color the past": {
       "text": "染色往昔",
       "source": "cn"
     },
     "Colorful Bunny": {
-      "text": "",
-      "source": "unknown"
+      "text": "彩色兔兔",
+      "source": "llm"
     },
     "Come to Life": {
       "text": "生机盎然",
       "source": "cn"
     },
     "Confidence suit": {
-      "text": "",
-      "source": "unknown"
+      "text": "自信西装",
+      "source": "llm"
     },
     "Connect Hopeful Hour（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连结希望时刻（男款）",
+      "source": "llm"
     },
     "Connect Hopeful Hour（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连接希望时刻（女款）",
+      "source": "llm"
     },
     "Connect Moonlight Dream（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连接月光之梦（男装）",
+      "source": "llm"
     },
     "Connect Moonlight Dream（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连接月光之梦（女装）",
+      "source": "llm"
     },
     "Connect Rock'n Beat(メンズ)": {
       "text": "Connect Rock'n Beat（男款）",
@@ -905,12 +905,12 @@
       "source": "cn"
     },
     "Connect Smileful Hour（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连结微笑时刻（男装）",
+      "source": "llm"
     },
     "Connect Smileful Hour（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "Connect Smileful Hour（女款）",
+      "source": "llm"
     },
     "Connect Street Beat(メンズ)": {
       "text": "Connect Street Beat（男款）",
@@ -921,132 +921,132 @@
       "source": "cn"
     },
     "Connect Sunshine Dream（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "连结阳光之梦（男）",
+      "source": "llm"
     },
     "Connect Sunshine Dream（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "Connect Sunshine Dream（女款）",
+      "source": "llm"
     },
     "Cool New Colors": {
-      "text": "",
-      "source": "unknown"
+      "text": "酷炫新色",
+      "source": "llm"
     },
     "Cosmo Phone": {
-      "text": "",
-      "source": "unknown"
+      "text": "宇宙耳机",
+      "source": "llm"
     },
     "Craving flame": {
-      "text": "",
-      "source": "unknown"
+      "text": "渴望之焰",
+      "source": "llm"
     },
     "Crown Knight": {
-      "text": "",
-      "source": "unknown"
+      "text": "王冠骑士",
+      "source": "llm"
     },
     "Cushy butler": {
-      "text": "",
-      "source": "unknown"
+      "text": "软绵绵执事",
+      "source": "llm"
     },
     "D.C.Bad trip": {
-      "text": "",
-      "source": "unknown"
+      "text": "D.C.Bad trip",
+      "source": "llm"
     },
     "D.C.Be help": {
-      "text": "",
-      "source": "unknown"
+      "text": "D.C.小帮手",
+      "source": "llm"
     },
     "D.C.Get close": {
-      "text": "",
-      "source": "unknown"
+      "text": "D.C.亲近",
+      "source": "llm"
     },
     "DENIM\u0026MONO": {
-      "text": "",
-      "source": "unknown"
+      "text": "丹宁与单色",
+      "source": "llm"
     },
     "Dance of freedom": {
-      "text": "",
-      "source": "unknown"
+      "text": "自由之舞",
+      "source": "llm"
     },
     "Dance of pleasure": {
-      "text": "",
-      "source": "unknown"
+      "text": "愉悦之舞",
+      "source": "llm"
     },
     "Dance of zeal": {
-      "text": "",
-      "source": "unknown"
+      "text": "热忱之舞",
+      "source": "llm"
     },
     "Dark Embrace": {
-      "text": "",
-      "source": "unknown"
+      "text": "漆黑拥抱",
+      "source": "llm"
     },
     "Detective Cat Robe": {
-      "text": "",
-      "source": "unknown"
+      "text": "Detective Cat Robe",
+      "source": "llm"
     },
     "Devil move heart": {
-      "text": "",
-      "source": "unknown"
+      "text": "恶魔动心",
+      "source": "llm"
     },
     "Dilemma of seeker": {
-      "text": "",
-      "source": "unknown"
+      "text": "探索者的困境",
+      "source": "llm"
     },
     "Don't give up・Style": {
-      "text": "",
-      "source": "unknown"
+      "text": "Don't give up・Style",
+      "source": "llm"
     },
     "Drop sugar Tea party!": {
       "text": "糖果茶会！",
       "source": "cn"
     },
     "Dynamic-tone": {
-      "text": "",
-      "source": "unknown"
+      "text": "动感色调",
+      "source": "llm"
     },
     "EVIL ONE": {
-      "text": "",
-      "source": "unknown"
+      "text": "EVIL ONE",
+      "source": "llm"
     },
     "Easter・Bunny Boy": {
-      "text": "",
-      "source": "unknown"
+      "text": "复活节・兔男郎",
+      "source": "llm"
     },
     "Echoes of Myself": {
-      "text": "",
-      "source": "unknown"
+      "text": "自我的回响",
+      "source": "llm"
     },
     "Elegant Pirates": {
       "text": "优雅海侠",
       "source": "cn"
     },
     "Elysion Ange": {
-      "text": "",
-      "source": "unknown"
+      "text": "Elysion Ange",
+      "source": "llm"
     },
     "Escape girl": {
       "text": "出逃少女",
       "source": "cn"
     },
     "Eternal Belief": {
-      "text": "",
-      "source": "unknown"
+      "text": "永恒信念",
+      "source": "llm"
     },
     "FLAME OF ENDEAVOR": {
       "text": "奋发之火",
       "source": "cn"
     },
     "Fairlady Dress": {
-      "text": "",
-      "source": "unknown"
+      "text": "淑女礼服",
+      "source": "llm"
     },
     "Faith in Shadows": {
-      "text": "",
-      "source": "unknown"
+      "text": "影中信仰",
+      "source": "llm"
     },
     "Fake Smile": {
-      "text": "",
-      "source": "unknown"
+      "text": "虚假笑容",
+      "source": "llm"
     },
     "Fall Fun Steps": {
       "text": "快乐秋日步伐",
@@ -1061,148 +1061,148 @@
       "source": "cn"
     },
     "Fleek vivid": {
-      "text": "",
-      "source": "unknown"
+      "text": "鲜艳时髦",
+      "source": "llm"
     },
     "Flight Kid": {
       "text": "飞行少女",
       "source": "cn"
     },
     "Fluffy rabbit princess": {
-      "text": "",
-      "source": "unknown"
+      "text": "蓬松兔子公主",
+      "source": "llm"
     },
     "Flutter of Butterflies": {
       "text": "蝴蝶迷踪",
       "source": "cn"
     },
     "Fresh Citrus Weekend": {
-      "text": "",
-      "source": "unknown"
+      "text": "清新柑橘周末",
+      "source": "llm"
     },
     "GIFT-uniform": {
-      "text": "",
-      "source": "unknown"
+      "text": "礼物制服",
+      "source": "llm"
     },
     "Gentle Dog": {
       "text": "温顺狗",
       "source": "cn"
     },
     "Gentle steps": {
-      "text": "",
-      "source": "unknown"
+      "text": "温柔步伐",
+      "source": "llm"
     },
     "Glamorous Peacock Ensemble": {
-      "text": "",
-      "source": "unknown"
+      "text": "华丽孔雀合奏",
+      "source": "llm"
     },
     "Glamorous Peacock Suit": {
-      "text": "",
-      "source": "unknown"
+      "text": "华丽孔雀西装",
+      "source": "llm"
     },
     "Go Frontier（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "Go Frontier（男款）",
+      "source": "llm"
     },
     "Go Frontier（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "前进边境（女装）",
+      "source": "llm"
     },
     "HAPPY Flower": {
-      "text": "",
-      "source": "unknown"
+      "text": "快乐花朵",
+      "source": "llm"
     },
     "HOT AIR GIRL": {
       "text": "炽烈少女",
       "source": "cn"
     },
     "Hamster in pocket": {
-      "text": "",
-      "source": "unknown"
+      "text": "口袋里的仓鼠",
+      "source": "llm"
     },
     "Happy deliver": {
-      "text": "",
-      "source": "unknown"
+      "text": "快乐传递",
+      "source": "llm"
     },
     "Hello! Cherry Blossom": {
-      "text": "",
-      "source": "unknown"
+      "text": "Hello! Cherry Blossom",
+      "source": "llm"
     },
     "Hip-Hoppin’ candy cat": {
       "text": "嘻哈糖果猫",
       "source": "cn"
     },
     "Honor Student": {
-      "text": "",
-      "source": "unknown"
+      "text": "优等生",
+      "source": "llm"
     },
     "Hot New Colors": {
-      "text": "",
-      "source": "unknown"
+      "text": "流行新色",
+      "source": "llm"
     },
     "Hound Kid": {
       "text": "猎犬少年",
       "source": "cn"
     },
     "House Walker": {
-      "text": "",
-      "source": "unknown"
+      "text": "House漫步者",
+      "source": "llm"
     },
     "I'm a catch!!": {
-      "text": "",
-      "source": "unknown"
+      "text": "我钓到了！！",
+      "source": "llm"
     },
     "Icy rose-lady": {
-      "text": "",
-      "source": "unknown"
+      "text": "冰之玫瑰淑女",
+      "source": "llm"
     },
     "Idol lover": {
-      "text": "",
-      "source": "unknown"
+      "text": "偶像爱好者",
+      "source": "llm"
     },
     "Innocent Clown": {
       "text": "无邪的小丑",
       "source": "cn"
     },
     "Innocent Streamer": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯真的主播",
+      "source": "llm"
     },
     "Insomnia Night": {
-      "text": "",
-      "source": "unknown"
+      "text": "不眠之夜",
+      "source": "llm"
     },
     "Jumping life": {
-      "text": "",
-      "source": "unknown"
+      "text": "跳跃生活",
+      "source": "llm"
     },
     "Key to heart": {
       "text": "心之键",
       "source": "cn"
     },
     "Kind Brother": {
-      "text": "",
-      "source": "unknown"
+      "text": "温柔兄长",
+      "source": "llm"
     },
     "LOGO LOGO SEKAI CORDE": {
       "text": "LOGO LOGO 「世界」 CORDE",
       "source": "cn"
     },
     "LOVE-uniform": {
-      "text": "",
-      "source": "unknown"
+      "text": "恋爱制服",
+      "source": "llm"
     },
     "Light steps": {
-      "text": "",
-      "source": "unknown"
+      "text": "轻盈脚步",
+      "source": "llm"
     },
     "Lit vivid": {
-      "text": "",
-      "source": "unknown"
+      "text": "Lit vivid",
+      "source": "llm"
     },
     "Livelylady Dress": {
-      "text": "",
-      "source": "unknown"
+      "text": "活泼淑女裙",
+      "source": "llm"
     },
     "Lo-fi Green": {
       "text": "轻音海盐汽水·bilibili（男款）",
@@ -1221,16 +1221,16 @@
       "source": "cn"
     },
     "Loving Sunflower": {
-      "text": "",
-      "source": "unknown"
+      "text": "挚爱向日葵",
+      "source": "llm"
     },
     "Lunatic Puppeteer": {
-      "text": "",
-      "source": "unknown"
+      "text": "疯狂的傀儡师",
+      "source": "llm"
     },
     "MIKU MIKU POP!": {
-      "text": "",
-      "source": "unknown"
+      "text": "MIKU MIKU POP!",
+      "source": "llm"
     },
     "Magic Academy of Sekai(メンズ)": {
       "text": "「世界」魔法学院（男款）",
@@ -1245,20 +1245,20 @@
       "source": "cn"
     },
     "Mellow Streamer": {
-      "text": "",
-      "source": "unknown"
+      "text": "柔和流光",
+      "source": "llm"
     },
     "Melody Walker": {
-      "text": "",
-      "source": "unknown"
+      "text": "旋律行者",
+      "source": "llm"
     },
     "Melting Curse": {
-      "text": "",
-      "source": "unknown"
+      "text": "融化的诅咒",
+      "source": "llm"
     },
     "Merry Bad Bride": {
-      "text": "",
-      "source": "unknown"
+      "text": "欢愉坏新娘",
+      "source": "llm"
     },
     "Midnight Celebration Tea Party(メンズ)": {
       "text": "Midnight Celebration Tea Party（男款）",
@@ -1269,12 +1269,12 @@
       "source": "cn"
     },
     "Midnight calm": {
-      "text": "",
-      "source": "unknown"
+      "text": "午夜宁静",
+      "source": "llm"
     },
     "Monotone city": {
-      "text": "",
-      "source": "unknown"
+      "text": "单色都市",
+      "source": "llm"
     },
     "My Little Shine": {
       "text": "属于我的小小光辉",
@@ -1285,116 +1285,116 @@
       "source": "cn"
     },
     "NEON Dr.": {
-      "text": "",
-      "source": "unknown"
+      "text": "霓虹医生",
+      "source": "llm"
     },
     "NEON SINGER": {
-      "text": "",
-      "source": "unknown"
+      "text": "霓虹歌手",
+      "source": "llm"
     },
     "NEON Vo.": {
-      "text": "",
-      "source": "unknown"
+      "text": "霓虹主唱",
+      "source": "llm"
     },
     "Naughty Dog": {
       "text": "淘气狗",
       "source": "cn"
     },
     "Night rose-queen": {
-      "text": "",
-      "source": "unknown"
+      "text": "暗夜玫瑰女王",
+      "source": "llm"
     },
     "Noble Eternity": {
-      "text": "",
-      "source": "unknown"
+      "text": "高洁永恒",
+      "source": "llm"
     },
     "Nussknacker": {
-      "text": "",
-      "source": "unknown"
+      "text": "胡桃夹子",
+      "source": "llm"
     },
     "Ocean Captain": {
-      "text": "",
-      "source": "unknown"
+      "text": "海洋船长",
+      "source": "llm"
     },
     "Old Days Boy": {
-      "text": "",
-      "source": "unknown"
+      "text": "昔日少年",
+      "source": "llm"
     },
     "POPPIN' CUTE POLICE": {
-      "text": "",
-      "source": "unknown"
+      "text": "POPPIN' CUTE POLICE",
+      "source": "llm"
     },
     "PURE FIGHTER": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯粹战士",
+      "source": "llm"
     },
     "PURE PUNCHER": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯真击球手",
+      "source": "llm"
     },
     "PURE WATCHER": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯净观测者",
+      "source": "llm"
     },
     "Papilionidae": {
-      "text": "",
-      "source": "unknown"
+      "text": "凤蝶",
+      "source": "llm"
     },
     "Patrol Bear": {
-      "text": "",
-      "source": "unknown"
+      "text": "巡逻小熊",
+      "source": "llm"
     },
     "Penguin lover": {
-      "text": "",
-      "source": "unknown"
+      "text": "企鹅爱好者",
+      "source": "llm"
     },
     "Permanent Spirit": {
-      "text": "",
-      "source": "unknown"
+      "text": "永恒精神",
+      "source": "llm"
     },
     "Petit Printemps": {
       "text": "玲珑春意",
       "source": "cn"
     },
     "Petit pas": {
-      "text": "",
-      "source": "unknown"
+      "text": "小小步履",
+      "source": "llm"
     },
     "Petit souhait": {
-      "text": "",
-      "source": "unknown"
+      "text": "小小愿望",
+      "source": "llm"
     },
     "Petite joie": {
-      "text": "",
-      "source": "unknown"
+      "text": "微小喜悦",
+      "source": "llm"
     },
     "Phantom Crow": {
       "text": "幻影之鸦",
       "source": "cn"
     },
     "Phantom thief": {
-      "text": "",
-      "source": "unknown"
+      "text": "怪盗",
+      "source": "llm"
     },
     "Playing life": {
-      "text": "",
-      "source": "unknown"
+      "text": "演奏人生",
+      "source": "llm"
     },
     "Pretty Lady": {
-      "text": "",
-      "source": "unknown"
+      "text": "俏丽淑女",
+      "source": "llm"
     },
     "Prince of the CK": {
       "text": "拇指国的玫瑰公主",
       "source": "cn"
     },
     "Prismatic Blossom": {
-      "text": "",
-      "source": "unknown"
+      "text": "棱镜花开",
+      "source": "llm"
     },
     "Prismatic Floret": {
-      "text": "",
-      "source": "unknown"
+      "text": "棱镜小花",
+      "source": "llm"
     },
     "PunkyStarRider（メンズ）": {
       "text": "PunkyStarRider（男款）",
@@ -1405,36 +1405,36 @@
       "source": "cn"
     },
     "Pure Transparency": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯粹透明",
+      "source": "llm"
     },
     "Pure Walker": {
-      "text": "",
-      "source": "unknown"
+      "text": "纯粹行者",
+      "source": "llm"
     },
     "RAD ONEROAD": {
-      "text": "",
-      "source": "unknown"
+      "text": "RAD唯一之路",
+      "source": "llm"
     },
     "RAINY magician": {
       "text": "细雨魔术师",
       "source": "cn"
     },
     "ROOKIE SURVIVOR": {
-      "text": "",
-      "source": "unknown"
+      "text": "新手幸存者",
+      "source": "llm"
     },
     "ROSE/POMPADOUR": {
-      "text": "",
-      "source": "unknown"
+      "text": "玫瑰/庞巴度",
+      "source": "llm"
     },
     "Ramble Rider": {
-      "text": "",
-      "source": "unknown"
+      "text": "漫步骑手",
+      "source": "llm"
     },
     "Real badass": {
-      "text": "",
-      "source": "unknown"
+      "text": "真正的硬汉",
+      "source": "llm"
     },
     "Red step rabbit(メンズ)": {
       "text": "Red step rabbit（男款）",
@@ -1445,40 +1445,40 @@
       "source": "cn"
     },
     "Resolution suit": {
-      "text": "",
-      "source": "unknown"
+      "text": "决意西装",
+      "source": "llm"
     },
     "Road to CHAMPION（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "冠军之路（男款）",
+      "source": "llm"
     },
     "Road to CHAMPION（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "冠军之路（女款）",
+      "source": "llm"
     },
     "Rose Cage": {
-      "text": "",
-      "source": "unknown"
+      "text": "玫瑰之笼",
+      "source": "llm"
     },
     "Runaway Cat": {
       "text": "遁走猫咪",
       "source": "cn"
     },
     "Ruse Direction": {
-      "text": "",
-      "source": "unknown"
+      "text": "诡计导向",
+      "source": "llm"
     },
     "SEKAI UNIVERSITY": {
       "text": "「世界」大学",
       "source": "cn"
     },
     "SEKAI step wear": {
-      "text": "",
-      "source": "unknown"
+      "text": "SEKAI步履装",
+      "source": "llm"
     },
     "SMILE-uniform": {
-      "text": "",
-      "source": "unknown"
+      "text": "微笑制服",
+      "source": "llm"
     },
     "SNOW MIKU 2022（KAITO）": {
       "text": "SNOW MIKU 2023（KAITO）",
@@ -1509,12 +1509,12 @@
       "source": "cn"
     },
     "STEP-uniform": {
-      "text": "",
-      "source": "unknown"
+      "text": "STEP制服",
+      "source": "llm"
     },
     "SUMMER SPLASH！": {
-      "text": "",
-      "source": "unknown"
+      "text": "夏日水花！",
+      "source": "llm"
     },
     "SUNNY magician": {
       "text": "晴空魔术师",
@@ -1533,48 +1533,48 @@
       "source": "cn"
     },
     "Shady rose-duke": {
-      "text": "",
-      "source": "unknown"
+      "text": "Shady rose-duke",
+      "source": "llm"
     },
     "Sherlock Times": {
-      "text": "",
-      "source": "unknown"
+      "text": "夏洛克时代",
+      "source": "llm"
     },
     "Shortcake*Gentleman": {
-      "text": "",
-      "source": "unknown"
+      "text": "草莓蛋糕*绅士",
+      "source": "llm"
     },
     "Silent Devotion": {
-      "text": "",
-      "source": "unknown"
+      "text": "静默奉献",
+      "source": "llm"
     },
     "Smashing vivid": {
-      "text": "",
-      "source": "unknown"
+      "text": "飒爽鲜活",
+      "source": "llm"
     },
     "Smile deliver": {
-      "text": "",
-      "source": "unknown"
+      "text": "微笑传递",
+      "source": "llm"
     },
     "Snow Fairy lover": {
-      "text": "",
-      "source": "unknown"
+      "text": "雪之精灵恋人",
+      "source": "llm"
     },
     "Snowflake White Rabbit彡": {
-      "text": "",
-      "source": "unknown"
+      "text": "雪花白兔",
+      "source": "llm"
     },
     "Soar high canary": {
-      "text": "",
-      "source": "unknown"
+      "text": "高飞的金丝雀",
+      "source": "llm"
     },
     "Soft fur attendant": {
-      "text": "",
-      "source": "unknown"
+      "text": "毛茸茸皮毛侍从",
+      "source": "llm"
     },
     "Song to taste.": {
-      "text": "",
-      "source": "unknown"
+      "text": "Song to taste.",
+      "source": "llm"
     },
     "Sonic Style(メンズ)": {
       "text": "Sonic Style（男款）",
@@ -1589,12 +1589,12 @@
       "source": "cn"
     },
     "Soulful-tone": {
-      "text": "",
-      "source": "unknown"
+      "text": "灵魂音色",
+      "source": "llm"
     },
     "Sparkling life": {
-      "text": "",
-      "source": "unknown"
+      "text": "闪耀生活",
+      "source": "llm"
     },
     "Spirit of Love": {
       "text": "爱之魂",
@@ -1609,24 +1609,24 @@
       "source": "cn"
     },
     "Star Player": {
-      "text": "",
-      "source": "unknown"
+      "text": "明星选手",
+      "source": "llm"
     },
     "Starry Ability": {
-      "text": "",
-      "source": "unknown"
+      "text": "星之才能",
+      "source": "llm"
     },
     "Starry Core": {
-      "text": "",
-      "source": "unknown"
+      "text": "星光核心",
+      "source": "llm"
     },
     "Starry Identity": {
-      "text": "",
-      "source": "unknown"
+      "text": "星空身份",
+      "source": "llm"
     },
     "Starry Vigor": {
-      "text": "",
-      "source": "unknown"
+      "text": "繁星活力",
+      "source": "llm"
     },
     "Starry night dance party!(メンズ)": {
       "text": "Starry night dance party!（男款）",
@@ -1637,28 +1637,28 @@
       "source": "cn"
     },
     "Stitch up Heart": {
-      "text": "",
-      "source": "unknown"
+      "text": "缝补之心",
+      "source": "llm"
     },
     "Stunning lady": {
-      "text": "",
-      "source": "unknown"
+      "text": "惊艳淑女",
+      "source": "llm"
     },
     "Suave Resort Style": {
-      "text": "",
-      "source": "unknown"
+      "text": "优雅度假风",
+      "source": "llm"
     },
     "Sugary Maid": {
-      "text": "",
-      "source": "unknown"
+      "text": "甜心女仆",
+      "source": "llm"
     },
     "Summer Ribbon Style": {
-      "text": "",
-      "source": "unknown"
+      "text": "夏日缎带风格",
+      "source": "llm"
     },
     "Summer time Flamingo": {
-      "text": "",
-      "source": "unknown"
+      "text": "夏日火烈鸟",
+      "source": "llm"
     },
     "Sway Clown": {
       "text": "茫然的小丑",
@@ -1673,12 +1673,12 @@
       "source": "cn"
     },
     "S×S": {
-      "text": "",
-      "source": "unknown"
+      "text": "S×S",
+      "source": "llm"
     },
     "Tethered Calm": {
-      "text": "",
-      "source": "unknown"
+      "text": "维系的沉着",
+      "source": "llm"
     },
     "The Flowershower": {
       "text": "沐浴花朵",
@@ -1701,12 +1701,12 @@
       "source": "cn"
     },
     "Tight Player": {
-      "text": "",
-      "source": "unknown"
+      "text": "实力玩家",
+      "source": "llm"
     },
     "Topgear-tone": {
-      "text": "",
-      "source": "unknown"
+      "text": "极速音调",
+      "source": "llm"
     },
     "Trail of Butterflies": {
       "text": "蝴蝶轨迹",
@@ -1729,64 +1729,64 @@
       "source": "cn"
     },
     "USAMIMI♡GAMERS": {
-      "text": "",
-      "source": "unknown"
+      "text": "兔耳♡游戏玩家",
+      "source": "llm"
     },
     "USE暗星庁・裁判官の装い": {
       "text": "USE暗星法庭法官服",
       "source": "cn"
     },
     "Unchanged purity": {
-      "text": "",
-      "source": "unknown"
+      "text": "不变的纯真",
+      "source": "llm"
     },
     "Unfailing kindness": {
-      "text": "",
-      "source": "unknown"
+      "text": "恒久仁慈",
+      "source": "llm"
     },
     "Unshakable belief": {
-      "text": "",
-      "source": "unknown"
+      "text": "坚定信念",
+      "source": "llm"
     },
     "V.B.S SURVIVOR": {
-      "text": "",
-      "source": "unknown"
+      "text": "V.B.S 幸存者",
+      "source": "llm"
     },
     "Vitality suit": {
-      "text": "",
-      "source": "unknown"
+      "text": "活力套装",
+      "source": "llm"
     },
     "Vivid Argyle": {
-      "text": "",
-      "source": "unknown"
+      "text": "鲜艳菱格",
+      "source": "llm"
     },
     "Vivid Bunny": {
-      "text": "",
-      "source": "unknown"
+      "text": "鲜艳兔兔",
+      "source": "llm"
     },
     "Vivid New Colors": {
-      "text": "",
-      "source": "unknown"
+      "text": "鲜艳新色",
+      "source": "llm"
     },
     "Warming Cat": {
-      "text": "",
-      "source": "unknown"
+      "text": "暖心猫咪",
+      "source": "llm"
     },
     "White Attractive": {
-      "text": "",
-      "source": "unknown"
+      "text": "白色魅力",
+      "source": "llm"
     },
     "Wings of trust": {
-      "text": "",
-      "source": "unknown"
+      "text": "信任之翼",
+      "source": "llm"
     },
     "Wings of watch": {
-      "text": "",
-      "source": "unknown"
+      "text": "守护之翼",
+      "source": "llm"
     },
     "Witness of duel": {
-      "text": "",
-      "source": "unknown"
+      "text": "决斗的见证者",
+      "source": "llm"
     },
     "Wonderful Symphony(メンズ)": {
       "text": "Wonderful Symphony（男款）",
@@ -1801,88 +1801,88 @@
       "source": "cn"
     },
     "Worry of walker": {
-      "text": "",
-      "source": "unknown"
+      "text": "漫步者的忧虑",
+      "source": "llm"
     },
     "Xylocopa": {
-      "text": "",
-      "source": "unknown"
+      "text": "木蜂",
+      "source": "llm"
     },
     "Yearning flame": {
-      "text": "",
-      "source": "unknown"
+      "text": "憧憬之焰",
+      "source": "llm"
     },
     "Youthful life": {
-      "text": "",
-      "source": "unknown"
+      "text": "青春生活",
+      "source": "llm"
     },
     "bombyx mori": {
-      "text": "",
-      "source": "unknown"
+      "text": "家蚕",
+      "source": "llm"
     },
     "city casual coffee": {
-      "text": "",
-      "source": "unknown"
+      "text": "城市休闲咖啡",
+      "source": "llm"
     },
     "classical school girl": {
-      "text": "",
-      "source": "unknown"
+      "text": "古典校服少女",
+      "source": "llm"
     },
     "cosmic rhythm shooter": {
-      "text": "",
-      "source": "unknown"
+      "text": "宇宙节奏射手",
+      "source": "llm"
     },
     "cozy time": {
-      "text": "",
-      "source": "unknown"
+      "text": "惬意时光",
+      "source": "llm"
     },
     "crystal meteor(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "水晶流星（男装）",
+      "source": "llm"
     },
     "crystal meteor(レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "水晶流星（女装）",
+      "source": "llm"
     },
     "cute white kitty": {
-      "text": "",
-      "source": "unknown"
+      "text": "可爱白猫",
+      "source": "llm"
     },
     "cyber saver!": {
-      "text": "",
-      "source": "unknown"
+      "text": "赛博救星！",
+      "source": "llm"
     },
     "day by denim": {
-      "text": "",
-      "source": "unknown"
+      "text": "丹宁时光",
+      "source": "llm"
     },
     "dizzy trap": {
-      "text": "",
-      "source": "unknown"
+      "text": "眩晕陷阱",
+      "source": "llm"
     },
     "duel of Growth": {
-      "text": "",
-      "source": "unknown"
+      "text": "成长的决斗",
+      "source": "llm"
     },
     "duel of Revolt": {
-      "text": "",
-      "source": "unknown"
+      "text": "反叛决斗",
+      "source": "llm"
     },
     "fairy tale princess": {
-      "text": "",
-      "source": "unknown"
+      "text": "童话公主",
+      "source": "llm"
     },
     "fallin' fluff": {
-      "text": "",
-      "source": "unknown"
+      "text": "飘落绒毛",
+      "source": "llm"
     },
     "flower champagne(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "花之香槟（男装）",
+      "source": "llm"
     },
     "flower champagne(レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "繁花香槟（女）",
+      "source": "llm"
     },
     "girly spring flower": {
       "text": "少女春花",
@@ -1893,136 +1893,136 @@
       "source": "cn"
     },
     "heroic featherias (レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "heroic featherias（女）",
+      "source": "llm"
     },
     "heroic featherias(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "英勇羽翼（男）",
+      "source": "llm"
     },
     "hope to believe": {
-      "text": "",
-      "source": "unknown"
+      "text": "相信希望",
+      "source": "llm"
     },
     "hope to persevere": {
-      "text": "",
-      "source": "unknown"
+      "text": "坚持的希望",
+      "source": "llm"
     },
     "hope to rise": {
-      "text": "",
-      "source": "unknown"
+      "text": "hope to rise",
+      "source": "llm"
     },
     "hope to strive": {
-      "text": "",
-      "source": "unknown"
+      "text": "奋斗的希望",
+      "source": "llm"
     },
     "intruder:R": {
       "text": "侵入者:R",
       "source": "cn"
     },
     "knitting colors": {
-      "text": "",
-      "source": "unknown"
+      "text": "编织色彩",
+      "source": "llm"
     },
     "lady in flowers": {
-      "text": "",
-      "source": "unknown"
+      "text": "花中淑女",
+      "source": "llm"
     },
     "lady of charming": {
-      "text": "",
-      "source": "unknown"
+      "text": "魅力淑女",
+      "source": "llm"
     },
     "legendarily radiance(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "传说光芒（男装）",
+      "source": "llm"
     },
     "legendarily radiance(レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "传奇光辉（女装）",
+      "source": "llm"
     },
     "mend a tear": {
-      "text": "",
-      "source": "unknown"
+      "text": "缝补泪痕",
+      "source": "llm"
     },
     "mode parfum": {
-      "text": "",
-      "source": "unknown"
+      "text": "香氛风尚",
+      "source": "llm"
     },
     "observer:R": {
       "text": "观察者:R",
       "source": "cn"
     },
     "oversize･streeT": {
-      "text": "",
-      "source": "unknown"
+      "text": "廓形街头",
+      "source": "llm"
     },
     "peppy abyssinian": {
-      "text": "",
-      "source": "unknown"
+      "text": "活泼阿比西尼亚",
+      "source": "llm"
     },
     "planet SEKAI": {
       "text": "行星「世界」",
       "source": "cn"
     },
     "pretty silver tabby": {
-      "text": "",
-      "source": "unknown"
+      "text": "俏皮银虎斑",
+      "source": "llm"
     },
     "raise hearts voice": {
-      "text": "",
-      "source": "unknown"
+      "text": "振奋心声",
+      "source": "llm"
     },
     "reminiscence echo": {
-      "text": "",
-      "source": "unknown"
+      "text": "reminiscence echo",
+      "source": "llm"
     },
     "see-p-ta-ni-ka stars(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "see-p-ta-ni-ka stars（男款）",
+      "source": "llm"
     },
     "see-p-ta-ni-ka stars(レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "Sip-ta-ni-ka之星(女装)",
+      "source": "llm"
     },
     "shot": {
-      "text": "",
-      "source": "unknown"
+      "text": "瞬间",
+      "source": "llm"
     },
     "sparkle of resolve": {
-      "text": "",
-      "source": "unknown"
+      "text": "决心的闪耀",
+      "source": "llm"
     },
     "sparkle of smarts": {
-      "text": "",
-      "source": "unknown"
+      "text": "智慧火花",
+      "source": "llm"
     },
     "sparkle of trust": {
-      "text": "",
-      "source": "unknown"
+      "text": "信任的闪耀",
+      "source": "llm"
     },
     "stir hearts performance": {
-      "text": "",
-      "source": "unknown"
+      "text": "动人心弦的演出",
+      "source": "llm"
     },
     "syzygy(メンズ)": {
-      "text": "",
-      "source": "unknown"
+      "text": "syzygy（男）",
+      "source": "llm"
     },
     "syzygy(レディース)": {
-      "text": "",
-      "source": "unknown"
+      "text": "syzygy（女）",
+      "source": "llm"
     },
     "touch hearts song": {
-      "text": "",
-      "source": "unknown"
+      "text": "触动心灵之歌",
+      "source": "llm"
     },
     "turning purple": {
-      "text": "",
-      "source": "unknown"
+      "text": "渐变紫色",
+      "source": "llm"
     },
     "♡Sweet Little Soldier♡": {
-      "text": "",
-      "source": "unknown"
+      "text": "♡甜美小战士♡",
+      "source": "llm"
     },
     "いたずらな小鬼の衣": {
       "text": "Happy Anniversary MEIKO",
@@ -2037,12 +2037,12 @@
       "source": "cn"
     },
     "おとぎ話の森コーデ（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "童话森林套装（男款）",
+      "source": "llm"
     },
     "おとぎ話の森コーデ（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "童话森林套装（女）",
+      "source": "llm"
     },
     "おやすみぷらねっと": {
       "text": "晚安星球",
@@ -2057,8 +2057,8 @@
       "source": "cn"
     },
     "くちぱっち風ゆったりコーデ": {
-      "text": "",
-      "source": "unknown"
+      "text": "嘴巴奇风宽松穿搭",
+      "source": "llm"
     },
     "くまのみまーち": {
       "text": "小丑鱼进行曲",
@@ -2093,12 +2093,12 @@
       "source": "cn"
     },
     "ときめきトリップ": {
-      "text": "",
-      "source": "unknown"
+      "text": "悸动之旅",
+      "source": "llm"
     },
     "どりぃみぃ・きゃっと☆彡": {
-      "text": "",
-      "source": "unknown"
+      "text": "梦幻小猫☆彡",
+      "source": "llm"
     },
     "どり～みん★ごーすとさん": {
       "text": "梦想★幽灵",
@@ -2133,20 +2133,20 @@
       "source": "cn"
     },
     "まめっち風ドットジャケット": {
-      "text": "",
-      "source": "unknown"
+      "text": "豆豆亲风点阵夹克",
+      "source": "llm"
     },
     "みみっち風キュートパーカー": {
-      "text": "",
-      "source": "unknown"
+      "text": "萌耳风可爱连帽衫",
+      "source": "llm"
     },
     "めくるめ。": {
       "text": "光彩炫目。",
       "source": "cn"
     },
     "めめっち風ぐるぐるスタイル": {
-      "text": "",
-      "source": "unknown"
+      "text": "美美美风卷卷风格",
+      "source": "llm"
     },
     "もこもこスノーコート(メンズ)": {
       "text": "毛绒御寒大衣（男款）",
@@ -2177,8 +2177,8 @@
       "source": "cn"
     },
     "ゆめくいていぱー": {
-      "text": "",
-      "source": "unknown"
+      "text": "食梦貘",
+      "source": "llm"
     },
     "らうたし一葉の衣": {
       "text": "烂漫孤叶服",
@@ -2205,12 +2205,12 @@
       "source": "cn"
     },
     "アスピレエプロン": {
-      "text": "",
-      "source": "unknown"
+      "text": "憧憬围裙",
+      "source": "llm"
     },
     "アップビート・ワーカー": {
-      "text": "",
-      "source": "unknown"
+      "text": "欢快劳动者",
+      "source": "llm"
     },
     "アップルピクニックコーデ": {
       "text": "苹果郊游服",
@@ -2229,8 +2229,8 @@
       "source": "cn"
     },
     "アフェクショネート・シンデレラ": {
-      "text": "",
-      "source": "unknown"
+      "text": "深情灰姑娘",
+      "source": "llm"
     },
     "アライブ・ストリート": {
       "text": "活力街头风",
@@ -2249,8 +2249,8 @@
       "source": "cn"
     },
     "アンウェーバリング・マーチ": {
-      "text": "",
-      "source": "unknown"
+      "text": "坚定进行曲",
+      "source": "llm"
     },
     "アングラビティスーツ": {
       "text": "宇航服",
@@ -2297,16 +2297,16 @@
       "source": "cn"
     },
     "インサイト・ボディスーツ": {
-      "text": "",
-      "source": "unknown"
+      "text": "洞察连体服",
+      "source": "llm"
     },
     "インテリジェンス・エージェント": {
       "text": "超智力特工",
       "source": "cn"
     },
     "インベンティブ・ワーカー": {
-      "text": "",
-      "source": "unknown"
+      "text": "创意的劳动者",
+      "source": "llm"
     },
     "イースターマーチングドール": {
       "text": "复活节行进娃娃",
@@ -2689,16 +2689,16 @@
       "source": "cn"
     },
     "コージー・カラー": {
-      "text": "",
-      "source": "unknown"
+      "text": "舒适色彩",
+      "source": "llm"
     },
     "コーズィ・ナイトウェア": {
       "text": "温暖睡衣",
       "source": "cn"
     },
     "コーディアル・カラー": {
-      "text": "",
-      "source": "unknown"
+      "text": "诚挚色彩",
+      "source": "llm"
     },
     "コーヒーカップバルーン": {
       "text": "旋转咖啡杯气球",
@@ -2901,8 +2901,8 @@
       "source": "cn"
     },
     "ステッドファスト・シンデレラ": {
-      "text": "",
-      "source": "unknown"
+      "text": "坚定不移的辛德瑞拉",
+      "source": "llm"
     },
     "ステラクローバー": {
       "text": "星光三叶草",
@@ -3025,12 +3025,12 @@
       "source": "cn"
     },
     "ソートフル・マーチ": {
-      "text": "",
-      "source": "unknown"
+      "text": "体贴进行曲",
+      "source": "llm"
     },
     "ソートフル・ワーカー": {
-      "text": "",
-      "source": "unknown"
+      "text": "体贴的劳动者",
+      "source": "llm"
     },
     "タウロスの星衣": {
       "text": "金牛座星衣",
@@ -3285,8 +3285,8 @@
       "source": "cn"
     },
     "ノーブル·シルエット": {
-      "text": "",
-      "source": "unknown"
+      "text": "高贵剪影",
+      "source": "llm"
     },
     "ハイド・クリノリン": {
       "text": "克里诺林隐式裙衬",
@@ -3325,12 +3325,12 @@
       "source": "cn"
     },
     "ハレギサラブレイト（メンズ）": {
-      "text": "",
-      "source": "unknown"
+      "text": "盛装庆典（男款）",
+      "source": "llm"
     },
     "ハレギサラブレイト（レディース）": {
-      "text": "",
-      "source": "unknown"
+      "text": "盛装庆典（女装）",
+      "source": "llm"
     },
     "ハンサムレディ": {
       "text": "帅气女士",
@@ -3341,8 +3341,8 @@
       "source": "cn"
     },
     "ハーティー・オーバーオール": {
-      "text": "",
-      "source": "unknown"
+      "text": "诚挚背带裤",
+      "source": "llm"
     },
     "ハートビート・スター": {
       "text": "Heartbeat star",
@@ -3409,8 +3409,8 @@
       "source": "cn"
     },
     "パーシスタント・シンデレラ": {
-      "text": "",
-      "source": "unknown"
+      "text": "执着灰姑娘",
+      "source": "llm"
     },
     "ヒップスターウォーク": {
       "text": "时髦散步装",
@@ -3521,8 +3521,8 @@
       "source": "cn"
     },
     "フェイスエプロン": {
-      "text": "",
-      "source": "unknown"
+      "text": "饰面围裙",
+      "source": "llm"
     },
     "フェスティバルブレザー": {
       "text": "节庆西装夹克",
@@ -3597,8 +3597,8 @@
       "source": "cn"
     },
     "ブリッジ・カラー": {
-      "text": "",
-      "source": "unknown"
+      "text": "桥梁色彩",
+      "source": "llm"
     },
     "ブリリアントアイドル・M": {
       "text": "璀璨偶像·M",
@@ -3713,8 +3713,8 @@
       "source": "cn"
     },
     "ホワイトハート・ボディスーツ": {
-      "text": "",
-      "source": "unknown"
+      "text": "白心紧身衣",
+      "source": "llm"
     },
     "ホープフルソルジャー": {
       "text": "希望战士",
@@ -3813,8 +3813,8 @@
       "source": "cn"
     },
     "メインテイン・チュチュ": {
-      "text": "",
-      "source": "unknown"
+      "text": "维护芭蕾裙",
+      "source": "llm"
     },
     "メモリアルハートコーデ": {
       "text": "纪念爱心穿搭",
@@ -3945,8 +3945,8 @@
       "source": "cn"
     },
     "リラクシー･ボタニカル": {
-      "text": "",
-      "source": "unknown"
+      "text": "休闲草本",
+      "source": "llm"
     },
     "リラクゼーション・ナイトウェア": {
       "text": "休闲睡衣",
@@ -3961,8 +3961,8 @@
       "source": "cn"
     },
     "リンクト・マーチ": {
-      "text": "",
-      "source": "unknown"
+      "text": "连结进行曲",
+      "source": "llm"
     },
     "ルシフェニア王国・召使の装い": {
       "text": "露西菲尼亚王国侍从服",
@@ -3989,8 +3989,8 @@
       "source": "cn"
     },
     "レトロな本旅": {
-      "text": "",
-      "source": "unknown"
+      "text": "复古书香之旅",
+      "source": "llm"
     },
     "レミニセンス・ゴシック": {
       "text": "追忆哥特风",
@@ -4005,20 +4005,20 @@
       "source": "cn"
     },
     "レーヴ・デトワール": {
-      "text": "",
-      "source": "unknown"
+      "text": "繁星之梦",
+      "source": "llm"
     },
     "レーヴ・デ・スリアン": {
-      "text": "",
-      "source": "unknown"
+      "text": "微笑之梦",
+      "source": "llm"
     },
     "レーヴ・デ・トナリティ": {
-      "text": "",
-      "source": "unknown"
+      "text": "调性之梦",
+      "source": "llm"
     },
     "レーヴ・デ・マジ": {
-      "text": "",
-      "source": "unknown"
+      "text": "梦幻魔法",
+      "source": "llm"
     },
     "ロイヤリティ・ロックブレザー": {
       "text": "皇家摇滚西装夹克",
@@ -4077,12 +4077,12 @@
       "source": "cn"
     },
     "ヴェイルド・ボディスーツ": {
-      "text": "",
-      "source": "unknown"
+      "text": "面纱连体衣",
+      "source": "llm"
     },
     "ヴェリティエプロン": {
-      "text": "",
-      "source": "unknown"
+      "text": "真理围裙",
+      "source": "llm"
     },
     "不動のエナメルジャケット": {
       "text": "坚定不移的亮面夹克",
@@ -4097,8 +4097,8 @@
       "source": "cn"
     },
     "優麗のシリウス": {
-      "text": "",
-      "source": "unknown"
+      "text": "优丽的天狼星",
+      "source": "llm"
     },
     "光射す庭の騎士装束": {
       "text": "流光庭院骑士装",
@@ -4129,12 +4129,12 @@
       "source": "cn"
     },
     "地平望む猛炎": {
-      "text": "",
-      "source": "unknown"
+      "text": "眺望地平线的猛炎",
+      "source": "llm"
     },
     "夏かし小旅行": {
-      "text": "",
-      "source": "unknown"
+      "text": "怀旧夏日小旅行",
+      "source": "llm"
     },
     "夜を統べる星の王": {
       "text": "统领黑夜的星辰之王",
@@ -4169,8 +4169,8 @@
       "source": "cn"
     },
     "妖椿鬼": {
-      "text": "",
-      "source": "unknown"
+      "text": "妖椿鬼",
+      "source": "llm"
     },
     "妖艶姐姐花衣": {
       "text": "妖艳美人花衣",
@@ -4205,8 +4205,8 @@
       "source": "cn"
     },
     "彷徨のステラ": {
-      "text": "",
-      "source": "unknown"
+      "text": "彷徨之星",
+      "source": "llm"
     },
     "心赴くセットアップスタイル": {
       "text": "心驰神往穿搭",
@@ -4217,8 +4217,8 @@
       "source": "cn"
     },
     "悠然のポラリス": {
-      "text": "",
-      "source": "unknown"
+      "text": "悠然北极星",
+      "source": "llm"
     },
     "想いのオーバーレイテール": {
       "text": "心愿长燕尾服",
@@ -4269,8 +4269,8 @@
       "source": "cn"
     },
     "暁光仰ぐ紅炎": {
-      "text": "",
-      "source": "unknown"
+      "text": "仰望晓光的红炎",
+      "source": "llm"
     },
     "曙香る乙女の羽衣": {
       "text": "黎明少女的霓裳",
@@ -4293,8 +4293,8 @@
       "source": "cn"
     },
     "海辺のひまわり": {
-      "text": "",
-      "source": "unknown"
+      "text": "海边的向日葵",
+      "source": "llm"
     },
     "涼む黄昏の纏": {
       "text": "清凉黄昏的庆典服",
@@ -4321,8 +4321,8 @@
       "source": "cn"
     },
     "漂泊する鬼人の衣": {
-      "text": "",
-      "source": "unknown"
+      "text": "漂泊鬼人之衣",
+      "source": "llm"
     },
     "無言の贈花": {
       "text": "无言之赠花",
@@ -4377,8 +4377,8 @@
       "source": "cn"
     },
     "笑顔溢れる鬼姫の衣": {
-      "text": "",
-      "source": "unknown"
+      "text": "笑容洋溢的鬼姬之衣",
+      "source": "llm"
     },
     "紬音桜舞": {
       "text": "绸音樱舞",
@@ -4393,8 +4393,8 @@
       "source": "cn"
     },
     "聖夜の星明り": {
-      "text": "",
-      "source": "unknown"
+      "text": "圣夜的星光",
+      "source": "llm"
     },
     "花咲く乙女の羽衣": {
       "text": "花开少女的霓裳",
@@ -4445,8 +4445,8 @@
       "source": "cn"
     },
     "贈り物を包む兵士": {
-      "text": "",
-      "source": "unknown"
+      "text": "包装礼物的士兵",
+      "source": "llm"
     },
     "赤ずきんのおでかけドレス": {
       "text": "小红帽的户外裙",
@@ -4473,8 +4473,8 @@
       "source": "cn"
     },
     "雨色": {
-      "text": "",
-      "source": "unknown"
+      "text": "雨色",
+      "source": "llm"
     },
     "電華熊猫": {
       "text": "中华电子熊猫",
@@ -4509,8 +4509,8 @@
       "source": "cn"
     },
     "風統べる蒼炎": {
-      "text": "",
-      "source": "unknown"
+      "text": "统御风之苍炎",
+      "source": "llm"
     },
     "飛翔のフェザー": {
       "text": "翱翔之羽",
@@ -4525,8 +4525,8 @@
       "source": "cn"
     },
     "魔法少女☆フェニー・ザ・スマイル": {
-      "text": "",
-      "source": "unknown"
+      "text": "魔法少女☆笑脸菲尼",
+      "source": "llm"
     },
     "黎明のステップ": {
       "text": "黎明之步",
