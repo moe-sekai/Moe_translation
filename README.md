@@ -1,130 +1,65 @@
 # sekai-translate
 
-Moesekai 翻译系统 — 轻量后端 + 校对 UI + 自动推送到静态仓库。
+Moesekai 翻译系统（Go 后端 + 校对 UI）
 
-## 架构
+- 翻译文件静态存储在本仓库 `translations/`
+- 服务内每日定时执行 CN 同步，并通过 `git clone + commit + push` 备份到**本仓库**
+- 不再依赖 `scripts/translate.py` 与 GitHub Action 定时任务
+
+## 当前架构
 
 ```
 sekai-translate/
-├── main.go                # Go 服务入口
-├── backend/               # 轻量后端 (store + auth + pusher + handlers)
-├── translations/          # 翻译 JSON 数据 (source of truth)
-│   ├── *.json             # 扁平格式 (前端消费)
-│   ├── *.full.json        # 完整格式 (带 source 追踪)
-│   └── eventStory/        # 活动剧情翻译
-├── proofreading/          # 校对 UI (Next.js CSR 静态导出)
-├── scripts/translate.py   # 翻译生成脚本 (CN对照 + LLM)
-├── Dockerfile             # 多阶段构建: Go + Node → alpine
-└── .github/workflows/     # 自动翻译 (每6h)
+├── main.go
+├── backend/
+│   ├── store.go        # 翻译存储与编辑
+│   ├── handlers.go     # API
+│   ├── translator.go   # Go 翻译引擎 (CN同步 + 手动AI)
+│   ├── scheduler.go    # 每日定时任务
+│   └── pusher.go       # git clone + push 备份
+├── translations/
+│   ├── *.json
+│   ├── *.full.json
+│   └── eventStory/
+├── proofreading/       # Next.js 静态导出 UI
+└── Dockerfile
 ```
 
-### 数据流
+## 运行参数
 
-```
-translate.py → translations/*.json (本地) → Go 后端管理
-                                            ├─ 校对 UI 读写 (API)
-                                            └─ 推送到 MoeSekai-Hub (GitHub API)
-                                                 └─ moe.exmeaning.com/translation/*.json
-                                                      └─ 主站 pjsk.moe 前端获取
-```
-
-## 部署
-
-```bash
-docker build -t sekai-translate .
-docker run -p 8080:8080 \
-  -e PORT=8080 \
-  -e TRANSLATION_PATH=/app/translations \
-  -e STATIC_DIR=/app/proofreading-ui \
-  -e TRANSLATOR_ACCOUNTS="user1:pass1,user2:pass2" \
-  -e AUTH_SECRET="sekai-translate-secret" \
-  -e GITHUB_TOKEN="ghp_xxx" \
-  -e GITHUB_REPO="moe-sekai/MoeSekai-Hub" \
-  -e GITHUB_PUSH_PATH="translation" \
-  -e GITHUB_BRANCH="main" \
-  -e AUTO_PUSH_ENABLED=true \
-  sekai-translate
-```
-
-如果用容器编排变量（如 `${WEB_PORT}`），请确保 `PORT` 最终是具体数字（例如 `8080`）。
-
-环境变量:
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
 | `PORT` | `9090` | 服务端口 |
-| `TRANSLATION_PATH` | `./translations` | 翻译数据目录（容器内建议 `/app/translations`） |
-| `TRANSLATOR_ACCOUNTS` | - | 校对账号 `user:pass,...` |
-| `AUTH_SECRET` | `sekai-translate-secret` | Token 签名密钥 |
-| `GITHUB_TOKEN` | - | GitHub PAT (push 用) |
-| `GITHUB_REPO` | `moe-sekai/MoeSekai-Hub` | 推送目标仓库 |
-| `GITHUB_PUSH_PATH` | `translation` | 仓库内路径 |
-| `GITHUB_BRANCH` | `main` | 推送分支 |
-| `AUTO_PUSH_ENABLED` | `false` | 开启定时推送 (1h) |
-| `STATIC_DIR` | `./proofreading/out` | 校对 UI 静态文件目录（容器内应为 `/app/proofreading-ui`） |
+| `TRANSLATION_PATH` | `./translations` | 翻译目录 |
+| `STATIC_DIR` | `./proofreading/out` | 前端静态文件目录 |
+| `TRANSLATOR_ACCOUNTS` | - | 登录账号 `user:pass,user2:pass2` |
+| `AUTH_SECRET` | `sekai-translate-secret` | 鉴权密钥 |
+| `TRANSLATE_SCHEDULER_ENABLED` | `true` | 开启每日定时任务 |
+| `TRANSLATE_CRON_HOUR` | `4` | 每日 UTC 小时（4=UTC+8 中午12点） |
+| `GIT_PUSH_REPO_URL` | - | 备份目标仓库 URL（建议带 token） |
+| `GIT_PUSH_BRANCH` | `main` | 备份分支 |
+| `GIT_WORKSPACE` | `/app/git-workspace` | 容器 git 工作区 |
+| `LLM_TYPE` | `gemini` | 默认 AI 提供方 (`gemini`/`openai`) |
+| `GEMINI_API_KEY` | - | Gemini key |
+| `GEMINI_MODEL` | `gemini-2.0-flash` | Gemini 模型 |
+| `OPENAI_API_KEY` | - | OpenAI 兼容 key |
+| `OPENAI_BASE_URL` | `https://api.openai.com/v1` | OpenAI 兼容端点 |
+| `OPENAI_MODEL` | `gpt-4o-mini` | OpenAI 模型 |
 
-URL:
-- `/api/*` → 校对 API
-- `/translation/editor/` → 校对 UI
+## API
 
-## 翻译数据格式
+- `POST /api/login`
+- `GET /api/categories`
+- `GET /api/entries`
+- `PUT /api/entry`
+- `POST /api/push`（手动备份推送）
+- `GET /api/status`（推送状态）
+- `GET /api/translate/status`（翻译/调度状态）
+- `POST /api/translate/cn-sync`（手动触发 CN 同步 + 备份）
+- `POST /api/translate/ai`（手动 AI 翻译当前字段）
+- `GET /api/event-stories`
+- `GET /api/event-story?eventId=123`
 
-### 扁平格式 (*.json) — 前端消费
-```json
-{
-  "prefix": {
-    "日本語テキスト": "中文翻译"
-  }
-}
-```
+## Docker
 
-### 完整格式 (*.full.json) — 内部追踪
-```json
-{
-  "prefix": {
-    "日本語テキスト": {
-      "text": "中文翻译",
-      "source": "cn"
-    }
-  }
-}
-```
-
-Source 类型: `cn` (官方) | `human` (人工校对) | `pinned` (锁定) | `llm` (AI) | `unknown`
-
-## 校对工具
-
-校对 UI 为 Next.js 静态导出 (CSR)，通过 Go 后端 API 读写翻译数据:
-
-1. 使用账号密码登录 → 后端返回 token
-2. 浏览翻译分类/字段，按来源过滤
-3. 编辑翻译条目，Enter 保存并跳转下一条
-4. 点击「推送到 Hub」→ 后端通过 GitHub API 更新 MoeSekai-Hub
-
-快捷键: `Enter` 保存 | `Ctrl+↑↓` 切换条目 | `j/k` 上下导航 | `Esc` 取消
-
-## 翻译生成
-
-```bash
-# 仅 CN 服对照翻译
-python scripts/translate.py --cn-only
-
-# CN + LLM (Gemini) 自动翻译
-python scripts/translate.py --llm gemini
-
-# 指定单个类别
-python scripts/translate.py --category cards --llm gemini
-```
-
-GitHub Actions 每 6 小时自动运行翻译脚本。
-
-## 主站集成
-
-主站 (pjsk.moe) 从静态 CDN 获取翻译数据:
-
-```
-https://moe.exmeaning.com/translation/cards.json
-https://moe.exmeaning.com/translation/events.json
-...
-```
-
-完全解耦：翻译更新 → 推送到 MoeSekai-Hub → 自动部署 → 主站无需重新构建。
+运行时镜像安装了 `git` 并预建 `/app/git-workspace`，适配 Zeabur 这类无 git 工作区平台。

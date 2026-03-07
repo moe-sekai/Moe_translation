@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
+	"strings"
 	"time"
 
 	"sekai-translate/backend"
@@ -14,19 +16,51 @@ func main() {
 	dataPath := envOr("TRANSLATION_PATH", "./translations")
 	accounts := os.Getenv("TRANSLATOR_ACCOUNTS") // "user1:pass1,user2:pass2"
 	secret := envOr("AUTH_SECRET", "sekai-translate-secret")
-	ghToken := os.Getenv("GITHUB_TOKEN")
-	ghRepo := envOr("GITHUB_REPO", "moe-sekai/MoeSekai-Hub")        // the STATIC hosting repo
-	ghPath := envOr("GITHUB_PUSH_PATH", "translation")               // path inside moesekai-hub
-	ghBranch := envOr("GITHUB_BRANCH", "main")
-	autoPush := os.Getenv("AUTO_PUSH_ENABLED") == "true"
+	expectedRepo := envOr("SELF_REPO", "moe-sekai/Moe_translation")
+	gitRepoURL := os.Getenv("GIT_PUSH_REPO_URL")
+	gitBranch := envOr("GIT_PUSH_BRANCH", "main")
+	gitWorkspace := envOr("GIT_WORKSPACE", "/app/git-workspace")
+
+	if gitRepoURL == "" {
+		token := os.Getenv("GITHUB_TOKEN")
+		repo := envOr("GITHUB_REPO", "moe-sekai/Moe_translation")
+		if token != "" {
+			gitRepoURL = fmt.Sprintf("https://x-access-token:%s@github.com/%s.git", token, repo)
+		}
+	}
+
+	if gitRepoURL == "" {
+		fmt.Fprintf(os.Stderr, "Fatal: GIT_PUSH_REPO_URL is required\n")
+		os.Exit(1)
+	}
+	if !isAllowedPushTarget(gitRepoURL, expectedRepo) {
+		fmt.Fprintf(os.Stderr, "Fatal: push target must be current repo (%s), got %s\n", expectedRepo, maskURL(gitRepoURL))
+		os.Exit(1)
+	}
+
+	llmType := envOr("LLM_TYPE", "gemini")
+	cronHour := envIntOr("TRANSLATE_CRON_HOUR", 4)
+	schedulerEnabled := envOr("TRANSLATE_SCHEDULER_ENABLED", "true") == "true"
 	staticDir := envOr("STATIC_DIR", "./proofreading/out") // built proofreading UI
 
 	store := backend.NewStore(dataPath)
 	auth := backend.NewAuth(accounts, secret)
-	pusher := backend.NewPusher(ghToken, ghRepo, ghPath, ghBranch)
+	pusher := backend.NewPusher(gitRepoURL, gitBranch, gitWorkspace, dataPath)
+	translator := backend.NewTranslator(store, backend.TranslatorConfig{
+		LLMType:        llmType,
+		GeminiAPIKey:   os.Getenv("GEMINI_API_KEY"),
+		GeminiModel:    envOr("GEMINI_MODEL", "gemini-2.0-flash"),
+		OpenAIAPIKey:   os.Getenv("OPENAI_API_KEY"),
+		OpenAIBaseURL:  envOr("OPENAI_BASE_URL", "https://api.openai.com/v1"),
+		OpenAIModel:    envOr("OPENAI_MODEL", "gpt-4o-mini"),
+		BatchSize:      envIntOr("TRANSLATE_BATCH_SIZE", 20),
+		RateLimitDelay: envDurationMsOr("TRANSLATE_RATE_DELAY_MS", 800),
+	})
+	scheduler := backend.NewScheduler(translator, pusher, store, cronHour, schedulerEnabled)
+	scheduler.Start()
 
 	mux := http.NewServeMux()
-	h := backend.NewHandler(store, auth, pusher)
+	h := backend.NewHandler(store, auth, pusher, translator, scheduler)
 	h.RegisterRoutes(mux)
 
 	// Serve proofreading UI at /translation/editor/ (matches Next.js basePath)
@@ -41,28 +75,13 @@ func main() {
 		http.NotFound(w, r)
 	})
 
-	if autoPush {
-		go func() {
-			ticker := time.NewTicker(1 * time.Hour)
-			defer ticker.Stop()
-			for range ticker.C {
-				fmt.Println("[push] Scheduled push starting...")
-				if err := pusher.PushAll(store, "scheduled"); err != nil {
-					fmt.Printf("[push] Scheduled push failed: %v\n", err)
-				} else {
-					fmt.Println("[push] Scheduled push completed")
-				}
-			}
-		}()
-		fmt.Println("Auto-push enabled (every 1h)")
-	}
-
 	// CORS middleware
 	handler := corsMiddleware(mux)
 
 	fmt.Printf("sekai-translate server starting on :%s\n", port)
 	fmt.Printf("  translations: %s\n", dataPath)
-	fmt.Printf("  push target:  %s/%s\n", ghRepo, ghPath)
+	fmt.Printf("  push target:  %s\n", maskURL(gitRepoURL))
+	fmt.Printf("  cron(utc):    %02d:00 (enabled=%v)\n", cronHour, schedulerEnabled)
 	if err := http.ListenAndServe(":"+port, handler); err != nil {
 		fmt.Fprintf(os.Stderr, "Fatal: %v\n", err)
 		os.Exit(1)
@@ -74,6 +93,48 @@ func envOr(key, fallback string) string {
 		return v
 	}
 	return fallback
+}
+
+func envIntOr(key string, fallback int) int {
+	v := strings.TrimSpace(os.Getenv(key))
+	if v == "" {
+		return fallback
+	}
+	n, err := strconv.Atoi(v)
+	if err != nil {
+		return fallback
+	}
+	return n
+}
+
+func envDurationMsOr(key string, fallback int) time.Duration {
+	v := envIntOr(key, fallback)
+	if v <= 0 {
+		v = fallback
+	}
+	return time.Duration(v) * time.Millisecond
+}
+
+func maskURL(url string) string {
+	if strings.Contains(url, "@github.com") && strings.Contains(url, "https://") {
+		start := strings.Index(url, "https://")
+		at := strings.Index(url[start:], "@github.com")
+		if start >= 0 && at > 0 {
+			at = start + at
+			return url[:start+8] + "***" + url[at:]
+		}
+	}
+	return url
+}
+
+func isAllowedPushTarget(repoURL, expectedRepo string) bool {
+	normalizedURL := strings.ToLower(strings.TrimSpace(repoURL))
+	normalizedExpected := strings.ToLower(strings.TrimSpace(expectedRepo))
+	if normalizedURL == "" || normalizedExpected == "" {
+		return false
+	}
+	return strings.Contains(normalizedURL, "github.com/"+normalizedExpected+".git") ||
+		strings.Contains(normalizedURL, "github.com/"+normalizedExpected)
 }
 
 func corsMiddleware(next http.Handler) http.Handler {

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -12,13 +13,15 @@ import (
 // ============================================================================
 
 type Handler struct {
-	store  *Store
-	auth   *Auth
-	pusher *Pusher
+	store      *Store
+	auth       *Auth
+	pusher     *Pusher
+	translator *Translator
+	scheduler  *Scheduler
 }
 
-func NewHandler(store *Store, auth *Auth, pusher *Pusher) *Handler {
-	return &Handler{store: store, auth: auth, pusher: pusher}
+func NewHandler(store *Store, auth *Auth, pusher *Pusher, translator *Translator, scheduler *Scheduler) *Handler {
+	return &Handler{store: store, auth: auth, pusher: pusher, translator: translator, scheduler: scheduler}
 }
 
 func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
@@ -28,6 +31,11 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/entry", h.requireAuth(h.handleUpdateEntry))
 	mux.HandleFunc("/api/push", h.requireAuth(h.handlePush))
 	mux.HandleFunc("/api/status", h.requireAuth(h.handleStatus))
+	mux.HandleFunc("/api/translate/status", h.requireAuth(h.handleTranslateStatus))
+	mux.HandleFunc("/api/translate/cn-sync", h.requireAuth(h.handleCNSync))
+	mux.HandleFunc("/api/translate/ai", h.requireAuth(h.handleTranslateAI))
+	mux.HandleFunc("/api/event-stories", h.requireAuth(h.handleEventStories))
+	mux.HandleFunc("/api/event-story", h.requireAuth(h.handleEventStory))
 }
 
 // requireAuth wraps a handler with authentication.
@@ -150,4 +158,83 @@ func (h *Handler) handlePush(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) handleStatus(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(h.pusher.Status())
+}
+
+func (h *Handler) handleTranslateStatus(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]any{
+		"translator": h.translator.Status(),
+		"scheduler":  h.scheduler.Status(),
+		"pusher":     h.pusher.Status(),
+	})
+}
+
+func (h *Handler) handleCNSync(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	if err := h.scheduler.RunOnce("manual-cn-sync"); err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+}
+
+func (h *Handler) handleTranslateAI(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req AITranslateRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	result, err := h.translator.ManualAITranslate(req)
+	if err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+func (h *Handler) handleEventStories(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	stories, err := h.translator.ListEventStories()
+	if err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(stories)
+}
+
+func (h *Handler) handleEventStory(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	idText := strings.TrimSpace(r.URL.Query().Get("eventId"))
+	if idText == "" {
+		http.Error(w, `{"error":"eventId required"}`, http.StatusBadRequest)
+		return
+	}
+	id, err := strconv.Atoi(idText)
+	if err != nil || id <= 0 {
+		http.Error(w, `{"error":"invalid eventId"}`, http.StatusBadRequest)
+		return
+	}
+	detail, err := h.translator.GetEventStory(id)
+	if err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(detail)
 }

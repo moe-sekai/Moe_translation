@@ -22,9 +22,15 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /sekai-translate .
 # Stage 3: Minimal runtime
 FROM alpine:3.20
 
-RUN apk add --no-cache ca-certificates tzdata
+RUN apk add --no-cache ca-certificates tzdata git
 
 WORKDIR /app
+
+RUN mkdir -p /app/git-workspace && \
+    git config --system user.name "MoeSekai Bot" && \
+    git config --system user.email "bot@moesekai.com" && \
+    git config --system --add safe.directory /app/git-workspace && \
+    git config --system --add safe.directory /app/git-workspace/repo
 
 COPY --from=go-builder /sekai-translate ./sekai-translate
 COPY --from=ui-builder /app/out/ ./proofreading-ui/
@@ -33,6 +39,7 @@ COPY translations/ ./translations/
 ENV PORT=9090
 ENV TRANSLATION_PATH=/app/translations
 ENV STATIC_DIR=/app/proofreading-ui
+ENV GIT_WORKSPACE=/app/git-workspace
 
 EXPOSE 9090
 

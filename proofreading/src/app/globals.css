@@ -340,6 +340,26 @@ body {
     cursor: not-allowed;
 }
 
+.sync-btn {
+    width: 100%;
+    padding: 0.55rem;
+    background: var(--surface-hover);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.sync-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+}
+
+.sync-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .push-status {
     font-size: 0.75rem;
     color: var(--text-dim);
@@ -535,6 +555,7 @@ body {
 
 .btn-save,
 .btn-pinned,
+.btn-ai,
 .btn-cancel {
     padding: 0.5rem 1rem;
     border: none;
@@ -559,10 +580,21 @@ body {
     color: var(--text-dim);
 }
 
+.btn-ai {
+    background: var(--accent);
+    color: #fff;
+}
+
 .btn-save:hover,
 .btn-pinned:hover,
+.btn-ai:hover,
 .btn-cancel:hover {
     opacity: 0.85;
+}
+
+.btn-ai:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .proof-hints {
@@ -637,6 +669,77 @@ body {
 
 .cn-text {
     word-break: break-all;
+}
+
+.story-section {
+    margin-top: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.story-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+}
+
+.story-header h2 {
+    font-size: 1rem;
+}
+
+.story-header span {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.story-toolbar select {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.story-episode {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    overflow: hidden;
+}
+
+.story-episode summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    background: var(--surface-hover);
+}
+
+.story-lines {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.story-line {
+    padding: 0.55rem 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.story-line .jp {
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+    white-space: pre-wrap;
+}
+
+.story-line .cn {
+    white-space: pre-wrap;
 }
 
 /* Source tags */

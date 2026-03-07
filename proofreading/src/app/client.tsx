@@ -4,7 +4,9 @@ import React, { useState, useEffect, useCallback, useRef, useMemo } from "react"
 import {
     getToken, setToken, clearToken, getUsername, setUsername,
     login, getCategories, getEntries, updateEntry, pushToHub, getPushStatus,
+    triggerAITranslate, getEventStories, getEventStory, runCNSync,
     type CategoryInfo, type TranslationEntry, type PushStatus,
+    type EventStorySummary, type EventStoryDetail,
 } from "@/lib/api";
 import { useTheme } from "next-themes";
 
@@ -117,6 +119,17 @@ export default function ProofreadingClient() {
     // Push
     const [pushing, setPushing] = useState(false);
     const [pushStatus, setPushStatus] = useState<PushStatus | null>(null);
+    const [syncingCN, setSyncingCN] = useState(false);
+
+    // AI translation
+    const [aiProvider, setAIProvider] = useState<"gemini" | "openai">("gemini");
+    const [aiTranslating, setAITranslating] = useState(false);
+
+    // Event story block
+    const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
+    const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
+    const [selectedStoryDetail, setSelectedStoryDetail] = useState<EventStoryDetail | null>(null);
+    const [storyLoading, setStoryLoading] = useState(false);
 
     // Sidebar (mobile)
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -185,6 +198,34 @@ export default function ProofreadingClient() {
         const iv = setInterval(fetch, 30000);
         return () => clearInterval(iv);
     }, [loggedIn]);
+
+    // ---- Event stories summary ----
+    useEffect(() => {
+        if (!loggedIn) return;
+        getEventStories()
+            .then(data => {
+                setEventStories(data);
+                if (data.length > 0) {
+                    setSelectedEventId(prev => prev ?? data[0].eventId);
+                }
+            })
+            .catch(() => {
+                setEventStories([]);
+            });
+    }, [loggedIn]);
+
+    // ---- Event story detail ----
+    useEffect(() => {
+        if (!loggedIn || !selectedEventId) {
+            setSelectedStoryDetail(null);
+            return;
+        }
+        setStoryLoading(true);
+        getEventStory(selectedEventId)
+            .then(setSelectedStoryDetail)
+            .catch(() => setSelectedStoryDetail(null))
+            .finally(() => setStoryLoading(false));
+    }, [loggedIn, selectedEventId]);
 
     // ---- Focus textarea on selection ----
     useEffect(() => {
@@ -296,6 +337,48 @@ export default function ProofreadingClient() {
         }
     };
 
+    const handleCNSync = async () => {
+        setSyncingCN(true);
+        try {
+            await runCNSync();
+            showToast("CN日更同步完成", "ok");
+            const cats = await getCategories();
+            setCategories(cats);
+            if (selectedCategory && selectedField) {
+                const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
+                const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
+                data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                setEntries(data);
+            }
+            const stories = await getEventStories();
+            setEventStories(stories);
+        } catch (err) {
+            showToast(err instanceof Error ? err.message : "CN同步失败", "err");
+        } finally {
+            setSyncingCN(false);
+        }
+    };
+
+    const handleAITranslate = async () => {
+        if (!selectedCategory || !selectedField) {
+            showToast("请先选择分类与字段", "err");
+            return;
+        }
+        setAITranslating(true);
+        try {
+            const result = await triggerAITranslate(selectedCategory, selectedField, aiProvider);
+            showToast(`AI完成: ${result.translated}/${result.candidates}`, "ok");
+            const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
+            const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
+            data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+            setEntries(data);
+        } catch (err) {
+            showToast(err instanceof Error ? err.message : "AI翻译失败", "err");
+        } finally {
+            setAITranslating(false);
+        }
+    };
+
     // ---- Keyboard ----
 
     const handleTextareaKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -392,7 +475,10 @@ export default function ProofreadingClient() {
 
                     <div className="sidebar-footer">
                         <button className="push-btn" onClick={handlePush} disabled={pushing}>
-                            {pushing ? "推送中..." : "📤 推送到 Hub"}
+                            {pushing ? "备份推送中..." : "📤 备份推送到本仓库"}
+                        </button>
+                        <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pushing || aiTranslating}>
+                            {syncingCN ? "同步中..." : "🛰️ 立即执行CN日更+备份"}
                         </button>
                         {pushStatus?.lastPush && (
                             <div className="push-status">
@@ -414,6 +500,13 @@ export default function ProofreadingClient() {
                                 </select>
                             </div>
                         )}
+                        <div className="theme-container">
+                            <span>AI提供方</span>
+                            <select className="theme-select" value={aiProvider} onChange={e => setAIProvider(e.target.value as "gemini" | "openai")}>
+                                <option value="gemini">Gemini</option>
+                                <option value="openai">OpenAI兼容</option>
+                            </select>
+                        </div>
                         <button className="btn-logout" onClick={handleLogout}>退出登录</button>
                     </div>
                 </aside>
@@ -472,6 +565,9 @@ export default function ProofreadingClient() {
                                         <div className="proof-actions">
                                             <button className="btn-save" onClick={() => handleSave()}>✓ 保存并下一条</button>
                                             <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
+                                            <button className="btn-ai" onClick={handleAITranslate} disabled={aiTranslating || !selectedCategory || !selectedField}>
+                                                {aiTranslating ? "AI翻译中..." : "🤖 一键AI补全本字段"}
+                                            </button>
                                             <button className="btn-cancel" onClick={() => { setSelectedKey(null); setIsEditing(false); }}>取消</button>
                                             <div className="proof-hints">
                                                 <kbd>Enter</kbd> 保存 <kbd>Ctrl+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
@@ -526,6 +622,63 @@ export default function ProofreadingClient() {
                                     </table>
                                 </div>
                             )}
+
+                            <section className="story-section">
+                                <div className="story-header">
+                                    <h2>活动剧情翻译（eventStory）</h2>
+                                    <span>{eventStories.length} 个活动文件</span>
+                                </div>
+                                {eventStories.length === 0 ? (
+                                    <div className="empty" style={{ padding: "1.5rem 1rem" }}>
+                                        <p>暂无活动剧情翻译文件</p>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div className="story-toolbar">
+                                            <select
+                                                value={selectedEventId ?? ""}
+                                                onChange={e => setSelectedEventId(Number(e.target.value))}
+                                            >
+                                                {eventStories.map(story => (
+                                                    <option key={story.eventId} value={story.eventId}>
+                                                        Event #{story.eventId} · {story.source} · {story.episodeCount} 章
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        {storyLoading ? (
+                                            <div className="loading" style={{ height: "auto", padding: "1rem" }}>
+                                                <div className="spinner" />加载活动剧情中...
+                                            </div>
+                                        ) : !selectedStoryDetail ? (
+                                            <div className="empty" style={{ padding: "1.5rem 1rem" }}>
+                                                <p>未找到活动剧情详情</p>
+                                            </div>
+                                        ) : (
+                                            <div className="story-episodes">
+                                                {Object.entries(selectedStoryDetail.episodes)
+                                                    .sort((a, b) => Number(a[0]) - Number(b[0]))
+                                                    .map(([episodeNo, ep]) => (
+                                                        <details key={episodeNo} className="story-episode">
+                                                            <summary>
+                                                                第 {episodeNo} 章 {ep.title ? `· ${ep.title}` : ""}
+                                                                <span>{Object.keys(ep.talkData || {}).length} 条</span>
+                                                            </summary>
+                                                            <div className="story-lines">
+                                                                {Object.entries(ep.talkData || {}).map(([jp, cn]) => (
+                                                                    <div key={`${episodeNo}-${jp}`} className="story-line">
+                                                                        <div className="jp">{jp}</div>
+                                                                        <div className="cn">{cn}</div>
+                                                                    </div>
+                                                                ))}
+                                                            </div>
+                                                        </details>
+                                                    ))}
+                                            </div>
+                                        )}
+                                    </>
+                                )}
+                            </section>
                         </>
                     )}
                 </main>

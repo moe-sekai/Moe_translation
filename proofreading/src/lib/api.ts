@@ -34,6 +34,35 @@ export interface PushStatus {
     pushing: boolean;
 }
 
+export interface AITranslateResult {
+    category: string;
+    field: string;
+    provider: string;
+    candidates: number;
+    translated: number;
+    skippedExisting: number;
+}
+
+export interface EventStorySummary {
+    eventId: number;
+    source: string;
+    episodeCount: number;
+    lastUpdated: number;
+}
+
+export interface EventStoryDetail {
+    meta: {
+        source: string;
+        version: string;
+        last_updated: number;
+    };
+    episodes: Record<string, {
+        scenarioId: string;
+        title: string;
+        talkData: Record<string, string>;
+    }>;
+}
+
 // ============================================================================
 // Auth — simple token stored in localStorage
 // ============================================================================
@@ -126,4 +155,23 @@ export async function pushToHub() {
 
 export async function getPushStatus() {
     return apiFetch<PushStatus>("/status");
+}
+
+export async function triggerAITranslate(category: string, field: string, provider: "gemini" | "openai") {
+    return apiFetch<AITranslateResult>("/translate/ai", {
+        method: "POST",
+        body: JSON.stringify({ category, field, provider }),
+    });
+}
+
+export async function runCNSync() {
+    return apiFetch<{ status: string }>("/translate/cn-sync", { method: "POST" });
+}
+
+export async function getEventStories() {
+    return apiFetch<EventStorySummary[]>("/event-stories");
+}
+
+export async function getEventStory(eventId: number) {
+    return apiFetch<EventStoryDetail>(`/event-story?eventId=${eventId}`);
 }
