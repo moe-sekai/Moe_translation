@@ -18,7 +18,7 @@ func main() {
 	secret := envOr("AUTH_SECRET", "sekai-translate-secret")
 	expectedRepo := envOr("SELF_REPO", "moe-sekai/Moe_translation")
 	gitRepoURL := os.Getenv("GIT_PUSH_REPO_URL")
-	gitBranch := envOr("GIT_PUSH_BRANCH", "main")
+	gitBranch := envOr("GIT_PUSH_BRANCH", "backup-translations")
 	gitWorkspace := envOr("GIT_WORKSPACE", "/app/git-workspace")
 
 	if gitRepoURL == "" {
@@ -39,7 +39,8 @@ func main() {
 	}
 
 	llmType := envOr("LLM_TYPE", "gemini")
-	cronHour := envIntOr("TRANSLATE_CRON_HOUR", 4)
+	upstreamRepo := envOr("UPSTREAM_REPO", "Team-Haruki/haruki-sekai-master")
+	upstreamBranch := envOr("UPSTREAM_BRANCH", "main")
 	schedulerEnabled := envOr("TRANSLATE_SCHEDULER_ENABLED", "true") == "true"
 	staticDir := envOr("STATIC_DIR", "./proofreading/out") // built proofreading UI
 
@@ -56,7 +57,7 @@ func main() {
 		BatchSize:      envIntOr("TRANSLATE_BATCH_SIZE", 20),
 		RateLimitDelay: envDurationMsOr("TRANSLATE_RATE_DELAY_MS", 800),
 	})
-	scheduler := backend.NewScheduler(translator, pusher, store, cronHour, schedulerEnabled)
+	scheduler := backend.NewScheduler(translator, pusher, store, upstreamRepo, upstreamBranch, schedulerEnabled)
 	scheduler.Start()
 
 	mux := http.NewServeMux()
@@ -81,7 +82,7 @@ func main() {
 	fmt.Printf("sekai-translate server starting on :%s\n", port)
 	fmt.Printf("  translations: %s\n", dataPath)
 	fmt.Printf("  push target:  %s\n", maskURL(gitRepoURL))
-	fmt.Printf("  cron(utc):    %02d:00 (enabled=%v)\n", cronHour, schedulerEnabled)
+	fmt.Printf("  upstream:     %s@%s (enabled=%v)\n", upstreamRepo, upstreamBranch, schedulerEnabled)
 	if err := http.ListenAndServe(":"+port, handler); err != nil {
 		fmt.Fprintf(os.Stderr, "Fatal: %v\n", err)
 		os.Exit(1)

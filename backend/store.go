@@ -64,6 +64,7 @@ type Store struct {
 	mu   sync.RWMutex
 	path string
 	data map[string]TranslationCategory
+	rev  uint64
 }
 
 func NewStore(path string) *Store {
@@ -213,8 +214,19 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 	flatBytes, _ := json.MarshalIndent(flat, "", "  ")
 	flatPath := filepath.Join(s.path, category+".json")
 	writeAtomic(flatPath, flatBytes) // non-critical
+	s.rev++
 
 	return "ok", nil
+}
+
+func (s *Store) CurrentRevision() uint64 {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+	return s.rev
+}
+
+func (s *Store) bumpRevisionLocked() {
+	s.rev++
 }
 
 // FlatJSON returns the flat-format JSON bytes for a category (for pushing).

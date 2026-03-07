@@ -43,6 +43,15 @@ export interface AITranslateResult {
     skippedExisting: number;
 }
 
+export interface AITranslateAllResult {
+    provider: string;
+    totalFields: number;
+    totalCandidates: number;
+    totalTranslated: number;
+    totalSkipped: number;
+    errors: number;
+}
+
 export interface EventStorySummary {
     eventId: number;
     source: string;
@@ -164,6 +173,13 @@ export async function triggerAITranslate(category: string, field: string, provid
     });
 }
 
+export async function triggerAITranslateAll(provider: "gemini" | "openai") {
+    return apiFetch<AITranslateAllResult>("/translate/ai-all", {
+        method: "POST",
+        body: JSON.stringify({ provider }),
+    });
+}
+
 export async function runCNSync() {
     return apiFetch<{ status: string }>("/translate/cn-sync", { method: "POST" });
 }
@@ -174,4 +190,13 @@ export async function getEventStories() {
 
 export async function getEventStory(eventId: number) {
     return apiFetch<EventStoryDetail>(`/event-story?eventId=${eventId}`);
+}
+
+export async function updateEventStoryLine(
+    eventId: number, episodeNo: string, jpKey: string, cnText: string
+) {
+    return apiFetch<{ status: string }>("/event-story/update", {
+        method: "PUT",
+        body: JSON.stringify({ eventId, episodeNo, jpKey, cnText }),
+    });
 }

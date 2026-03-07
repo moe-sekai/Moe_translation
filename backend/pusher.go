@@ -33,7 +33,7 @@ type PushStatus struct {
 
 func NewPusher(repoURL, branch, workspace, dataPath string) *Pusher {
 	if branch == "" {
-		branch = "main"
+		branch = "backup-translations"
 	}
 	if workspace == "" {
 		workspace = "/app/git-workspace"
@@ -59,7 +59,7 @@ func (p *Pusher) Status() PushStatus {
 	return s
 }
 
-func (p *Pusher) PushAll(_ *Store, username string) error {
+func (p *Pusher) PushAll(store *Store, username string) error {
 	p.mu.Lock()
 	if p.pushing {
 		p.mu.Unlock()
@@ -85,58 +85,77 @@ func (p *Pusher) PushAll(_ *Store, username string) error {
 		return err
 	}
 
-	repoDir := filepath.Join(p.workspace, "repo")
-	_ = os.RemoveAll(repoDir)
-
-	if err := p.runGit(p.workspace, "clone", "--depth", "1", "--branch", p.branch, p.repoURL, repoDir); err != nil {
+	if store == nil {
+		err := fmt.Errorf("store is required")
 		p.setError(err)
 		return err
 	}
 
-	if err := p.runGit(repoDir, "config", "user.name", "MoeSekai Bot"); err != nil {
-		p.setError(err)
-		return err
-	}
-	if err := p.runGit(repoDir, "config", "user.email", "bot@moesekai.com"); err != nil {
-		p.setError(err)
-		return err
-	}
+	const maxRounds = 3
+	for round := 1; round <= maxRounds; round++ {
+		startRev := store.CurrentRevision()
 
-	targetTranslations := filepath.Join(repoDir, "translations")
-	if err := copyDir(p.dataPath, targetTranslations); err != nil {
-		p.setError(err)
-		return err
-	}
+		repoDir := filepath.Join(p.workspace, "repo")
+		_ = os.RemoveAll(repoDir)
 
-	if err := p.runGit(repoDir, "add", "translations"); err != nil {
-		p.setError(err)
-		return err
-	}
+		if err := p.runGit(p.workspace, "clone", "--depth", "1", "--branch", p.branch, p.repoURL, repoDir); err != nil {
+			p.setError(err)
+			return err
+		}
 
-	msg := fmt.Sprintf("chore: backup translations by %s", username)
-	commitErr := p.runGit(repoDir, "commit", "-m", msg)
-	if commitErr != nil {
-		if strings.Contains(commitErr.Error(), "nothing to commit") || strings.Contains(commitErr.Error(), "working tree clean") {
+		if err := p.runGit(repoDir, "config", "user.name", "MoeSekai Bot"); err != nil {
+			p.setError(err)
+			return err
+		}
+		if err := p.runGit(repoDir, "config", "user.email", "bot@moesekai.com"); err != nil {
+			p.setError(err)
+			return err
+		}
+
+		targetTranslations := filepath.Join(repoDir, "translations")
+		store.mu.RLock()
+		copyErr := copyDir(p.dataPath, targetTranslations)
+		store.mu.RUnlock()
+		if copyErr != nil {
+			p.setError(copyErr)
+			return copyErr
+		}
+
+		if err := p.runGit(repoDir, "add", "translations"); err != nil {
+			p.setError(err)
+			return err
+		}
+
+		msg := fmt.Sprintf("chore: backup translations by %s", username)
+		if round > 1 {
+			msg = fmt.Sprintf("chore: backup translations by %s (catch-up %d)", username, round-1)
+		}
+		commitErr := p.runGit(repoDir, "commit", "-m", msg)
+		if commitErr != nil {
+			if !(strings.Contains(commitErr.Error(), "nothing to commit") || strings.Contains(commitErr.Error(), "working tree clean")) {
+				p.setError(commitErr)
+				return commitErr
+			}
+		} else {
+			if err := p.runGit(repoDir, "push", "origin", p.branch); err != nil {
+				p.setError(err)
+				return err
+			}
+		}
+
+		endRev := store.CurrentRevision()
+		if endRev == startRev {
 			p.mu.Lock()
 			p.lastPush = time.Now()
 			p.lastError = ""
 			p.mu.Unlock()
 			return nil
 		}
-		p.setError(commitErr)
-		return commitErr
 	}
 
-	if err := p.runGit(repoDir, "push", "origin", p.branch); err != nil {
-		p.setError(err)
-		return err
-	}
-
-	p.mu.Lock()
-	p.lastPush = time.Now()
-	p.lastError = ""
-	p.mu.Unlock()
-	return nil
+	err := fmt.Errorf("translations changed continuously during backup; retry when edits are stable")
+	p.setError(err)
+	return err
 }
 
 func (p *Pusher) setError(err error) {

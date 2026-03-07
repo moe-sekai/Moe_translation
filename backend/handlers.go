@@ -34,8 +34,10 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/translate/status", h.requireAuth(h.handleTranslateStatus))
 	mux.HandleFunc("/api/translate/cn-sync", h.requireAuth(h.handleCNSync))
 	mux.HandleFunc("/api/translate/ai", h.requireAuth(h.handleTranslateAI))
+	mux.HandleFunc("/api/translate/ai-all", h.requireAuth(h.handleTranslateAIAll))
 	mux.HandleFunc("/api/event-stories", h.requireAuth(h.handleEventStories))
 	mux.HandleFunc("/api/event-story", h.requireAuth(h.handleEventStory))
+	mux.HandleFunc("/api/event-story/update", h.requireAuth(h.handleUpdateEventStory))
 }
 
 // requireAuth wraps a handler with authentication.
@@ -237,4 +239,54 @@ func (h *Handler) handleEventStory(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(detail)
+}
+
+func (h *Handler) handleTranslateAIAll(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req struct {
+		Provider string `json:"provider"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	result, err := h.translator.AITranslateAll(req.Provider)
+	if err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPut {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req struct {
+		EventID   int    `json:"eventId"`
+		EpisodeNo string `json:"episodeNo"`
+		JpKey     string `json:"jpKey"`
+		CnText    string `json:"cnText"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	if req.EventID <= 0 || req.EpisodeNo == "" || req.JpKey == "" {
+		http.Error(w, `{"error":"eventId, episodeNo, jpKey are required"}`, http.StatusBadRequest)
+		return
+	}
+	user := r.Header.Get("X-Username")
+	if err := h.translator.UpdateEventStoryLine(req.EventID, req.EpisodeNo, req.JpKey, req.CnText); err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	fmt.Printf("[edit-story] event%d/ep%s: %q -> %q by %s\n", req.EventID, req.EpisodeNo, req.JpKey, req.CnText, user)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
 }

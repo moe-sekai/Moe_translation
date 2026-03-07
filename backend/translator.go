@@ -68,6 +68,15 @@ type AITranslateResult struct {
 	SkippedExisting int    `json:"skippedExisting"`
 }
 
+type AITranslateAllResult struct {
+	Provider        string `json:"provider"`
+	TotalFields     int    `json:"totalFields"`
+	TotalCandidates int    `json:"totalCandidates"`
+	TotalTranslated int    `json:"totalTranslated"`
+	TotalSkipped    int    `json:"totalSkipped"`
+	Errors          int    `json:"errors"`
+}
+
 type EventStorySummary struct {
 	EventID      int    `json:"eventId"`
 	Source       string `json:"source"`
@@ -383,6 +392,196 @@ func (t *Translator) GetEventStory(eventID int) (EventStoryDetail, error) {
 	return detail, nil
 }
 
+// AITranslateAll iterates all loaded categories and fields,
+// translating entries that have no translation (empty text, source unknown/llm).
+func (t *Translator) AITranslateAll(provider string) (AITranslateAllResult, error) {
+	if err := t.markStart("ai-translate-all"); err != nil {
+		return AITranslateAllResult{}, err
+	}
+	provider = strings.ToLower(strings.TrimSpace(provider))
+	if provider == "" {
+		provider = strings.ToLower(strings.TrimSpace(t.cfg.LLMType))
+	}
+	result := AITranslateAllResult{Provider: provider}
+	var runErr error
+	defer func() { t.markEnd("ai translate all complete", runErr) }()
+
+	if provider != "gemini" && provider != "openai" {
+		runErr = fmt.Errorf("unsupported provider: %s", provider)
+		return result, runErr
+	}
+
+	// Collect all category/field pairs
+	t.store.mu.RLock()
+	type catField struct {
+		category string
+		field    string
+	}
+	var pairs []catField
+	for catName, cat := range t.store.data {
+		for fieldName := range cat {
+			pairs = append(pairs, catField{catName, fieldName})
+		}
+	}
+	t.store.mu.RUnlock()
+
+	for _, cf := range pairs {
+		req := AITranslateRequest{
+			Category: cf.category,
+			Field:    cf.field,
+			Provider: provider,
+			Limit:    200,
+		}
+		// Call ManualAITranslate but reset running state first
+		// We do inline logic instead to avoid markStart conflict
+		sub, err := t.aiTranslateField(req)
+		result.TotalFields++
+		result.TotalCandidates += sub.Candidates
+		result.TotalTranslated += sub.Translated
+		result.TotalSkipped += sub.SkippedExisting
+		if err != nil {
+			result.Errors++
+			fmt.Printf("[ai-all] error on %s/%s: %v\n", cf.category, cf.field, err)
+		}
+	}
+
+	return result, nil
+}
+
+// aiTranslateField is the inner logic of ManualAITranslate without markStart/markEnd.
+func (t *Translator) aiTranslateField(req AITranslateRequest) (AITranslateResult, error) {
+	provider := strings.ToLower(strings.TrimSpace(req.Provider))
+	result := AITranslateResult{Category: req.Category, Field: req.Field, Provider: provider}
+
+	if !IsValidCategory(req.Category) {
+		return result, fmt.Errorf("unsupported category: %s", req.Category)
+	}
+
+	limit := req.Limit
+	if limit <= 0 {
+		limit = 200
+	}
+
+	t.store.mu.Lock()
+	cat, ok := t.store.data[req.Category]
+	if !ok {
+		t.store.mu.Unlock()
+		return result, fmt.Errorf("category not loaded: %s", req.Category)
+	}
+	fieldMap := cat[req.Field]
+	if fieldMap == nil {
+		t.store.mu.Unlock()
+		return result, nil // no entries
+	}
+
+	keys := make([]string, 0, len(fieldMap))
+	for jp, entry := range fieldMap {
+		if entry.Source == SourceHuman || entry.Source == SourcePinned || entry.Source == SourceCN {
+			result.SkippedExisting++
+			continue
+		}
+		if strings.TrimSpace(entry.Text) != "" {
+			result.SkippedExisting++
+			continue
+		}
+		keys = append(keys, jp)
+	}
+	t.store.mu.Unlock()
+	sort.Strings(keys)
+	if len(keys) > limit {
+		keys = keys[:limit]
+	}
+	result.Candidates = len(keys)
+
+	if len(keys) == 0 {
+		return result, nil
+	}
+
+	updates := make(map[string]string, len(keys))
+	for i := 0; i < len(keys); i += t.cfg.BatchSize {
+		end := i + t.cfg.BatchSize
+		if end > len(keys) {
+			end = len(keys)
+		}
+		batch := keys[i:end]
+		translated, err := t.callLLM(provider, batch)
+		if err != nil {
+			return result, err
+		}
+		for idx, jp := range batch {
+			if idx < len(translated) {
+				cn := strings.TrimSpace(translated[idx])
+				if cn != "" {
+					updates[jp] = cn
+				}
+			}
+		}
+		if end < len(keys) {
+			time.Sleep(t.cfg.RateLimitDelay)
+		}
+	}
+
+	t.store.mu.Lock()
+	cat = t.store.data[req.Category]
+	if cat == nil {
+		cat = make(TranslationCategory)
+		t.store.data[req.Category] = cat
+	}
+	if cat[req.Field] == nil {
+		cat[req.Field] = make(map[string]TranslationEntry)
+	}
+	for jp, cn := range updates {
+		current := cat[req.Field][jp]
+		if current.Source == SourcePinned || current.Source == SourceHuman || current.Source == SourceCN {
+			result.SkippedExisting++
+			continue
+		}
+		if strings.TrimSpace(current.Text) != "" && current.Source != SourceUnknown && current.Source != SourceLLM {
+			result.SkippedExisting++
+			continue
+		}
+		cat[req.Field][jp] = TranslationEntry{Text: cn, Source: SourceLLM}
+		result.Translated++
+	}
+	err := t.saveCategoryLocked(req.Category, cat)
+	t.store.mu.Unlock()
+	if err != nil {
+		return result, err
+	}
+
+	return result, nil
+}
+
+// UpdateEventStoryLine updates a single line in an event story file.
+func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText string) error {
+	path := filepath.Join(t.store.path, "eventStory", fmt.Sprintf("event_%d.json", eventID))
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	var detail EventStoryDetail
+	if err := json.Unmarshal(data, &detail); err != nil {
+		return err
+	}
+
+	ep, ok := detail.Episodes[episodeNo]
+	if !ok {
+		return fmt.Errorf("episode %s not found in event %d", episodeNo, eventID)
+	}
+	if _, exists := ep.TalkData[jpKey]; !exists {
+		return fmt.Errorf("key not found in episode %s", episodeNo)
+	}
+	ep.TalkData[jpKey] = cnText
+	detail.Episodes[episodeNo] = ep
+	detail.Meta.LastUpdated = time.Now().Unix()
+
+	out, err := json.MarshalIndent(detail, "", "  ")
+	if err != nil {
+		return err
+	}
+	return writeAtomic(path, out)
+}
+
 func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string) (int, error) {
 	t.store.mu.Lock()
 	defer t.store.mu.Unlock()
@@ -449,6 +648,7 @@ func (t *Translator) saveCategoryLocked(category string, cat TranslationCategory
 	if err := writeAtomic(flatPath, flatBytes); err != nil {
 		return fmt.Errorf("write %s.json: %w", category, err)
 	}
+	t.store.bumpRevisionLocked()
 	return nil
 }
 

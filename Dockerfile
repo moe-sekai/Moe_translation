@@ -27,6 +27,7 @@ RUN apk add --no-cache ca-certificates tzdata git
 WORKDIR /app
 
 RUN mkdir -p /app/git-workspace && \
+    mkdir -p /data/translations && \
     git config --system user.name "MoeSekai Bot" && \
     git config --system user.email "bot@moesekai.com" && \
     git config --system --add safe.directory /app/git-workspace && \
@@ -35,12 +36,17 @@ RUN mkdir -p /app/git-workspace && \
 COPY --from=go-builder /sekai-translate ./sekai-translate
 COPY --from=ui-builder /app/out/ ./proofreading-ui/
 COPY translations/ ./translations/
+COPY docker-entrypoint.sh ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh
 
 ENV PORT=9090
-ENV TRANSLATION_PATH=/app/translations
+ENV TRANSLATION_PATH=/data/translations
 ENV STATIC_DIR=/app/proofreading-ui
 ENV GIT_WORKSPACE=/app/git-workspace
+ENV GIT_PUSH_BRANCH=backup-translations
+
+VOLUME ["/data/translations"]
 
 EXPOSE 9090
 
-CMD ["./sekai-translate"]
+CMD ["./docker-entrypoint.sh"]
