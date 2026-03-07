@@ -97,6 +97,19 @@ type EventStoryDetail struct {
 	} `json:"episodes"`
 }
 
+type eventStoryEpisodePayload struct {
+	ScenarioID string            `json:"scenarioId"`
+	Title      string            `json:"title"`
+	TalkData   map[string]string `json:"talkData"`
+}
+
+type localEventStoryState struct {
+	EventID      int
+	Source       string
+	IsOfficialCN bool
+	IsLLM        bool
+}
+
 type Translator struct {
 	store  *Store
 	client *http.Client
@@ -1000,106 +1013,376 @@ func (t *Translator) syncEventStoriesCNOnly() (int, error) {
 	for _, e := range cnEvents {
 		cnEventSet[getInt(e, "id")] = true
 	}
+	sort.Slice(jpStories, func(i, j int) bool {
+		return getInt(jpStories[i], "eventId") < getInt(jpStories[j], "eventId")
+	})
 
 	dir := filepath.Join(t.store.path, "eventStory")
 	if err := os.MkdirAll(dir, 0o755); err != nil {
 		return 0, err
 	}
 
+	localStates, localMaxEventID, err := t.loadLocalEventStoryStates(dir)
+	if err != nil {
+		return 0, err
+	}
+	latestOfficialCNEvent := 0
+	firstLLMEvent := 0
+	for _, state := range localStates {
+		if state.IsOfficialCN && state.EventID > latestOfficialCNEvent {
+			latestOfficialCNEvent = state.EventID
+		}
+		if state.IsLLM && (firstLLMEvent == 0 || state.EventID < firstLLMEvent) {
+			firstLLMEvent = state.EventID
+		}
+	}
+
+	startCNEventID := 1
+	if firstLLMEvent > 0 {
+		startCNEventID = firstLLMEvent
+	} else if latestOfficialCNEvent > 0 {
+		startCNEventID = latestOfficialCNEvent + 1
+	}
+
+	fmt.Printf("[translate] cn-sync event stories strategy: startCN=%d latestOfficialCN=%d firstLLM=%d localMax=%d\n",
+		startCNEventID, latestOfficialCNEvent, firstLLMEvent, localMaxEventID)
+
 	processed := 0
 	scenarioErrors := 0
+	emptyCNStreak := 0
+	cnStoppedByEmpty := false
+	lastCheckedEventID := 0
 	for _, jpStory := range jpStories {
 		eventID := getInt(jpStory, "eventId")
+		if eventID < startCNEventID {
+			continue
+		}
+		lastCheckedEventID = eventID
+
+		if state, ok := localStates[eventID]; ok && state.IsOfficialCN {
+			continue
+		}
+
 		if !cnEventSet[eventID] {
+			emptyCNStreak++
+			fmt.Printf("  [CN] Event %d: CN event not published (%d/3)\n", eventID, emptyCNStreak)
+			if emptyCNStreak >= 3 {
+				cnStoppedByEmpty = true
+				break
+			}
 			continue
 		}
 		cnStory := cnStoryByEvent[eventID]
 		if cnStory == nil {
-			continue
-		}
-		asset := getString(jpStory, "assetbundleName")
-		jpEpisodes := toMapSlice(jpStory["eventStoryEpisodes"])
-		cnEpisodes := toMapSlice(cnStory["eventStoryEpisodes"])
-		cnByEp := byIntID(cnEpisodes, "episodeNo")
-
-		type epData struct {
-			ScenarioID string            `json:"scenarioId"`
-			Title      string            `json:"title"`
-			TalkData   map[string]string `json:"talkData"`
-		}
-		episodes := map[string]epData{}
-
-		for _, ep := range jpEpisodes {
-			epNo := getInt(ep, "episodeNo")
-			scenarioID := getString(ep, "scenarioId")
-			if scenarioID == "" {
-				continue
+			emptyCNStreak++
+			fmt.Printf("  [CN] Event %d: CN story metadata missing (%d/3)\n", eventID, emptyCNStreak)
+			if emptyCNStreak >= 3 {
+				cnStoppedByEmpty = true
+				break
 			}
-			scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
-			jpScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", jpAssetsURL, scenarioPath))
-			if err != nil {
-				scenarioErrors++
-				continue
-			}
-			cnScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", cnAssetsURL, scenarioPath))
-			if err != nil {
-				scenarioErrors++
-				continue
-			}
-
-			jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
-			cnTalk := toMapSlice(asMap(cnScenario)["TalkData"])
-			talkData := map[string]string{}
-			for i := 0; i < len(jpTalk) && i < len(cnTalk); i++ {
-				jpBody := strings.TrimSpace(getString(jpTalk[i], "Body"))
-				cnBody := strings.TrimSpace(getString(cnTalk[i], "Body"))
-				if jpBody != "" && cnBody != "" && jpBody != cnBody {
-					talkData[jpBody] = cnBody
-				}
-				jpName := strings.TrimSpace(getString(jpTalk[i], "WindowDisplayName"))
-				cnName := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
-				if jpName != "" && cnName != "" && jpName != cnName {
-					talkData[jpName] = cnName
-				}
-			}
-			if len(talkData) == 0 {
-				continue
-			}
-			episodes[strconv.Itoa(epNo)] = epData{
-				ScenarioID: scenarioID,
-				Title:      getString(cnByEp[epNo], "title"),
-				TalkData:   talkData,
-			}
-		}
-
-		if len(episodes) == 0 {
 			continue
 		}
 
-		payload := map[string]any{
-			"meta": map[string]any{
-				"source":       "official_cn",
-				"version":      "1.0",
-				"last_updated": time.Now().Unix(),
-			},
-			"episodes": episodes,
+		episodes, hasTalkData, hasTitleOnly, errs := t.buildOfficialCNEpisodes(jpStory, cnStory)
+		scenarioErrors += errs
+		if !hasTalkData {
+			emptyCNStreak++
+			reason := "empty"
+			if hasTitleOnly {
+				reason = "title-only"
+			}
+			fmt.Printf("  [CN] Event %d: %s (%d/3)\n", eventID, reason, emptyCNStreak)
+			if emptyCNStreak >= 3 {
+				cnStoppedByEmpty = true
+				break
+			}
+			continue
 		}
-		b, err := json.MarshalIndent(payload, "", "  ")
-		if err != nil {
+		emptyCNStreak = 0
+
+		if err := t.writeEventStoryFile(dir, eventID, "official_cn", episodes); err != nil {
 			return processed, err
 		}
-		outPath := filepath.Join(dir, fmt.Sprintf("event_%d.json", eventID))
-		if err := writeAtomic(outPath, b); err != nil {
-			return processed, err
+		localStates[eventID] = localEventStoryState{EventID: eventID, Source: "official_cn", IsOfficialCN: true}
+		if eventID > localMaxEventID {
+			localMaxEventID = eventID
 		}
 		processed++
 	}
 
+	if cnStoppedByEmpty {
+		fallbackStart := localMaxEventID + 1
+		if fallbackStart > 0 {
+			fmt.Printf("[translate] cn-sync event stories: CN empty streak reached at event %d, fallback JP-only from event %d\n", lastCheckedEventID, fallbackStart)
+			fallbackProcessed, fallbackErrors, err := t.fillEventStoriesJPPending(jpStories, fallbackStart, dir, localStates)
+			if err != nil {
+				return processed, err
+			}
+			processed += fallbackProcessed
+			scenarioErrors += fallbackErrors
+		}
+	}
+
 	if scenarioErrors > 0 {
-		return processed, fmt.Errorf("event story scenario fetch failed: %d files", scenarioErrors)
+		fmt.Printf("[translate] cn-sync event stories warning: scenario fetch failures=%d\n", scenarioErrors)
 	}
 
 	return processed, nil
+}
+
+func (t *Translator) loadLocalEventStoryStates(dir string) (map[int]localEventStoryState, int, error) {
+	states := map[int]localEventStoryState{}
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return states, 0, nil
+		}
+		return nil, 0, err
+	}
+	maxID := 0
+	for _, entry := range entries {
+		if entry.IsDir() || !strings.HasPrefix(entry.Name(), "event_") || !strings.HasSuffix(entry.Name(), ".json") {
+			continue
+		}
+		idText := strings.TrimSuffix(strings.TrimPrefix(entry.Name(), "event_"), ".json")
+		eventID, err := strconv.Atoi(idText)
+		if err != nil || eventID <= 0 {
+			continue
+		}
+		if eventID > maxID {
+			maxID = eventID
+		}
+
+		raw, err := os.ReadFile(filepath.Join(dir, entry.Name()))
+		if err != nil {
+			continue
+		}
+		state := localEventStoryState{EventID: eventID}
+		if source, ok := detectEventStoryMetaSource(raw); ok {
+			state.Source = source
+			state.IsOfficialCN = source == "official_cn"
+			state.IsLLM = source == "llm"
+		} else if isLegacyEventStoryFormat(raw) {
+			state.Source = "official_cn_legacy"
+			state.IsOfficialCN = true
+		} else {
+			state.Source = "unknown"
+		}
+		states[eventID] = state
+	}
+	return states, maxID, nil
+}
+
+func detectEventStoryMetaSource(raw []byte) (string, bool) {
+	var parsed struct {
+		Meta struct {
+			Source string `json:"source"`
+		} `json:"meta"`
+		Episodes map[string]any `json:"episodes"`
+	}
+	if err := json.Unmarshal(raw, &parsed); err != nil {
+		return "", false
+	}
+	if parsed.Episodes == nil {
+		return "", false
+	}
+	source := strings.TrimSpace(parsed.Meta.Source)
+	if source == "" {
+		return "", false
+	}
+	return source, true
+}
+
+func isLegacyEventStoryFormat(raw []byte) bool {
+	var obj map[string]map[string]any
+	if err := json.Unmarshal(raw, &obj); err != nil {
+		return false
+	}
+	if len(obj) == 0 {
+		return false
+	}
+	hasEpisode := false
+	for key, ep := range obj {
+		if key == "meta" || key == "episodes" {
+			return false
+		}
+		if _, err := strconv.Atoi(key); err != nil {
+			continue
+		}
+		scenarioID := getString(ep, "scenarioId")
+		_, hasTalkData := ep["talkData"]
+		if scenarioID != "" || hasTalkData {
+			hasEpisode = true
+		}
+	}
+	return hasEpisode
+}
+
+func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (map[string]eventStoryEpisodePayload, bool, bool, int) {
+	asset := getString(jpStory, "assetbundleName")
+	jpEpisodes := toMapSlice(jpStory["eventStoryEpisodes"])
+	cnEpisodes := toMapSlice(cnStory["eventStoryEpisodes"])
+	cnByEp := byIntID(cnEpisodes, "episodeNo")
+
+	episodes := map[string]eventStoryEpisodePayload{}
+	hasTalkData := false
+	hasTitleOnly := false
+	errs := 0
+
+	for _, ep := range jpEpisodes {
+		epNo := getInt(ep, "episodeNo")
+		scenarioID := getString(ep, "scenarioId")
+		if scenarioID == "" {
+			continue
+		}
+		scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
+		jpScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", jpAssetsURL, scenarioPath))
+		if err != nil {
+			errs++
+			continue
+		}
+		cnScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", cnAssetsURL, scenarioPath))
+		if err != nil {
+			errs++
+			continue
+		}
+
+		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
+		cnTalk := toMapSlice(asMap(cnScenario)["TalkData"])
+		talkData := map[string]string{}
+		for i := 0; i < len(jpTalk) && i < len(cnTalk); i++ {
+			jpBody := strings.TrimSpace(getString(jpTalk[i], "Body"))
+			cnBody := strings.TrimSpace(getString(cnTalk[i], "Body"))
+			if jpBody != "" && cnBody != "" && jpBody != cnBody {
+				talkData[jpBody] = cnBody
+			}
+			jpName := strings.TrimSpace(getString(jpTalk[i], "WindowDisplayName"))
+			cnName := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
+			if jpName != "" && cnName != "" && jpName != cnName {
+				talkData[jpName] = cnName
+			}
+		}
+
+		cnTitle := strings.TrimSpace(getString(cnByEp[epNo], "title"))
+		jpTitle := strings.TrimSpace(getString(ep, "title"))
+		if cnTitle == jpTitle {
+			cnTitle = ""
+		}
+
+		if len(talkData) > 0 {
+			hasTalkData = true
+		} else if cnTitle != "" {
+			hasTitleOnly = true
+		}
+
+		if len(talkData) == 0 && cnTitle == "" {
+			continue
+		}
+
+		episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
+			ScenarioID: scenarioID,
+			Title:      cnTitle,
+			TalkData:   talkData,
+		}
+	}
+
+	return episodes, hasTalkData, hasTitleOnly, errs
+}
+
+func (t *Translator) fillEventStoriesJPPending(jpStories []map[string]any, startEventID int, dir string, localStates map[int]localEventStoryState) (int, int, error) {
+	processed := 0
+	scenarioErrors := 0
+	for _, jpStory := range jpStories {
+		eventID := getInt(jpStory, "eventId")
+		if eventID < startEventID {
+			continue
+		}
+		if _, exists := localStates[eventID]; exists {
+			continue
+		}
+
+		episodes, errs := t.buildJPPendingEpisodes(jpStory)
+		scenarioErrors += errs
+		if len(episodes) == 0 {
+			continue
+		}
+
+		if err := t.writeEventStoryFile(dir, eventID, "jp_pending", episodes); err != nil {
+			return processed, scenarioErrors, err
+		}
+		localStates[eventID] = localEventStoryState{EventID: eventID, Source: "jp_pending"}
+		processed++
+	}
+	return processed, scenarioErrors, nil
+}
+
+func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]eventStoryEpisodePayload, int) {
+	asset := getString(jpStory, "assetbundleName")
+	jpEpisodes := toMapSlice(jpStory["eventStoryEpisodes"])
+	episodes := map[string]eventStoryEpisodePayload{}
+	errs := 0
+
+	for _, ep := range jpEpisodes {
+		epNo := getInt(ep, "episodeNo")
+		scenarioID := getString(ep, "scenarioId")
+		if scenarioID == "" {
+			continue
+		}
+		title := strings.TrimSpace(getString(ep, "title"))
+		scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
+		jpScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", jpAssetsURL, scenarioPath))
+		if err != nil {
+			errs++
+			if title != "" {
+				episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
+					ScenarioID: scenarioID,
+					Title:      title,
+					TalkData:   map[string]string{},
+				}
+			}
+			continue
+		}
+
+		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
+		talkData := map[string]string{}
+		for _, talk := range jpTalk {
+			jpBody := strings.TrimSpace(getString(talk, "Body"))
+			if jpBody != "" {
+				talkData[jpBody] = ""
+			}
+			jpName := strings.TrimSpace(getString(talk, "WindowDisplayName"))
+			if jpName != "" {
+				talkData[jpName] = ""
+			}
+		}
+		if len(talkData) == 0 && title == "" {
+			continue
+		}
+		episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
+			ScenarioID: scenarioID,
+			Title:      title,
+			TalkData:   talkData,
+		}
+	}
+
+	return episodes, errs
+}
+
+func (t *Translator) writeEventStoryFile(dir string, eventID int, source string, episodes map[string]eventStoryEpisodePayload) error {
+	payload := map[string]any{
+		"meta": map[string]any{
+			"source":       source,
+			"version":      "1.0",
+			"last_updated": time.Now().Unix(),
+		},
+		"episodes": episodes,
+	}
+	b, err := json.MarshalIndent(payload, "", "  ")
+	if err != nil {
+		return err
+	}
+	outPath := filepath.Join(dir, fmt.Sprintf("event_%d.json", eventID))
+	return writeAtomic(outPath, b)
 }
 
 func (t *Translator) callLLM(provider string, texts []string) ([]string, error) {
