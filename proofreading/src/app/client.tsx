@@ -444,18 +444,23 @@ export default function ProofreadingClient() {
 
     // ---- Keyboard ----
 
+    const checkModifier = useCallback((e: React.KeyboardEvent | KeyboardEvent) => {
+        const isMac = typeof window !== "undefined" && navigator.userAgent.toUpperCase().indexOf("MAC") >= 0;
+        return isMac ? e.metaKey && !e.ctrlKey : e.ctrlKey && !e.metaKey;
+    }, []);
+
     const handleTextareaKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSave(); }
         if (e.key === "Escape") { e.preventDefault(); setSelectedKey(null); setIsEditing(false); }
-        if ((e.ctrlKey || e.metaKey) && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
-        if ((e.ctrlKey || e.metaKey) && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
-    }, [handleSave, navigateEntry]);
+        if (checkModifier(e) && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
+        if (checkModifier(e) && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
+    }, [handleSave, navigateEntry, checkModifier]);
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
             const tag = (e.target as HTMLElement).tagName;
             if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
-            if ((e.ctrlKey || e.metaKey) && e.key === "s") { e.preventDefault(); handleSave(); }
+            if (checkModifier(e) && e.key === "s") { e.preventDefault(); handleSave(); }
             if (e.key === "ArrowDown" || e.key === "j") { e.preventDefault(); navigateEntry(1); }
             if (e.key === "ArrowUp" || e.key === "k") { e.preventDefault(); navigateEntry(-1); }
             if (e.key === "Enter" && selectedKey) { e.preventDefault(); editRef.current?.focus(); }
@@ -463,7 +468,7 @@ export default function ProofreadingClient() {
         };
         window.addEventListener("keydown", handler);
         return () => window.removeEventListener("keydown", handler);
-    }, [selectedKey, handleSave, navigateEntry]);
+    }, [selectedKey, handleSave, navigateEntry, checkModifier]);
 
     // ---- Render ----
 
