@@ -4004,7 +4004,7 @@
     },
     "Brand New Street": {
       "text": "全新的街头",
-      "source": "unknown"
+      "source": "human"
     },
     "Brand New Style": {
       "text": "全新风格",
@@ -4048,7 +4048,7 @@
     },
     "Happy Anniversary！！2026": {
       "text": "周年快乐！！2026",
-      "source": "unknown"
+      "source": "human"
     },
     "Happy Birthday！！": {
       "text": "Happy Birthday！！Flower",
@@ -4084,7 +4084,7 @@
     },
     "Let's enjoy the movie！": {
       "text": "尽情享受电影吧！",
-      "source": "unknown"
+      "source": "human"
     },
     "MORE MORE JUMP！": {
       "text": "MORE MORE JUMP！",
@@ -4143,8 +4143,8 @@
       "source": "unknown"
     },
     "feat.ふらわっち": {
-      "text": "feat.花花美眉",
-      "source": "unknown"
+      "text": "feat.紫罗兰吉",
+      "source": "human"
     },
     "feat.ぼんぼんりぼん": {
       "text": "feat.蹦蹦兔",
@@ -4423,8 +4423,8 @@
       "source": "cn"
     },
     "いざ、舞台へ": {
-      "text": "走吧，前往舞台",
-      "source": "unknown"
+      "text": "现在，上舞台吧",
+      "source": "human"
     },
     "いざ衣装班へ！": {
       "text": "前往服装组！",
@@ -4524,7 +4524,7 @@
     },
     "おいしいを分け合って": {
       "text": "分享美味",
-      "source": "unknown"
+      "source": "human"
     },
     "おそろいコーデ♥": {
       "text": "同款的穿搭♥",
@@ -4647,8 +4647,8 @@
       "source": "cn"
     },
     "からっぽになる部屋": {
-      "text": "变得空荡荡的房间",
-      "source": "unknown"
+      "text": "空荡荡的房间",
+      "source": "human"
     },
     "かるた界のトップアイドル？": {
       "text": "歌牌界的顶尖偶像",
@@ -4820,7 +4820,7 @@
     },
     "そばにいられるように": {
       "text": "为了能留在你身边",
-      "source": "unknown"
+      "source": "human"
     },
     "それぞれの休日の過ごし方": {
       "text": "各自的休憩时间",
@@ -5004,7 +5004,7 @@
     },
     "また会える日を想って": {
       "text": "期待着重逢之日",
-      "source": "unknown"
+      "source": "human"
     },
     "まだ何も知らない": {
       "text": "尚且一无所知",
@@ -5215,8 +5215,8 @@
       "source": "cn"
     },
     "オススメはしょうゆラーメン": {
-      "text": "推荐是酱油拉面",
-      "source": "unknown"
+      "text": "招牌是酱油拉面",
+      "source": "human"
     },
     "オレが主役だ！": {
       "text": "我是主角！",
@@ -5619,8 +5619,8 @@
       "source": "cn"
     },
     "ヒヤッとドッキリ！": {
-      "text": "惊心动魄的恶作剧！",
-      "source": "unknown"
+      "text": "吓一跳的恶作剧！",
+      "source": "human"
     },
     "ヒーローからヒーローへ": {
       "text": "从英雄到英雄",
@@ -6363,8 +6363,8 @@
       "source": "cn"
     },
     "夕暮れの窓辺": {
-      "text": "黄昏的窗边",
-      "source": "unknown"
+      "text": "暮色中的窗边",
+      "source": "human"
     },
     "夕暮れの語らい": {
       "text": "夕阳下的对话",
@@ -6784,7 +6784,7 @@
     },
     "徹夜を案じて": {
       "text": "担心熬夜",
-      "source": "unknown"
+      "source": "human"
     },
     "心に、１枚の": {
       "text": "为内心，拍一张",
@@ -6907,8 +6907,8 @@
       "source": "cn"
     },
     "悪食の悪魔": {
-      "text": "恶食的恶魔",
-      "source": "unknown"
+      "text": "恶食之魔",
+      "source": "human"
     },
     "悲しみも全部": {
       "text": "连悲伤也一起",
@@ -7039,8 +7039,8 @@
       "source": "cn"
     },
     "憧れまでの距離": {
-      "text": "与憧憬之间的距离",
-      "source": "unknown"
+      "text": "憧憬的距离",
+      "source": "human"
     },
     "憧れを共に": {
       "text": "伴随心中的憧憬",
@@ -7124,7 +7124,7 @@
     },
     "掴めない『想い』": {
       "text": "无法触及的『心愿』",
-      "source": "unknown"
+      "source": "human"
     },
     "描きたくなった表情": {
       "text": "想画的表情",
@@ -7428,7 +7428,7 @@
     },
     "止まらない歩み": {
       "text": "永不停歇的脚步",
-      "source": "unknown"
+      "source": "human"
     },
     "止まらぬ構想と暴走": {
       "text": "脱缰的构思与失控",
@@ -7467,8 +7467,8 @@
       "source": "cn"
     },
     "気になるVRライブ": {
-      "text": "令人在意的VR演唱会",
-      "source": "unknown"
+      "text": "令人关注的VR演唱会",
+      "source": "human"
     },
     "気になる劇団": {
       "text": "令人在意的剧团",
@@ -7647,8 +7647,8 @@
       "source": "cn"
     },
     "熱烈歓迎にたじたじ！": {
-      "text": "对热烈欢迎感到不知所措！",
-      "source": "unknown"
+      "text": "对热烈欢迎弄得不知所措！",
+      "source": "human"
     },
     "燃え上がる闘志": {
       "text": "燃起的斗志",
@@ -7880,7 +7880,7 @@
     },
     "突然の危機": {
       "text": "突如其来的危机",
-      "source": "unknown"
+      "source": "human"
     },
     "窓のセカイから": {
       "text": "来自窗扉的「世界」",
@@ -7939,8 +7939,8 @@
       "source": "cn"
     },
     "素直な想いを紡いで": {
-      "text": "编织坦率的心意",
-      "source": "unknown"
+      "text": "编织纯粹的心意",
+      "source": "human"
     },
     "紹介しよう！！": {
       "text": "介绍一下吧！！",
@@ -8574,7 +8574,7 @@
   "skillName": {
     "AR写真の世界へ": {
       "text": "走进AR照片的世界",
-      "source": "human"
+      "source": "unknown"
     },
     "BAD DOGSの由来": {
       "text": "BAD DOGS的由来",
@@ -9117,16 +9117,16 @@
       "source": "cn"
     },
     "お疲れさまの気持ちで": {
-      "text": "怀揣这份慰劳",
-      "source": "human"
+      "text": "怀着辛苦了的心情",
+      "source": "unknown"
     },
     "お疲れさまを言いたくて": {
       "text": "想说一句“辛苦了”",
       "source": "cn"
     },
     "お疲れさまパーティー♪": {
-      "text": "犒劳派对♪",
-      "source": "human"
+      "text": "辛苦了派对♪",
+      "source": "unknown"
     },
     "お礼のサプライズ": {
       "text": "惊喜回礼",
@@ -9409,8 +9409,8 @@
       "source": "cn"
     },
     "それぞれの関係性": {
-      "text": "彼此的关系",
-      "source": "human"
+      "text": "各自的关系性",
+      "source": "unknown"
     },
     "それでも、まだ……": {
       "text": "即便如此，我也要……",
@@ -9630,7 +9630,7 @@
     },
     "のびのびストレッチ": {
       "text": "悠闲的拉伸",
-      "source": "human"
+      "source": "unknown"
     },
     "はい。召し上がれ": {
       "text": "给，请享用吧",
@@ -9694,15 +9694,15 @@
     },
     "ふたりの仲裁": {
       "text": "两人的仲裁",
-      "source": "human"
+      "source": "unknown"
     },
     "ふー。ふー。": {
       "text": "呼——呼——",
       "source": "cn"
     },
     "ほっとするひと時": {
-      "text": "令人安心的片刻",
-      "source": "human"
+      "text": "令人安心的时刻",
+      "source": "unknown"
     },
     "ほっぺはぷにぷにのままで": {
       "text": "脸最好还是软乎乎的",
@@ -9773,8 +9773,8 @@
       "source": "unknown"
     },
     "みんなでお祭りバースデー！": {
-      "text": "大家一起过生日派对！",
-      "source": "human"
+      "text": "大家一起庆典生日！",
+      "source": "unknown"
     },
     "みんなでイス係": {
       "text": "大家一起负责拿椅子",
@@ -9789,8 +9789,8 @@
       "source": "cn"
     },
     "みんなでリフレッシュデー": {
-      "text": "大家一起来放松日",
-      "source": "human"
+      "text": "大家一起的放松日",
+      "source": "unknown"
     },
     "みんなで一緒に食べようね！": {
       "text": "大家一起吃吧！",
@@ -9881,8 +9881,8 @@
       "source": "cn"
     },
     "みんなに支えられて": {
-      "text": "众人的扶持",
-      "source": "human"
+      "text": "被大家支持着",
+      "source": "unknown"
     },
     "みんなのためにできること": {
       "text": "能为大家做的事",
@@ -10353,8 +10353,8 @@
       "source": "unknown"
     },
     "スポジョイパークでエンジョイ♪": {
-      "text": "在运动乐园尽情享受♪",
-      "source": "human"
+      "text": "在运动欢乐园尽情享受♪",
+      "source": "unknown"
     },
     "スポジョイパーク・リターンズ！": {
       "text": "运动乐园回归！",
@@ -10369,8 +10369,8 @@
       "source": "cn"
     },
     "セカイでお泊まり！": {
-      "text": "在「世界」留宿！",
-      "source": "human"
+      "text": "在“世界”留宿！",
+      "source": "unknown"
     },
     "セカイでかくれんぼ！": {
       "text": "在「世界」捉迷藏！",
@@ -10574,7 +10574,7 @@
     },
     "ファンに伝えたい想い": {
       "text": "想传达给粉丝的心意",
-      "source": "human"
+      "source": "unknown"
     },
     "ファンの想い、ファンの力": {
       "text": "粉丝的心意，粉丝的力量",
@@ -10754,7 +10754,7 @@
     },
     "ライバルと競い合って": {
       "text": "与对手竞争",
-      "source": "human"
+      "source": "unknown"
     },
     "ラブリーコーディネート♪": {
       "text": "可爱的穿搭♪",
@@ -11034,7 +11034,7 @@
     },
     "仲間と重ねる思い出": {
       "text": "与伙伴们积累的回忆",
-      "source": "human"
+      "source": "unknown"
     },
     "仲間の存在": {
       "text": "拥有伙伴的意义",
@@ -11045,8 +11045,8 @@
       "source": "unknown"
     },
     "仲間の支え": {
-      "text": "同伴的支持",
-      "source": "human"
+      "text": "伙伴的支持",
+      "source": "unknown"
     },
     "仲間への信頼": {
       "text": "同伴间的信赖",
@@ -11258,7 +11258,7 @@
     },
     "写真が彩る記憶": {
       "text": "照片点缀的记忆",
-      "source": "human"
+      "source": "unknown"
     },
     "写真に思い出を": {
       "text": "用照片留住回忆",
@@ -11554,7 +11554,7 @@
     },
     "地獄の沙汰も金次第": {
       "text": "有钱能使鬼推磨",
-      "source": "human"
+      "source": "unknown"
     },
     "垣間見えた努力": {
       "text": "不经意窥见的努力",
@@ -11801,8 +11801,8 @@
       "source": "cn"
     },
     "安らげる場所": {
-      "text": "安宁之地",
-      "source": "human"
+      "text": "能够安心的场所",
+      "source": "unknown"
     },
     "完璧なエスコートの秘密？": {
       "text": "最佳护花使者的秘诀是？",
@@ -12110,7 +12110,7 @@
     },
     "応援を込めたメッセージ": {
       "text": "蕴含应援之情的留言",
-      "source": "human"
+      "source": "unknown"
     },
     "念願の新刊！": {
       "text": "心心念念的新刊！",
@@ -12169,8 +12169,8 @@
       "source": "cn"
     },
     "思い出話に花を咲かせて": {
-      "text": "回忆往事，畅谈甚欢",
-      "source": "human"
+      "text": "畅谈往事",
+      "source": "unknown"
     },
     "思い出話を語って": {
       "text": "畅谈回忆",
@@ -12242,7 +12242,7 @@
     },
     "想いを込めた１曲だから": {
       "text": "因为是倾注了心意的一曲",
-      "source": "human"
+      "source": "unknown"
     },
     "想いを運ぶカードの精": {
       "text": "传递心意的卡片精灵",
@@ -12314,7 +12314,7 @@
     },
     "慣れないことだけど": {
       "text": "虽然还不习惯",
-      "source": "human"
+      "source": "unknown"
     },
     "憧れに届くように": {
       "text": "为了触及憧憬",
@@ -12325,8 +12325,8 @@
       "source": "cn"
     },
     "成長するパフォーマンス": {
-      "text": "不断发展的演出",
-      "source": "human"
+      "text": "不断成长的演出",
+      "source": "unknown"
     },
     "成長を実感して": {
       "text": "切身体会到成长",
@@ -12506,7 +12506,7 @@
     },
     "早起きした朝に": {
       "text": "在早起的清晨",
-      "source": "human"
+      "source": "unknown"
     },
     "明かされた真意": {
       "text": "被揭晓的真实意图",
@@ -12734,7 +12734,7 @@
     },
     "楽しい時間をあと少しだけ": {
       "text": "让快乐时光再多留片刻",
-      "source": "human"
+      "source": "unknown"
     },
     "楽しい検品作業？": {
       "text": "开心地检查周边？",
@@ -12941,8 +12941,8 @@
       "source": "cn"
     },
     "特徴的な笑顔？": {
-      "text": "标志性的笑容？",
-      "source": "human"
+      "text": "特征鲜明的笑容？",
+      "source": "unknown"
     },
     "特製パフェタイム♪": {
       "text": "特制芭菲时间到♪",
@@ -13045,8 +13045,8 @@
       "source": "cn"
     },
     "真髄はまだ遠い": {
-      "text": "真谛尚远",
-      "source": "human"
+      "text": "距离精髓还很遥远",
+      "source": "unknown"
     },
     "眠らせ姫のgift": {
       "text": "沉睡公主的礼物",
@@ -13218,7 +13218,7 @@
     },
     "笑顔の宣誓": {
       "text": "笑容的宣誓",
-      "source": "human"
+      "source": "unknown"
     },
     "笑顔をくれるファンレター": {
       "text": "带来笑容的粉丝来信",
@@ -13309,8 +13309,8 @@
       "source": "cn"
     },
     "繋がれたバトン": {
-      "text": "传递的接力棒",
-      "source": "human"
+      "text": "传递下去的接力棒",
+      "source": "unknown"
     },
     "美しき歌い手として": {
       "text": "作为美丽的歌者",
