@@ -16,9 +16,8 @@ if [ -d "$SEED_DIR" ]; then
   echo "SEED_DIR exists. Checking for cards.json..."
   if [ ! -f "$DATA_DIR/cards.json" ]; then
     echo "cards.json NOT found. Copying seed data..."
-    # We use cp -a * because cp -a . might behave weirdly depending on busybox version
-    # Actually, we can use cp -R since we are copying mostly JSON files
-    cp -a "$SEED_DIR"/* "$DATA_DIR"/ || echo "WARNING: cp command failed with code $?"
+    # We use cp -a . to copy all contents including hidden files (if any) and it avoids shell glob expansion issues
+    cp -a "$SEED_DIR"/. "$DATA_DIR"/ || echo "WARNING: cp command failed with code $?"
     echo "Copy completed!"
   else
     echo "cards.json ALREADY EXISTS. Skipping copy."
