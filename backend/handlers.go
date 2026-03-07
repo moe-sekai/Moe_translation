@@ -30,6 +30,7 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/entries", h.requireAuth(h.handleEntries))
 	mux.HandleFunc("/api/entry", h.requireAuth(h.handleUpdateEntry))
 	mux.HandleFunc("/api/push", h.requireAuth(h.handlePush))
+	mux.HandleFunc("/api/pull", h.requireAuth(h.handlePull))
 	mux.HandleFunc("/api/status", h.requireAuth(h.handleStatus))
 	mux.HandleFunc("/api/translate/status", h.requireAuth(h.handleTranslateStatus))
 	mux.HandleFunc("/api/translate/cn-sync", h.requireAuth(h.handleCNSync))
@@ -150,6 +151,20 @@ func (h *Handler) handlePush(w http.ResponseWriter, r *http.Request) {
 	}
 	user := r.Header.Get("X-Username")
 	if err := h.pusher.PushAll(h.store, user); err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+}
+
+func (h *Handler) handlePull(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	user := r.Header.Get("X-Username")
+	if err := h.pusher.PullLatest(h.store, user); err != nil {
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}

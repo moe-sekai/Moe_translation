@@ -173,6 +173,10 @@ export async function pushToHub() {
     return apiFetch<{ status: string }>("/push", { method: "POST" });
 }
 
+export async function pullLatestBackup() {
+    return apiFetch<{ status: string }>("/pull", { method: "POST" });
+}
+
 export async function getPushStatus() {
     return apiFetch<PushStatus>("/status");
 }

@@ -158,6 +158,72 @@ func (p *Pusher) PushAll(store *Store, username string) error {
 	return err
 }
 
+func (p *Pusher) PullLatest(store *Store, username string) error {
+	p.mu.Lock()
+	if p.pushing {
+		p.mu.Unlock()
+		return fmt.Errorf("backup sync already in progress")
+	}
+	p.pushing = true
+	p.mu.Unlock()
+
+	defer func() {
+		p.mu.Lock()
+		p.pushing = false
+		p.mu.Unlock()
+	}()
+
+	if strings.TrimSpace(p.repoURL) == "" {
+		err := fmt.Errorf("GIT_PUSH_REPO_URL is not configured")
+		p.setError(err)
+		return err
+	}
+	if store == nil {
+		err := fmt.Errorf("store is required")
+		p.setError(err)
+		return err
+	}
+	if err := os.MkdirAll(p.workspace, 0o755); err != nil {
+		p.setError(err)
+		return err
+	}
+
+	repoDir := filepath.Join(p.workspace, "repo-pull")
+	_ = os.RemoveAll(repoDir)
+
+	if err := p.runGit(p.workspace, "clone", "--depth", "1", "--branch", p.branch, p.repoURL, repoDir); err != nil {
+		p.setError(err)
+		return err
+	}
+
+	remoteTranslations := filepath.Join(repoDir, "translations")
+	if info, err := os.Stat(remoteTranslations); err != nil || !info.IsDir() {
+		pullErr := fmt.Errorf("remote branch %s has no translations directory", p.branch)
+		p.setError(pullErr)
+		return pullErr
+	}
+
+	stagingPath := filepath.Join(p.workspace, "translations-pull-staging")
+	if err := copyDir(remoteTranslations, stagingPath); err != nil {
+		p.setError(err)
+		return err
+	}
+
+	if err := p.replaceDataDir(stagingPath); err != nil {
+		p.setError(err)
+		return err
+	}
+
+	store.ReloadAllFromDisk()
+
+	p.mu.Lock()
+	p.lastError = ""
+	p.mu.Unlock()
+
+	fmt.Printf("[backup] pulled latest translations from %s by %s\n", p.branch, username)
+	return nil
+}
+
 func (p *Pusher) setError(err error) {
 	p.mu.Lock()
 	defer p.mu.Unlock()
@@ -195,6 +261,32 @@ func sanitizeRepoURL(s string) string {
 		}
 	}
 	return s
+}
+
+func (p *Pusher) replaceDataDir(src string) error {
+	incomingPath := p.dataPath + ".incoming"
+	backupPath := p.dataPath + ".backup"
+
+	if err := copyDir(src, incomingPath); err != nil {
+		return err
+	}
+	_ = os.RemoveAll(backupPath)
+
+	if _, err := os.Stat(p.dataPath); err == nil {
+		if err := os.Rename(p.dataPath, backupPath); err != nil {
+			return err
+		}
+	}
+
+	if err := os.Rename(incomingPath, p.dataPath); err != nil {
+		if _, rollbackErr := os.Stat(backupPath); rollbackErr == nil {
+			_ = os.Rename(backupPath, p.dataPath)
+		}
+		return err
+	}
+
+	_ = os.RemoveAll(backupPath)
+	return nil
 }
 
 func copyDir(src, dst string) error {

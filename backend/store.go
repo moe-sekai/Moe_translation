@@ -77,6 +77,11 @@ func NewStore(path string) *Store {
 func (s *Store) LoadAll() {
 	s.mu.Lock()
 	defer s.mu.Unlock()
+	s.loadAllLocked()
+}
+
+func (s *Store) loadAllLocked() {
+	s.data = make(map[string]TranslationCategory)
 	for _, cat := range SupportedCategories {
 		data, err := s.loadCategory(cat)
 		if err != nil {
@@ -86,6 +91,13 @@ func (s *Store) LoadAll() {
 		s.data[cat] = data
 	}
 	fmt.Printf("[store] loaded %d categories\n", len(s.data))
+}
+
+func (s *Store) ReloadAllFromDisk() {
+	s.mu.Lock()
+	defer s.mu.Unlock()
+	s.loadAllLocked()
+	s.rev++
 }
 
 func (s *Store) loadCategory(cat string) (TranslationCategory, error) {

@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import {
     getToken, setToken, clearToken, getUsername, setUsername,
-    login, getCategories, getEntries, updateEntry, pushToHub, getPushStatus,
+    login, getCategories, getEntries, updateEntry, pushToHub, pullLatestBackup, getPushStatus,
     triggerAITranslateAll, getEventStories, getEventStory, runCNSync, getTranslateStatus,
     updateEventStoryLine,
     type CategoryInfo, type TranslationEntry, type PushStatus,
@@ -35,6 +35,43 @@ const FIELD_LABELS: Record<string, string> = {
 const SOURCE_LABELS: Record<string, string> = {
     cn: "官方", human: "人工", pinned: "锁定", llm: "AI", unknown: "未知",
 };
+
+type DraftRecord = Record<string, { text: string; updatedAt: number }>;
+
+function makeDraftStorageKey(username: string, category: string, field: string): string {
+    return `translate-drafts:${username || "anonymous"}:${category}:${field}`;
+}
+
+function loadDrafts(storageKey: string): DraftRecord {
+    if (typeof window === "undefined") return {};
+    try {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return {};
+        const parsed = JSON.parse(raw) as DraftRecord;
+        if (!parsed || typeof parsed !== "object") return {};
+        return parsed;
+    } catch {
+        return {};
+    }
+}
+
+function saveDrafts(storageKey: string, drafts: DraftRecord) {
+    if (typeof window === "undefined") return;
+    if (Object.keys(drafts).length === 0) {
+        localStorage.removeItem(storageKey);
+        return;
+    }
+    localStorage.setItem(storageKey, JSON.stringify(drafts));
+}
+
+function mergeEntriesWithDrafts(entries: TranslationEntry[], drafts: DraftRecord): TranslationEntry[] {
+    if (Object.keys(drafts).length === 0) return entries;
+    return entries.map(entry => {
+        const draft = drafts[entry.key];
+        if (!draft) return entry;
+        return { ...entry, text: draft.text, source: "human" };
+    });
+}
 
 // ============================================================================
 // Toast Hook
@@ -111,15 +148,18 @@ export default function ProofreadingClient() {
     const [loadingEntries, setLoadingEntries] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedKey, setSelectedKey] = useState<string | null>(null);
+    const [drafts, setDrafts] = useState<DraftRecord>({});
 
     // Edit
     const [editValue, setEditValue] = useState("");
     const [isEditing, setIsEditing] = useState(false);
     const editRef = useRef<HTMLTextAreaElement>(null);
     const savingRef = useRef(false);
+    const autosaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // Push
     const [pushing, setPushing] = useState(false);
+    const [pullingBackup, setPullingBackup] = useState(false);
     const [pushStatus, setPushStatus] = useState<PushStatus | null>(null);
     const [syncingCN, setSyncingCN] = useState(false);
     const syncingCNRef = useRef(false);
@@ -159,6 +199,10 @@ export default function ProofreadingClient() {
         () => (selectedKey ? filteredEntries.findIndex(e => e.key === selectedKey) : -1),
         [selectedKey, filteredEntries]
     );
+    const draftStorageKey = useMemo(() => {
+        if (!selectedCategory || !selectedField) return "";
+        return makeDraftStorageKey(currentUser, selectedCategory, selectedField);
+    }, [currentUser, selectedCategory, selectedField]);
     const backendTranslatorRunning = Boolean(translateStatus?.translator?.running);
     const backendSchedulerRunning = Boolean(translateStatus?.scheduler?.running);
 
@@ -179,6 +223,10 @@ export default function ProofreadingClient() {
         setSelectedKey(null);
         setIsEditing(false);
 
+        const storageKey = makeDraftStorageKey(currentUser, selectedCategory, selectedField);
+        const loadedDrafts = loadDrafts(storageKey);
+        setDrafts(loadedDrafts);
+
         if (selectedCategory === "eventStory") {
             const eventId = Number(selectedField);
             getEventStory(eventId)
@@ -193,12 +241,13 @@ export default function ProofreadingClient() {
                                     text: cn,
                                     source: "human" // Event stories use human translation for now
                                 });
+                                });
                             });
-                        });
-                    setEntries(newEntries);
-                    if (newEntries.length > 0) {
-                        setSelectedKey(newEntries[0].key);
-                        setEditValue(newEntries[0].text);
+                    const mergedEntries = mergeEntriesWithDrafts(newEntries, loadedDrafts);
+                    setEntries(mergedEntries);
+                    if (mergedEntries.length > 0) {
+                        setSelectedKey(mergedEntries[0].key);
+                        setEditValue(mergedEntries[0].text);
                         setIsEditing(false);
                     }
                 })
@@ -211,16 +260,22 @@ export default function ProofreadingClient() {
             .then(data => {
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
                 data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
-                setEntries(data);
-                if (data.length > 0) {
-                    setSelectedKey(data[0].key);
-                    setEditValue(data[0].text);
+                const mergedEntries = mergeEntriesWithDrafts(data, loadedDrafts);
+                setEntries(mergedEntries);
+                if (mergedEntries.length > 0) {
+                    setSelectedKey(mergedEntries[0].key);
+                    setEditValue(mergedEntries[0].text);
                     setIsEditing(false);
                 }
             })
             .catch(err => showToast(err.message, "err"))
             .finally(() => setLoadingEntries(false));
-    }, [selectedCategory, selectedField, sourceFilter, loggedIn, showToast]);
+    }, [selectedCategory, selectedField, sourceFilter, loggedIn, showToast, currentUser]);
+
+    useEffect(() => {
+        if (!draftStorageKey) return;
+        saveDrafts(draftStorageKey, drafts);
+    }, [draftStorageKey, drafts]);
 
     // ---- Push status polling ----
     useEffect(() => {
@@ -286,8 +341,8 @@ export default function ProofreadingClient() {
         setSelectedKey(key);
         setIsEditing(false);
         const entry = entries.find(e => e.key === key);
-        if (entry) setEditValue(entry.text);
-    }, [entries]);
+        if (entry) setEditValue(drafts[key]?.text ?? entry.text);
+    }, [entries, drafts]);
 
     const navigateEntry = useCallback((dir: 1 | -1) => {
         if (selectedIndex < 0) return;
@@ -295,11 +350,71 @@ export default function ProofreadingClient() {
         if (idx < 0 || idx >= filteredEntries.length) return;
         const next = filteredEntries[idx];
         setSelectedKey(next.key);
-        setEditValue(next.text);
+        setEditValue(drafts[next.key]?.text ?? next.text);
         setIsEditing(false);
         document.querySelector(`[data-key="${CSS.escape(next.key)}"]`)
             ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-    }, [selectedIndex, filteredEntries]);
+    }, [selectedIndex, filteredEntries, drafts]);
+
+    const saveDraft = useCallback((key: string, text: string) => {
+        setDrafts(prev => ({
+            ...prev,
+            [key]: { text, updatedAt: Date.now() },
+        }));
+    }, []);
+
+    const clearDraft = useCallback((key: string) => {
+        setDrafts(prev => {
+            if (!prev[key]) return prev;
+            const next = { ...prev };
+            delete next[key];
+            return next;
+        });
+    }, []);
+
+    const autoSaveCurrent = useCallback(async () => {
+        if (savingRef.current || !selectedKey || !selectedCategory || !selectedField) return;
+        const current = entries.find(e => e.key === selectedKey);
+        if (!current) return;
+        const hasDraft = Boolean(drafts[selectedKey]);
+        if (editValue === current.text && !hasDraft) {
+            clearDraft(selectedKey);
+            return;
+        }
+
+        savingRef.current = true;
+        try {
+            if (selectedCategory === "eventStory") {
+                const parts = selectedKey.split("|");
+                const episodeNo = parts[0];
+                const jp = parts.slice(1).join("|");
+                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue);
+            } else {
+                await updateEntry(selectedCategory, selectedField, selectedKey, editValue, "human");
+            }
+            setEntries(prev => prev.map(e => e.key === selectedKey ? { ...e, text: editValue, source: "human" } : e));
+            clearDraft(selectedKey);
+        } catch {
+            showToast("自动保存失败，内容已本地暂存", "err");
+        } finally {
+            savingRef.current = false;
+        }
+    }, [selectedKey, selectedCategory, selectedField, editValue, entries, drafts, clearDraft, showToast]);
+
+    useEffect(() => {
+        if (!selectedKey || !isEditing) return;
+        if (autosaveTimerRef.current) {
+            clearTimeout(autosaveTimerRef.current);
+        }
+        autosaveTimerRef.current = setTimeout(() => {
+            void autoSaveCurrent();
+        }, 1200);
+        return () => {
+            if (autosaveTimerRef.current) {
+                clearTimeout(autosaveTimerRef.current);
+            }
+        };
+    }, [selectedKey, isEditing, editValue, autoSaveCurrent]);
 
     const handleSave = useCallback(async (overrideSource?: string) => {
         if (savingRef.current || !selectedKey || !selectedCategory || !selectedField) return;
@@ -316,6 +431,7 @@ export default function ProofreadingClient() {
                 setEntries(prev => prev.map(e =>
                     e.key === selectedKey ? { ...e, text: editValue, source: src } : e
                 ));
+                clearDraft(selectedKey);
                 showToast("剧情翻译已保存", "ok");
             } else {
                 const result = await updateEntry(selectedCategory, selectedField, selectedKey, editValue, src);
@@ -324,6 +440,7 @@ export default function ProofreadingClient() {
                 setEntries(prev => prev.map(e =>
                     e.key === selectedKey ? { ...e, text: editValue, source: src } : e
                 ));
+                clearDraft(selectedKey);
 
                 if (result.status !== "noop") {
                     showToast("保存成功", "ok");
@@ -347,7 +464,7 @@ export default function ProofreadingClient() {
         } finally {
             savingRef.current = false;
         }
-    }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast]);
+    }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast, clearDraft]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
         if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
@@ -366,12 +483,64 @@ export default function ProofreadingClient() {
         setPushing(true);
         try {
             await pushToHub();
-            showToast("推送成功", "ok");
+            showToast("上传本地数据成功", "ok");
             getPushStatus().then(setPushStatus);
         } catch (err) {
-            showToast(err instanceof Error ? err.message : "推送失败", "err");
+            showToast(err instanceof Error ? err.message : "上传失败", "err");
         } finally {
             setPushing(false);
+        }
+    };
+
+    const handlePullLatestBackup = async () => {
+        setPullingBackup(true);
+        try {
+            await pullLatestBackup();
+            showToast("已拉取 backup-translations 最新备份", "ok");
+
+            const cats = await getCategories();
+            setCategories(cats);
+
+            if (selectedCategory && selectedField) {
+                if (selectedCategory === "eventStory") {
+                    const detail = await getEventStory(Number(selectedField));
+                    const newEntries: TranslationEntry[] = [];
+                    Object.entries(detail.episodes)
+                        .sort((a, b) => Number(a[0]) - Number(b[0]))
+                        .forEach(([episodeNo, ep]) => {
+                            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
+                                newEntries.push({ key: `${episodeNo}|${jp}`, text: cn, source: "human" });
+                            });
+                        });
+                    const merged = mergeEntriesWithDrafts(newEntries, drafts);
+                    setEntries(merged);
+                    if (selectedKey) {
+                        const current = merged.find(e => e.key === selectedKey);
+                        if (current) {
+                            setEditValue(drafts[selectedKey]?.text ?? current.text);
+                        }
+                    }
+                } else {
+                    const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
+                    const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
+                    data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                    const merged = mergeEntriesWithDrafts(data, drafts);
+                    setEntries(merged);
+                    if (selectedKey) {
+                        const current = merged.find(e => e.key === selectedKey);
+                        if (current) {
+                            setEditValue(drafts[selectedKey]?.text ?? current.text);
+                        }
+                    }
+                }
+            }
+
+            const stories = await getEventStories();
+            setEventStories(stories);
+        } catch (err) {
+            showToast(err instanceof Error ? err.message : "拉取备份失败", "err");
+        } finally {
+            setPullingBackup(false);
         }
     };
 
@@ -391,7 +560,7 @@ export default function ProofreadingClient() {
                 const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
                 data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
-                setEntries(data);
+                setEntries(mergeEntriesWithDrafts(data, drafts));
             }
             const stories = await getEventStories();
             setEventStories(stories);
@@ -424,7 +593,7 @@ export default function ProofreadingClient() {
                 const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
                 data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
-                setEntries(data);
+                setEntries(mergeEntriesWithDrafts(data, drafts));
             }
         } catch (err) {
             const message = err instanceof Error ? err.message : "AI翻译失败";
@@ -562,13 +731,16 @@ export default function ProofreadingClient() {
                             </details>
                         )}
 
-                        <button className="push-btn" onClick={handlePush} disabled={pushing}>
-                            {pushing ? "备份中..." : "备份"}
+                        <button className="push-btn" onClick={handlePush} disabled={pushing || pullingBackup || syncingCN || aiTranslating}>
+                            {pushing ? "上传中..." : "上传本地数据"}
                         </button>
-                        <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pushing || aiTranslating || backendSchedulerRunning || backendTranslatorRunning}>
+                        <button className="sync-btn" onClick={handlePullLatestBackup} disabled={pullingBackup || pushing || syncingCN || aiTranslating || backendSchedulerRunning || backendTranslatorRunning}>
+                            {pullingBackup ? "拉取中..." : "拉取最新备份"}
+                        </button>
+                        <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pullingBackup || pushing || aiTranslating || backendSchedulerRunning || backendTranslatorRunning}>
                             {(syncingCN || backendSchedulerRunning) ? "更新中..." : "数据更新"}
                         </button>
-                        <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || backendTranslatorRunning || backendSchedulerRunning}>
+                        <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || pullingBackup || backendTranslatorRunning || backendSchedulerRunning}>
                             {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
                         </button>
                         {pushStatus?.lastPush && (
@@ -654,7 +826,12 @@ export default function ProofreadingClient() {
                                             ref={editRef}
                                             className={`proof-textarea ${!isEditing ? "gray" : ""}`}
                                             value={editValue}
-                                            onChange={e => { setIsEditing(true); setEditValue(e.target.value); }}
+                                            onChange={e => {
+                                                const value = e.target.value;
+                                                setIsEditing(true);
+                                                setEditValue(value);
+                                                if (selectedKey) saveDraft(selectedKey, value);
+                                            }}
                                             onClick={() => setIsEditing(true)}
                                             onKeyDown={handleTextareaKeyDown}
                                             placeholder="输入翻译..."
