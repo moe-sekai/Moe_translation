@@ -466,7 +466,7 @@ body {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-shrink: 0;
 }
 
@@ -562,7 +562,8 @@ body {
 
 .btn-save,
 .btn-pinned,
-.btn-cancel {
+.btn-cancel,
+.btn-detail {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 6px;
@@ -586,10 +587,56 @@ body {
     color: var(--text-dim);
 }
 
+.btn-detail {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-detail:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .btn-save:hover,
 .btn-pinned:hover,
-.btn-cancel:hover {
+.btn-cancel:hover,
+.btn-detail:hover {
     opacity: 0.85;
+}
+
+.detail-menu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.detail-menu-list {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.35rem;
+    min-width: 120px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.detail-menu-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.detail-menu-item:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .btn-ai-all {
@@ -651,6 +698,10 @@ body {
     background: var(--bg);
 }
 
+.col-detail {
+    width: 130px;
+}
+
 .col-source {
     width: 70px;
 }
@@ -676,6 +727,11 @@ body {
 .entry-row td {
     padding: 0.5rem 0.75rem;
     vertical-align: top;
+}
+
+.btn-detail-sm {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.75rem;
 }
 
 .jp-text {

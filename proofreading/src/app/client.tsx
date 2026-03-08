@@ -36,6 +36,19 @@ const SOURCE_LABELS: Record<string, string> = {
     cn: "官方", human: "人工", pinned: "锁定", llm: "AI", unknown: "未知",
 };
 
+const SOURCE_BASE = (process.env.NEXT_PUBLIC_PJSK_BASE || "https://pjsk.moe").replace(/\/+$/, "");
+
+const DETAIL_BUILDERS: Record<string, (id: string) => string> = {
+    cards: (id) => `${SOURCE_BASE}/cards/${id}/`,
+    events: (id) => `${SOURCE_BASE}/events/${id}/`,
+    gacha: (id) => `${SOURCE_BASE}/gacha/${id}/`,
+    virtualLive: (id) => `${SOURCE_BASE}/live/${id}/`,
+    music: (id) => `${SOURCE_BASE}/music/${id}/`,
+    mysekai: (id) => `${SOURCE_BASE}/mysekai/${id}/`,
+    costumes: (id) => `${SOURCE_BASE}/costumes/${id}/`,
+    characters: (id) => `${SOURCE_BASE}/character/${id}/`,
+};
+
 type DraftRecord = Record<string, { text: string; updatedAt: number }>;
 
 function makeDraftStorageKey(username: string, category: string, field: string): string {
@@ -149,6 +162,10 @@ export default function ProofreadingClient() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedKey, setSelectedKey] = useState<string | null>(null);
     const [drafts, setDrafts] = useState<DraftRecord>({});
+    const [rowDetailMenuKey, setRowDetailMenuKey] = useState<string | null>(null);
+    const [rowLastDetailId, setRowLastDetailId] = useState<Record<string, string>>({});
+    const [detailMenuOpen, setDetailMenuOpen] = useState(false);
+    const [lastDetailId, setLastDetailId] = useState("");
 
     // Edit
     const [editValue, setEditValue] = useState("");
@@ -205,6 +222,96 @@ export default function ProofreadingClient() {
     }, [currentUser, selectedCategory, selectedField]);
     const backendTranslatorRunning = Boolean(translateStatus?.translator?.running);
     const backendSchedulerRunning = Boolean(translateStatus?.scheduler?.running);
+
+    const detailInfo = useMemo(() => {
+        if (!selectedEntry) {
+            return { mode: "none" as const, label: "页面", url: "", ids: [], disabledReason: "无可用条目" };
+        }
+        if (selectedCategory === "eventStory") {
+            const eventId = selectedField;
+            if (!eventId) {
+                return { mode: "none" as const, label: "页面", url: "", ids: [], disabledReason: "缺少活动ID" };
+            }
+            const label = `${eventId} Moesekai 页面`;
+            return { mode: "single" as const, label, url: `${SOURCE_BASE}/eventstory/${eventId}/`, ids: [], disabledReason: "" };
+        }
+        const builder = DETAIL_BUILDERS[selectedCategory];
+        if (!builder) {
+            return { mode: "none" as const, label: "页面", url: "", ids: [], disabledReason: "该分类暂无来源链接" };
+        }
+        const ids = selectedEntry.ids || [];
+        if (ids.length === 0) {
+            return { mode: "none" as const, label: "页面", url: "", ids, disabledReason: "缺少来源ID" };
+        }
+        if (ids.length === 1) {
+            return { mode: "single" as const, label: `${ids[0]} Moesekai 页面`, url: builder(ids[0]), ids, disabledReason: "" };
+        }
+        const label = lastDetailId && ids.includes(lastDetailId)
+            ? `Moesekai 页面 (${lastDetailId})`
+            : `Moesekai 页面 (${ids.length})`;
+        return { mode: "multi" as const, label, ids, builder, disabledReason: "" };
+    }, [selectedEntry, selectedCategory, selectedField, lastDetailId]);
+
+    const handleOpenDetail = useCallback((url: string) => {
+        if (!url) return;
+        window.open(url, "_blank", "noopener,noreferrer");
+    }, []);
+
+    const detailMenuRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        setDetailMenuOpen(false);
+        setLastDetailId("");
+    }, [selectedEntry?.key, selectedCategory, selectedField]);
+
+    useEffect(() => {
+        if (!detailMenuOpen) return;
+        const handleClick = (e: MouseEvent) => {
+            if (!detailMenuRef.current) return;
+            if (detailMenuRef.current.contains(e.target as Node)) return;
+            setDetailMenuOpen(false);
+        };
+        window.addEventListener("click", handleClick);
+        return () => window.removeEventListener("click", handleClick);
+    }, [detailMenuOpen]);
+
+    useEffect(() => {
+        if (!rowDetailMenuKey) return;
+        const handleClick = (e: MouseEvent) => {
+            const target = e.target as HTMLElement | null;
+            if (target && target.closest(".detail-menu")) return;
+            setRowDetailMenuKey(null);
+        };
+        window.addEventListener("click", handleClick);
+        return () => window.removeEventListener("click", handleClick);
+    }, [rowDetailMenuKey]);
+
+    const buildRowDetail = useCallback((entry: TranslationEntry) => {
+        if (selectedCategory === "eventStory") {
+            if (!selectedField) {
+                return { mode: "none" as const, label: "页面", url: "", disabledReason: "缺少活动ID" };
+            }
+            return {
+                mode: "single" as const,
+                label: `${selectedField} 页面`,
+                url: `${SOURCE_BASE}/eventstory/${selectedField}/`,
+            };
+        }
+        const builder = DETAIL_BUILDERS[selectedCategory];
+        if (!builder) {
+            return { mode: "none" as const, label: "页面", url: "", disabledReason: "该分类暂无来源链接" };
+        }
+        const ids = entry.ids || [];
+        if (ids.length === 0) {
+            return { mode: "none" as const, label: "页面", url: "", disabledReason: "缺少来源ID" };
+        }
+        if (ids.length === 1) {
+            return { mode: "single" as const, label: `${ids[0]} 页面`, url: builder(ids[0]) };
+        }
+        const last = rowLastDetailId[entry.key];
+        const label = last && ids.includes(last) ? `页面 (${last})` : `页面 (${ids.length})`;
+        return { mode: "multi" as const, label, ids, builder };
+    }, [selectedCategory, selectedField, rowLastDetailId]);
 
     // ---- Auth check on mount ----
     useEffect(() => {
@@ -841,6 +948,44 @@ export default function ProofreadingClient() {
                                             <button className="btn-save" onClick={() => handleSave()}>✓ 保存并下一条</button>
                                             <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
                                             <button className="btn-cancel" onClick={() => { setSelectedKey(null); setIsEditing(false); }}>取消</button>
+                                            {detailInfo.mode === "multi" && detailInfo.ids && detailInfo.ids.length > 1 ? (
+                                                <div className="detail-menu" ref={detailMenuRef}>
+                                                    <button
+                                                        className="btn-detail"
+                                                        onClick={() => setDetailMenuOpen(v => !v)}
+                                                        title="选择来源页面"
+                                                    >
+                                                        {detailInfo.label}
+                                                    </button>
+                                                    {detailMenuOpen && (
+                                                        <div className="detail-menu-list">
+                                                            {detailInfo.ids.map(id => (
+                                                                <button
+                                                                    key={id}
+                                                                    className="detail-menu-item"
+                                                                    onClick={() => {
+                                                                        if (!detailInfo.builder) return;
+                                                                        handleOpenDetail(detailInfo.builder(id));
+                                                                        setLastDetailId(id);
+                                                                        setDetailMenuOpen(false);
+                                                                    }}
+                                                                >
+                                                                    {id}
+                                                                </button>
+                                                            ))}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ) : (
+                                                <button
+                                                    className="btn-detail"
+                                                    onClick={() => handleOpenDetail(detailInfo.url || "")}
+                                                    disabled={!detailInfo.url}
+                                                    title={detailInfo.url ? "打开来源详情" : detailInfo.disabledReason}
+                                                >
+                                                    {detailInfo.label}
+                                                </button>
+                                            )}
                                             <div className="proof-hints">
                                                 <kbd>Enter</kbd> 保存 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
                                             </div>
@@ -862,41 +1007,84 @@ export default function ProofreadingClient() {
                                     <table className="translation-table">
                                         <thead>
                                             <tr>
+                                                <th className="col-detail">页面</th>
                                                 <th className="col-source">来源</th>
                                                 <th className="col-jp">日文原文</th>
                                                 <th className="col-cn">当前翻译</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {filteredEntries.map(entry => (
-                                                <tr
-                                                    key={entry.key}
-                                                    data-key={entry.key}
-                                                    className={`entry-row ${selectedKey === entry.key ? "row-active" : ""}`}
-                                                    onClick={() => selectEntry(entry.key)}
-                                                >
-                                                    <td onClick={e => e.stopPropagation()}>
-                                                        <select
-                                                            value={entry.source}
-                                                            onChange={e => handleSourceChange(entry.key, e.target.value)}
-                                                            className={`source-tag ${entry.source}`}
-                                                        >
-                                                            {Object.entries(SOURCE_LABELS).map(([k, v]) => (
-                                                                <option key={k} value={k}>{v}</option>
-                                                            ))}
-                                                        </select>
-                                                    </td>
-                                                    <td><div className="jp-text">
-                                                        {selectedCategory === "eventStory" ? entry.key.split("|").slice(1).join("|") : entry.key}
-                                                        {selectedCategory === "eventStory" && (
-                                                            <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
-                                                                第 {entry.key.split("|")[0]} 章
-                                                            </div>
+                                            {filteredEntries.map(entry => {
+                                                const rowDetail = buildRowDetail(entry);
+                                                return (
+                                                    <tr
+                                                        key={entry.key}
+                                                        data-key={entry.key}
+                                                        className={`entry-row ${selectedKey === entry.key ? "row-active" : ""}`}
+                                                        onClick={() => selectEntry(entry.key)}
+                                                    >
+                                                        <td onClick={e => e.stopPropagation()}>
+                                                            {rowDetail.mode === "multi" && rowDetail.ids ? (
+                                                                <div className="detail-menu">
+                                                                    <button
+                                                                        className="btn-detail btn-detail-sm"
+                                                                        onClick={() => setRowDetailMenuKey(k => (k === entry.key ? null : entry.key))}
+                                                                    >
+                                                                        {rowDetail.label}
+                                                                    </button>
+                                                                    {rowDetailMenuKey === entry.key && (
+                                                                        <div className="detail-menu-list">
+                                                                            {rowDetail.ids.map(id => (
+                                                                                <button
+                                                                                    key={id}
+                                                                                    className="detail-menu-item"
+                                                                                    onClick={() => {
+                                                                                        if (!rowDetail.builder) return;
+                                                                                        handleOpenDetail(rowDetail.builder(id));
+                                                                                        setRowLastDetailId(prev => ({ ...prev, [entry.key]: id }));
+                                                                                        setRowDetailMenuKey(null);
+                                                                                    }}
+                                                                                >
+                                                                                    {id}
+                                                                                </button>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </div>
+                                                            ) : (
+                                                            <button
+                                                                className="btn-detail btn-detail-sm"
+                                                                onClick={() => handleOpenDetail(rowDetail.url || "")}
+                                                                disabled={!rowDetail.url}
+                                                                title={rowDetail.url ? "打开来源详情" : (rowDetail.disabledReason || "缺少来源ID")}
+                                                            >
+                                                                {rowDetail.label}
+                                                            </button>
                                                         )}
-                                                    </div></td>
-                                                    <td><div className="cn-text">{entry.text}</div></td>
-                                                </tr>
-                                            ))}
+                                                        </td>
+                                                        <td onClick={e => e.stopPropagation()}>
+                                                            <select
+                                                                value={entry.source}
+                                                                onChange={e => handleSourceChange(entry.key, e.target.value)}
+                                                                className={`source-tag ${entry.source}`}
+                                                            >
+                                                                {Object.entries(SOURCE_LABELS).map(([k, v]) => (
+                                                                    <option key={k} value={k}>{v}</option>
+                                                                ))}
+                                                            </select>
+                                                        </td>
+                                                        <td><div className="jp-text">
+                                                            {selectedCategory === "eventStory" ? entry.key.split("|").slice(1).join("|") : entry.key}
+                                                            {selectedCategory === "eventStory" && (
+                                                                <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                                                    第 {entry.key.split("|")[0]} 章
+                                                                </div>
+                                                            )}
+                                                        </div></td>
+                                                        <td><div className="cn-text">{entry.text}</div></td>
+                                                    </tr>
+                                                );
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>

@@ -41,6 +41,7 @@ RUN chmod +x ./docker-entrypoint.sh
 
 ENV PORT=9090
 ENV TRANSLATION_PATH=/data/translations
+ENV DATA_DIR=/data
 ENV STATIC_DIR=/app/proofreading-ui
 ENV GIT_WORKSPACE=/app/git-workspace
 ENV GIT_PUSH_BRANCH=backup-translations
