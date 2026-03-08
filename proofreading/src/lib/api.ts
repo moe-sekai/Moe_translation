@@ -80,7 +80,9 @@ export interface EventStoryDetail {
     episodes: Record<string, {
         scenarioId: string;
         title: string;
+        titleSource?: string;
         talkData: Record<string, string>;
+        talkSources?: Record<string, string>;
     }>;
 }
 
@@ -213,10 +215,17 @@ export async function getEventStory(eventId: number) {
 }
 
 export async function updateEventStoryLine(
-    eventId: number, episodeNo: string, jpKey: string, cnText: string
+    eventId: number, episodeNo: string, jpKey: string, cnText: string, source = "human"
 ) {
     return apiFetch<{ status: string }>("/event-story/update", {
         method: "PUT",
-        body: JSON.stringify({ eventId, episodeNo, jpKey, cnText }),
+        body: JSON.stringify({ eventId, episodeNo, jpKey, cnText, source }),
+    });
+}
+
+export async function promoteEventStoryHuman(eventId: number) {
+    return apiFetch<{ status: string }>("/event-story/promote-human", {
+        method: "POST",
+        body: JSON.stringify({ eventId }),
     });
 }

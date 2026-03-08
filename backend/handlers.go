@@ -39,6 +39,7 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/event-stories", h.requireAuth(h.handleEventStories))
 	mux.HandleFunc("/api/event-story", h.requireAuth(h.handleEventStory))
 	mux.HandleFunc("/api/event-story/update", h.requireAuth(h.handleUpdateEventStory))
+	mux.HandleFunc("/api/event-story/promote-human", h.requireAuth(h.handlePromoteEventStoryHuman))
 }
 
 // requireAuth wraps a handler with authentication.
@@ -322,6 +323,7 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 		EpisodeNo string `json:"episodeNo"`
 		JpKey     string `json:"jpKey"`
 		CnText    string `json:"cnText"`
+		Source    string `json:"source"`
 	}
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
@@ -332,11 +334,37 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 		return
 	}
 	user := r.Header.Get("X-Username")
-	if err := h.translator.UpdateEventStoryLine(req.EventID, req.EpisodeNo, req.JpKey, req.CnText); err != nil {
+	if err := h.translator.UpdateEventStoryLine(req.EventID, req.EpisodeNo, req.JpKey, req.CnText, req.Source); err != nil {
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}
-	fmt.Printf("[edit-story] event%d/ep%s: %q -> %q by %s\n", req.EventID, req.EpisodeNo, req.JpKey, req.CnText, user)
+	fmt.Printf("[edit-story] event%d/ep%s: %q -> %q (%s) by %s\n", req.EventID, req.EpisodeNo, req.JpKey, req.CnText, req.Source, user)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+}
+
+func (h *Handler) handlePromoteEventStoryHuman(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req struct {
+		EventID int `json:"eventId"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	if req.EventID <= 0 {
+		http.Error(w, `{"error":"eventId is required"}`, http.StatusBadRequest)
+		return
+	}
+	user := r.Header.Get("X-Username")
+	if err := h.translator.PromoteEventStoryHuman(req.EventID); err != nil {
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	fmt.Printf("[edit-story] event%d: promoted all lines to human by %s\n", req.EventID, user)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
 }

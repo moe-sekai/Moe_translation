@@ -5,7 +5,7 @@ import {
     getToken, setToken, clearToken, getUsername, setUsername,
     login, getCategories, getEntries, updateEntry, pushToHub, pullLatestBackup, getPushStatus,
     triggerAITranslateAll, getEventStories, getEventStory, runCNSync, getTranslateStatus,
-    updateEventStoryLine,
+    updateEventStoryLine, promoteEventStoryHuman,
     type CategoryInfo, type TranslationEntry, type PushStatus,
     type EventStorySummary, type EventStoryDetail, type TranslateStatusResponse,
 } from "@/lib/api";
@@ -56,8 +56,21 @@ function normalizeEventStorySource(source: string | undefined): string {
     }
 }
 
-function getPersistedEventStorySource(source: string | undefined): string {
-    return normalizeEventStorySource(source);
+function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
+    const storySource = normalizeEventStorySource(detail.meta?.source);
+    const entries: TranslationEntry[] = [];
+    Object.entries(detail.episodes)
+        .sort((a, b) => Number(a[0]) - Number(b[0]))
+        .forEach(([episodeNo, ep]) => {
+            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
+                entries.push({
+                    key: `${episodeNo}|${jp}`,
+                    text: cn,
+                    source: ep.talkSources?.[jp] || storySource,
+                });
+            });
+        });
+    return entries;
 }
 
 const DETAIL_BUILDERS: Record<string, (id: string) => string> = {
@@ -378,19 +391,7 @@ export default function ProofreadingClient() {
             const eventId = Number(selectedField);
             getEventStory(eventId)
                 .then(detail => {
-                    const storySource = normalizeEventStorySource(detail.meta?.source);
-                    const newEntries: TranslationEntry[] = [];
-                    Object.entries(detail.episodes)
-                        .sort((a, b) => Number(a[0]) - Number(b[0]))
-                        .forEach(([episodeNo, ep]) => {
-                            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
-                                newEntries.push({
-                                    key: `${episodeNo}|${jp}`,
-                                    text: cn,
-                                    source: storySource,
-                                });
-                            });
-                        });
+                    const newEntries = buildEventStoryEntries(detail);
                     const mergedEntries = mergeEntriesWithDrafts(newEntries, loadedDrafts);
                     setEntries(mergedEntries);
                     if (mergedEntries.length > 0) {
@@ -540,7 +541,7 @@ export default function ProofreadingClient() {
                 const parts = selectedKey.split("|");
                 const episodeNo = parts[0];
                 const jp = parts.slice(1).join("|");
-                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue);
+                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue, "human");
             } else {
                 await updateEntry(selectedCategory, selectedField, selectedKey, editValue, "human");
             }
@@ -549,7 +550,7 @@ export default function ProofreadingClient() {
                 return {
                     ...e,
                     text: editValue,
-                    source: selectedCategory === "eventStory" ? getPersistedEventStorySource(e.source) : "human",
+                    source: "human",
                 };
             }));
             clearDraft(selectedKey);
@@ -579,18 +580,16 @@ export default function ProofreadingClient() {
         if (savingRef.current || !selectedKey || !selectedCategory || !selectedField) return;
         savingRef.current = true;
         const src = overrideSource || "human";
-        const current = entries.find(e => e.key === selectedKey);
-        const persistedEventStorySource = getPersistedEventStorySource(current?.source);
 
         try {
             if (selectedCategory === "eventStory") {
                 const parts = selectedKey.split("|");
                 const episodeNo = parts[0];
                 const jp = parts.slice(1).join("|");
-                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue);
+                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue, src);
 
                 setEntries(prev => prev.map(e =>
-                    e.key === selectedKey ? { ...e, text: editValue, source: persistedEventStorySource } : e
+                    e.key === selectedKey ? { ...e, text: editValue, source: src } : e
                 ));
                 clearDraft(selectedKey);
                 showToast("剧情翻译已保存", "ok");
@@ -631,6 +630,23 @@ export default function ProofreadingClient() {
         }
     }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast, clearDraft, entries]);
 
+    const handlePromoteCurrentEventStoryHuman = useCallback(async () => {
+	    if (savingRef.current || selectedCategory !== "eventStory" || !selectedField) return;
+	    await autoSaveCurrent();
+	    savingRef.current = true;
+	    try {
+	        await promoteEventStoryHuman(Number(selectedField));
+	        setEntries(prev => prev.map(entry => ({ ...entry, source: "human" })));
+	        const stories = await getEventStories();
+	        setEventStories(stories);
+	        showToast("已将当前剧情整篇标记为人工", "ok");
+	    } catch (err) {
+	        showToast(err instanceof Error ? err.message : "整篇标记失败", "err");
+	    } finally {
+	        savingRef.current = false;
+	    }
+    }, [autoSaveCurrent, selectedCategory, selectedField, showToast]);
+
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
         if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
         const entry = entries.find(e => e.key === key);
@@ -669,15 +685,7 @@ export default function ProofreadingClient() {
             if (selectedCategory && selectedField) {
                 if (selectedCategory === "eventStory") {
                     const detail = await getEventStory(Number(selectedField));
-                    const storySource = normalizeEventStorySource(detail.meta?.source);
-                    const newEntries: TranslationEntry[] = [];
-                    Object.entries(detail.episodes)
-                        .sort((a, b) => Number(a[0]) - Number(b[0]))
-                        .forEach(([episodeNo, ep]) => {
-                            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
-                                newEntries.push({ key: `${episodeNo}|${jp}`, text: cn, source: storySource });
-                            });
-                        });
+                    const newEntries = buildEventStoryEntries(detail);
                     const merged = mergeEntriesWithDrafts(newEntries, drafts);
                     setEntries(merged);
                     if (selectedKey) {
@@ -727,14 +735,19 @@ export default function ProofreadingClient() {
             const cats = await getCategories();
             setCategories(cats);
             if (selectedCategory && selectedField) {
-                const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
-                const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                data.sort((a, b) => {
-                    const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
-                    if (diff !== 0) return diff;
-                    return a.key.localeCompare(b.key, undefined, { numeric: true });
-                });
-                setEntries(mergeEntriesWithDrafts(data, drafts));
+                if (selectedCategory === "eventStory") {
+                    const detail = await getEventStory(Number(selectedField));
+                    setEntries(mergeEntriesWithDrafts(buildEventStoryEntries(detail), drafts));
+                } else {
+                    const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
+                    const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
+                    data.sort((a, b) => {
+                        const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
+                        if (diff !== 0) return diff;
+                        return a.key.localeCompare(b.key, undefined, { numeric: true });
+                    });
+                    setEntries(mergeEntriesWithDrafts(data, drafts));
+                }
             }
             const stories = await getEventStories();
             setEventStories(stories);
@@ -932,6 +945,7 @@ export default function ProofreadingClient() {
                                                     Event #{story.eventId}
                                                 </span>
                                                 <div className="field-stats">
+                                                    {!isIgnored && story.source === "llm" && <span className="badge llm">AI</span>}
                                                     {!isIgnored && <span className="badge cn">{story.episodeCount}章</span>}
                                                 </div>
                                             </div>
@@ -1064,6 +1078,9 @@ export default function ProofreadingClient() {
                                         />
                                         <div className="proof-actions">
                                             <button className="btn-save" onClick={() => handleSave()}>✓ 保存并下一条</button>
+                                            {selectedCategory === "eventStory" && (
+                                                <button className="btn-pinned" onClick={handlePromoteCurrentEventStoryHuman}>🪄 整篇标记人工</button>
+                                            )}
                                             {selectedCategory !== "eventStory" && (
                                                 <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
                                             )}

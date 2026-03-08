@@ -84,17 +84,23 @@ type EventStorySummary struct {
 	LastUpdated  int64  `json:"lastUpdated"`
 }
 
+type EventStoryMeta struct {
+	Source      string `json:"source"`
+	Version     string `json:"version"`
+	LastUpdated int64  `json:"last_updated"`
+}
+
+type EventStoryEpisode struct {
+	ScenarioID  string            `json:"scenarioId"`
+	Title       string            `json:"title"`
+	TitleSource string            `json:"titleSource,omitempty"`
+	TalkData    map[string]string `json:"talkData"`
+	TalkSources map[string]string `json:"talkSources,omitempty"`
+}
+
 type EventStoryDetail struct {
-	Meta struct {
-		Source      string `json:"source"`
-		Version     string `json:"version"`
-		LastUpdated int64  `json:"last_updated"`
-	} `json:"meta"`
-	Episodes map[string]struct {
-		ScenarioID string            `json:"scenarioId"`
-		Title      string            `json:"title"`
-		TalkData   map[string]string `json:"talkData"`
-	} `json:"episodes"`
+	Meta     EventStoryMeta               `json:"meta"`
+	Episodes map[string]EventStoryEpisode `json:"episodes"`
 }
 
 type eventStoryEpisodePayload struct {
@@ -103,11 +109,29 @@ type eventStoryEpisodePayload struct {
 	TalkData   map[string]string `json:"talkData"`
 }
 
+type eventStoryLinePayload struct {
+	Text   string `json:"text"`
+	Source string `json:"source"`
+}
+
+type eventStoryFullEpisodePayload struct {
+	ScenarioID string                           `json:"scenarioId"`
+	Title      eventStoryLinePayload            `json:"title"`
+	TalkData   map[string]eventStoryLinePayload `json:"talkData"`
+}
+
+type eventStoryFullDetail struct {
+	Meta     EventStoryMeta                          `json:"meta"`
+	Episodes map[string]eventStoryFullEpisodePayload `json:"episodes"`
+}
+
 type localEventStoryState struct {
-	EventID      int
-	Source       string
-	IsOfficialCN bool
-	IsLLM        bool
+	EventID       int
+	Source        string
+	IsOfficialCN  bool
+	IsLLM         bool
+	HasCompanion  bool
+	PreserveLocal bool
 }
 
 type Translator struct {
@@ -434,7 +458,8 @@ func (t *Translator) ListEventStories() ([]EventStorySummary, error) {
 
 func (t *Translator) GetEventStory(eventID int) (EventStoryDetail, error) {
 	var detail EventStoryDetail
-	path := filepath.Join(t.store.path, "eventStory", fmt.Sprintf("event_%d.json", eventID))
+	dir := filepath.Join(t.store.path, "eventStory")
+	path := eventStoryJSONPath(dir, eventID)
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return detail, err
@@ -446,6 +471,24 @@ func (t *Translator) GetEventStory(eventID int) (EventStoryDetail, error) {
 	detail, err = parseEventStoryDetail(data, info.ModTime().Unix())
 	if err != nil {
 		return detail, err
+	}
+	fullPath := eventStoryFullJSONPath(dir, eventID)
+	fullData, err := os.ReadFile(fullPath)
+	if err == nil {
+		fullInfo, statErr := os.Stat(fullPath)
+		if statErr != nil {
+			fmt.Printf("[eventStory] warning: stat sidecar for event %d failed: %v\n", eventID, statErr)
+			return detail, nil
+		}
+		fullDetail, parseErr := parseEventStoryFullDetail(fullData, fullInfo.ModTime().Unix(), detail)
+		if parseErr != nil {
+			fmt.Printf("[eventStory] warning: parse sidecar for event %d failed: %v\n", eventID, parseErr)
+			return detail, nil
+		}
+		applyEventStoryLineSources(&detail, fullDetail)
+	} else if !os.IsNotExist(err) {
+		fmt.Printf("[eventStory] warning: read sidecar for event %d failed: %v\n", eventID, err)
+		return detail, nil
 	}
 	return detail, nil
 }
@@ -617,8 +660,9 @@ func (t *Translator) aiTranslateField(req AITranslateRequest) (AITranslateResult
 }
 
 // UpdateEventStoryLine updates a single line in an event story file.
-func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText string) error {
-	path := filepath.Join(t.store.path, "eventStory", fmt.Sprintf("event_%d.json", eventID))
+func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText, source string) error {
+	dir := filepath.Join(t.store.path, "eventStory")
+	path := eventStoryJSONPath(dir, eventID)
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return err
@@ -631,6 +675,13 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	if err != nil {
 		return err
 	}
+	originalMainData := append([]byte(nil), data...)
+	originalFullPath := eventStoryFullJSONPath(dir, eventID)
+	originalFullData, originalFullErr := os.ReadFile(originalFullPath)
+	fullDetail, err := t.loadOrBuildEventStoryFullDetail(dir, eventID, detail)
+	if err != nil {
+		return err
+	}
 
 	ep, ok := detail.Episodes[episodeNo]
 	if !ok {
@@ -639,15 +690,110 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	if _, exists := ep.TalkData[jpKey]; !exists {
 		return fmt.Errorf("key not found in episode %s", episodeNo)
 	}
+	fullEpisode, ok := fullDetail.Episodes[episodeNo]
+	if !ok {
+		return fmt.Errorf("episode %s not found in event %d full state", episodeNo, eventID)
+	}
+	lineEntry, exists := fullEpisode.TalkData[jpKey]
+	if !exists {
+		return fmt.Errorf("key not found in episode %s full state", episodeNo)
+	}
+	lineSource := normalizeEventStoryLineSource(source)
+	if lineSource == SourceUnknown {
+		lineSource = SourceHuman
+	}
 	ep.TalkData[jpKey] = cnText
 	detail.Episodes[episodeNo] = ep
-	detail.Meta.LastUpdated = time.Now().Unix()
+	lineEntry.Text = cnText
+	lineEntry.Source = lineSource
+	fullEpisode.TalkData[jpKey] = lineEntry
+	fullDetail.Episodes[episodeNo] = fullEpisode
+	now := time.Now().Unix()
+	detail.Meta.LastUpdated = now
+	fullDetail.Meta.LastUpdated = now
+	if allEventStoryTalkDataHuman(fullDetail) {
+		promoteEventStoryFullDetailToHuman(&fullDetail)
+		detail.Meta.Source = SourceHuman
+	} else {
+		fullDetail.Meta.Source = normalizeEventStoryStorySource(detail.Meta.Source)
+	}
+	detail.Meta.Version = "1.0"
+	fullDetail.Meta.Version = "1.0"
 
 	out, err := json.MarshalIndent(detail, "", "  ")
 	if err != nil {
 		return err
 	}
 	if err := writeAtomic(path, out); err != nil {
+		return err
+	}
+	fullOut, err := json.MarshalIndent(fullDetail, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := writeAtomic(originalFullPath, fullOut); err != nil {
+		rollbackErr := writeAtomic(path, originalMainData)
+		if rollbackErr != nil {
+			return fmt.Errorf("write event story full sidecar: %w (rollback failed: %v)", err, rollbackErr)
+		}
+		if originalFullErr == nil {
+			_ = writeAtomic(originalFullPath, originalFullData)
+		}
+		return err
+	}
+	t.store.MarkExternalChange()
+	return nil
+}
+
+func (t *Translator) PromoteEventStoryHuman(eventID int) error {
+	dir := filepath.Join(t.store.path, "eventStory")
+	path := eventStoryJSONPath(dir, eventID)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return err
+	}
+	detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
+		return err
+	}
+	originalMainData := append([]byte(nil), data...)
+	originalFullPath := eventStoryFullJSONPath(dir, eventID)
+	originalFullData, originalFullErr := os.ReadFile(originalFullPath)
+	fullDetail, err := t.loadOrBuildEventStoryFullDetail(dir, eventID, detail)
+	if err != nil {
+		return err
+	}
+	now := time.Now().Unix()
+	promoteEventStoryFullDetailToHuman(&fullDetail)
+	fullDetail.Meta.LastUpdated = now
+	fullDetail.Meta.Version = "1.0"
+	detail.Meta.Source = SourceHuman
+	detail.Meta.LastUpdated = now
+	detail.Meta.Version = "1.0"
+
+	out, err := json.MarshalIndent(detail, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := writeAtomic(path, out); err != nil {
+		return err
+	}
+	fullOut, err := json.MarshalIndent(fullDetail, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := writeAtomic(originalFullPath, fullOut); err != nil {
+		rollbackErr := writeAtomic(path, originalMainData)
+		if rollbackErr != nil {
+			return fmt.Errorf("write event story full sidecar: %w (rollback failed: %v)", err, rollbackErr)
+		}
+		if originalFullErr == nil {
+			_ = writeAtomic(originalFullPath, originalFullData)
+		}
 		return err
 	}
 	t.store.MarkExternalChange()
@@ -657,16 +803,7 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDetail, error) {
 	var detail EventStoryDetail
 	if err := json.Unmarshal(raw, &detail); err == nil && detail.Episodes != nil {
-		detail.Meta.Source = strings.TrimSpace(detail.Meta.Source)
-		if detail.Meta.Source == "" {
-			detail.Meta.Source = "unknown"
-		}
-		if detail.Meta.Version == "" {
-			detail.Meta.Version = "1.0"
-		}
-		if detail.Meta.LastUpdated == 0 {
-			detail.Meta.LastUpdated = fallbackLastUpdated
-		}
+		normalizeEventStoryMeta(&detail.Meta, fallbackLastUpdated)
 		return detail, nil
 	}
 
@@ -675,11 +812,7 @@ func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDet
 		return detail, err
 	}
 
-	episodes := make(map[string]struct {
-		ScenarioID string            `json:"scenarioId"`
-		Title      string            `json:"title"`
-		TalkData   map[string]string `json:"talkData"`
-	})
+	episodes := make(map[string]EventStoryEpisode)
 	for episodeNo, episode := range legacy {
 		if _, err := strconv.Atoi(episodeNo); err != nil {
 			continue
@@ -687,11 +820,7 @@ func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDet
 		if episode.ScenarioID == "" && strings.TrimSpace(episode.Title) == "" && len(episode.TalkData) == 0 {
 			continue
 		}
-		episodes[episodeNo] = struct {
-			ScenarioID string            `json:"scenarioId"`
-			Title      string            `json:"title"`
-			TalkData   map[string]string `json:"talkData"`
-		}{
+		episodes[episodeNo] = EventStoryEpisode{
 			ScenarioID: episode.ScenarioID,
 			Title:      episode.Title,
 			TalkData:   episode.TalkData,
@@ -706,6 +835,210 @@ func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDet
 	detail.Meta.LastUpdated = fallbackLastUpdated
 	detail.Episodes = episodes
 	return detail, nil
+}
+
+func parseEventStoryFullDetail(raw []byte, fallbackLastUpdated int64, base EventStoryDetail) (eventStoryFullDetail, error) {
+	var detail eventStoryFullDetail
+	if err := json.Unmarshal(raw, &detail); err != nil {
+		return detail, err
+	}
+	if detail.Episodes == nil {
+		return detail, fmt.Errorf("unsupported event story full format")
+	}
+	normalizeEventStoryMeta(&detail.Meta, fallbackLastUpdated)
+	baseSource := normalizeEventStoryLineSource(base.Meta.Source)
+	for episodeNo, episode := range base.Episodes {
+		fullEpisode, ok := detail.Episodes[episodeNo]
+		if !ok {
+			fullEpisode = eventStoryFullEpisodePayload{
+				ScenarioID: episode.ScenarioID,
+				Title: eventStoryLinePayload{
+					Text:   episode.Title,
+					Source: baseSource,
+				},
+				TalkData: map[string]eventStoryLinePayload{},
+			}
+		}
+		if fullEpisode.TalkData == nil {
+			fullEpisode.TalkData = map[string]eventStoryLinePayload{}
+		}
+		if strings.TrimSpace(fullEpisode.ScenarioID) == "" {
+			fullEpisode.ScenarioID = episode.ScenarioID
+		}
+		if fullEpisode.Title.Text == "" {
+			fullEpisode.Title.Text = episode.Title
+		}
+		fullEpisode.Title.Source = normalizeEventStoryLineSource(fullEpisode.Title.Source)
+		for jp, cn := range episode.TalkData {
+			line, ok := fullEpisode.TalkData[jp]
+			if !ok {
+				line = eventStoryLinePayload{Text: cn, Source: baseSource}
+			} else {
+				if line.Text == "" && cn == "" {
+					line.Text = ""
+				} else if line.Text == "" {
+					line.Text = cn
+				}
+				line.Source = normalizeEventStoryLineSource(line.Source)
+			}
+			fullEpisode.TalkData[jp] = line
+		}
+		detail.Episodes[episodeNo] = fullEpisode
+	}
+	return detail, nil
+}
+
+func normalizeEventStoryMeta(meta *EventStoryMeta, fallbackLastUpdated int64) {
+	meta.Source = normalizeEventStoryStorySource(meta.Source)
+	if meta.Version == "" {
+		meta.Version = "1.0"
+	}
+	if meta.LastUpdated == 0 {
+		meta.LastUpdated = fallbackLastUpdated
+	}
+}
+
+func normalizeEventStoryStorySource(source string) string {
+	switch strings.TrimSpace(strings.ToLower(source)) {
+	case "official_cn", "llm", "jp_pending", SourceHuman, SourcePinned, SourceUnknown:
+		return strings.TrimSpace(strings.ToLower(source))
+	case "official_cn_legacy", SourceCN:
+		return "official_cn"
+	case "":
+		return SourceUnknown
+	default:
+		return strings.TrimSpace(strings.ToLower(source))
+	}
+}
+
+func normalizeEventStoryLineSource(source string) string {
+	switch strings.TrimSpace(strings.ToLower(source)) {
+	case SourceHuman, SourcePinned, SourceLLM, SourceUnknown, SourceCN:
+		return strings.TrimSpace(strings.ToLower(source))
+	case "official_cn", "official_cn_legacy":
+		return SourceCN
+	case "jp_pending", "":
+		return SourceUnknown
+	default:
+		return SourceUnknown
+	}
+}
+
+func applyEventStoryLineSources(detail *EventStoryDetail, full eventStoryFullDetail) {
+	baseSource := normalizeEventStoryLineSource(detail.Meta.Source)
+	for episodeNo, episode := range detail.Episodes {
+		fullEpisode, ok := full.Episodes[episodeNo]
+		talkSources := make(map[string]string, len(episode.TalkData))
+		titleSource := baseSource
+		if ok {
+			if normalized := normalizeEventStoryLineSource(fullEpisode.Title.Source); normalized != SourceUnknown || baseSource == SourceUnknown {
+				titleSource = normalized
+			}
+		}
+		for jp := range episode.TalkData {
+			source := baseSource
+			if ok {
+				if line, hasLine := fullEpisode.TalkData[jp]; hasLine {
+					source = normalizeEventStoryLineSource(line.Source)
+				}
+			}
+			talkSources[jp] = source
+		}
+		episode.TitleSource = titleSource
+		episode.TalkSources = talkSources
+		detail.Episodes[episodeNo] = episode
+	}
+}
+
+func buildEventStoryFullDetail(detail EventStoryDetail) eventStoryFullDetail {
+	baseSource := normalizeEventStoryLineSource(detail.Meta.Source)
+	full := eventStoryFullDetail{
+		Meta: EventStoryMeta{
+			Source:      normalizeEventStoryStorySource(detail.Meta.Source),
+			Version:     "1.0",
+			LastUpdated: detail.Meta.LastUpdated,
+		},
+		Episodes: make(map[string]eventStoryFullEpisodePayload, len(detail.Episodes)),
+	}
+	for episodeNo, episode := range detail.Episodes {
+		fullEpisode := eventStoryFullEpisodePayload{
+			ScenarioID: episode.ScenarioID,
+			Title: eventStoryLinePayload{
+				Text:   episode.Title,
+				Source: baseSource,
+			},
+			TalkData: make(map[string]eventStoryLinePayload, len(episode.TalkData)),
+		}
+		for jp, cn := range episode.TalkData {
+			fullEpisode.TalkData[jp] = eventStoryLinePayload{Text: cn, Source: baseSource}
+		}
+		full.Episodes[episodeNo] = fullEpisode
+	}
+	return full
+}
+
+func (t *Translator) loadOrBuildEventStoryFullDetail(dir string, eventID int, base EventStoryDetail) (eventStoryFullDetail, error) {
+	path := eventStoryFullJSONPath(dir, eventID)
+	raw, err := os.ReadFile(path)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return buildEventStoryFullDetail(base), nil
+		}
+		return eventStoryFullDetail{}, err
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return eventStoryFullDetail{}, err
+	}
+	return parseEventStoryFullDetail(raw, info.ModTime().Unix(), base)
+}
+
+func allEventStoryTalkDataHuman(detail eventStoryFullDetail) bool {
+	total := 0
+	for _, episode := range detail.Episodes {
+		for _, line := range episode.TalkData {
+			total++
+			if normalizeEventStoryLineSource(line.Source) != SourceHuman {
+				return false
+			}
+		}
+	}
+	return total > 0
+}
+
+func promoteEventStoryFullDetailToHuman(detail *eventStoryFullDetail) {
+	detail.Meta.Source = SourceHuman
+	for episodeNo, episode := range detail.Episodes {
+		episode.Title.Source = SourceHuman
+		for jp, line := range episode.TalkData {
+			line.Source = SourceHuman
+			episode.TalkData[jp] = line
+		}
+		detail.Episodes[episodeNo] = episode
+	}
+}
+
+func eventStoryFullHasEditableSources(detail eventStoryFullDetail) bool {
+	for _, episode := range detail.Episodes {
+		if normalizeEventStoryLineSource(episode.Title.Source) == SourceHuman || normalizeEventStoryLineSource(episode.Title.Source) == SourcePinned {
+			return true
+		}
+		for _, line := range episode.TalkData {
+			source := normalizeEventStoryLineSource(line.Source)
+			if source == SourceHuman || source == SourcePinned {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+func eventStoryJSONPath(dir string, eventID int) string {
+	return filepath.Join(dir, fmt.Sprintf("event_%d.json", eventID))
+}
+
+func eventStoryFullJSONPath(dir string, eventID int) string {
+	return filepath.Join(dir, fmt.Sprintf("event_%d.full.json", eventID))
 }
 
 func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string, trace TraceMap) (int, error) {
@@ -1287,7 +1620,7 @@ func (t *Translator) syncEventStoriesCNOnly() (int, error) {
 		}
 		lastCheckedEventID = eventID
 
-		if state, ok := localStates[eventID]; ok && state.IsOfficialCN {
+		if state, ok := localStates[eventID]; ok && (state.IsOfficialCN || state.PreserveLocal) {
 			emptyCNStreak = 0
 			continue
 		}
@@ -1395,6 +1728,7 @@ func (t *Translator) loadLocalEventStoryStates(dir string) (map[int]localEventSt
 			continue
 		}
 		state := localEventStoryState{EventID: eventID}
+		fullPath := eventStoryFullJSONPath(dir, eventID)
 		detail, err := parseEventStoryDetail(raw, info.ModTime().Unix())
 		if err != nil {
 			state.Source = "unknown"
@@ -1405,6 +1739,24 @@ func (t *Translator) loadLocalEventStoryStates(dir string) (map[int]localEventSt
 			}
 			state.IsOfficialCN = detail.Meta.Source == "official_cn"
 			state.IsLLM = detail.Meta.Source == "llm"
+			if detail.Meta.Source == SourceHuman || detail.Meta.Source == SourcePinned {
+				state.PreserveLocal = true
+			}
+		}
+		fullRaw, fullErr := os.ReadFile(fullPath)
+		if fullErr == nil {
+			state.HasCompanion = true
+			fullInfo, statErr := os.Stat(fullPath)
+			if statErr != nil {
+				state.PreserveLocal = true
+			} else {
+				fullDetail, parseErr := parseEventStoryFullDetail(fullRaw, fullInfo.ModTime().Unix(), detail)
+				if parseErr != nil {
+					state.PreserveLocal = true
+				} else if eventStoryFullHasEditableSources(fullDetail) {
+					state.PreserveLocal = true
+				}
+			}
 		}
 		states[eventID] = state
 	}
