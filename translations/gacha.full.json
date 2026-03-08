@@ -330,8 +330,8 @@
       ]
     },
     "Let's play with catsガチャ": {
-      "text": "Let's play with cats招募",
-      "source": "cn",
+      "text": "Let's play with cats招募 「猫混」",
+      "source": "human",
       "ids": [
         "696"
       ]
@@ -2043,15 +2043,15 @@
       ]
     },
     "[復刻]Play with dogsガチャ": {
-      "text": "[复刻]Play with dogs招募",
-      "source": "unknown",
+      "text": "[复刻]Play with dogs招募 「狗混」",
+      "source": "human",
       "ids": [
         "714",
         "870"
       ]
     },
     "[復刻]SEKAIでHello♡素敵な出会いガチャ": {
-      "text": "[复刻]在SEKAI中Hello♡美好的相遇招募 「三丽鸥联动池」",
+      "text": "[复刻]在「SEKAI」Hello♡美妙的邂逅招募「三丽鸥联动池」",
       "source": "human",
       "ids": [
         "903"
@@ -2737,7 +2737,7 @@
     },
     "[復刻]in my fairy taleガチャ": {
       "text": "[复刻]in my fairy tale招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "750"
       ]
