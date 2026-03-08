@@ -20,6 +20,7 @@ func main() {
 	gitRepoURL := os.Getenv("GIT_PUSH_REPO_URL")
 	gitBranch := envOr("GIT_PUSH_BRANCH", "backup-translations")
 	gitWorkspace := envOr("GIT_WORKSPACE", "/app/git-workspace")
+	dataDir := envOr("DATA_DIR", "./data")
 
 	if gitRepoURL == "" {
 		token := os.Getenv("GITHUB_TOKEN")
@@ -59,6 +60,13 @@ func main() {
 	})
 	scheduler := backend.NewScheduler(translator, pusher, store, upstreamRepo, upstreamBranch, schedulerEnabled)
 	scheduler.Start()
+	searchIndex := backend.NewSearchIndexBuilder(
+		store,
+		dataDir,
+		envDurationMsOr("SEARCH_INDEX_DEBOUNCE_MS", 3600000),
+		envDurationMsOr("SEARCH_INDEX_REFRESH_MS", 3600000),
+	)
+	searchIndex.Start()
 
 	mux := http.NewServeMux()
 	h := backend.NewHandler(store, auth, pusher, translator, scheduler)
@@ -71,6 +79,10 @@ func main() {
 	// Serve translation JSON files at /translation/ (matches dataPath)
 	dataFs := http.FileServer(http.Dir(dataPath))
 	mux.Handle("/translation/", http.StripPrefix("/translation/", dataFs))
+
+	// Serve search index and related data at /data/
+	dataOutFs := http.FileServer(http.Dir(dataDir))
+	mux.Handle("/data/", http.StripPrefix("/data/", dataOutFs))
 
 	// Root redirect
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -86,6 +98,7 @@ func main() {
 
 	fmt.Printf("sekai-translate server starting on :%s\n", port)
 	fmt.Printf("  translations: %s\n", dataPath)
+	fmt.Printf("  data dir:     %s\n", dataDir)
 	fmt.Printf("  push target:  %s\n", maskURL(gitRepoURL))
 	fmt.Printf("  upstream:     %s@%s (enabled=%v)\n", upstreamRepo, upstreamBranch, schedulerEnabled)
 	if err := http.ListenAndServe(":"+port, handler); err != nil {

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 	"sync"
 )
@@ -67,6 +68,9 @@ type Store struct {
 	path string
 	data map[string]TranslationCategory
 	rev  uint64
+	// changeHooks are invoked when translations or related assets change.
+	// Hooks must not call back into Store methods to avoid deadlocks.
+	changeHooks []func()
 }
 
 func NewStore(path string) *Store {
@@ -97,9 +101,11 @@ func (s *Store) loadAllLocked() {
 
 func (s *Store) ReloadAllFromDisk() {
 	s.mu.Lock()
-	defer s.mu.Unlock()
 	s.loadAllLocked()
 	s.rev++
+	hooks := append([]func(){}, s.changeHooks...)
+	s.mu.Unlock()
+	s.runChangeHooks(hooks)
 }
 
 func (s *Store) loadCategory(cat string) (TranslationCategory, error) {
@@ -193,10 +199,10 @@ func (s *Store) GetEntries(category, field, source string) []EntryWithKey {
 // UpdateEntry updates a single translation and writes both file formats to disk.
 func (s *Store) UpdateEntry(category, field, key, text, source string) (string, error) {
 	s.mu.Lock()
-	defer s.mu.Unlock()
 
 	cat, ok := s.data[category]
 	if !ok {
+		s.mu.Unlock()
 		return "", fmt.Errorf("unknown category: %s", category)
 	}
 	if cat[field] == nil {
@@ -205,6 +211,7 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 
 	old := cat[field][key]
 	if old.Text == text && old.Source == source {
+		s.mu.Unlock()
 		return "noop", nil
 	}
 
@@ -217,6 +224,7 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 	fullBytes, _ := json.MarshalIndent(cat, "", "  ")
 	fullPath := filepath.Join(s.path, category+".full.json")
 	if err := writeAtomic(fullPath, fullBytes); err != nil {
+		s.mu.Unlock()
 		return "", fmt.Errorf("write full.json: %w", err)
 	}
 
@@ -232,6 +240,9 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 	flatPath := filepath.Join(s.path, category+".json")
 	writeAtomic(flatPath, flatBytes) // non-critical
 	s.rev++
+	hooks := append([]func(){}, s.changeHooks...)
+	s.mu.Unlock()
+	s.runChangeHooks(hooks)
 
 	return "ok", nil
 }
@@ -244,6 +255,47 @@ func (s *Store) CurrentRevision() uint64 {
 
 func (s *Store) bumpRevisionLocked() {
 	s.rev++
+}
+
+// RegisterOnChange registers a callback invoked when translation files change.
+// Callbacks must not call Store methods to avoid deadlocks.
+func (s *Store) RegisterOnChange(fn func()) {
+	if fn == nil {
+		return
+	}
+	s.mu.Lock()
+	s.changeHooks = append(s.changeHooks, fn)
+	s.mu.Unlock()
+}
+
+// MarkExternalChange marks that translation-related files changed outside Store.
+func (s *Store) MarkExternalChange() {
+	s.mu.Lock()
+	s.rev++
+	hooks := append([]func(){}, s.changeHooks...)
+	s.mu.Unlock()
+	s.runChangeHooks(hooks)
+}
+
+// NotifyChange triggers change hooks without bumping the revision.
+func (s *Store) NotifyChange() {
+	s.mu.Lock()
+	hooks := append([]func(){}, s.changeHooks...)
+	s.mu.Unlock()
+	s.runChangeHooks(hooks)
+}
+
+func (s *Store) runChangeHooks(hooks []func()) {
+	for _, hook := range hooks {
+		func() {
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Printf("[store] change hook panic: %v\n%s\n", r, debug.Stack())
+				}
+			}()
+			hook()
+		}()
+	}
 }
 
 // FlatJSON returns the flat-format JSON bytes for a category (for pushing).
