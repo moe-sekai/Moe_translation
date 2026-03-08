@@ -2782,7 +2782,7 @@
     },
     "ボクの気が済むまで付き合ってもらうよ": {
       "text": "在我尽兴之前，就请一直陪着我吧",
-      "source": "llm"
+      "source": "human"
     },
     "ボク達みんなで笑顔にするよ！": {
       "text": "我们会让大家露出笑容的！",
@@ -4067,8 +4067,8 @@
       "source": "cn"
     },
     "Happy Birthday！！2025": {
-      "text": "Happy Birthday！！2026",
-      "source": "cn"
+      "text": "Happy Birthday！！2025",
+      "source": "human"
     },
     "Happy Birthday！！2026": {
       "text": "生日快乐！！2026",
