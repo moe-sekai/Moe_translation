@@ -364,7 +364,10 @@ func (t *Translator) ManualAITranslate(req AITranslateRequest) (AITranslateResul
 			result.SkippedExisting++
 			continue
 		}
-		cat[req.Field][jp] = TranslationEntry{Text: cn, Source: SourceLLM}
+		next := current
+		next.Text = cn
+		next.Source = SourceLLM
+		cat[req.Field][jp] = next
 		result.Translated++
 	}
 	err := t.saveCategoryLocked(req.Category, cat)
@@ -580,7 +583,10 @@ func (t *Translator) aiTranslateField(req AITranslateRequest) (AITranslateResult
 			result.SkippedExisting++
 			continue
 		}
-		cat[req.Field][jp] = TranslationEntry{Text: cn, Source: SourceLLM}
+		next := current
+		next.Text = cn
+		next.Source = SourceLLM
+		cat[req.Field][jp] = next
 		result.Translated++
 	}
 	err := t.saveCategoryLocked(req.Category, cat)
@@ -643,12 +649,14 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 				if has && old.Source == SourcePinned {
 					continue
 				}
-				next = TranslationEntry{Text: cn, Source: SourceCN}
+				next.Text = cn
+				next.Source = SourceCN
 			} else {
 				if has && old.Text != "" {
 					continue
 				}
-				next = TranslationEntry{Text: "", Source: SourceUnknown}
+				next.Text = ""
+				next.Source = SourceUnknown
 			}
 			if !has || old.Text != next.Text || old.Source != next.Source {
 				cat[field][jp] = next

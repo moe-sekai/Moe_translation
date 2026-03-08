@@ -23,8 +23,9 @@ const (
 )
 
 type TranslationEntry struct {
-	Text   string `json:"text"`
-	Source string `json:"source"`
+	Text   string   `json:"text"`
+	Source string   `json:"source"`
+	Ids    []string `json:"ids,omitempty"`
 }
 
 // field -> { jpKey -> entry }
@@ -46,9 +47,10 @@ type CategoryInfo struct {
 }
 
 type EntryWithKey struct {
-	Key    string `json:"key"`
-	Text   string `json:"text"`
-	Source string `json:"source"`
+	Key    string   `json:"key"`
+	Text   string   `json:"text"`
+	Source string   `json:"source"`
+	Ids    []string `json:"ids,omitempty"`
 }
 
 // ============================================================================
@@ -183,7 +185,7 @@ func (s *Store) GetEntries(category, field, source string) []EntryWithKey {
 		if source != "" && e.Source != source {
 			continue
 		}
-		result = append(result, EntryWithKey{Key: k, Text: e.Text, Source: e.Source})
+		result = append(result, EntryWithKey{Key: k, Text: e.Text, Source: e.Source, Ids: e.Ids})
 	}
 	return result
 }
@@ -206,7 +208,10 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 		return "noop", nil
 	}
 
-	cat[field][key] = TranslationEntry{Text: text, Source: source}
+	next := old
+	next.Text = text
+	next.Source = source
+	cat[field][key] = next
 
 	// Write .full.json
 	fullBytes, _ := json.MarshalIndent(cat, "", "  ")

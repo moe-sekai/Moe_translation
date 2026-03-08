@@ -26,6 +26,7 @@ export interface TranslationEntry {
     key: string;
     text: string;
     source: string;
+    ids?: string[];
 }
 
 export interface PushStatus {
