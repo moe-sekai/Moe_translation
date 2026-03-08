@@ -2,791 +2,1382 @@
   "name": {
     "Aim higher and higher！": {
       "text": "志存高远！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "169"
+      ]
     },
     "All ways Jump! with you": {
       "text": "始终与你一同Jump！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "176"
+      ]
     },
     "Awakening Beat": {
       "text": "觉醒的节拍",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "28"
+      ]
     },
     "BREAK DOWN THE WALL": {
       "text": "冲破高墙",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "118"
+      ]
     },
     "BURN MY SOUL": {
       "text": "燃烧我魂",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "109"
+      ]
     },
     "Bout for Beside You": {
       "text": "与你相伴的对决",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "37"
+      ]
     },
     "CHANGE！えむは王女さま！？": {
       "text": "CHANGE！笑梦竟然是公主殿下！？",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "196"
+      ]
     },
     "Cast Spell on You": {
       "text": "为你施加魔法",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "52"
+      ]
     },
     "Chase my IDEAL IDOL！": {
       "text": "追逐我的理想偶像！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "138"
+      ]
     },
     "Cheer with my Heart!": {
       "text": "用我的心去应援！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "168"
+      ]
     },
     "Choices for the future": {
       "text": "未来的抉择",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "164"
+      ]
     },
     "Color of Myself！": {
       "text": "Color of Myself!",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "11"
+      ]
     },
     "Colors of Pure Sense": {
       "text": "纯真感性之色",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "184"
+      ]
     },
     "Competitive fire！": {
       "text": "竞争之火！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "175"
+      ]
     },
     "Connect hearts message": {
       "text": "连结心灵的信息",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "159"
+      ]
     },
     "Dear my fellows": {
       "text": "致我的伙伴们",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "167"
+      ]
     },
     "Deep Dark For Light": {
       "text": "深邃黑暗为光明",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "178"
+      ]
     },
     "Deeper and deeper": {
       "text": "愈发深处",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "172"
+      ]
     },
     "Don't lose faith!": {
       "text": "莫失信念！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "69"
+      ]
     },
     "Echo my melody": {
       "text": "回响我的旋律",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "76"
+      ]
     },
     "Find A Way Out": {
       "text": "寻觅出路",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "79"
+      ]
     },
     "Find the dream view": {
       "text": "寻找梦想的风景",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "162"
+      ]
     },
     "GO ALL OUT": {
       "text": "全力以赴",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "193"
+      ]
     },
     "Get over it.": {
       "text": "跨越难关",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "91"
+      ]
     },
     "Grow glorious glow": {
       "text": "孕育辉煌光芒",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "151"
+      ]
     },
     "Happy Enjoy Music！": {
       "text": "快乐享受音乐！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "147"
+      ]
     },
     "KAMIKOU FESTIVAL！": {
       "text": "神山高校校园庆典！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "7"
+      ]
     },
     "Kick it up a notch": {
       "text": "更上一层楼",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "86"
+      ]
     },
     "Knock the Future!!": {
       "text": "敲响未来！！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "34"
+      ]
     },
     "Knowing the Unseen": {
       "text": "洞悉无形",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "127"
+      ]
     },
     "Lead to shine more": {
       "text": "引导更闪耀的光芒",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "133"
+      ]
     },
     "Legend still vivid": {
       "text": "传奇依然鲜活",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "49"
+      ]
     },
     "Let's study hard！": {
       "text": "努力学习吧！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "107"
+      ]
     },
     "Light Up the Fire": {
       "text": "点燃心火",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "97"
+      ]
     },
     "Link the Beats！": {
       "text": "连接节拍！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "179"
+      ]
     },
     "Little Bravers！": {
       "text": "小小勇者们！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "83"
+      ]
     },
     "Live with memories": {
       "text": "伴随回忆而生",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "56"
+      ]
     },
     "MOREMOREMakingXmas": {
       "text": "MORE MORE 圣诞制作",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "43"
+      ]
     },
     "Never Give Up Cooking！": {
       "text": "绝不认输的料理！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "87"
+      ]
     },
     "No seek No find": {
       "text": "无求无获",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "65"
+      ]
     },
     "OVER RAD SQUAD!!": {
       "text": "超越RAD小队！！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "135"
+      ]
     },
     "On Your Feet": {
       "text": "伫立于此",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "103"
+      ]
     },
     "Our Golden Days": {
       "text": "我们的黄金岁月",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "181"
+      ]
     },
     "Overcome one's limits": {
       "text": "超越极限",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "187"
+      ]
     },
     "POP IN MY HEART!!": {
       "text": "跃动我心！！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "46"
+      ]
     },
     "Parallel Harmonies": {
       "text": "并行的和声",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "128"
+      ]
     },
     "Path made by faith": {
       "text": "信念之路",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "195"
+      ]
     },
     "Period of NOCTURNE": {
       "text": "夜曲之刻",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "12"
+      ]
     },
     "Re-tie Friendship": {
       "text": "重系友谊之绊",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "92"
+      ]
     },
     "Rekindle the flame": {
       "text": "重燃火焰",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "146"
+      ]
     },
     "Resonate with you": {
       "text": "与你共鸣",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "20"
+      ]
     },
     "Revival my dream": {
       "text": "重燃的梦想",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "38"
+      ]
     },
     "Rise and Strive": {
       "text": "奋起拼搏",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "157"
+      ]
     },
     "Rise as ONE！": {
       "text": "齐心协力！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "126"
+      ]
     },
     "STEP by STEP！": {
       "text": "步步向前！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "98"
+      ]
     },
     "STRAY BAD DOG": {
       "text": "迷途恶犬",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "21"
+      ]
     },
     "Same Dreams,Same Colors": {
       "text": "同梦同色",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "44"
+      ]
     },
     "Show your shine": {
       "text": "展现你的光芒",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "155"
+      ]
     },
     "Special present for YOU！": {
       "text": "给你的特别礼物！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "152"
+      ]
     },
     "Stick to your faith": {
       "text": "坚守信念",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "110"
+      ]
     },
     "THE POWER OF UNITY": {
       "text": "团结的力量",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "59"
+      ]
     },
     "Take the Best Shot！": {
       "text": "拍下最美的一瞬！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "120"
+      ]
     },
     "The Power Of Regret": {
       "text": "悔恨的力量",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "149"
+      ]
     },
     "The Vivid Old Tale": {
       "text": "鲜活的旧日往事",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "64"
+      ]
     },
     "The first concerto": {
       "text": "第一协奏曲",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "125"
+      ]
     },
     "This moment with you！": {
       "text": "与你共度的这一刻！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "143"
+      ]
     },
     "Time to take off！": {
       "text": "起飞时刻！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "154"
+      ]
     },
     "Turning Pain into Drive": {
       "text": "化痛苦为动力",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "163"
+      ]
     },
     "Unfading wishing": {
       "text": "永不褪色的心愿",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "153"
+      ]
     },
     "Unnamed Harmony": {
       "text": "无名和弦",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "27"
+      ]
     },
     "Unreliable Notes": {
       "text": "游移不定的音符",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "161"
+      ]
     },
     "Unsteady, still steady step": {
       "text": "摇曳却坚定的步伐",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "173"
+      ]
     },
     "Walk on and on": {
       "text": "步履不停",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "71"
+      ]
     },
     "Whip the wimp girl!!": {
       "text": "鞭策胆怯少女！！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "129"
+      ]
     },
     "Wishes in Bloom！": {
       "text": "绽放的心愿！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "180"
+      ]
     },
     "You are my HERO!!": {
       "text": "你是我的英雄！！",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "160"
+      ]
     },
     "close game/OFFLINE": {
       "text": "紧凑对局/OFFLINE",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "66"
+      ]
     },
     "ordinary,yet special us": {
       "text": "平凡而又特别的我们",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "171"
+      ]
     },
     "perspective for smile": {
       "text": "笑容的视角",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "131"
+      ]
     },
     "start rolling! stars' crossing": {
       "text": "开始转动！星辰交汇",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "174"
+      ]
     },
     "あたしたちのハッピーエンド": {
       "text": "我们的圆满结局",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "104"
+      ]
     },
     "あっちこっち飼育員体験！": {
       "text": "东奔西走的饲养员体验！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "115"
+      ]
     },
     "あの日、奏でた音色を": {
       "text": "将那天，演奏的音乐",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "116"
+      ]
     },
     "あの日、空は遠かった": {
       "text": "那一天，天空遥不可及",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "50"
+      ]
     },
     "あの日の夢の、彼方向こうへ": {
       "text": "昨日梦想的延续",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "78"
+      ]
     },
     "あの日見た夜空は、いつかの未来へ": {
       "text": "那天仰望的夜空，将通向我们的未来",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "137"
+      ]
     },
     "いつか、絶望の底から": {
       "text": "总有一天，会从绝望的深渊",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "47"
+      ]
     },
     "いつか、背中あわせのリリックを": {
       "text": "总有一天为你献上心连心的抒情诗",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "6"
+      ]
     },
     "いつか花咲くステージへ": {
       "text": "总有一日，登上鲜花盛放的舞台",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "130"
+      ]
     },
     "お悩み聞かせて！わくわくピクニック": {
       "text": "让我分担你的烦恼！心跳雀跃的郊游",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "22"
+      ]
     },
     "お縄を頂戴！？天馬捕物帳": {
       "text": "捉拿归案？！天马捕物帐",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "136"
+      ]
     },
     "きっと最高のsummer！": {
       "text": "这一定是最棒的summer！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "30"
+      ]
     },
     "ここからRE:START！": {
       "text": "此时此地再次启程！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "5"
+      ]
     },
     "このひと針に想いを込めて": {
       "text": "在这针线中寄托心意",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "156"
+      ]
     },
     "この物語は希望をのせて": {
       "text": "载满希望的故事",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "190"
+      ]
     },
     "この祭に 夕闇色も": {
       "text": "逢此庆典 暮色亦染",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "72"
+      ]
     },
     "そして、針は動き出す": {
       "text": "于是，指针开始转动",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "165"
+      ]
     },
     "そしていま、リボンを結んで": {
       "text": "现在再次绑上蝴蝶结",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "68"
+      ]
     },
     "その手導くぬくもりは": {
       "text": "那双手所引向的温暖",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "111"
+      ]
     },
     "つなぐPainful Hope": {
       "text": "连接Painful Hope",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "57"
+      ]
     },
     "つなぐ、星の歌": {
       "text": "相联的，星星之歌",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "101"
+      ]
     },
     "ともに、トゥルールートを目指して": {
       "text": "共同向着真理之路前进",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "189"
+      ]
     },
     "ふたり、月うさぎ": {
       "text": "两人与月兔",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "33"
+      ]
     },
     "ほどかれた糸のその先に": {
       "text": "解开的心结之后",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "85"
+      ]
     },
     "ほどけぬ明日に手を伸ばして": {
       "text": "向无法解开的明日伸出双手",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "177"
+      ]
     },
     "また、木の葉の色づく頃に": {
       "text": "又到秋叶染色之时",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "148"
+      ]
     },
     "まばゆい光のステージで": {
       "text": "在璀璨耀眼的舞台上",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "55"
+      ]
     },
     "みんなでエンジョイ！スポジョイパーク": {
       "text": "大家一起欢享！SPOJOYPARK",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "63"
+      ]
     },
     "みんなで配信♡WEDDING LIVE！": {
       "text": "大家来直播♡WEDDING LIVE！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "132"
+      ]
     },
     "わんだほら～！？な肝だめし！": {
       "text": "Wonderhorror～？！的试胆！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "141"
+      ]
     },
     "イミシブル・ディスコード": {
       "text": "难以弥合·分歧",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "89"
+      ]
     },
     "カナリアは窮境に歌う": {
       "text": "金丝雀于绝境中高歌",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "95"
+      ]
     },
     "カーテンコールに惜別を": {
       "text": "惜别谢幕",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "74"
+      ]
     },
     "カーネーション・リコレクション": {
       "text": "珍藏在心中的康乃馨",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "26"
+      ]
     },
     "キミと、セカイの始まりで": {
       "text": "和你在「世界」的起点",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "140"
+      ]
     },
     "キャンドルの香りは思い出と共に": {
       "text": "蜡烛的芬芳萦绕于往昔的回忆",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "84"
+      ]
     },
     "シークレット・ディスタンス": {
       "text": "Secret Distance",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "19"
+      ]
     },
     "スクランブル・ファンフェスタ！": {
       "text": "缤纷粉丝节！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "36"
+      ]
     },
     "スマイルオブドリーマー": {
       "text": "梦想家的笑容",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "15"
+      ]
     },
     "セカイに響け！Your Song": {
       "text": "响彻「世界」！Your Song",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "105"
+      ]
     },
     "セカイのハッピーニューイヤー！": {
       "text": "「世界」的Happy New Year！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "9"
+      ]
     },
     "セカイの桜、つながる想い": {
       "text": "「世界」之樱，相连的心愿",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "54"
+      ]
     },
     "チアフルカーニバルイベントテストイベント": {
       "text": "欢乐嘉年华活动测试活动",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "166"
+      ]
     },
     "ドタバタ cafe ●REC!!": {
       "text": "手忙脚乱cafe ●REC!!",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "102"
+      ]
     },
     "ハッピー・ラブリー・エブリデイ！": {
       "text": "Happy lovely everyday!",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "31"
+      ]
     },
     "ハロー・グッド・デイ！": {
       "text": "Hello·Good·Day！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "108"
+      ]
     },
     "バディ・ファニー・スペンドタイム♪": {
       "text": "搭档·趣事·欢乐时刻♪",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "41"
+      ]
     },
     "ボクのあしあと キミのゆくさき": {
       "text": "我的足迹 你的止境",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "39"
+      ]
     },
     "ボク達の生存逃走": {
       "text": "我们为了生存而逃避",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "93"
+      ]
     },
     "マーメイドにあこがれて": {
       "text": "对美人鱼充满憧憬",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "32"
+      ]
     },
     "リラックスティータイム": {
       "text": "Relax Teatime",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "123"
+      ]
     },
     "ワンダーマジカルショウタイム！": {
       "text": "奇幻魔法表演时间！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "25"
+      ]
     },
     "一期一会な百鬼夜行！？": {
       "text": "一期一会的百鬼夜行？！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "99"
+      ]
     },
     "交わる旋律 灯るぬくもり": {
       "text": "交织的旋律 点亮的温暖",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "42"
+      ]
     },
     "交わる色はあの日のままに": {
       "text": "交汇的色彩一如往昔",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "183"
+      ]
     },
     "交響する街の片隅で": {
       "text": "在乐声共鸣的街角",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "90"
+      ]
     },
     "仮面の私にさよならを": {
       "text": "向戴着面具的我告别",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "100"
+      ]
     },
     "仰ぐ夜空に、星は紛れて": {
       "text": "仰望夜空，繁星隐匿其中",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "188"
+      ]
     },
     "傷だらけの手で、私達は": {
       "text": "用我们，布满伤痕的双手",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "150"
+      ]
     },
     "全力！ワンダーハロウィン！": {
       "text": "全力以赴！奇幻万圣节！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "3"
+      ]
     },
     "刻まれた傷は、やがて": {
       "text": "刻下的伤痕，总有一天",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "122"
+      ]
     },
     "君が主役の物語を": {
       "text": "以你为主角的故事",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "113"
+      ]
     },
     "君と歌う、桜舞う世界で": {
       "text": "在樱花烂漫的世界中与你高歌",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "18"
+      ]
     },
     "君と紡ぐPrecious memories": {
       "text": "和你创造的Precious memories",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "106"
+      ]
     },
     "君と繋ぐHeart Beat": {
       "text": "与你相连的心跳",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "182"
+      ]
     },
     "囚われのマリオネット": {
       "text": "被囚禁的提线木偶",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "2"
+      ]
     },
     "変わらぬあたたかさの隣で": {
       "text": "在不变的温暖旁",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "117"
+      ]
     },
     "夏祭り、鳴り響く音は": {
       "text": "夏日庆典，那响彻云霄的声音",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "29"
+      ]
     },
     "夢の途中、輝く星たちへ": {
       "text": "梦想的旅途，奔向闪耀的群星",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "82"
+      ]
     },
     "天の果てのフェニックスへ": {
       "text": "追寻翱翔于天际的凤凰",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "88"
+      ]
     },
     "天馬さんちのひな祭り": {
       "text": "天马家的女儿节",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "16"
+      ]
     },
     "好きを描いて♪レインボーキャンバス": {
       "text": "绘出自我♪RAINBOW CANVAS",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "70"
+      ]
     },
     "導く勇気、優しさを胸に": {
       "text": "勇敢引导，温柔在心",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "121"
+      ]
     },
     "届け！HOPEFUL STAGE♪": {
       "text": "传递心声！充满希望的舞台♪",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "17"
+      ]
     },
     "弓引け、白の世界で": {
       "text": "在纯白世界拉弓引箭",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "80"
+      ]
     },
     "怪盗紳士のハラハラ！？ホワイトデー": {
       "text": "慌慌张张？！怪盗绅士的白色情人节",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "51"
+      ]
     },
     "悪夢の庭を歌い明かして": {
       "text": "唱彻噩梦之庭",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "197"
+      ]
     },
     "想いをのせて！Dream Stage": {
       "text": "承载心愿！Dream Stage",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "144"
+      ]
     },
     "拝啓、あの頃のわたしへ": {
       "text": "致过去的我",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "73"
+      ]
     },
     "揺るがぬ想い、今言葉にして": {
       "text": "矢志不摇的心愿，此刻以话语传达",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "40"
+      ]
     },
     "揺れるまま、でも君は前へ": {
       "text": "即使摇摆不定，但毅然勇往直前",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "10"
+      ]
     },
     "新年言祝ぐ、祈りの舞": {
       "text": "贺岁新年，祈愿之舞",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "191"
+      ]
     },
     "新春！ 獅子舞ロボのお正月ショー！": {
       "text": "新春！舞狮机器人的新年演出！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "81"
+      ]
     },
     "昔日のRead-aloud": {
       "text": "昔日的Read-aloud",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "158"
+      ]
     },
     "星を目指して、ヨーソロー！": {
       "text": "向着星星，启航！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "124"
+      ]
     },
     "最高のクランクアップ！": {
       "text": "最棒的杀青！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "114"
+      ]
     },
     "水底に影を探して": {
       "text": "水底寻影",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "112"
+      ]
     },
     "泡沫に抱かれて": {
       "text": "沉溺于泡沫之中",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "170"
+      ]
     },
     "満たされないペイルカラー": {
       "text": "饱和不了的黯淡色彩",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "14"
+      ]
     },
     "灯のミラージュ": {
       "text": "光之幻影",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "35"
+      ]
     },
     "灯を手繰りよせて": {
       "text": "揽灯近前",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "134"
+      ]
     },
     "白熱！神高応援団！": {
       "text": "白热！神高应援团！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "58"
+      ]
     },
     "祈りの先 願う明日は": {
       "text": "祈愿的未来 憧憬的明天",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "45"
+      ]
     },
     "秘密の♡バレンタイン大作戦！": {
       "text": "秘密♡情人节大作战！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "48"
+      ]
     },
     "空白のキャンバスに描く私は": {
       "text": "在空白的画布上描绘自我",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "53"
+      ]
     },
     "第2回チアフルカーニバルイベントテストイベント": {
       "text": "第2届欢乐嘉年华测试活动",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "186"
+      ]
     },
     "粉砕せよ！アンヴァレンタインの復讐": {
       "text": "粉碎吧！安瓦伦丁的复仇",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "194"
+      ]
     },
     "純白の貴方へ、誓いの歌を！": {
       "text": "为纯白的你唱响誓言之歌！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "24"
+      ]
     },
     "絶体絶命！？アイランドパニック！": {
       "text": "危在旦夕？！无人岛绝处逢生！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "62"
+      ]
     },
     "絶叫！？ オオカミの森へようこそ！": {
       "text": "尖叫？！欢迎来到大灰狼森林",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "75"
+      ]
     },
     "聖なる夜に、この歌声を": {
       "text": "让歌声响彻，神圣之夜",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "8"
+      ]
     },
     "船出の前のワンデイトリップ": {
       "text": "启航前的一日游",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "94"
+      ]
     },
     "荊棘の道は何処へ": {
       "text": "荆棘之路通往何处",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "145"
+      ]
     },
     "覚めない幻想をノックして": {
       "text": "敲响永不觉醒的幻想",
-      "source": "human"
+      "source": "human",
+      "ids": [
+        "192"
+      ]
     },
     "走れ！体育祭！～実行委員は大忙し～": {
       "text": "奔跑吧！体育节！～组织委员晕头转向～",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "4"
+      ]
     },
     "超克のプロタゴニスタ": {
-      "text": "超越的主角",
-      "source": "human"
+      "text": "超越自我的主人公",
+      "source": "human",
+      "ids": [
+        "185"
+      ]
     },
     "迷い子の手を引く、そのさきは": {
       "text": "牵起迷失的孩子，前方等待的是",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "61"
+      ]
     },
     "逆光のレンズフレア": {
       "text": "背光的镜头光晕",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "119"
+      ]
     },
     "鍛えてFLY！Muscle Training！": {
       "text": "锻炼后FLY！Muscle Training！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "142"
+      ]
     },
     "隣に立つ、優しいあなたへ": {
       "text": "给在我身边温柔的你",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "96"
+      ]
     },
     "雨上がりの一番星": {
       "text": "雨过天晴的启明星",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "1"
+      ]
     },
     "青空に願うユア・ハピネス！": {
       "text": "向晴空许愿Your Happiness!",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "60"
+      ]
     },
     "青空の先、輝きを追いかけて": {
       "text": "在蓝天下追逐光芒",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "67"
+      ]
     },
     "響くトワイライトパレード": {
       "text": "回响于耳畔的暮色巡游",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "13"
+      ]
     },
     "頑張るあなたにBreak Time！": {
       "text": "为努力的你营造闲暇时光！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "23"
+      ]
     },
     "願いは、いつか朝をこえて": {
       "text": "祈愿，终有一天跨越黎明",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "77"
+      ]
     },
     "鳴らせビューティフルサウンド！": {
       "text": "奏响美妙乐音！",
-      "source": "cn"
+      "source": "cn",
+      "ids": [
+        "139"
+      ]
     }
   }
 }
