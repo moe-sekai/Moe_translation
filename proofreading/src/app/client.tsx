@@ -187,6 +187,12 @@ export default function ProofreadingClient() {
     const aiTranslatingRef = useRef(false);
     const [translateStatus, setTranslateStatus] = useState<TranslateStatusResponse | null>(null);
 
+    // Shortcut
+    const [saveShortcut, setSaveShortcut] = useState<"enter" | "shift-enter">("shift-enter");
+
+    // Ignored stats
+    const [ignoredStats, setIgnoredStats] = useState<string[]>([]);
+
     // Event story block
     const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
 
@@ -316,6 +322,18 @@ export default function ProofreadingClient() {
     // ---- Auth check on mount ----
     useEffect(() => {
         setMounted(true);
+        const storedShortcut = localStorage.getItem("save-shortcut");
+        if (storedShortcut === "enter" || storedShortcut === "shift-enter") {
+            setSaveShortcut(storedShortcut);
+        }
+
+        const storedIgnored = localStorage.getItem("ignored-stats");
+        if (storedIgnored) {
+            try {
+                setIgnoredStats(JSON.parse(storedIgnored));
+            } catch (e) { }
+        }
+
         const token = getToken();
         if (!token) { setLoggedIn(false); return; }
         getCategories()
@@ -567,6 +585,10 @@ export default function ProofreadingClient() {
                 setSelectedKey(next.key);
                 setEditValue(next.text);
                 setIsEditing(false);
+                setTimeout(() => {
+                    document.querySelector(`[data-key="${CSS.escape(next.key)}"]`)
+                        ?.scrollIntoView({ block: "center", behavior: "smooth" });
+                }, 50);
             } else {
                 showToast("已到最后一条", "ok");
             }
@@ -742,11 +764,15 @@ export default function ProofreadingClient() {
     }, []);
 
     const handleTextareaKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-        if (e.key === "Enter" && e.shiftKey) { e.preventDefault(); handleSave(); }
+        const isSaveAction = saveShortcut === "shift-enter"
+            ? (e.key === "Enter" && e.shiftKey)
+            : (e.key === "Enter" && !e.shiftKey);
+
+        if (isSaveAction) { e.preventDefault(); handleSave(); return; }
         if (e.key === "Escape") { e.preventDefault(); setSelectedKey(null); setIsEditing(false); }
         if (checkModifier(e) && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
         if (checkModifier(e) && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
-    }, [handleSave, navigateEntry, checkModifier]);
+    }, [handleSave, navigateEntry, checkModifier, saveShortcut]);
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
@@ -755,7 +781,11 @@ export default function ProofreadingClient() {
             if (checkModifier(e) && e.key === "s") { e.preventDefault(); handleSave(); }
             if (e.key === "ArrowDown" || e.key === "j") { e.preventDefault(); navigateEntry(1); }
             if (e.key === "ArrowUp" || e.key === "k") { e.preventDefault(); navigateEntry(-1); }
-            if (e.key === "Enter" && selectedKey) { e.preventDefault(); editRef.current?.focus(); }
+            if (e.key === "Enter" && selectedKey) {
+                if (document.activeElement !== editRef.current) {
+                    e.preventDefault(); editRef.current?.focus();
+                }
+            }
             if (e.key === "Escape") { setSelectedKey(null); setIsEditing(false); }
         };
         window.addEventListener("keydown", handler);
@@ -814,15 +844,26 @@ export default function ProofreadingClient() {
                                 <div className="category-name">{CATEGORY_LABELS[cat.name] || cat.name}</div>
                                 {cat.fields?.map(field => {
                                     const needsWork = field.llmCount + field.unknownCount;
+                                    const fieldKey = `${cat.name}:${field.name}`;
+                                    const isIgnored = ignoredStats.includes(fieldKey);
                                     return (
                                         <div
                                             key={`${cat.name}-${field.name}`}
                                             className={`field-item ${selectedCategory === cat.name && selectedField === field.name ? "active" : ""}`}
                                             onClick={() => handleFieldSelect(cat.name, field.name)}
+                                            onContextMenu={(e) => {
+                                                e.preventDefault();
+                                                const next = isIgnored ? ignoredStats.filter(k => k !== fieldKey) : [...ignoredStats, fieldKey];
+                                                setIgnoredStats(next);
+                                                localStorage.setItem("ignored-stats", JSON.stringify(next));
+                                            }}
+                                            title="右键点击可切换忽略该项的数字提示"
                                         >
-                                            <span>{FIELD_LABELS[field.name] || field.name}</span>
+                                            <span style={{ textDecoration: isIgnored ? "line-through" : "none", color: isIgnored ? "var(--text-dim)" : "inherit" }}>
+                                                {FIELD_LABELS[field.name] || field.name}
+                                            </span>
                                             <div className="field-stats">
-                                                {needsWork > 0 && <span className="badge llm">{needsWork}</span>}
+                                                {!isIgnored && needsWork > 0 && <span className="badge llm">{needsWork}</span>}
                                             </div>
                                         </div>
                                     );
@@ -838,18 +879,31 @@ export default function ProofreadingClient() {
                                     <span>活动剧情翻译 <span className="badge llm" style={{ marginLeft: "4px" }}>{eventStories.length}</span></span>
                                 </summary>
                                 <div style={{ maxHeight: "30vh", overflowY: "auto", marginTop: "0.5rem", borderTop: "1px solid var(--border)", paddingTop: "0.5rem" }}>
-                                    {eventStories.map(story => (
-                                        <div
-                                            key={`eventStory-${story.eventId}`}
-                                            className={`field-item ${selectedCategory === "eventStory" && selectedField === String(story.eventId) ? "active" : ""}`}
-                                            onClick={() => handleFieldSelect("eventStory", String(story.eventId))}
-                                        >
-                                            <span>Event #{story.eventId}</span>
-                                            <div className="field-stats">
-                                                <span className="badge cn">{story.episodeCount}章</span>
+                                    {eventStories.map(story => {
+                                        const eventKey = `eventStory:${story.eventId}`;
+                                        const isIgnored = ignoredStats.includes(eventKey);
+                                        return (
+                                            <div
+                                                key={`eventStory-${story.eventId}`}
+                                                className={`field-item ${selectedCategory === "eventStory" && selectedField === String(story.eventId) ? "active" : ""}`}
+                                                onClick={() => handleFieldSelect("eventStory", String(story.eventId))}
+                                                onContextMenu={(e) => {
+                                                    e.preventDefault();
+                                                    const next = isIgnored ? ignoredStats.filter(k => k !== eventKey) : [...ignoredStats, eventKey];
+                                                    setIgnoredStats(next);
+                                                    localStorage.setItem("ignored-stats", JSON.stringify(next));
+                                                }}
+                                                title="右键点击可切换忽略该项的数字提示"
+                                            >
+                                                <span style={{ textDecoration: isIgnored ? "line-through" : "none", color: isIgnored ? "var(--text-dim)" : "inherit" }}>
+                                                    Event #{story.eventId}
+                                                </span>
+                                                <div className="field-stats">
+                                                    {!isIgnored && <span className="badge cn">{story.episodeCount}章</span>}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        )
+                                    })}
                                 </div>
                             </details>
                         )}
@@ -863,21 +917,43 @@ export default function ProofreadingClient() {
                         <button className="sync-btn" onClick={handleCNSync} disabled={syncingCN || pullingBackup || pushing || aiTranslating || backendSchedulerRunning || backendTranslatorRunning}>
                             {(syncingCN || backendSchedulerRunning) ? "更新中..." : "数据更新"}
                         </button>
-                        <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || pullingBackup || backendTranslatorRunning || backendSchedulerRunning}>
-                            {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
-                        </button>
+
+                        <details className="category-group" style={{
+                            marginTop: '0.2rem',
+                            borderTop: '1px solid var(--border)',
+                            paddingTop: '0.5rem',
+                            marginBottom: '0'
+                        }}>
+                            <summary className="category-name" style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                <span>AI 翻译设置</span>
+                                <span style={{ fontSize: "10px", transform: "scale(0.8)" }}>▼</span>
+                            </summary>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.4rem' }}>
+                                <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || pullingBackup || backendTranslatorRunning || backendSchedulerRunning}>
+                                    {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
+                                </button>
+                                <div className="theme-container" style={{ margin: 0 }}>
+                                    <span>AI提供方</span>
+                                    <select className="theme-select" value={aiProvider} onChange={e => setAIProvider(e.target.value as "gemini" | "openai")}>
+                                        <option value="gemini">Gemini</option>
+                                        <option value="openai">OpenAI兼容</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </details>
+
                         {pushStatus?.lastPush && (
-                            <div className="push-status">
+                            <div className="push-status" style={{ marginTop: '0.5rem' }}>
                                 上次推送: {new Date(pushStatus.lastPush).toLocaleString("zh-CN")}
                             </div>
                         )}
                         {pushStatus?.lastError && (
-                            <div className="push-status" style={{ color: "#ef4444" }}>
+                            <div className="push-status" style={{ color: "#ef4444", marginTop: '0.2rem' }}>
                                 错误: {pushStatus.lastError}
                             </div>
                         )}
                         {mounted && (
-                            <div className="theme-container">
+                            <div className="theme-container" style={{ marginTop: '0.3rem' }}>
                                 <span>主题模式</span>
                                 <select className="theme-select" value={theme} onChange={e => setTheme(e.target.value)}>
                                     <option value="system">跟随系统</option>
@@ -886,14 +962,7 @@ export default function ProofreadingClient() {
                                 </select>
                             </div>
                         )}
-                        <div className="theme-container">
-                            <span>AI提供方</span>
-                            <select className="theme-select" value={aiProvider} onChange={e => setAIProvider(e.target.value as "gemini" | "openai")}>
-                                <option value="gemini">Gemini</option>
-                                <option value="openai">OpenAI兼容</option>
-                            </select>
-                        </div>
-                        <button className="btn-logout" onClick={handleLogout}>退出登录</button>
+                        <button className="btn-logout" onClick={handleLogout} style={{ marginTop: '0.3rem' }}>退出登录</button>
                     </div>
                 </aside>
 
@@ -1003,7 +1072,19 @@ export default function ProofreadingClient() {
                                                 </button>
                                             )}
                                             <div className="proof-hints">
-                                                <kbd>Shift+Enter</kbd> 保存 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
+                                                <button
+                                                    style={{ background: 'none', border: 'none', color: 'var(--accent)', cursor: 'pointer', fontSize: '0.75rem', marginRight: '0.5rem', padding: 0 }}
+                                                    onClick={() => {
+                                                        const next = saveShortcut === "enter" ? "shift-enter" : "enter";
+                                                        setSaveShortcut(next);
+                                                        localStorage.setItem("save-shortcut", next);
+                                                    }}
+                                                    title="切换快捷保存按钮配置"
+                                                >
+                                                    [切换快捷键]
+                                                </button>
+                                                保存: <kbd>{saveShortcut === "shift-enter" ? "Shift+Enter" : "Enter"}</kbd> &nbsp;
+                                                <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
                                             </div>
                                         </div>
                                     </div>

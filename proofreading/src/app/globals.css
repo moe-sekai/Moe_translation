@@ -696,6 +696,7 @@ body {
     position: sticky;
     top: 0;
     background: var(--bg);
+    z-index: 20;
 }
 
 .col-detail {
