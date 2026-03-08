@@ -9,14 +9,14 @@
     },
     "3900's10連無料ガチャ": {
       "text": "3900's免费10连招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "486"
       ]
     },
     "3900's★4メンバー確定ガチャ": {
       "text": "3900's必得★4成员招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "487"
       ]
@@ -29,29 +29,29 @@
       ]
     },
     "3900'sプレミアムプレゼントガチャ 3.5th ANNIVERSARY EDITION": {
-      "text": "3900's高级礼品招募 3.5th ANNIVERSARY EDITION",
-      "source": "unknown",
+      "text": "3900's高级礼品招募 3.5周年版",
+      "source": "human",
       "ids": [
         "485"
       ]
     },
     "3900'sプレミアムプレゼントガチャ GLOBAL EDITION": {
-      "text": "3900's高级礼品招募 GLOBAL EDITION",
-      "source": "unknown",
+      "text": "3900's高级礼品招募 全球版",
+      "source": "human",
       "ids": [
         "499"
       ]
     },
     "3900'sプレミアムプレゼントガチャ WCS 2024 EDITION": {
-      "text": "3900's高级礼品招募 WCS 2024 EDITION",
-      "source": "unknown",
+      "text": "3900's高级礼品招募 WCS 2024 版本",
+      "source": "human",
       "ids": [
         "492"
       ]
     },
     "3900's前夜祭ハピネスパッケージガチャ": {
       "text": "3900's前夜祭幸福礼包招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "483"
       ]
@@ -72,7 +72,7 @@
     },
     "A sweet afternoonガチャ": {
       "text": "A sweet afternoon招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "901"
       ]
@@ -86,7 +86,7 @@
     },
     "Another sparkle Starsガチャ": {
       "text": "Another sparkle Stars 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "757"
       ]
@@ -121,7 +121,7 @@
     },
     "CYBER SNIPERガチャ": {
       "text": "CYBER SNIPER招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "226"
       ]
@@ -142,7 +142,7 @@
     },
     "Darkness Festaガチャ": {
       "text": "Darkness Festa招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "248"
       ]
@@ -163,7 +163,7 @@
     },
     "Dream a Wonder Dreamガチャ": {
       "text": "Dream a Wonder Dream招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "733"
       ]
@@ -177,14 +177,14 @@
     },
     "EYES ON MEガチャ": {
       "text": "EYES ON ME 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "838"
       ]
     },
     "Empty Teatimeガチャ": {
       "text": "Empty Teatime 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "782"
       ]
@@ -205,21 +205,21 @@
     },
     "FIND THE EXITガチャ": {
       "text": "FIND THE EXIT招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "394"
       ]
     },
     "Fly to the future!!ガチャ": {
       "text": "Fly to the future!!招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "267"
       ]
     },
     "Follow my heartガチャ": {
       "text": "Follow my heart 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "841"
       ]
@@ -240,14 +240,14 @@
     },
     "Gathering placeガチャ": {
       "text": "Gathering place招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "894"
       ]
     },
     "Get my bright wingsガチャ": {
       "text": "Get my bright wings 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "858"
       ]
@@ -261,7 +261,7 @@
     },
     "Good to go！ガチャ": {
       "text": "Good to go！招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "861"
       ]
@@ -296,21 +296,21 @@
     },
     "Hues of the Selfガチャ": {
       "text": "Hues of the Self 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "850"
       ]
     },
     "Human×Techガチャ": {
       "text": "Human×Tech招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "868"
       ]
     },
     "Imperial Soldiersガチャ": {
       "text": "Imperial Soldiers招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "301"
       ]
@@ -345,7 +345,7 @@
     },
     "Lunatic doll in the boxガチャ": {
       "text": "Lunatic doll in the box招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "915"
       ]
@@ -373,7 +373,7 @@
     },
     "Memory of Melodyガチャ": {
       "text": "Memory of Melody招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "426"
       ]
@@ -401,7 +401,7 @@
     },
     "Night's Treasureガチャ": {
       "text": "Night's Treasure招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "749"
       ]
@@ -436,14 +436,14 @@
     },
     "Open up my feelings!ガチャ": {
       "text": "Open up my feelings! 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "771"
       ]
     },
     "Papilio Vinculatusガチャ": {
       "text": "Papilio Vinculatus招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "725"
       ]
@@ -457,7 +457,7 @@
     },
     "Play the shadowガチャ": {
       "text": "Play the shadow招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "414"
       ]
@@ -471,14 +471,14 @@
     },
     "Punk Night TOKYOガチャ": {
       "text": "Punk Night TOKYO招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "446"
       ]
     },
     "Rabbit Kingdom♡ガチャ": {
       "text": "Rabbit Kingdom♡招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "911"
       ]
@@ -534,28 +534,28 @@
     },
     "Seeking my wayガチャ": {
       "text": "Seeking my way 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "766"
       ]
     },
     "Spooky Forestガチャ": {
       "text": "Spooky Forest招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "258"
       ]
     },
     "Sporty Girl♡ガチャ": {
       "text": "Sporty Girl♡ 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "219"
       ]
     },
     "Starry-eyed Princessガチャ": {
       "text": "Starry-eyed Princess招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "740"
       ]
@@ -569,14 +569,14 @@
     },
     "Strange Workshopガチャ": {
       "text": "Strange Workshop 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "763"
       ]
     },
     "Sweet Cute Valentine！ガチャ": {
       "text": "Sweet Cute Valentine！招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "291"
       ]
@@ -597,7 +597,7 @@
     },
     "The Light We Foundガチャ": {
       "text": "The Light We Found招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "872"
       ]
@@ -611,7 +611,7 @@
     },
     "Those who dareガチャ": {
       "text": "Those who dare 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "778"
       ]
@@ -625,14 +625,14 @@
     },
     "Velvet Afternoonガチャ": {
       "text": "Velvet Afternoon 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "803"
       ]
     },
     "Welcome to diner!!ガチャ": {
       "text": "Welcome to diner!!招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "356"
       ]
@@ -1296,50 +1296,50 @@
       ]
     },
     "[5周年記念]1/3セレクトリストガチャ LIMITED EDITION": {
-      "text": "[5周年纪念]1/3自选名单招募 LIMITED EDITION",
-      "source": "llm",
+      "text": "[5周年纪念]1/3自选名单招募 期间限定卡版",
+      "source": "human",
       "ids": [
         "832"
       ]
     },
     "[5周年記念][25時、ナイトコードで。]プレミアムプレゼントガチャ": {
-      "text": "[5周年纪念][25点，在Nightcord。]高级礼物招募",
-      "source": "llm",
+      "text": "[5周年纪念][25点，Nightcord见。]高级礼物招募",
+      "source": "human",
       "ids": [
         "831"
       ]
     },
     "[5周年記念][Leo/need]プレミアムプレゼントガチャ": {
       "text": "[5周年纪念][Leo/need]高级礼物招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "827"
       ]
     },
     "[5周年記念][MORE MORE JUMP！]プレミアムプレゼントガチャ": {
       "text": "[5周年纪念][MORE MORE JUMP！]高级礼物招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "828"
       ]
     },
     "[5周年記念][Vivid BAD SQUAD]プレミアムプレゼントガチャ": {
       "text": "[5周年纪念][Vivid BAD SQUAD]高级礼物招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "829"
       ]
     },
     "[5周年記念][バーチャル・シンガー]プレミアムプレゼントガチャ": {
       "text": "[5周年纪念][虚拟歌手]高级礼物招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "826"
       ]
     },
     "[5周年記念][ワンダーランズ×ショウタイム]プレミアムプレゼントガチャ": {
       "text": "[5周年纪念][Wonderlands×Showtime]高级礼物招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "830"
       ]
@@ -1381,21 +1381,21 @@
     },
     "[CS 2025 開催記念]プレミアムプレゼントガチャ": {
       "text": "[CS 2025 举办纪念] 高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "845"
       ]
     },
     "[Dreamscape 開催記念]プレミアムプレゼントガチャ 25時、ナイトコードで。 EDITION": {
-      "text": "[Dreamscape 举办纪念] 高级礼物招募 25点，在Nightcord。 EDITION",
-      "source": "unknown",
+      "text": "[Dreamscape 举办纪念] 高级礼物招募 「25点，Nightcord见。」 版本\n",
+      "source": "human",
       "ids": [
         "776"
       ]
     },
     "[Dreamscape 開催記念]プレミアムプレゼントガチャ バーチャル・シンガー EDITION": {
-      "text": "[Dreamscape 举办纪念] 高级礼物招募 虚拟歌手 EDITION",
-      "source": "unknown",
+      "text": "[Dreamscape 举办纪念] 高级礼物招募 「虚拟歌手」 版本\n",
+      "source": "human",
       "ids": [
         "777"
       ]
@@ -1409,7 +1409,7 @@
     },
     "[KAITO]HAPPY ANNIVERSARY2024ガチャ": {
       "text": "[KAITO]HAPPY ANNIVERSARY2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "461"
       ]
@@ -1423,7 +1423,7 @@
     },
     "[KAITO]HAPPY ANNIVERSARY2026ガチャ": {
       "text": "[KAITO]HAPPY ANNIVERSARY 2026招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "909"
       ]
@@ -1437,7 +1437,7 @@
     },
     "[KAITO]HAPPY ANNIVERSARYメモリーズガチャ": {
       "text": "[KAITO]HAPPY ANNIVERSARY 回忆招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "910"
       ]
@@ -1451,14 +1451,14 @@
     },
     "[Leo/need]プレミアムプレゼントガチャ": {
       "text": "[Leo/need]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "127"
       ]
     },
     "[Leo/need]ワールドリンクイベントサポートガチャ": {
       "text": "[Leo/need] World Link 活动支援招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "752"
       ]
@@ -1472,7 +1472,7 @@
     },
     "[MEIKO]HAPPY ANNIVERSARY2023ガチャ": {
       "text": "[MEIKO]HAPPY ANNIVERSARY2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "402"
       ]
@@ -1486,7 +1486,7 @@
     },
     "[MEIKO]HAPPY ANNIVERSARY2025ガチャ": {
       "text": "[MEIKO] HAPPY ANNIVERSARY 20",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "851"
       ]
@@ -1500,7 +1500,7 @@
     },
     "[MEIKO]HAPPY ANNIVERSARYメモリーズガチャ": {
       "text": "[MEIKO] HAPPY ANNIVERSARY 纪念回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "852"
       ]
@@ -1514,14 +1514,14 @@
     },
     "[MORE MORE JUMP！]プレミアムプレゼントガチャ": {
       "text": "[MORE MORE JUMP！]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "128"
       ]
     },
     "[MORE MORE JUMP！]ワールドリンクイベントサポートガチャ": {
       "text": "[MORE MORE JUMP！] World Link 活动支援招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "779"
       ]
@@ -1542,7 +1542,7 @@
     },
     "[SNOW MIKU 2022]プレミアムプレゼントガチャ": {
       "text": "[SNOW MIKU 2022]特别礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "179"
       ]
@@ -1556,42 +1556,42 @@
     },
     "[Vivid BAD SQUAD]プレミアムプレゼントガチャ": {
       "text": "[Vivid BAD SQUAD]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "129"
       ]
     },
     "[Vivid BAD SQUAD]ワールドリンクイベントサポートガチャ": {
       "text": "[Vivid BAD SQUAD] World Link 活动支援招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "712"
       ]
     },
     "[わん！もあ！HAPPY TIME 開催記念]プレミアムプレゼントガチャ MORE MORE JUMP！ EDITION": {
-      "text": "[One! More! HAPPY TIME 举办纪念] 高级礼物招募 MORE MORE JUMP！ EDITION",
-      "source": "unknown",
+      "text": "[One! More! HAPPY TIME 举办纪念] 高级礼物招募 「MORE MORE JUMP！」 版本",
+      "source": "human",
       "ids": [
         "853"
       ]
     },
     "[わん！もあ！HAPPY TIME 開催記念]プレミアムプレゼントガチャ ワンダーランズ×ショウタイム EDITION": {
-      "text": "[One! More! HAPPY TIME 举办纪念] 高级礼物招募 Wonderlands×Showtime EDITION",
-      "source": "unknown",
+      "text": "[One! More! HAPPY TIME 举办纪念] 高级礼物招募 「Wonderlands×Showtime」版本",
+      "source": "human",
       "ids": [
         "854"
       ]
     },
     "[セカライ5th 開催記念]プレミアムプレゼントガチャ": {
       "text": "[SEKAI LIVE 5th 举办纪念]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "897"
       ]
     },
     "[バーチャル・シンガー]プレミアムプレゼントガチャ": {
       "text": "[虚拟歌手]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "126"
       ]
@@ -1606,49 +1606,49 @@
     },
     "[フィナーレチャプター]Another sparkle Starsガチャ": {
       "text": "[终章]Another sparkle Stars招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "814"
       ]
     },
     "[フィナーレチャプター]Dream a Wonder Dreamガチャ": {
       "text": "[终章] Dream a Wonder Dream 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "812"
       ]
     },
     "[フィナーレチャプター]Empty Teatimeガチャ": {
       "text": "[终章]Empty Teatime招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "815"
       ]
     },
     "[フィナーレチャプター]Glance at Same Worldガチャ": {
       "text": "[终章] Glance at Same World 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "811"
       ]
     },
     "[フィナーレチャプター]Night's Treasureガチャ": {
       "text": "[终章] Night's Treasure 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "813"
       ]
     },
     "[フィナーレチャプター]Velvet Afternoonガチャ": {
       "text": "[终章]Velvet Afternoon招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "816"
       ]
     },
     "[フィナーレチャプター]ワールドリンクイベントサポートガチャ": {
       "text": "[终章]世界连接活动支援招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "817"
       ]
@@ -1662,7 +1662,7 @@
     },
     "[ペルソナ５ ザ・ロイヤルタイアップ記念]プレミアムプレゼントガチャ": {
       "text": "[女神异闻录5 皇家版 联动纪念] 高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "781"
       ]
@@ -1675,8 +1675,8 @@
       ]
     },
     "[マジカルミライ2025]プレミアムプレゼントガチャ": {
-      "text": "[Magical Mirai 2025] 高级礼物招募",
-      "source": "unknown",
+      "text": "[魔法未来 2025] 高级礼物招募",
+      "source": "human",
       "ids": [
         "794"
       ]
@@ -1697,14 +1697,14 @@
     },
     "[ワンダーランズ×ショウタイム]プレミアムプレゼントガチャ": {
       "text": "[Wonderlands×Showtime]高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "130"
       ]
     },
     "[ワンダーランズ×ショウタイム]ワールドリンクイベントサポートガチャ": {
       "text": "[Wonderlands×Showtime]世界连结活动支援招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "726"
       ]
@@ -1732,7 +1732,7 @@
     },
     "[初音ミク]HAPPY ANNIVERSARY2025ガチャ": {
       "text": "[初音未来] HAPPY ANNIVERSARY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "795"
       ]
@@ -1746,35 +1746,35 @@
     },
     "[劇場版プロジェクトセカイ公開記念][25時、ナイトコードで。]リコレクションガチャ": {
       "text": "[剧场版 Project SEKAI 公开纪念][25時、ナイトコードで。]回顾招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "661"
       ]
     },
     "[劇場版プロジェクトセカイ公開記念][Leo/need]リコレクションガチャ": {
       "text": "[剧场版 Project SEKAI 公开纪念][Leo/need]回顾招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "657"
       ]
     },
     "[劇場版プロジェクトセカイ公開記念][MORE MORE JUMP！]リコレクションガチャ": {
       "text": "[剧场版 Project SEKAI 公开纪念][MORE MORE JUMP！]回顾招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "658"
       ]
     },
     "[劇場版プロジェクトセカイ公開記念][Vivid BAD SQUAD]リコレクションガチャ": {
       "text": "[剧场版 Project SEKAI 公开纪念][Vivid BAD SQUAD]回顾招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "659"
       ]
     },
     "[劇場版プロジェクトセカイ公開記念][ワンダーランズ×ショウタイム]リコレクションガチャ": {
       "text": "[剧场版 Project SEKAI 公开纪念][Wonderlands×Showtime]回顾招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "660"
       ]
@@ -1805,7 +1805,7 @@
     },
     "[天馬司]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[天马司]HAPPY BIRTHDAY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "736"
       ]
@@ -1833,7 +1833,7 @@
     },
     "[天馬咲希]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[天马咲希]HAPPY BIRTHDAY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "728"
       ]
@@ -1854,7 +1854,7 @@
     },
     "[宵崎奏]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[宵崎奏]HAPPY BIRTHDAY2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "456"
       ]
@@ -1868,21 +1868,21 @@
     },
     "[宵崎奏]HAPPY BIRTHDAY2026ガチャ": {
       "text": "[宵崎奏]HAPPY BIRTHDAY 2026招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "904"
       ]
     },
     "[宵崎奏]HAPPY BIRTHDAYガチャ": {
       "text": "[宵崎奏]HAPPY BIRTHDAY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "183"
       ]
     },
     "[宵崎奏]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[宵崎奏]HAPPY BIRTHDAY 回忆招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "905"
       ]
@@ -1896,7 +1896,7 @@
     },
     "[小豆沢こはね]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[小豆泽心羽] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "470"
       ]
@@ -1910,21 +1910,21 @@
     },
     "[小豆沢こはね]HAPPY BIRTHDAY2026ガチャ": {
       "text": "[小豆泽心羽]HAPPY BIRTHDAY 2026招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "913"
       ]
     },
     "[小豆沢こはね]HAPPY BIRTHDAYガチャ": {
       "text": "[小豆泽心羽]HAPPY BIRTHDAY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "190"
       ]
     },
     "[小豆沢こはね]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[小豆泽心羽]HAPPY BIRTHDAY Memories招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "914"
       ]
@@ -1938,7 +1938,7 @@
     },
     "[巡音ルカ]HAPPY ANNIVERSARY2024ガチャ": {
       "text": "[巡音流歌]HAPPY ANNIVERSARY2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "451"
       ]
@@ -1952,21 +1952,21 @@
     },
     "[巡音ルカ]HAPPY ANNIVERSARY2026ガチャ": {
       "text": "[巡音流歌]HAPPY ANNIVERSARY 2026招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "898"
       ]
     },
     "[巡音ルカ]HAPPY ANNIVERSARYガチャ": {
       "text": "[巡音流歌]HAPPY ANNIVERSARY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "176"
       ]
     },
     "[巡音ルカ]HAPPY ANNIVERSARYメモリーズガチャ": {
       "text": "[巡音流歌]HAPPY ANNIVERSARY 回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "899"
       ]
@@ -1996,8 +1996,8 @@
       ]
     },
     "[復刻]Escape from rainガチャ": {
-      "text": "[复刻] Escape from rain 招募",
-      "source": "unknown",
+      "text": "[复刻]Escape from rain 招募",
+      "source": "human",
       "ids": [
         "510",
         "633"
@@ -2005,7 +2005,7 @@
     },
     "[復刻]Eternal Boutガチャ": {
       "text": "[复刻]Eternal Bout招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "734",
         "860"
@@ -2021,7 +2021,7 @@
     },
     "[復刻]Grow up with me！ガチャ": {
       "text": "[复刻]Grow up with me！招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "600",
         "735"
@@ -2037,7 +2037,7 @@
     },
     "[復刻]Night sweet mealガチャ": {
       "text": "[复刻]Night sweet meal招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "907"
       ]
@@ -2051,8 +2051,8 @@
       ]
     },
     "[復刻]SEKAIでHello♡素敵な出会いガチャ": {
-      "text": "[复刻]在SEKAI中Hello♡美好的相遇招募",
-      "source": "llm",
+      "text": "[复刻]在SEKAI中Hello♡美好的相遇招募 「三丽鸥联动池」",
+      "source": "human",
       "ids": [
         "903"
       ]
@@ -2083,21 +2083,21 @@
     },
     "[復刻]Talent Bloomsガチャ": {
       "text": "[复刻] Talent Blooms 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "843"
       ]
     },
     "[復刻]That flower, once moreガチャ": {
       "text": "[复刻]That flower, once more招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "869"
       ]
     },
     "[復刻]The Party Of Blast!!ガチャ": {
       "text": "[复刻] The Party Of Blast!! 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "764",
         "908"
@@ -2169,7 +2169,7 @@
     },
     "[復刻][初音ミク]HAPPY ANNIVERSARY2024ガチャ": {
       "text": "[复刻] [初音未来] HAPPY ANNIVERSARY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "796"
       ]
@@ -2193,7 +2193,7 @@
     },
     "[復刻][天馬司]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻][天马司]HAPPY BIRTHDAY 2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "737"
       ]
@@ -2217,7 +2217,7 @@
     },
     "[復刻][天馬咲希]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻][天马咲希]HAPPY BIRTHDAY 2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "729"
       ]
@@ -2361,7 +2361,7 @@
     },
     "[復刻][星乃一歌]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [星乃一歌] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "784"
       ]
@@ -2385,7 +2385,7 @@
     },
     "[復刻][暁山瑞希]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [晓山瑞希] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "791"
       ]
@@ -2553,7 +2553,7 @@
     },
     "[復刻][白石杏]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [白石杏] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "773"
       ]
@@ -2577,7 +2577,7 @@
     },
     "[復刻][神代類]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [神代类] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "754"
       ]
@@ -2625,7 +2625,7 @@
     },
     "[復刻][草薙寧々]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [草薙宁宁] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "768"
       ]
@@ -2697,7 +2697,7 @@
     },
     "[復刻][青柳冬弥]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻][青柳冬弥]HAPPY BIRTHDAY 2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "742"
       ]
@@ -2721,7 +2721,7 @@
     },
     "[復刻][鳳えむ]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[复刻] [凤笑梦] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "805"
       ]
@@ -2744,7 +2744,7 @@
     },
     "[復刻]あなたに届け♡Live Streamingガチャ": {
       "text": "[复刻]传达给你♡Live Streaming招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "787",
         "893"
@@ -2760,7 +2760,7 @@
     },
     "[復刻]とってもおばけなバケーション！ガチャ": {
       "text": "[复刻] 鬼怪满满的假期！ 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "808"
       ]
@@ -2855,15 +2855,15 @@
     },
     "[復刻]妖蔓延る京ガチャ": {
       "text": "[复刻] 妖气弥漫之京招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "538",
         "656"
       ]
     },
     "[復刻]想い奏でるマーチングパレードガチャ": {
-      "text": "[复刻]奏响心",
-      "source": "unknown",
+      "text": "[复刻] 奏响心",
+      "source": "human",
       "ids": [
         "574",
         "698"
@@ -2871,7 +2871,7 @@
     },
     "[復刻]戦の果てに待つものはガチャ": {
       "text": "[复刻] 战争尽头等待之物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "697",
         "844"
@@ -2879,7 +2879,7 @@
     },
     "[復刻]新春・咲き誇る魅惑の華ガチャ": {
       "text": "[复刻] 新春·盛开的魅惑之花 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "655",
         "765"
@@ -2902,16 +2902,16 @@
       ]
     },
     "[復刻]永久に響く鐘の音の下でガチャ": {
-      "text": "[复刻]在永恒鸣响的钟声下招募",
-      "source": "unknown",
+      "text": "[复刻] 在永恒鸣响的钟声下招募",
+      "source": "human",
       "ids": [
         "524",
         "680"
       ]
     },
     "[復刻]玲瓏たる追憶ガチャ": {
-      "text": "[复刻]玲珑追忆招募",
-      "source": "unknown",
+      "text": "[复刻] 玲珑追忆招募",
+      "source": "human",
       "ids": [
         "892"
       ]
@@ -2925,8 +2925,8 @@
       ]
     },
     "[復刻]秋宵深まる黄昏時にガチャ": {
-      "text": "[复刻]秋宵渐深黄昏时招募",
-      "source": "unknown",
+      "text": "[复刻] 秋宵渐深黄昏时招募",
+      "source": "human",
       "ids": [
         "616",
         "751"
@@ -2934,7 +2934,7 @@
     },
     "[復刻]罪の回顧録ガチャ": {
       "text": "[复刻]罪之回忆录招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "327",
         "862"
@@ -2942,7 +2942,7 @@
     },
     "[復刻]華の都へご招待ガチャ": {
       "text": "[复刻] 华丽之都的邀请 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "632",
         "788"
@@ -2958,7 +2958,7 @@
     },
     "[復刻]音楽が鳴る街角でガチャ": {
       "text": "[复刻] 音乐鸣响的街角招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "859"
       ]
@@ -2980,7 +2980,7 @@
     },
     "[日野森志歩]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[日野森志步]HAPPY BIRTHDAY2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "439"
       ]
@@ -2994,7 +2994,7 @@
     },
     "[日野森志歩]HAPPY BIRTHDAY2026ガチャ": {
       "text": "[日野森志步]HAPPY BIRTHDAY 2026招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "884"
       ]
@@ -3008,7 +3008,7 @@
     },
     "[日野森志歩]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[日野森志步]HAPPY BIRTHDAY 回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "885"
       ]
@@ -3022,7 +3022,7 @@
     },
     "[日野森雫]HAPPY BIRTHDAY2023ガチャ": {
       "text": "[日野森雫]HAPPY BIRTHDAY2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "419"
       ]
@@ -3036,7 +3036,7 @@
     },
     "[日野森雫]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[日野森雫]HAPPY BIRTHDAY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "866"
       ]
@@ -3050,7 +3050,7 @@
     },
     "[日野森雫]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[日野森雫]HAPPY BIRTHDAY 纪念招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "867"
       ]
@@ -3071,7 +3071,7 @@
     },
     "[星乃一歌]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[星乃一歌] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "783"
       ]
@@ -3099,7 +3099,7 @@
     },
     "[暁山瑞希]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[晓山瑞希] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "790"
       ]
@@ -3120,7 +3120,7 @@
     },
     "[望月穂波]HAPPY BIRTHDAY2023ガチャ": {
       "text": "[望月穗波]HAPPY BIRTHDAY 2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "398"
       ]
@@ -3134,7 +3134,7 @@
     },
     "[望月穂波]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[望月穗波] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "847"
       ]
@@ -3148,7 +3148,7 @@
     },
     "[望月穂波]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[望月穗波] HAPPY BIRTHDAY 回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "848"
       ]
@@ -3162,7 +3162,7 @@
     },
     "[朝比奈まふゆ]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[朝比奈真冬]HAPPY BIRTHDAY2024招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "448"
       ]
@@ -3176,21 +3176,21 @@
     },
     "[朝比奈まふゆ]HAPPY BIRTHDAY2026ガチャ": {
       "text": "[朝比奈真冬]HAPPY BIRTHDAY 2026招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "895"
       ]
     },
     "[朝比奈まふゆ]HAPPY BIRTHDAYガチャ": {
       "text": "[朝比奈真冬]HAPPY BIRTHDAY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "175"
       ]
     },
     "[朝比奈まふゆ]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[朝比奈真冬]HAPPY BIRTHDAY 回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "896"
       ]
@@ -3203,8 +3203,8 @@
       ]
     },
     "[東方Projectコラボ記念] コラボ限定★4メンバー確定 幻想郷コレクションガチャ": {
-      "text": "[东方Project联动纪念] 联动限定★4成员必得 幻想乡收藏招募",
-      "source": "unknown",
+      "text": "[东方Project联动纪念] 联动限定必出★4成员 幻想乡收藏招募",
+      "source": "human",
       "ids": [
         "732"
       ]
@@ -3218,7 +3218,7 @@
     },
     "[東雲彰人]HAPPY BIRTHDAY2023ガチャ": {
       "text": "[东云彰人]HAPPY BIRTHDAY2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "408"
       ]
@@ -3232,7 +3232,7 @@
     },
     "[東雲彰人]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[东云彰人] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "856"
       ]
@@ -3246,7 +3246,7 @@
     },
     "[東雲彰人]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[东云彰人] HAPPY BIRTHDAY 纪念回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "857"
       ]
@@ -3288,7 +3288,7 @@
     },
     "[桃井愛莉]HAPPY BIRTHDAY2024ガチャ": {
       "text": "[桃井爱莉] HAPPY BIRTHDAY 2024 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "479"
       ]
@@ -3316,7 +3316,7 @@
     },
     "[桐谷遥]HAPPY BIRTHDAY2023ガチャ": {
       "text": "[桐谷遥]HAPPY BIRTHDAY 2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "389"
       ]
@@ -3330,7 +3330,7 @@
     },
     "[桐谷遥]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[桐谷遥] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "836"
       ]
@@ -3344,7 +3344,7 @@
     },
     "[桐谷遥]HAPPY BIRTHDAYメモリーズガチャ": {
       "text": "[桐谷遥] HAPPY BIRTHDAY 回忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "837"
       ]
@@ -3365,14 +3365,14 @@
     },
     "[白石杏]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[白石杏] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "772"
       ]
     },
     "[白石杏]HAPPY BIRTHDAYガチャ": {
       "text": "[白石杏]HAPPY BIRTHDAY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "224"
       ]
@@ -3393,7 +3393,7 @@
     },
     "[神代類]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[神代类] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "753"
       ]
@@ -3449,14 +3449,14 @@
     },
     "[草薙寧々]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[草薙宁宁] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "767"
       ]
     },
     "[草薙寧々]HAPPY BIRTHDAYガチャ": {
       "text": "[草薙宁宁]HAPPY BIRTHDAY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "222"
       ]
@@ -3477,7 +3477,7 @@
     },
     "[鏡音リン]HAPPY ANNIVERSARY2023ガチャ": {
       "text": "[镜音铃]HAPPY ANNIVERSARY2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "427"
       ]
@@ -3491,21 +3491,21 @@
     },
     "[鏡音リン]HAPPY ANNIVERSARY2025ガチャ": {
       "text": "[镜音铃]HAPPY ANNIVERSARY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "873"
       ]
     },
     "[鏡音リン]HAPPY ANNIVERSARYガチャ": {
       "text": "[镜音铃]HAPPY ANNIVERSARY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "162"
       ]
     },
     "[鏡音リン]HAPPY ANNIVERSARYメモリーズガチャ": {
       "text": "[镜音铃]HAPPY ANNIVERSARY 纪念招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "874"
       ]
@@ -3519,7 +3519,7 @@
     },
     "[鏡音レン]HAPPY ANNIVERSARY2023ガチャ": {
       "text": "[镜音连]HAPPY ANNIVERSARY2023招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "430"
       ]
@@ -3533,21 +3533,21 @@
     },
     "[鏡音レン]HAPPY ANNIVERSARY2025ガチャ": {
       "text": "[镜音连]HAPPY ANNIVERSARY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "875"
       ]
     },
     "[鏡音レン]HAPPY ANNIVERSARYガチャ": {
       "text": "[镜音连]HAPPY ANNIVERSARY 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "163"
       ]
     },
     "[鏡音レン]HAPPY ANNIVERSARYメモリーズガチャ": {
       "text": "[镜音连]HAPPY ANNIVERSARY 纪念招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "876"
       ]
@@ -3568,7 +3568,7 @@
     },
     "[青柳冬弥]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[青柳冬弥]HAPPY BIRTHDAY 2025招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "741"
       ]
@@ -3596,7 +3596,7 @@
     },
     "[鳳えむ]HAPPY BIRTHDAY2025ガチャ": {
       "text": "[凤笑梦] HAPPY BIRTHDAY 2025 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "804"
       ]
@@ -3683,43 +3683,43 @@
       ]
     },
     "【5周年前夜祭】[25時、ナイトコードで。]スペシャルプライズガチャ": {
-      "text": "【5周年庆前夜祭】[25点，在Nightcord。]特别奖品招募",
-      "source": "llm",
+      "text": "【5周年庆前夜祭】[25点，Nightcord见。]特别奖品招募",
+      "source": "human",
       "ids": [
         "823"
       ]
     },
     "【5周年前夜祭】[Leo/need]スペシャルプライズガチャ": {
       "text": "【5周年庆前夜祭】[Leo/need]特别奖品招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "819"
       ]
     },
     "【5周年前夜祭】[MORE MORE JUMP！]スペシャルプライズガチャ": {
       "text": "【5周年庆前夜祭】[MORE MORE JUMP！]特别奖品招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "820"
       ]
     },
     "【5周年前夜祭】[Vivid BAD SQUAD]スペシャルプライズガチャ": {
       "text": "【5周年庆前夜祭】[Vivid BAD SQUAD]特别奖品招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "821"
       ]
     },
     "【5周年前夜祭】[バーチャル・シンガー]スペシャルプライズガチャ": {
       "text": "【5周年庆前夜祭】[虚拟歌手]特别奖品招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "818"
       ]
     },
     "【5周年前夜祭】[ワンダーランズ×ショウタイム]スペシャルプライズガチャ": {
       "text": "【5周年庆前夜祭】[Wonderlands×Showtime]特别奖品招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "822"
       ]
@@ -3733,7 +3733,7 @@
     },
     "あの日の光を追いかけてガチャ": {
       "text": "追逐那一天的光芒招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "220"
       ]
@@ -3796,14 +3796,14 @@
     },
     "ひらひらたゆたう乙女ガチャ": {
       "text": "飘然摇曳的少女招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "316"
       ]
     },
     "ふわふわ☆ドリームランドガチャ": {
       "text": "蓬松松☆梦幻乐园招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "56"
       ]
@@ -3817,14 +3817,14 @@
     },
     "まほろば流離う鬼ガチャ": {
       "text": "桃源流浪之鬼招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "886"
       ]
     },
     "みんなたまとも!どり～むガチャ": {
-      "text": "大家都是塔麻朋友！Dream 招募",
-      "source": "unknown",
+      "text": "大家都是塔麻可吉的朋友！Dream 招募",
+      "source": "human",
       "ids": [
         "810"
       ]
@@ -3900,7 +3900,7 @@
     },
     "ウェルカム♪不思議のセカイガチャ": {
       "text": "Welcome♪不思议世界招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "92"
       ]
@@ -3959,8 +3959,8 @@
       ]
     },
     "キミに咲うfuzzy daisyガチャ": {
-      "text": "为你绽放的 fuzzy daisy 招募",
-      "source": "unknown",
+      "text": "为你绽放的毛绒雏菊招募",
+      "source": "human",
       "ids": [
         "789"
       ]
@@ -3981,14 +3981,14 @@
     },
     "グレイス・マリアージュガチャ": {
       "text": "Grace Mariage 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "213"
       ]
     },
     "シークレット・ティータイムガチャ": {
       "text": "秘密茶会招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "177"
       ]
@@ -4002,14 +4002,14 @@
     },
     "スカイランナーズ！ガチャ": {
       "text": "Sky Runners！招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "181"
       ]
     },
     "スクランブル・フラワーガチャ": {
       "text": "Scramble Flower招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "132"
       ]
@@ -4047,7 +4047,7 @@
     },
     "ナイツ・オブ・ホワイトガチャ": {
       "text": "Knights of White 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "188"
       ]
@@ -4143,7 +4143,7 @@
     },
     "ラブリーメッセンジャーガチャ": {
       "text": "可爱信使招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "110"
       ]
@@ -4172,7 +4172,7 @@
     },
     "ロマンティックブライドガチャ": {
       "text": "浪漫新娘招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "89"
       ]
@@ -4186,28 +4186,28 @@
     },
     "ワールドコスチュームガチャ vol.1": {
       "text": "世界服装招募 vol.1",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "759"
       ]
     },
     "ワールドコスチュームガチャ vol.2": {
       "text": "世界服装招募 vol.2",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "760"
       ]
     },
     "ワールドコスチュームガチャ vol.3": {
       "text": "世界服装招募 vol.3",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "871"
       ]
     },
     "ワールドコスチュームガチャ vol.4": {
       "text": "世界服装招募 vol.4",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "877"
       ]
@@ -4235,14 +4235,14 @@
     },
     "光芒差す黎明ガチャ": {
       "text": "光芒映照之黎明招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "746"
       ]
     },
     "共に歩むクルーガチャ": {
       "text": "并肩同行的伙伴招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "78"
       ]
@@ -4296,7 +4296,7 @@
     },
     "夏夜に浮かぶ昔日ガチャ": {
       "text": "浮现于夏夜的往昔招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "104"
       ]
@@ -4324,7 +4324,7 @@
     },
     "密着！アニマルポリス24時！ガチャ": {
       "text": "紧贴！动物警察24小时！招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "422"
       ]
@@ -4345,7 +4345,7 @@
     },
     "忘却のスノー・ホワイトガチャ": {
       "text": "忘却的白雪公主招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "120"
       ]
@@ -4387,7 +4387,7 @@
     },
     "想望の星追い人ガチャ": {
       "text": "想望的逐星者招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "864"
       ]
@@ -4422,7 +4422,7 @@
     },
     "旅立つ冬のレイルウェイガチャ": {
       "text": "启程的冬日铁道招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "160"
       ]
@@ -4436,7 +4436,7 @@
     },
     "春想う、宵の一刻ガチャ": {
       "text": "春思之宵招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "200"
       ]
@@ -4471,7 +4471,7 @@
     },
     "歌よ響け！夢見るマーメイドガチャ": {
       "text": "歌声响彻！梦幻人鱼招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "112"
       ]
@@ -4527,49 +4527,49 @@
     },
     "瞬きのSunny daysガチャ": {
       "text": "瞬息的Sunny days招募",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "906"
       ]
     },
     "瞳、高みを目指してガチャ": {
       "text": "双眸，向着高处迈进招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "459"
       ]
     },
     "瞳に映る綴り花ガチャ": {
       "text": "眼中映出的缀花招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "846"
       ]
     },
     "神獣たちの年始ガチャ": {
       "text": "神兽们的年初招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "280"
       ]
     },
     "福財の御札ガチャ（大）": {
       "text": "福财御札招募（大）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "888"
       ]
     },
     "福財の御札ガチャ（極）": {
       "text": "福财御札招募（极）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "890"
       ]
     },
     "福財の御札ガチャ（特）": {
       "text": "福财御札招募（特）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "889"
       ]
@@ -4583,7 +4583,7 @@
     },
     "秘めたるビーストハートガチャ": {
       "text": "秘藏的野性之心招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "102"
       ]
@@ -4604,21 +4604,21 @@
     },
     "空に描く虹の魔法ガチャ": {
       "text": "在空中描绘虹之魔法招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "466"
       ]
     },
     "絶望の雨すら笑ってガチャ": {
       "text": "连绝望之雨也付之一笑 招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "799"
       ]
     },
     "罪の回顧録ガチャ": {
       "text": "罪之回忆录招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "159"
       ]
@@ -4660,7 +4660,7 @@
     },
     "蒼穹へ響く音ガチャ": {
       "text": "响彻苍穹之音招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "396"
       ]
@@ -4674,7 +4674,7 @@
     },
     "迷い断ち切るフルメタルガチャ": {
       "text": "斩断迷茫的全金属招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "118"
       ]
