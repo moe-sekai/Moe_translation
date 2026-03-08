@@ -35,6 +35,7 @@ RUN mkdir -p /app/git-workspace && \
 
 COPY --from=go-builder /sekai-translate ./sekai-translate
 COPY --from=ui-builder /app/out/ ./proofreading-ui/
+COPY translations/ ./seed-translations/
 COPY docker-entrypoint.sh ./docker-entrypoint.sh
 RUN chmod +x ./docker-entrypoint.sh
 
