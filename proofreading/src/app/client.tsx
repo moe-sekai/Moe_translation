@@ -348,8 +348,8 @@ export default function ProofreadingClient() {
                                     text: cn,
                                     source: "human" // Event stories use human translation for now
                                 });
-                                });
                             });
+                        });
                     const mergedEntries = mergeEntriesWithDrafts(newEntries, loadedDrafts);
                     setEntries(mergedEntries);
                     if (mergedEntries.length > 0) {
@@ -366,7 +366,11 @@ export default function ProofreadingClient() {
         getEntries(selectedCategory, selectedField, sourceFilter || undefined)
             .then(data => {
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                data.sort((a, b) => {
+                    const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
+                    if (diff !== 0) return diff;
+                    return a.key.localeCompare(b.key, undefined, { numeric: true });
+                });
                 const mergedEntries = mergeEntriesWithDrafts(data, loadedDrafts);
                 setEntries(mergedEntries);
                 if (mergedEntries.length > 0) {
@@ -460,7 +464,7 @@ export default function ProofreadingClient() {
         setEditValue(drafts[next.key]?.text ?? next.text);
         setIsEditing(false);
         document.querySelector(`[data-key="${CSS.escape(next.key)}"]`)
-            ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+            ?.scrollIntoView({ block: "center", behavior: "smooth" });
     }, [selectedIndex, filteredEntries, drafts]);
 
     const saveDraft = useCallback((key: string, text: string) => {
@@ -630,7 +634,11 @@ export default function ProofreadingClient() {
                 } else {
                     const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
                     const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                    data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                    data.sort((a, b) => {
+                        const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
+                        if (diff !== 0) return diff;
+                        return a.key.localeCompare(b.key, undefined, { numeric: true });
+                    });
                     const merged = mergeEntriesWithDrafts(data, drafts);
                     setEntries(merged);
                     if (selectedKey) {
@@ -666,7 +674,11 @@ export default function ProofreadingClient() {
             if (selectedCategory && selectedField) {
                 const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                data.sort((a, b) => {
+                    const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
+                    if (diff !== 0) return diff;
+                    return a.key.localeCompare(b.key, undefined, { numeric: true });
+                });
                 setEntries(mergeEntriesWithDrafts(data, drafts));
             }
             const stories = await getEventStories();
@@ -699,7 +711,11 @@ export default function ProofreadingClient() {
             if (selectedCategory && selectedField) {
                 const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
                 const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                data.sort((a, b) => (order[a.source] ?? 5) - (order[b.source] ?? 5));
+                data.sort((a, b) => {
+                    const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
+                    if (diff !== 0) return diff;
+                    return a.key.localeCompare(b.key, undefined, { numeric: true });
+                });
                 setEntries(mergeEntriesWithDrafts(data, drafts));
             }
         } catch (err) {
@@ -726,7 +742,7 @@ export default function ProofreadingClient() {
     }, []);
 
     const handleTextareaKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-        if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSave(); }
+        if (e.key === "Enter" && e.shiftKey) { e.preventDefault(); handleSave(); }
         if (e.key === "Escape") { e.preventDefault(); setSelectedKey(null); setIsEditing(false); }
         if (checkModifier(e) && e.key === "ArrowUp") { e.preventDefault(); navigateEntry(-1); }
         if (checkModifier(e) && e.key === "ArrowDown") { e.preventDefault(); navigateEntry(1); }
@@ -987,7 +1003,7 @@ export default function ProofreadingClient() {
                                                 </button>
                                             )}
                                             <div className="proof-hints">
-                                                <kbd>Enter</kbd> 保存 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
+                                                <kbd>Shift+Enter</kbd> 保存 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
                                             </div>
                                         </div>
                                     </div>
@@ -1052,15 +1068,15 @@ export default function ProofreadingClient() {
                                                                     )}
                                                                 </div>
                                                             ) : (
-                                                            <button
-                                                                className="btn-detail btn-detail-sm"
-                                                                onClick={() => handleOpenDetail(rowDetail.url || "")}
-                                                                disabled={!rowDetail.url}
-                                                                title={rowDetail.url ? "打开来源详情" : (rowDetail.disabledReason || "缺少来源ID")}
-                                                            >
-                                                                {rowDetail.label}
-                                                            </button>
-                                                        )}
+                                                                <button
+                                                                    className="btn-detail btn-detail-sm"
+                                                                    onClick={() => handleOpenDetail(rowDetail.url || "")}
+                                                                    disabled={!rowDetail.url}
+                                                                    title={rowDetail.url ? "打开来源详情" : (rowDetail.disabledReason || "缺少来源ID")}
+                                                                >
+                                                                    {rowDetail.label}
+                                                                </button>
+                                                            )}
                                                         </td>
                                                         <td onClick={e => e.stopPropagation()}>
                                                             <select
