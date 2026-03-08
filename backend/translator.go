@@ -412,8 +412,12 @@ func (t *Translator) ListEventStories() ([]EventStorySummary, error) {
 		if err != nil {
 			continue
 		}
-		var detail EventStoryDetail
-		if err := json.Unmarshal(data, &detail); err != nil {
+		info, err := e.Info()
+		if err != nil {
+			continue
+		}
+		detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+		if err != nil {
 			continue
 		}
 		s := EventStorySummary{
@@ -435,7 +439,12 @@ func (t *Translator) GetEventStory(eventID int) (EventStoryDetail, error) {
 	if err != nil {
 		return detail, err
 	}
-	if err := json.Unmarshal(data, &detail); err != nil {
+	info, err := os.Stat(path)
+	if err != nil {
+		return detail, err
+	}
+	detail, err = parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
 		return detail, err
 	}
 	return detail, nil
@@ -614,8 +623,12 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	if err != nil {
 		return err
 	}
-	var detail EventStoryDetail
-	if err := json.Unmarshal(data, &detail); err != nil {
+	info, err := os.Stat(path)
+	if err != nil {
+		return err
+	}
+	detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
 		return err
 	}
 
@@ -639,6 +652,60 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	}
 	t.store.MarkExternalChange()
 	return nil
+}
+
+func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDetail, error) {
+	var detail EventStoryDetail
+	if err := json.Unmarshal(raw, &detail); err == nil && detail.Episodes != nil {
+		detail.Meta.Source = strings.TrimSpace(detail.Meta.Source)
+		if detail.Meta.Source == "" {
+			detail.Meta.Source = "unknown"
+		}
+		if detail.Meta.Version == "" {
+			detail.Meta.Version = "1.0"
+		}
+		if detail.Meta.LastUpdated == 0 {
+			detail.Meta.LastUpdated = fallbackLastUpdated
+		}
+		return detail, nil
+	}
+
+	var legacy map[string]eventStoryEpisodePayload
+	if err := json.Unmarshal(raw, &legacy); err != nil {
+		return detail, err
+	}
+
+	episodes := make(map[string]struct {
+		ScenarioID string            `json:"scenarioId"`
+		Title      string            `json:"title"`
+		TalkData   map[string]string `json:"talkData"`
+	})
+	for episodeNo, episode := range legacy {
+		if _, err := strconv.Atoi(episodeNo); err != nil {
+			continue
+		}
+		if episode.ScenarioID == "" && strings.TrimSpace(episode.Title) == "" && len(episode.TalkData) == 0 {
+			continue
+		}
+		episodes[episodeNo] = struct {
+			ScenarioID string            `json:"scenarioId"`
+			Title      string            `json:"title"`
+			TalkData   map[string]string `json:"talkData"`
+		}{
+			ScenarioID: episode.ScenarioID,
+			Title:      episode.Title,
+			TalkData:   episode.TalkData,
+		}
+	}
+	if len(episodes) == 0 {
+		return detail, fmt.Errorf("unsupported event story format")
+	}
+
+	detail.Meta.Source = "official_cn"
+	detail.Meta.Version = "legacy"
+	detail.Meta.LastUpdated = fallbackLastUpdated
+	detail.Episodes = episodes
+	return detail, nil
 }
 
 func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string, trace TraceMap) (int, error) {
@@ -725,6 +792,8 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 		}
 	}
 
+	updated += syncMysekaiFlavorTextFromTag(category, cat)
+
 	if err := t.saveCategoryLocked(category, cat); err != nil {
 		t.store.mu.Unlock()
 		return updated, err
@@ -746,6 +815,36 @@ func idsEqual(a, b []string) bool {
 		}
 	}
 	return true
+}
+
+func syncMysekaiFlavorTextFromTag(category string, cat TranslationCategory) int {
+	if category != "mysekai" || cat == nil {
+		return 0
+	}
+	flavorEntries := cat["flavorText"]
+	tagEntries := cat["tag"]
+	if flavorEntries == nil || tagEntries == nil {
+		return 0
+	}
+	updated := 0
+	for jp, flavorEntry := range flavorEntries {
+		tagEntry, ok := tagEntries[jp]
+		if !ok {
+			continue
+		}
+		if strings.TrimSpace(tagEntry.Text) == "" && tagEntry.Source == SourceUnknown {
+			continue
+		}
+		next := flavorEntry
+		next.Text = tagEntry.Text
+		next.Source = tagEntry.Source
+		if flavorEntry.Text == next.Text && flavorEntry.Source == next.Source {
+			continue
+		}
+		flavorEntries[jp] = next
+		updated++
+	}
+	return updated
 }
 
 func (t *Translator) saveCategoryLocked(category string, cat TranslationCategory) error {
@@ -1291,78 +1390,25 @@ func (t *Translator) loadLocalEventStoryStates(dir string) (map[int]localEventSt
 		if err != nil {
 			continue
 		}
+		info, err := entry.Info()
+		if err != nil {
+			continue
+		}
 		state := localEventStoryState{EventID: eventID}
-		if source, ok := detectEventStoryMetaSource(raw); ok {
-			state.Source = source
-			state.IsOfficialCN = source == "official_cn"
-			state.IsLLM = source == "llm"
-		} else if isLegacyEventStoryFormat(raw) {
-			state.Source = "official_cn_legacy"
-			state.IsOfficialCN = true
-		} else {
+		detail, err := parseEventStoryDetail(raw, info.ModTime().Unix())
+		if err != nil {
 			state.Source = "unknown"
+		} else {
+			state.Source = detail.Meta.Source
+			if detail.Meta.Version == "legacy" && detail.Meta.Source == "official_cn" {
+				state.Source = "official_cn_legacy"
+			}
+			state.IsOfficialCN = detail.Meta.Source == "official_cn"
+			state.IsLLM = detail.Meta.Source == "llm"
 		}
 		states[eventID] = state
 	}
 	return states, maxID, nil
-}
-
-func detectEventStoryMetaSource(raw []byte) (string, bool) {
-	var parsed struct {
-		Meta struct {
-			Source string `json:"source"`
-		} `json:"meta"`
-		Episodes map[string]any `json:"episodes"`
-	}
-	if err := json.Unmarshal(raw, &parsed); err != nil {
-		return "", false
-	}
-	if parsed.Episodes == nil {
-		return "", false
-	}
-	source := strings.TrimSpace(parsed.Meta.Source)
-	if source == "" {
-		return "", false
-	}
-	return source, true
-}
-
-func isLegacyEventStoryFormat(raw []byte) bool {
-	var obj map[string]map[string]any
-	if err := json.Unmarshal(raw, &obj); err != nil {
-		return false
-	}
-	if len(obj) == 0 {
-		return false
-	}
-	hasEpisode := false
-	hasCNContent := false
-	for key, ep := range obj {
-		if key == "meta" || key == "episodes" {
-			return false
-		}
-		if _, err := strconv.Atoi(key); err != nil {
-			continue
-		}
-		scenarioID := getString(ep, "scenarioId")
-		_, hasTalkData := ep["talkData"]
-		if scenarioID != "" || hasTalkData {
-			hasEpisode = true
-		}
-		if rawTalkData, ok := ep["talkData"]; ok {
-			talkData, ok := rawTalkData.(map[string]any)
-			if ok {
-				for _, v := range talkData {
-					cnText, ok := v.(string)
-					if ok && strings.TrimSpace(cnText) != "" {
-						hasCNContent = true
-						break
-					}
-				}
-			}
-		}
-	}
-	return hasEpisode && hasCNContent
 }
 
 func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (map[string]eventStoryEpisodePayload, bool, bool, int) {

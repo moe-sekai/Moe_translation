@@ -38,6 +38,28 @@ const SOURCE_LABELS: Record<string, string> = {
 
 const SOURCE_BASE = (process.env.NEXT_PUBLIC_PJSK_BASE || "https://pjsk.moe").replace(/\/+$/, "");
 
+function normalizeEventStorySource(source: string | undefined): string {
+    switch ((source || "").trim().toLowerCase()) {
+        case "official_cn":
+        case "official_cn_legacy":
+        case "cn":
+            return "cn";
+        case "llm":
+            return "llm";
+        case "human":
+        case "pinned":
+        case "unknown":
+            return (source || "unknown").trim().toLowerCase();
+        case "jp_pending":
+        default:
+            return "unknown";
+    }
+}
+
+function getPersistedEventStorySource(source: string | undefined): string {
+    return normalizeEventStorySource(source);
+}
+
 const DETAIL_BUILDERS: Record<string, (id: string) => string> = {
     cards: (id) => `${SOURCE_BASE}/cards/${id}/`,
     events: (id) => `${SOURCE_BASE}/events/${id}/`,
@@ -82,7 +104,7 @@ function mergeEntriesWithDrafts(entries: TranslationEntry[], drafts: DraftRecord
     return entries.map(entry => {
         const draft = drafts[entry.key];
         if (!draft) return entry;
-        return { ...entry, text: draft.text, source: "human" };
+        return { ...entry, text: draft.text };
     });
 }
 
@@ -356,6 +378,7 @@ export default function ProofreadingClient() {
             const eventId = Number(selectedField);
             getEventStory(eventId)
                 .then(detail => {
+                    const storySource = normalizeEventStorySource(detail.meta?.source);
                     const newEntries: TranslationEntry[] = [];
                     Object.entries(detail.episodes)
                         .sort((a, b) => Number(a[0]) - Number(b[0]))
@@ -364,7 +387,7 @@ export default function ProofreadingClient() {
                                 newEntries.push({
                                     key: `${episodeNo}|${jp}`,
                                     text: cn,
-                                    source: "human" // Event stories use human translation for now
+                                    source: storySource,
                                 });
                             });
                         });
@@ -521,7 +544,14 @@ export default function ProofreadingClient() {
             } else {
                 await updateEntry(selectedCategory, selectedField, selectedKey, editValue, "human");
             }
-            setEntries(prev => prev.map(e => e.key === selectedKey ? { ...e, text: editValue, source: "human" } : e));
+            setEntries(prev => prev.map(e => {
+                if (e.key !== selectedKey) return e;
+                return {
+                    ...e,
+                    text: editValue,
+                    source: selectedCategory === "eventStory" ? getPersistedEventStorySource(e.source) : "human",
+                };
+            }));
             clearDraft(selectedKey);
         } catch {
             showToast("自动保存失败，内容已本地暂存", "err");
@@ -549,6 +579,8 @@ export default function ProofreadingClient() {
         if (savingRef.current || !selectedKey || !selectedCategory || !selectedField) return;
         savingRef.current = true;
         const src = overrideSource || "human";
+        const current = entries.find(e => e.key === selectedKey);
+        const persistedEventStorySource = getPersistedEventStorySource(current?.source);
 
         try {
             if (selectedCategory === "eventStory") {
@@ -558,7 +590,7 @@ export default function ProofreadingClient() {
                 await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue);
 
                 setEntries(prev => prev.map(e =>
-                    e.key === selectedKey ? { ...e, text: editValue, source: src } : e
+                    e.key === selectedKey ? { ...e, text: editValue, source: persistedEventStorySource } : e
                 ));
                 clearDraft(selectedKey);
                 showToast("剧情翻译已保存", "ok");
@@ -597,7 +629,7 @@ export default function ProofreadingClient() {
         } finally {
             savingRef.current = false;
         }
-    }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast, clearDraft]);
+    }, [selectedKey, selectedCategory, selectedField, editValue, filteredEntries, showToast, clearDraft, entries]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
         if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
@@ -637,12 +669,13 @@ export default function ProofreadingClient() {
             if (selectedCategory && selectedField) {
                 if (selectedCategory === "eventStory") {
                     const detail = await getEventStory(Number(selectedField));
+                    const storySource = normalizeEventStorySource(detail.meta?.source);
                     const newEntries: TranslationEntry[] = [];
                     Object.entries(detail.episodes)
                         .sort((a, b) => Number(a[0]) - Number(b[0]))
                         .forEach(([episodeNo, ep]) => {
                             Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
-                                newEntries.push({ key: `${episodeNo}|${jp}`, text: cn, source: "human" });
+                                newEntries.push({ key: `${episodeNo}|${jp}`, text: cn, source: storySource });
                             });
                         });
                     const merged = mergeEntriesWithDrafts(newEntries, drafts);
@@ -1031,7 +1064,9 @@ export default function ProofreadingClient() {
                                         />
                                         <div className="proof-actions">
                                             <button className="btn-save" onClick={() => handleSave()}>✓ 保存并下一条</button>
-                                            <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
+                                            {selectedCategory !== "eventStory" && (
+                                                <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
+                                            )}
                                             <button className="btn-cancel" onClick={() => { setSelectedKey(null); setIsEditing(false); }}>取消</button>
                                             {detailInfo.mode === "multi" && detailInfo.ids && detailInfo.ids.length > 1 ? (
                                                 <div className="detail-menu" ref={detailMenuRef}>

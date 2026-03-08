@@ -210,15 +210,19 @@ func (s *Store) UpdateEntry(category, field, key, text, source string) (string, 
 	}
 
 	old := cat[field][key]
-	if old.Text == text && old.Source == source {
+	changed := false
+	if old.Text != text || old.Source != source {
+		next := old
+		next.Text = text
+		next.Source = source
+		cat[field][key] = next
+		changed = true
+	}
+
+	if !changed && syncMysekaiFlavorTextFromTag(category, cat) == 0 {
 		s.mu.Unlock()
 		return "noop", nil
 	}
-
-	next := old
-	next.Text = text
-	next.Source = source
-	cat[field][key] = next
 
 	// Write .full.json
 	fullBytes, _ := json.MarshalIndent(cat, "", "  ")
