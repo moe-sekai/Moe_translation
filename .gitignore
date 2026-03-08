@@ -26,3 +26,6 @@ __pycache__/
 
 # Runtime git workspace
 git-workspace/
+
+# Runtime data output
+data/

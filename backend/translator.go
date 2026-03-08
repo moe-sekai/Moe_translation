@@ -249,6 +249,9 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 		return result, runErr
 	}
 	result.EventStoryFiles = storyCount
+	if storyCount > 0 {
+		t.store.MarkExternalChange()
+	}
 	fmt.Printf("[translate] cn-sync event stories completed, files=%d\n", storyCount)
 	return result, nil
 }
@@ -364,7 +367,10 @@ func (t *Translator) ManualAITranslate(req AITranslateRequest) (AITranslateResul
 			result.SkippedExisting++
 			continue
 		}
-		cat[req.Field][jp] = TranslationEntry{Text: cn, Source: SourceLLM}
+		next := current
+		next.Text = cn
+		next.Source = SourceLLM
+		cat[req.Field][jp] = next
 		result.Translated++
 	}
 	err := t.saveCategoryLocked(req.Category, cat)
@@ -372,6 +378,9 @@ func (t *Translator) ManualAITranslate(req AITranslateRequest) (AITranslateResul
 	if err != nil {
 		runErr = err
 		return result, runErr
+	}
+	if result.Translated > 0 {
+		t.store.NotifyChange()
 	}
 
 	return result, nil
@@ -580,13 +589,19 @@ func (t *Translator) aiTranslateField(req AITranslateRequest) (AITranslateResult
 			result.SkippedExisting++
 			continue
 		}
-		cat[req.Field][jp] = TranslationEntry{Text: cn, Source: SourceLLM}
+		next := current
+		next.Text = cn
+		next.Source = SourceLLM
+		cat[req.Field][jp] = next
 		result.Translated++
 	}
 	err := t.saveCategoryLocked(req.Category, cat)
 	t.store.mu.Unlock()
 	if err != nil {
 		return result, err
+	}
+	if result.Translated > 0 {
+		t.store.NotifyChange()
 	}
 
 	return result, nil
@@ -619,12 +634,15 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	if err != nil {
 		return err
 	}
-	return writeAtomic(path, out)
+	if err := writeAtomic(path, out); err != nil {
+		return err
+	}
+	t.store.MarkExternalChange()
+	return nil
 }
 
 func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string) (int, error) {
 	t.store.mu.Lock()
-	defer t.store.mu.Unlock()
 
 	if t.store.data[category] == nil {
 		t.store.data[category] = make(TranslationCategory)
@@ -643,12 +661,14 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 				if has && old.Source == SourcePinned {
 					continue
 				}
-				next = TranslationEntry{Text: cn, Source: SourceCN}
+				next.Text = cn
+				next.Source = SourceCN
 			} else {
 				if has && old.Text != "" {
 					continue
 				}
-				next = TranslationEntry{Text: "", Source: SourceUnknown}
+				next.Text = ""
+				next.Source = SourceUnknown
 			}
 			if !has || old.Text != next.Text || old.Source != next.Source {
 				cat[field][jp] = next
@@ -658,7 +678,12 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 	}
 
 	if err := t.saveCategoryLocked(category, cat); err != nil {
+		t.store.mu.Unlock()
 		return updated, err
+	}
+	t.store.mu.Unlock()
+	if updated > 0 {
+		t.store.NotifyChange()
 	}
 	return updated, nil
 }
