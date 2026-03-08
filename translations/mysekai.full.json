@@ -15984,7 +15984,7 @@
     },
     "CDプレーヤー": {
       "text": "CD播放机",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10848"
       ]
@@ -15998,14 +15998,14 @@
     },
     "KAITO": {
       "text": "KAITO",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "31"
       ]
     },
     "KAITO AN '26": {
       "text": "KAITO AN '26",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11131"
       ]
@@ -16033,21 +16033,21 @@
     },
     "Leo/need": {
       "text": "Leo/need",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "5"
       ]
     },
     "MEIKO": {
       "text": "MEIKO",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "30"
       ]
     },
     "MEIKO AN '25": {
-      "text": "MEIKO、杏、25时",
-      "source": "unknown",
+      "text": "MEIKO AN '25",
+      "source": "human",
       "ids": [
         "10958"
       ]
@@ -16075,21 +16075,21 @@
     },
     "MORE MORE JUMP！": {
       "text": "MORE MORE JUMP!",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10"
       ]
     },
     "Vivid BAD SQUAD": {
       "text": "Vivid BAD SQUAD",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "15"
       ]
     },
     "[5周年記念]メモリアルクリアプレート": {
-      "text": "[5周年纪念] 纪念透明牌",
-      "source": "unknown",
+      "text": "[5周年纪念] 透明纪念牌",
+      "source": "human",
       "ids": [
         "10864"
       ]
@@ -16642,126 +16642,126 @@
     },
     "[リミテッドスタイル vol.1] KAITOのぬいぐるみ/L": {
       "text": "[限定款式 vol.1] KAITO玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10838"
       ]
     },
     "[リミテッドスタイル vol.1] KAITOのぬいぐるみ/M": {
       "text": "[限定款式 vol.1] KAITO的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10837"
       ]
     },
     "[リミテッドスタイル vol.1] KAITOのぬいぐるみ/S": {
       "text": "[限定款式 vol.1] KAITO的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10836"
       ]
     },
     "[リミテッドスタイル vol.1] MEIKOのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] MEIKO毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10784"
       ]
     },
     "[リミテッドスタイル vol.1] MEIKOのぬいぐるみ/M": {
       "text": "[限定款式 vol.1] MEIKO的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10783"
       ]
     },
     "[リミテッドスタイル vol.1] MEIKOのぬいぐるみ/S": {
       "text": "[限定风格 vol.1] MEIKO毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10782"
       ]
     },
     "[リミテッドスタイル vol.1] えむのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 笑梦的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10796"
       ]
     },
     "[リミテッドスタイル vol.1] えむのぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 笑梦毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10795"
       ]
     },
     "[リミテッドスタイル vol.1] えむのぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 笑梦的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10794"
       ]
     },
     "[リミテッドスタイル vol.1] こはねのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 心羽毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10772"
       ]
     },
     "[リミテッドスタイル vol.1] こはねのぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 心羽毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10771"
       ]
     },
     "[リミテッドスタイル vol.1] こはねのぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 心羽的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10770"
       ]
     },
     "[リミテッドスタイル vol.1] まふゆのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 真冬的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10799"
       ]
     },
     "[リミテッドスタイル vol.1] まふゆのぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 真冬的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10798"
       ]
     },
     "[リミテッドスタイル vol.1] まふゆのぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 真冬的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10797"
       ]
     },
     "[リミテッドスタイル vol.1] みのりのぬいぐるみ/L": {
       "text": "[限定款式 vol.1] 实乃里的布偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10790"
       ]
     },
     "[リミテッドスタイル vol.1] みのりのぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 实乃里的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10789"
       ]
     },
     "[リミテッドスタイル vol.1] みのりのぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 实乃里毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10788"
       ]
@@ -16789,105 +16789,105 @@
     },
     "[リミテッドスタイル vol.1] リンのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 铃的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10781"
       ]
     },
     "[リミテッドスタイル vol.1] リンのぬいぐるみ/M": {
       "text": "[限量款样式 vol.1] 铃的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10780"
       ]
     },
     "[リミテッドスタイル vol.1] リンのぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 铃毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10779"
       ]
     },
     "[リミテッドスタイル vol.1] ルカのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 流歌的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10835"
       ]
     },
     "[リミテッドスタイル vol.1] ルカのぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 巡音流歌玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10834"
       ]
     },
     "[リミテッドスタイル vol.1] ルカのぬいぐるみ/S": {
       "text": "[限量款样式 vol.1] 流歌的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10833"
       ]
     },
     "[リミテッドスタイル vol.1] レンのぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 连的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10802"
       ]
     },
     "[リミテッドスタイル vol.1] レンのぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 连的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10801"
       ]
     },
     "[リミテッドスタイル vol.1] レンのぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 连的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10800"
       ]
     },
     "[リミテッドスタイル vol.1] 一歌のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 一歌毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10766"
       ]
     },
     "[リミテッドスタイル vol.1] 一歌のぬいぐるみ/M": {
       "text": "[限定样式 vol.1] 一歌的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10765"
       ]
     },
     "[リミテッドスタイル vol.1] 一歌のぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 一歌的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10764"
       ]
     },
     "[リミテッドスタイル vol.1] 冬弥のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 冬弥的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10826"
       ]
     },
     "[リミテッドスタイル vol.1] 冬弥のぬいぐるみ/M": {
-      "text": "[限定款式 vol.1",
-      "source": "unknown",
+      "text": "[限定款式 vol.1] 冬弥毛绒玩偶/M",
+      "source": "human",
       "ids": [
         "10825"
       ]
     },
     "[リミテッドスタイル vol.1] 冬弥のぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 冬弥的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10824"
       ]
@@ -16936,105 +16936,105 @@
     },
     "[リミテッドスタイル vol.1] 奏のぬいぐるみ/L": {
       "text": "[限定款式 vol.1] 奏的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10778"
       ]
     },
     "[リミテッドスタイル vol.1] 奏のぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 奏毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10777"
       ]
     },
     "[リミテッドスタイル vol.1] 奏のぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 奏的布偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10776"
       ]
     },
     "[リミテッドスタイル vol.1] 寧々のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 宁宁的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10829"
       ]
     },
     "[リミテッドスタイル vol.1] 寧々のぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 宁宁的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10828"
       ]
     },
     "[リミテッドスタイル vol.1] 寧々のぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 宁宁的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10827"
       ]
     },
     "[リミテッドスタイル vol.1] 彰人のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 彰人的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10793"
       ]
     },
     "[リミテッドスタイル vol.1] 彰人のぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 彰人的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10792"
       ]
     },
     "[リミテッドスタイル vol.1] 彰人のぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 彰人的布偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10791"
       ]
     },
     "[リミテッドスタイル vol.1] 志歩のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 志步的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10787"
       ]
     },
     "[リミテッドスタイル vol.1] 志歩のぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 志步的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10786"
       ]
     },
     "[リミテッドスタイル vol.1] 志歩のぬいぐるみ/S": {
       "text": "[限量款样式 vol.1] 志步的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10785"
       ]
     },
     "[リミテッドスタイル vol.1] 愛莉のぬいぐるみ/L": {
       "text": "[限定款式 vol.1] 爱莉的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10769"
       ]
     },
     "[リミテッドスタイル vol.1] 愛莉のぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 爱莉的布偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10768"
       ]
     },
     "[リミテッドスタイル vol.1] 愛莉のぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 爱莉毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10767"
       ]
@@ -17083,42 +17083,42 @@
     },
     "[リミテッドスタイル vol.1] 穂波のぬいぐるみ/L": {
       "text": "[限定款式 vol.1] 穗波的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10820"
       ]
     },
     "[リミテッドスタイル vol.1] 穂波のぬいぐるみ/M": {
       "text": "[限定风格 vol.1] 穗波的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10819"
       ]
     },
     "[リミテッドスタイル vol.1] 穂波のぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 穗波的布偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10818"
       ]
     },
     "[リミテッドスタイル vol.1] 絵名のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 绘名的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10832"
       ]
     },
     "[リミテッドスタイル vol.1] 絵名のぬいぐるみ/M": {
       "text": "[限定样式 vol.1] 绘名的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10831"
       ]
     },
     "[リミテッドスタイル vol.1] 絵名のぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 绘名的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10830"
       ]
@@ -17146,861 +17146,861 @@
     },
     "[リミテッドスタイル vol.1] 雫のぬいぐるみ/L": {
       "text": "[限定款式 vol.1] 雫的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10823"
       ]
     },
     "[リミテッドスタイル vol.1] 雫のぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 日野森雫玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10822"
       ]
     },
     "[リミテッドスタイル vol.1] 雫のぬいぐるみ/S": {
       "text": "[限定风格 vol.1] 雫的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10821"
       ]
     },
     "[リミテッドスタイル vol.1] 類のぬいぐるみ/L": {
       "text": "[限定风格 vol.1] 类的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10775"
       ]
     },
     "[リミテッドスタイル vol.1] 類のぬいぐるみ/M": {
       "text": "[限定款式 vol.1] 类的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10774"
       ]
     },
     "[リミテッドスタイル vol.1] 類のぬいぐるみ/S": {
       "text": "[限定款式 vol.1] 类的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10773"
       ]
     },
     "[リミテッドスタイル vol.2] KAITOのぬいぐるみ/L": {
       "text": "[限定款式 vol.2] KAITO的布偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10982"
       ]
     },
     "[リミテッドスタイル vol.2] KAITOのぬいぐるみ/M": {
       "text": "[限定风格 vol.2] KAITO的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10981"
       ]
     },
     "[リミテッドスタイル vol.2] KAITOのぬいぐるみ/S": {
       "text": "[限定风格 vol.2] KAITO的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10980"
       ]
     },
     "[リミテッドスタイル vol.2] MEIKOのぬいぐるみ/L": {
       "text": "[限定风格 vol.2] MEIKO的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10882"
       ]
     },
     "[リミテッドスタイル vol.2] MEIKOのぬいぐるみ/M": {
       "text": "[限定风格 vol.2] MEIKO的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10881"
       ]
     },
     "[リミテッドスタイル vol.2] MEIKOのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] MEIKO的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10880"
       ]
     },
     "[リミテッドスタイル vol.2] えむのぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 笑梦的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11032"
       ]
     },
     "[リミテッドスタイル vol.2] えむのぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 笑梦的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11031"
       ]
     },
     "[リミテッドスタイル vol.2] えむのぬいぐるみ/S": {
       "text": "[限定样式 vol.2] 笑梦的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11030"
       ]
     },
     "[リミテッドスタイル vol.2] こはねのぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 心羽的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10873"
       ]
     },
     "[リミテッドスタイル vol.2] こはねのぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 心羽的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10872"
       ]
     },
     "[リミテッドスタイル vol.2] こはねのぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 心羽的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10871"
       ]
     },
     "[リミテッドスタイル vol.2] まふゆのぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 真冬的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10925"
       ]
     },
     "[リミテッドスタイル vol.2] まふゆのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 真冬的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10923"
       ]
     },
     "[リミテッドスタイル vol.2] みのりのぬいぐるみ/L": {
       "text": "[限量款样式 vol.2] 实乃里的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10970"
       ]
     },
     "[リミテッドスタイル vol.2] みのりのぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 实乃里毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10969"
       ]
     },
     "[リミテッドスタイル vol.2] みのりのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 实乃里的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10968"
       ]
     },
     "[リミテッドスタイル vol.2] ミクのぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 初音未来的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10928"
       ]
     },
     "[リミテッドスタイル vol.2] ミクのぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 未来的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10927"
       ]
     },
     "[リミテッドスタイル vol.2] ミクのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 未来的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10926"
       ]
     },
     "[リミテッドスタイル vol.2] リンのぬいぐるみ/L": {
       "text": "[限定样式 vol.2] 铃的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10931"
       ]
     },
     "[リミテッドスタイル vol.2] リンのぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 铃的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10930"
       ]
     },
     "[リミテッドスタイル vol.2] リンのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 铃的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10929"
       ]
     },
     "[リミテッドスタイル vol.2] ルカのぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 流歌的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11041"
       ]
     },
     "[リミテッドスタイル vol.2] ルカのぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 流歌的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11040"
       ]
     },
     "[リミテッドスタイル vol.2] ルカのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 流歌的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11039"
       ]
     },
     "[リミテッドスタイル vol.2] レンのぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 连的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11038"
       ]
     },
     "[リミテッドスタイル vol.2] レンのぬいぐるみ/M": {
       "text": "[限量款样式 vol.2] 连的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11037"
       ]
     },
     "[リミテッドスタイル vol.2] レンのぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 连的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11036"
       ]
     },
     "[リミテッドスタイル vol.2] 一歌のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 一歌的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10867"
       ]
     },
     "[リミテッドスタイル vol.2] 一歌のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 一歌毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10866"
       ]
     },
     "[リミテッドスタイル vol.2] 一歌のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 一歌的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10865"
       ]
     },
     "[リミテッドスタイル vol.2] 冬弥のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 冬弥的布偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10973"
       ]
     },
     "[リミテッドスタイル vol.2] 冬弥のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 冬弥的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10972"
       ]
     },
     "[リミテッドスタイル vol.2] 冬弥のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 冬弥的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10971"
       ]
     },
     "[リミテッドスタイル vol.2] 司のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 司的布偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10922"
       ]
     },
     "[リミテッドスタイル vol.2] 司のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 司的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10921"
       ]
     },
     "[リミテッドスタイル vol.2] 司のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 司的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10920"
       ]
     },
     "[リミテッドスタイル vol.2] 咲希のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 咲希的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10913"
       ]
     },
     "[リミテッドスタイル vol.2] 咲希のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 咲希的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10912"
       ]
     },
     "[リミテッドスタイル vol.2] 咲希のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 咲希毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10911"
       ]
     },
     "[リミテッドスタイル vol.2] 奏のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 奏的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10979"
       ]
     },
     "[リミテッドスタイル vol.2] 奏のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 奏的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10977"
       ]
     },
     "[リミテッドスタイル vol.2] 寧々のぬいぐるみ/L": {
       "text": "[限定样式 vol.2] 宁宁的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10976"
       ]
     },
     "[リミテッドスタイル vol.2] 寧々のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 宁宁的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10975"
       ]
     },
     "[リミテッドスタイル vol.2] 寧々のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 宁宁的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10974"
       ]
     },
     "[リミテッドスタイル vol.2] 彰人のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 彰人的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11029"
       ]
     },
     "[リミテッドスタイル vol.2] 彰人のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 彰人的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11028"
       ]
     },
     "[リミテッドスタイル vol.2] 彰人のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 彰人毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11027"
       ]
     },
     "[リミテッドスタイル vol.2] 志歩のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 志步的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10967"
       ]
     },
     "[リミテッドスタイル vol.2] 志歩のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 志步的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10966"
       ]
     },
     "[リミテッドスタイル vol.2] 志歩のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 志步的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10965"
       ]
     },
     "[リミテッドスタイル vol.2] 愛莉のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 爱莉的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10870"
       ]
     },
     "[リミテッドスタイル vol.2] 愛莉のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 爱莉的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10869"
       ]
     },
     "[リミテッドスタイル vol.2] 愛莉のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 爱莉的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10868"
       ]
     },
     "[リミテッドスタイル vol.2] 杏のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 杏的布偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10919"
       ]
     },
     "[リミテッドスタイル vol.2] 杏のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 杏的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10918"
       ]
     },
     "[リミテッドスタイル vol.2] 杏のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 杏的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10917"
       ]
     },
     "[リミテッドスタイル vol.2] 瑞希のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 瑞希的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10879"
       ]
     },
     "[リミテッドスタイル vol.2] 瑞希のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 瑞希的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10878"
       ]
     },
     "[リミテッドスタイル vol.2] 瑞希のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 瑞希的玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10877"
       ]
     },
     "[リミテッドスタイル vol.2] 穂波のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 穗波的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11023"
       ]
     },
     "[リミテッドスタイル vol.2] 穂波のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 穗波的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11022"
       ]
     },
     "[リミテッドスタイル vol.2] 穂波のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 穗波毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11021"
       ]
     },
     "[リミテッドスタイル vol.2] 絵名のぬいぐるみ/L": {
       "text": "[限定款式 vol.2] 绘名毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11035"
       ]
     },
     "[リミテッドスタイル vol.2] 絵名のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 绘名的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11034"
       ]
     },
     "[リミテッドスタイル vol.2] 絵名のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 绘名的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11033"
       ]
     },
     "[リミテッドスタイル vol.2] 遥のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 遥的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10916"
       ]
     },
     "[リミテッドスタイル vol.2] 遥のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 遥的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10915"
       ]
     },
     "[リミテッドスタイル vol.2] 遥のぬいぐるみ/S": {
       "text": "[限定风格 vol.2] 遥毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10914"
       ]
     },
     "[リミテッドスタイル vol.2] 雫のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 雫的毛绒玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11026"
       ]
     },
     "[リミテッドスタイル vol.2] 雫のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 雫的毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11025"
       ]
     },
     "[リミテッドスタイル vol.2] 雫のぬいぐるみ/S": {
       "text": "[限定样式 vol.2] 雫的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11024"
       ]
     },
     "[リミテッドスタイル vol.2] 類のぬいぐるみ/L": {
       "text": "[限定风格 vol.2] 类的玩偶/L",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10876"
       ]
     },
     "[リミテッドスタイル vol.2] 類のぬいぐるみ/M": {
       "text": "[限定风格 vol.2] 类的玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10875"
       ]
     },
     "[リミテッドスタイル vol.2] 類のぬいぐるみ/S": {
       "text": "[限定款式 vol.2] 类的毛绒玩偶/S",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10874"
       ]
     },
     "[リミテッドスタイル vol.2]まふゆのぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 真冬毛绒玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10924"
       ]
     },
     "[リミテッドスタイル vol.2]奏のぬいぐるみ/M": {
       "text": "[限定款式 vol.2] 宵崎奏玩偶/M",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10978"
       ]
     },
     "[リミテッドスタイル vol.3] MEIKOのぬいぐるみ/L": {
       "text": "[限定款式 vol.3] MEIKO的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11106"
       ]
     },
     "[リミテッドスタイル vol.3] MEIKOのぬいぐるみ/M": {
       "text": "[限定款式 vol.3] MEIKO的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11105"
       ]
     },
     "[リミテッドスタイル vol.3] MEIKOのぬいぐるみ/S": {
       "text": "[限定款式 vol.3] MEIKO的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11104"
       ]
     },
     "[リミテッドスタイル vol.3] こはねのぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 心羽的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11097"
       ]
     },
     "[リミテッドスタイル vol.3] こはねのぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 心羽的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11096"
       ]
     },
     "[リミテッドスタイル vol.3] こはねのぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 心羽的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11095"
       ]
     },
     "[リミテッドスタイル vol.3] まふゆのぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 真冬的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11103"
       ]
     },
     "[リミテッドスタイル vol.3] まふゆのぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 真冬的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11102"
       ]
     },
     "[リミテッドスタイル vol.3] まふゆのぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 真冬的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11101"
       ]
     },
     "[リミテッドスタイル vol.3] ミクのぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 未来的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11161"
       ]
     },
     "[リミテッドスタイル vol.3] ミクのぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 未来的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11160"
       ]
     },
     "[リミテッドスタイル vol.3] ミクのぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 未来的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11159"
       ]
     },
     "[リミテッドスタイル vol.3] ルカのぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 流歌的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11164"
       ]
     },
     "[リミテッドスタイル vol.3] ルカのぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 流歌玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11163"
       ]
     },
     "[リミテッドスタイル vol.3] ルカのぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 流歌的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11162"
       ]
     },
     "[リミテッドスタイル vol.3] 一歌のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 一歌的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11091"
       ]
     },
     "[リミテッドスタイル vol.3] 一歌のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 一歌的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11090"
       ]
     },
     "[リミテッドスタイル vol.3] 一歌のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 一歌的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11089"
       ]
     },
     "[リミテッドスタイル vol.3] 咲希のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 咲希的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11146"
       ]
     },
     "[リミテッドスタイル vol.3] 咲希のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 咲希的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11145"
       ]
     },
     "[リミテッドスタイル vol.3] 咲希のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 咲希的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11144"
       ]
     },
     "[リミテッドスタイル vol.3] 寧々のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 宁宁的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11155"
       ]
     },
     "[リミテッドスタイル vol.3] 寧々のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 宁宁的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11154"
       ]
     },
     "[リミテッドスタイル vol.3] 寧々のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 宁宁的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11153"
       ]
     },
     "[リミテッドスタイル vol.3] 彰人のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 彰人的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11152"
       ]
     },
     "[リミテッドスタイル vol.3] 彰人のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 彰人的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11151"
       ]
     },
     "[リミテッドスタイル vol.3] 彰人のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 彰人的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11150"
       ]
     },
     "[リミテッドスタイル vol.3] 愛莉のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 爱莉的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11149"
       ]
     },
     "[リミテッドスタイル vol.3] 愛莉のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 爱莉的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11148"
       ]
     },
     "[リミテッドスタイル vol.3] 愛莉のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 爱莉的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11147"
       ]
     },
     "[リミテッドスタイル vol.3] 瑞希のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 瑞希的布偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11158"
       ]
     },
     "[リミテッドスタイル vol.3] 瑞希のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 瑞希的布偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11157"
       ]
     },
     "[リミテッドスタイル vol.3] 瑞希のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 瑞希的布偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11156"
       ]
     },
     "[リミテッドスタイル vol.3] 遥のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 遥的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11094"
       ]
     },
     "[リミテッドスタイル vol.3] 遥のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 遥的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11093"
       ]
     },
     "[リミテッドスタイル vol.3] 遥のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 遥的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11092"
       ]
     },
     "[リミテッドスタイル vol.3] 類のぬいぐるみ/L": {
       "text": "[限定款式 vol.3] 类的毛绒玩偶/L",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11100"
       ]
     },
     "[リミテッドスタイル vol.3] 類のぬいぐるみ/M": {
       "text": "[限定款式 vol.3] 类的毛绒玩偶/M",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11099"
       ]
     },
     "[リミテッドスタイル vol.3] 類のぬいぐるみ/S": {
       "text": "[限定款式 vol.3] 类的毛绒玩偶/S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11098"
       ]
@@ -18091,63 +18091,63 @@
     },
     "おむらいす喫茶": {
       "text": "蛋包饭咖啡厅",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "99"
       ]
     },
     "おむらいす喫茶のケチャマヨ食器棚": {
       "text": "蛋包饭咖啡厅的番茄美乃滋餐具柜",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11115"
       ]
     },
     "おむらいす喫茶のコンロ": {
       "text": "蛋包饭咖啡厅的炉灶",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11113"
       ]
     },
     "おむらいす喫茶のシンク": {
       "text": "蛋包饭咖啡厅的水槽",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11114"
       ]
     },
     "おむらいす喫茶のダイニングテーブル": {
       "text": "蛋包饭咖啡厅的餐桌",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11112"
       ]
     },
     "おむらいす喫茶の丸椅子": {
       "text": "蛋包饭咖啡厅的圆凳",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11116"
       ]
     },
     "おむらいす喫茶の壁": {
       "text": "蛋包饭咖啡厅的墙壁",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11117"
       ]
     },
     "おむらいす喫茶の床": {
       "text": "蛋包饭咖啡厅的地板",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11118"
       ]
     },
     "おむらいす喫茶の窓": {
       "text": "蛋包饭咖啡厅的窗户",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11125"
       ]
@@ -18377,8 +18377,8 @@
       ]
     },
     "くちぱっち": {
-      "text": "嘴巴奇",
-      "source": "unknown",
+      "text": "嘴嘴吉",
+      "source": "human",
       "ids": [
         "10842"
       ]
@@ -18441,70 +18441,70 @@
     },
     "たまごっちコラボ": {
       "text": "拓麻歌子联动",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "87"
       ]
     },
     "たまごっち星のオブジェ": {
       "text": "拓麻歌子星球的装饰物",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10845"
       ]
     },
     "たまプランター": {
       "text": "蛋蛋花盆",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10844"
       ]
     },
     "たま噴水": {
       "text": "拓麻喷泉",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10843"
       ]
     },
     "にっこりたい焼き屋さん": {
       "text": "微笑鲷鱼烧店",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "85"
       ]
     },
     "にっこりたい焼き屋さんのたい焼き": {
       "text": "微笑鲷鱼烧店的鲷鱼烧",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10811"
       ]
     },
     "にっこりたい焼き屋さんのガーランド": {
       "text": "微笑鲷鱼烧店的拉旗",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10810"
       ]
     },
     "にっこりたい焼き屋さんのキッチンカー": {
       "text": "微笑鲷鱼烧店的餐车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10807"
       ]
     },
     "にっこりたい焼き屋さんのダストボックス": {
       "text": "微笑鲷鱼烧店垃圾桶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10809"
       ]
     },
     "にっこりたい焼き屋さんのメニュー看板": {
       "text": "微笑鲷鱼烧店的菜单看板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10808"
       ]
@@ -18868,98 +18868,98 @@
     },
     "ほっこり温泉": {
       "text": "暖心温泉",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "92"
       ]
     },
     "ほっこり温泉のパーテーション": {
       "text": "暖心温泉隔断",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10989"
       ]
     },
     "ほっこり温泉のフルーツ牛乳": {
       "text": "暖洋洋温泉的水果牛奶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10995"
       ]
     },
     "ほっこり温泉の休憩椅子": {
       "text": "暖心温泉的休息椅",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10993"
       ]
     },
     "ほっこり温泉の家": {
       "text": "暖洋洋温泉小屋",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10983"
       ]
     },
     "ほっこり温泉の敷石": {
       "text": "暖洋洋温泉的铺路石",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10992"
       ]
     },
     "ほっこり温泉の机": {
       "text": "暖融融温泉桌",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10994"
       ]
     },
     "ほっこり温泉の樽風呂": {
       "text": "暖洋洋温泉的木桶浴池",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10987"
       ]
     },
     "ほっこり温泉の温泉たまご": {
       "text": "暖呼呼温泉的温泉蛋",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10986"
       ]
     },
     "ほっこり温泉の灯り": {
       "text": "暖洋洋温泉灯饰",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10990"
       ]
     },
     "ほっこり温泉の竹": {
       "text": "暖心温泉的竹子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10988"
       ]
     },
     "ほっこり温泉の足湯": {
       "text": "暖洋洋温泉的足浴池",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10985"
       ]
     },
     "ほっこり温泉の露天風呂": {
       "text": "暖心温泉露天浴池",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10984"
       ]
     },
     "ほっこり温泉の風呂桶": {
       "text": "暖融融温泉的木桶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10991"
       ]
@@ -19084,8 +19084,8 @@
       ]
     },
     "まめっち": {
-      "text": "豆豆",
-      "source": "unknown",
+      "text": "豆豆吉",
+      "source": "human",
       "ids": [
         "10839"
       ]
@@ -19112,57 +19112,57 @@
       ]
     },
     "みみっち": {
-      "text": "咪咪奇",
-      "source": "unknown",
+      "text": "美美吉",
+      "source": "human",
       "ids": [
         "10840"
       ]
     },
     "めめっち": {
-      "text": "美美美",
-      "source": "unknown",
+      "text": "梅梅吉",
+      "source": "human",
       "ids": [
         "10841"
       ]
     },
     "もこもこおさんぽ": {
       "text": "毛茸茸散步",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "86"
       ]
     },
     "もこもこおさんぽのウォールシェルフ": {
       "text": "毛茸茸散步壁架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10814"
       ]
     },
     "もこもこおさんぽのソファ": {
       "text": "毛茸茸散步沙发",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10816"
       ]
     },
     "もこもこおさんぽのベッド": {
       "text": "毛茸茸散步床",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10815"
       ]
     },
     "もこもこおさんぽの壁": {
       "text": "毛茸茸散步墙壁",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10812"
       ]
     },
     "もこもこおさんぽの床": {
       "text": "毛茸茸散步地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10813"
       ]
@@ -19197,175 +19197,175 @@
     },
     "アニバーサリーガーランド（KAITO）": {
       "text": "周年纪念拉花（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11129"
       ]
     },
     "アニバーサリーガーランド（MEIKO）": {
       "text": "周年庆拉花（MEIKO）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10956"
       ]
     },
     "アニバーサリーガーランド（リン）": {
       "text": "周年庆拉花（铃）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11010"
       ]
     },
     "アニバーサリーガーランド（ルカ）": {
       "text": "周年庆拉旗（流歌）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11070"
       ]
     },
     "アニバーサリーガーランド（レン）": {
       "text": "周年庆拉花（连）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11015"
       ]
     },
     "アニバーサリーケーキ（KAITO）": {
       "text": "周年纪念蛋糕（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11126"
       ]
     },
     "アニバーサリーケーキ（MEIKO）": {
       "text": "周年纪念蛋糕（MEIKO）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10953"
       ]
     },
     "アニバーサリーケーキ（リン）": {
       "text": "周年庆蛋糕（铃）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11007"
       ]
     },
     "アニバーサリーケーキ（ルカ）": {
       "text": "周年庆蛋糕（流歌）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11067"
       ]
     },
     "アニバーサリーケーキ（レン）": {
       "text": "周年庆蛋糕（连）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11012"
       ]
     },
     "アニバーサリーチェア（KAITO）": {
       "text": "周年纪念椅子（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11130"
       ]
     },
     "アニバーサリーチェア（MEIKO）": {
       "text": "周年纪念椅（MEIKO）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10957"
       ]
     },
     "アニバーサリーチェア（リン）": {
       "text": "周年庆椅子（铃）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11011"
       ]
     },
     "アニバーサリーチェア（ルカ）": {
       "text": "周年纪念椅（流歌）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11071"
       ]
     },
     "アニバーサリーチェア（レン）": {
       "text": "周年纪念椅（连）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11016"
       ]
     },
     "アニバーサリーバルーン（KAITO）": {
       "text": "周年纪念气球（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11127"
       ]
     },
     "アニバーサリーバルーン（MEIKO）": {
       "text": "周年庆气球（MEIKO）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10954"
       ]
     },
     "アニバーサリーバルーン（リン）": {
       "text": "周年气球（铃）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11008"
       ]
     },
     "アニバーサリーバルーン（ルカ）": {
       "text": "周年庆气球（流歌）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11068"
       ]
     },
     "アニバーサリーバルーン（レン）": {
       "text": "周年纪念气球（连）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11013"
       ]
     },
     "アニバーサリーブーケ（KAITO）": {
       "text": "周年纪念花束（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11128"
       ]
     },
     "アニバーサリーブーケ（MEIKO）": {
       "text": "周年纪念花束（MEIKO）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10955"
       ]
     },
     "アニバーサリーブーケ（リン）": {
       "text": "周年纪念花束（铃）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11009"
       ]
     },
     "アニバーサリーブーケ（ルカ）": {
       "text": "周年花束（流歌）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11069"
       ]
     },
     "アニバーサリーブーケ（レン）": {
       "text": "周年庆花束（连）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11014"
       ]
@@ -20030,84 +20030,84 @@
     },
     "ガレージ": {
       "text": "车库",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "80"
       ]
     },
     "ガレージのバイク": {
       "text": "车库的摩托车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10729"
       ]
     },
     "ガレージのペンキ缶": {
       "text": "车库的油漆桶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10733"
       ]
     },
     "ガレージの作業机": {
       "text": "车库的工作台",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10727"
       ]
     },
     "ガレージの壁": {
       "text": "车库墙壁",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10724"
       ]
     },
     "ガレージの壁掛けシャッター": {
       "text": "车库壁挂卷帘门",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10734"
       ]
     },
     "ガレージの壁掛け工具": {
       "text": "车库的挂墙工具",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10731"
       ]
     },
     "ガレージの工具棚": {
       "text": "车库工具架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10726"
       ]
     },
     "ガレージの床": {
       "text": "车库的地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10725"
       ]
     },
     "ガレージの換気扇": {
       "text": "车库的换气扇",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10732"
       ]
     },
     "ガレージの自転車": {
       "text": "车库的自行车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10730"
       ]
     },
     "ガレージの車": {
       "text": "车库里的汽车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10728"
       ]
@@ -20373,7 +20373,7 @@
     },
     "キッチンシェルフ": {
       "text": "厨房置物架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10528"
       ]
@@ -20527,42 +20527,42 @@
     },
     "クリスマス": {
       "text": "圣诞节",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "93"
       ]
     },
     "クリスマスのソリ": {
       "text": "圣诞雪橇",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11003"
       ]
     },
     "クリスマスのツリー": {
       "text": "圣诞树",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11002"
       ]
     },
     "クリスマスのプレゼント": {
       "text": "圣诞礼物",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11004"
       ]
     },
     "クリスマスのライト": {
       "text": "圣诞灯饰",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11006"
       ]
     },
     "クリスマスのリース": {
       "text": "圣诞花环",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11005"
       ]
@@ -20590,7 +20590,7 @@
     },
     "クリーンパウダールームの窓": {
       "text": "洁净盥洗室的窗户",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10817"
       ]
@@ -20604,7 +20604,7 @@
     },
     "クロミのフロアクッション": {
       "text": "酷洛米的地板坐垫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11078"
       ]
@@ -20646,98 +20646,98 @@
     },
     "コズミックシャトル": {
       "text": "宇宙飞船",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "95"
       ]
     },
     "コズミックシャトルのチェスト": {
       "text": "宇宙飞船收纳柜",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11046"
       ]
     },
     "コズミックシャトルのテーブル": {
       "text": "宇宙穿梭机的桌子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11048"
       ]
     },
     "コズミックシャトルのベッド": {
       "text": "宇宙飞船床铺",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11047"
       ]
     },
     "コズミックシャトルのモニター": {
       "text": "宇宙航天飞机的显示器",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11053"
       ]
     },
     "コズミックシャトルのロボット": {
       "text": "宇宙穿梭机机器人",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11050"
       ]
     },
     "コズミックシャトルの壁": {
       "text": "宇宙飞船墙壁",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11043"
       ]
     },
     "コズミックシャトルの家": {
       "text": "宇宙穿梭机小屋",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11042"
       ]
     },
     "コズミックシャトルの床": {
       "text": "宇宙航天飞机的地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11044"
       ]
     },
     "コズミックシャトルの操縦席": {
       "text": "宇宙飞船驾驶座",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11051"
       ]
     },
     "コズミックシャトルの柱": {
       "text": "宇宙飞船支柱",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11052"
       ]
     },
     "コズミックシャトルの椅子": {
       "text": "宇宙穿梭机椅子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11049"
       ]
     },
     "コズミックシャトルの植物": {
       "text": "宇宙穿梭机植物",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11054"
       ]
     },
     "コズミックシャトルの窓": {
       "text": "宇宙穿梭机的窗户",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11045"
       ]
@@ -20751,21 +20751,21 @@
     },
     "コンクリートの道": {
       "text": "水泥路",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10741"
       ]
     },
     "コンクリートブロック 1x1": {
       "text": "混凝土砖 1x1",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10739"
       ]
     },
     "コンクリートブロック 2x2": {
       "text": "混凝土砖 2x2",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10740"
       ]
@@ -20793,49 +20793,49 @@
     },
     "ゴールドクレスト": {
       "text": "香冠柏",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10805"
       ]
     },
     "サイバーシティ": {
       "text": "赛博城市",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "82"
       ]
     },
     "サイバーシティのネオン": {
       "text": "赛博城市的霓虹灯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10756"
       ]
     },
     "サイバーシティの機材の山": {
       "text": "赛博城市的器材堆",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10757"
       ]
     },
     "サイバーシティの水陸空車": {
       "text": "赛博城市的陆海空三用车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10754"
       ]
     },
     "サイバーシティの道しるべ": {
       "text": "赛博城市的指路牌",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10758"
       ]
     },
     "サイバーシティアーチ": {
       "text": "赛博城市拱门",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10755"
       ]
@@ -20849,14 +20849,14 @@
     },
     "サンリオコラボ": {
       "text": "三丽鸥联动",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "96"
       ]
     },
     "シナモロールのカフェテーブル": {
       "text": "大耳狗的咖啡桌",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11077"
       ]
@@ -21010,98 +21010,98 @@
     },
     "セカイステージ": {
       "text": "世界舞台",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "88"
       ]
     },
     "セカイステージのDJブース": {
       "text": "世界舞台的DJ台",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10863"
       ]
     },
     "セカイステージのスタンドマイク": {
       "text": "世界舞台的立式麦克风",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10856"
       ]
     },
     "セカイステージのステージライト": {
       "text": "世界舞台的舞台灯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10862"
       ]
     },
     "セカイステージのスピーカー": {
       "text": "世界舞台的音箱",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10861"
       ]
     },
     "セカイステージのソファ": {
       "text": "世界舞台沙发",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10858"
       ]
     },
     "セカイステージのテーブル": {
       "text": "世界舞台的桌子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10857"
       ]
     },
     "セカイステージのハイチェア": {
       "text": "世界舞台的高脚椅",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10860"
       ]
     },
     "セカイステージのハイテーブル": {
       "text": "世界舞台的高脚桌",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10859"
       ]
     },
     "セカイステージのミニステージ": {
       "text": "世界舞台的迷你舞台",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10855"
       ]
     },
     "セカイステージの壁紙": {
       "text": "世界舞台的壁纸",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10852"
       ]
     },
     "セカイステージの家": {
       "text": "世界舞台的房子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10851"
       ]
     },
     "セカイステージの床": {
       "text": "世界舞台的地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10853"
       ]
     },
     "セカイステージの窓": {
       "text": "世界舞台的窗户",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10854"
       ]
@@ -21199,77 +21199,77 @@
     },
     "ドリーミィベビールーム": {
       "text": "梦幻婴儿房",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "81"
       ]
     },
     "ドリーミィベビールームのクッション": {
       "text": "梦幻婴儿房靠垫",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10751"
       ]
     },
     "ドリーミィベビールームのベッド": {
       "text": "梦幻婴儿房的床铺",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10748"
       ]
     },
     "ドリーミィベビールームのモビール": {
       "text": "梦幻婴儿房的吊饰",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10752"
       ]
     },
     "ドリーミィベビールームのラグマット": {
       "text": "梦幻婴儿房的地毯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10753"
       ]
     },
     "ドリーミィベビールームのロッキングアニマル": {
       "text": "梦幻婴儿房的摇摇乐",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10750"
       ]
     },
     "ドリーミィベビールームの壁紙": {
       "text": "梦幻婴儿房的壁纸",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10745"
       ]
     },
     "ドリーミィベビールームの家": {
       "text": "梦幻婴儿房小屋",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10744"
       ]
     },
     "ドリーミィベビールームの床": {
       "text": "梦幻婴儿房的地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10746"
       ]
     },
     "ドリーミィベビールームの窓": {
       "text": "梦幻婴儿房窗户",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10747"
       ]
     },
     "ドリーミィベビールームの絵本棚": {
       "text": "梦幻婴儿房的绘本架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10749"
       ]
@@ -21416,49 +21416,49 @@
     },
     "ハロウィン": {
       "text": "万圣节",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "89"
       ]
     },
     "ハロウィンのおばけカカシ": {
       "text": "万圣节幽灵稻草人",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10893"
       ]
     },
     "ハロウィンのかぼちゃ": {
       "text": "万圣节南瓜",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10889"
       ]
     },
     "ハロウィンのかぼちゃセット": {
       "text": "万圣节南瓜套装",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10890"
       ]
     },
     "ハロウィンのキャンディ": {
       "text": "万圣节糖果",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10892"
       ]
     },
     "ハロウィンの枯れ木": {
       "text": "万圣节枯树",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10891"
       ]
     },
     "ハローキティのピアノ": {
       "text": "Hello Kitty的钢琴",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11073"
       ]
@@ -21542,280 +21542,280 @@
     },
     "バースデーガーランド（こはね）": {
       "text": "生日拉旗（心羽）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11135"
       ]
     },
     "バースデーガーランド（まふゆ）": {
       "text": "生日拉旗（真冬）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11064"
       ]
     },
     "バースデーガーランド（奏）": {
       "text": "生日拉花（奏）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11122"
       ]
     },
     "バースデーガーランド（彰人）": {
       "text": "生日拉旗（彰人）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10962"
       ]
     },
     "バースデーガーランド（志歩）": {
       "text": "生日拉旗（志步）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11058"
       ]
     },
     "バースデーガーランド（穂波）": {
       "text": "生日拉旗（穗波）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10950"
       ]
     },
     "バースデーガーランド（遥）": {
       "text": "生日拉旗（遥）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10884"
       ]
     },
     "バースデーガーランド（雫）": {
       "text": "生日拉旗（雫）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10999"
       ]
     },
     "バースデーケーキ（こはね）": {
       "text": "生日蛋糕（心羽）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11132"
       ]
     },
     "バースデーケーキ（まふゆ）": {
       "text": "生日蛋糕（真冬）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11061"
       ]
     },
     "バースデーケーキ（奏）": {
       "text": "生日蛋糕（奏）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11119"
       ]
     },
     "バースデーケーキ（彰人）": {
       "text": "生日蛋糕（彰人）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10959"
       ]
     },
     "バースデーケーキ（志歩）": {
       "text": "生日蛋糕（志步）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11055"
       ]
     },
     "バースデーケーキ（穂波）": {
       "text": "生日蛋糕（穗波）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10947"
       ]
     },
     "バースデーケーキ（遥）": {
       "text": "生日蛋糕（遥）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10883"
       ]
     },
     "バースデーケーキ（雫）": {
       "text": "生日蛋糕（雫）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10996"
       ]
     },
     "バースデーチェア（こはね）": {
       "text": "生日椅子（心羽）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11136"
       ]
     },
     "バースデーチェア（まふゆ）": {
       "text": "生日椅（真冬）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11065"
       ]
     },
     "バースデーチェア（奏）": {
       "text": "生日椅子（奏）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11123"
       ]
     },
     "バースデーチェア（彰人）": {
       "text": "生日椅（彰人）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10963"
       ]
     },
     "バースデーチェア（志歩）": {
       "text": "生日椅（志步）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11059"
       ]
     },
     "バースデーチェア（穂波）": {
       "text": "生日椅子（穗波）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10951"
       ]
     },
     "バースデーチェア（遥）": {
       "text": "生日椅（遥）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10887"
       ]
     },
     "バースデーチェア（雫）": {
       "text": "生日椅（雫）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11000"
       ]
     },
     "バースデーバルーン（こはね）": {
       "text": "生日气球（心羽）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11133"
       ]
     },
     "バースデーバルーン（まふゆ）": {
       "text": "生日气球（真冬）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11062"
       ]
     },
     "バースデーバルーン（奏）": {
       "text": "生日气球（奏）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11120"
       ]
     },
     "バースデーバルーン（彰人）": {
       "text": "生日气球（彰人）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10960"
       ]
     },
     "バースデーバルーン（志歩）": {
       "text": "生日气球（志步）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11056"
       ]
     },
     "バースデーバルーン（穂波）": {
       "text": "生日气球（穗波）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10948"
       ]
     },
     "バースデーバルーン（遥）": {
       "text": "生日气球（遥）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10885"
       ]
     },
     "バースデーバルーン（雫）": {
       "text": "生日气球（雫）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10997"
       ]
     },
     "バースデーブーケ（こはね）": {
       "text": "生日花束（心羽）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11134"
       ]
     },
     "バースデーブーケ（まふゆ）": {
       "text": "生日花束（真冬）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11063"
       ]
     },
     "バースデーブーケ（奏）": {
       "text": "生日花束（奏）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11121"
       ]
     },
     "バースデーブーケ（彰人）": {
       "text": "生日花束（彰人）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10961"
       ]
     },
     "バースデーブーケ（志歩）": {
       "text": "生日花束（志步）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11057"
       ]
     },
     "バースデーブーケ（穂波）": {
       "text": "生日花束（穗波）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10949"
       ]
     },
     "バースデーブーケ（遥）": {
       "text": "生日花束（遥）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10886"
       ]
     },
     "バースデーブーケ（雫）": {
       "text": "生日花束（雫）",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10998"
       ]
@@ -22060,14 +22060,14 @@
     },
     "ベゴニア": {
       "text": "秋海棠",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10806"
       ]
     },
     "ベンジャミン": {
       "text": "垂叶榕",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10804"
       ]
@@ -22088,7 +22088,7 @@
     },
     "ポチャッコのストリートウォール": {
       "text": "帕恰狗的街头墙壁",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11076"
       ]
@@ -22102,7 +22102,7 @@
     },
     "ポムポムプリンのおひるねツリー": {
       "text": "布丁狗的午睡之树",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11074"
       ]
@@ -22116,7 +22116,7 @@
     },
     "マイメロディのラブリーソファ": {
       "text": "美乐蒂的可爱沙发",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11075"
       ]
@@ -22144,7 +22144,7 @@
     },
     "ミニコンポ": {
       "text": "迷你组合音响",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10849"
       ]
@@ -22172,7 +22172,7 @@
     },
     "ユスラヤシ": {
       "text": "亚历山大椰子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10699"
       ]
@@ -22193,14 +22193,14 @@
     },
     "ラジオ": {
       "text": "收音机",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10847"
       ]
     },
     "ラジオカセットプレーヤー": {
       "text": "收录机",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10850"
       ]
@@ -22214,91 +22214,91 @@
     },
     "リゾート": {
       "text": "度假胜地",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "79"
       ]
     },
     "リゾートのサイドテーブル": {
       "text": "度假风边几",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10702"
       ]
     },
     "リゾートのジェットバス": {
       "text": "度假村按摩浴缸",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10696"
       ]
     },
     "リゾートのダブルソファ": {
       "text": "度假双人沙发",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10697"
       ]
     },
     "リゾートのデッキチェア": {
       "text": "度假区躺椅",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10690"
       ]
     },
     "リゾートのハンモック": {
       "text": "度假吊床",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10698"
       ]
     },
     "リゾートのパラソル": {
       "text": "度假村的遮阳伞",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10693"
       ]
     },
     "リゾートのパーテーション": {
       "text": "度假风隔断",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10700"
       ]
     },
     "リゾートのプール": {
       "text": "度假区泳池",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10695"
       ]
     },
     "リゾートのラグ": {
       "text": "度假村的地毯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10694"
       ]
     },
     "リゾートのランプ": {
       "text": "度假区灯具",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10692"
       ]
     },
     "リゾートのローテーブル": {
       "text": "度假村矮桌",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10701"
       ]
     },
     "リゾートの浮き輪": {
       "text": "度假村的游泳圈",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10691"
       ]
@@ -22389,112 +22389,112 @@
     },
     "レンガブロック 1x1": {
       "text": "砖块 1x1",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10735"
       ]
     },
     "レンガブロック 2x2": {
       "text": "砖块 2x2",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10736"
       ]
     },
     "ロマンティックガーデン": {
       "text": "浪漫花园",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "90"
       ]
     },
     "ロマンティックガーデンのアーチ": {
       "text": "浪漫花园拱门",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10904"
       ]
     },
     "ロマンティックガーデンのガゼボ": {
       "text": "浪漫花园的凉亭",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10896"
       ]
     },
     "ロマンティックガーデンのテーブル": {
       "text": "浪漫花园的桌子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10902"
       ]
     },
     "ロマンティックガーデンの家": {
       "text": "浪漫花园小屋",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10894"
       ]
     },
     "ロマンティックガーデンの彫刻/右": {
       "text": "浪漫花园的雕像/右",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10897"
       ]
     },
     "ロマンティックガーデンの彫刻/左": {
       "text": "浪漫花园的雕塑/左",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10898"
       ]
     },
     "ロマンティックガーデンの椅子": {
       "text": "浪漫花园的椅子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10903"
       ]
     },
     "ロマンティックガーデンの池": {
       "text": "浪漫花园的水池",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10901"
       ]
     },
     "ロマンティックガーデンの糸杉": {
       "text": "浪漫花园的丝柏",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10906"
       ]
     },
     "ロマンティックガーデンの紅茶": {
       "text": "浪漫花园的红茶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10905"
       ]
     },
     "ロマンティックガーデンの街灯": {
       "text": "浪漫花园的路灯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10900"
       ]
     },
     "ロマンティックガーデンの鉢植え": {
       "text": "浪漫花园的盆栽",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10899"
       ]
     },
     "ロマンティックガーデンの馬車": {
       "text": "浪漫花园的马车",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10895"
       ]
@@ -22508,112 +22508,112 @@
     },
     "ヴィンテージスタイル": {
       "text": "复古风格",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "91"
       ]
     },
     "ヴィンテージスタイルのコーヒーメーカー": {
       "text": "复古风咖啡机",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10946"
       ]
     },
     "ヴィンテージスタイルのシェルフ": {
       "text": "复古风置物架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10942"
       ]
     },
     "ヴィンテージスタイルのソファ": {
       "text": "复古风沙发",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10939"
       ]
     },
     "ヴィンテージスタイルのチェスト": {
       "text": "复古风五斗柜",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10935"
       ]
     },
     "ヴィンテージスタイルのテーブル": {
       "text": "复古风桌子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10938"
       ]
     },
     "ヴィンテージスタイルのベッド": {
       "text": "复古风床铺",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10937"
       ]
     },
     "ヴィンテージスタイルのポールハンガー": {
       "text": "复古风格的衣帽架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10943"
       ]
     },
     "ヴィンテージスタイルのラグ": {
       "text": "复古风格地毯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10944"
       ]
     },
     "ヴィンテージスタイルのランプ": {
       "text": "复古风格的灯",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10941"
       ]
     },
     "ヴィンテージスタイルの壁紙": {
       "text": "复古风格壁纸",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10932"
       ]
     },
     "ヴィンテージスタイルの床": {
       "text": "复古风格地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10933"
       ]
     },
     "ヴィンテージスタイルの本棚": {
       "text": "复古风格书架",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10940"
       ]
     },
     "ヴィンテージスタイルの窓": {
       "text": "复古风窗户",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10934"
       ]
     },
     "ヴィンテージスタイルの絵画": {
       "text": "复古风绘画",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10945"
       ]
     },
     "ヴィンテージスタイルの鏡": {
       "text": "复古风格镜子",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10936"
       ]
@@ -22641,7 +22641,7 @@
     },
     "丸太の柵": {
       "text": "圆木栅栏",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10703"
       ]
@@ -22732,28 +22732,28 @@
     },
     "劇場版プロセカBlu-ray描き下ろしイラストポスター": {
       "text": "剧场版世界计划 Blu-ray全新绘制插画海报",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10909"
       ]
     },
     "劇場版プロセカBlu-ray特典": {
       "text": "剧场版世界计划Blu-ray特典",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10910"
       ]
     },
     "劇場版プロセカメインビジュアルポスター": {
       "text": "剧场版 世界计划主视觉海报",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10907"
       ]
     },
     "劇場版プロセカメインビジュアル第2弾ポスター": {
       "text": "剧场版世界计划主视觉图第2弹海报",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10908"
       ]
@@ -22858,7 +22858,7 @@
     },
     "和風の素朴な座布団": {
       "text": "和风朴素坐垫",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10846"
       ]
@@ -22984,7 +22984,7 @@
     },
     "夕桐": {
       "text": "夕桐",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "10125"
       ]
@@ -23145,14 +23145,14 @@
     },
     "宵崎奏": {
       "text": "宵崎奏",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "21"
       ]
     },
     "宵崎奏BD '26": {
       "text": "宵崎奏 BD '26",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11124"
       ]
@@ -23187,7 +23187,7 @@
     },
     "小豆沢こはねBD '26": {
       "text": "小豆泽心羽BD '26",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11137"
       ]
@@ -23215,7 +23215,7 @@
     },
     "巡音ルカAN '26": {
       "text": "巡音流歌AN '26",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11072"
       ]
@@ -23397,28 +23397,28 @@
     },
     "日野森志歩BD '26": {
       "text": "日野森志步BD '26",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11060"
       ]
     },
     "日野森雫": {
       "text": "日野森雫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "9"
       ]
     },
     "日野森雫BD '25": {
       "text": "日野森雫 生日 '25",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11001"
       ]
     },
     "星乃一歌": {
       "text": "星乃一歌",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "1"
       ]
@@ -23537,8 +23537,8 @@
       ]
     },
     "望月穂波BD '25": {
-      "text": "望月穗波 BD '25",
-      "source": "unknown",
+      "text": "望月穗波BD '25",
+      "source": "human",
       "ids": [
         "10952"
       ]
@@ -23552,7 +23552,7 @@
     },
     "朝比奈まふゆBD '26": {
       "text": "朝比奈真冬BD '26",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11066"
       ]
@@ -23573,21 +23573,21 @@
     },
     "木目ブロック 1x1": {
       "text": "木纹方块 1x1",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10737"
       ]
     },
     "木目ブロック 2x2": {
       "text": "木纹方块 2x2",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10738"
       ]
     },
     "朱塗りの木柵": {
       "text": "朱漆木栅栏",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10704"
       ]
@@ -23622,7 +23622,7 @@
     },
     "東雲彰人BD '25": {
       "text": "东云彰人BD '25",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10964"
       ]
@@ -23643,56 +23643,56 @@
     },
     "桐谷遥": {
       "text": "桐谷遥",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "7"
       ]
     },
     "桐谷遥BD '25": {
       "text": "桐谷遥 生日 '25",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10888"
       ]
     },
     "森ラックス": {
       "text": "森之治愈",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "98"
       ]
     },
     "森ラックスのオオカミクッション": {
       "text": "森之治愈狼狼靠垫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11108"
       ]
     },
     "森ラックスのパーティクルライト": {
       "text": "森之治愈粒子灯",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11111"
       ]
     },
     "森ラックスの丸太の長椅子": {
       "text": "森之治愈圆木长椅",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11110"
       ]
     },
     "森ラックスの泉のオブジェ": {
       "text": "森之治愈喷泉装饰",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11109"
       ]
     },
     "森ラックスの鳩時計ツリー": {
       "text": "森之治愈布谷鸟钟之树",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "11107"
       ]
@@ -23706,7 +23706,7 @@
     },
     "正月": {
       "text": "正月",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "94"
       ]
@@ -23720,42 +23720,42 @@
     },
     "水色くじら": {
       "text": "水蓝色鲸鱼",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "83"
       ]
     },
     "水色くじらのぬいぐるみ": {
       "text": "水蓝色鲸鱼玩偶",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10761"
       ]
     },
     "水色くじらのコーラル": {
       "text": "水蓝色鲸鱼的珊瑚",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10763"
       ]
     },
     "水色くじらの壁": {
       "text": "水蓝色鲸鱼墙壁",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10759"
       ]
     },
     "水色くじらの床": {
       "text": "水蓝色鲸鱼地板",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10760"
       ]
     },
     "水色くじらの魚ソファ": {
       "text": "水蓝色鲸鱼沙发",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10762"
       ]
@@ -23783,7 +23783,7 @@
     },
     "照明": {
       "text": "照明",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "70"
       ]
@@ -23832,14 +23832,14 @@
     },
     "白石杏": {
       "text": "白石杏",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "12"
       ]
     },
     "白砂の道": {
       "text": "白砂小径",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10743"
       ]
@@ -23874,7 +23874,7 @@
     },
     "砂利の道": {
       "text": "碎石路",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10742"
       ]
@@ -23958,7 +23958,7 @@
     },
     "竹の柵": {
       "text": "竹篱笆",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "10705"
       ]
@@ -24252,7 +24252,7 @@
     },
     "鏡音リン AN '25": {
       "text": "镜音铃 AN '25",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11017"
       ]
@@ -24266,21 +24266,21 @@
     },
     "鏡音レン AN '25": {
       "text": "镜音连 AN '25",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11018"
       ]
     },
     "鏡餅": {
       "text": "镜饼",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11020"
       ]
     },
     "門松": {
       "text": "门松",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "11019"
       ]
@@ -24308,7 +24308,7 @@
     },
     "雷神祭": {
       "text": "雷神祭",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "77"
       ]
@@ -24392,7 +24392,7 @@
     },
     "青柳冬弥": {
       "text": "青柳冬弥",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "14"
       ]
