@@ -1,8 +1,8 @@
 {
   "artist": {
     "*Luna": {
-      "text": "*Luna",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "173",
         "321",
@@ -13,8 +13,8 @@
       ]
     },
     "164": {
-      "text": "164",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "8",
         "132",
@@ -22,37 +22,37 @@
       ]
     },
     "1640mP": {
-      "text": "1640mP",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "8"
       ]
     },
     "19 -iku-": {
-      "text": "19 -iku-",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "390",
         "438"
       ]
     },
     "23.exe": {
-      "text": "23.exe",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "266"
       ]
     },
     "3106。": {
-      "text": "3106。",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "518"
       ]
     },
     "40mP": {
-      "text": "40mP",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "8",
         "87",
@@ -67,57 +67,57 @@
       ]
     },
     "40mP × sasakure.UK": {
-      "text": "40mP × sasakure.UK",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "573"
       ]
     },
     "40mP × 一二三 (12340mP)": {
-      "text": "40mP × 一二三 (12340mP)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "375"
       ]
     },
     "A4。": {
-      "text": "A4。",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "326"
       ]
     },
     "Adeliae": {
-      "text": "Adeliae",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "364"
       ]
     },
     "Aira": {
-      "text": "Aira",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "488"
       ]
     },
     "Aliey:S": {
-      "text": "Aliey:S",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "677"
       ]
     },
     "Anamanaguchi": {
-      "text": "Anamanaguchi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "153"
       ]
     },
     "Aqu3ra": {
-      "text": "Aqu3ra",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "140",
         "269",
@@ -127,8 +127,8 @@
       ]
     },
     "Ayase": {
-      "text": "Ayase",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "102",
         "126",
@@ -137,45 +137,45 @@
       ]
     },
     "Ayase, Rockwell": {
-      "text": "Ayase, Rockwell",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "414"
       ]
     },
     "Azari": {
-      "text": "Azari_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "476",
         "596"
       ]
     },
     "BIGHEAD": {
-      "text": "BIGHEAD",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "318"
       ]
     },
     "Benjamin Franklin": {
-      "text": "Benjamin Franklin",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "648"
       ]
     },
     "Capchii": {
-      "text": "Capchii",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "315",
         "697"
       ]
     },
     "Chinozo": {
-      "text": "Chinozo",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "182",
         "198",
@@ -183,8 +183,8 @@
       ]
     },
     "CircusP": {
-      "text": "CircusP",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "228",
         "247",
@@ -193,22 +193,22 @@
       ]
     },
     "CircusP + HaiDL": {
-      "text": "CircusP + HaiDL",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "445"
       ]
     },
     "Crusher P": {
-      "text": "Crusher P",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "100"
       ]
     },
     "DECO*27": {
-      "text": "DECO*27",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "6",
         "63",
@@ -235,30 +235,30 @@
       ]
     },
     "DECO*27 \u0026 Hayato Yamamoto": {
-      "text": "DECO*27 \u0026 山本隼人",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "628",
         "724"
       ]
     },
     "DECO*27 (OTOIRO)": {
-      "text": "DECO*27 (OTOIRO)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "555"
       ]
     },
     "DECO*27 x ピノキオピー": {
-      "text": "DECO*27 x PinocchioP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "412"
       ]
     },
     "DIVELA": {
-      "text": "DIVELA",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "112",
         "337",
@@ -266,45 +266,45 @@
       ]
     },
     "Dios/シグナルP": {
-      "text": "Dios/SignalP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "104"
       ]
     },
     "Dixie Flatline": {
-      "text": "Dixie Flatline",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "27",
         "319"
       ]
     },
     "EZFG": {
-      "text": "EZFG",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "94"
       ]
     },
     "EasyPop": {
-      "text": "EasyPop",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "10",
         "252"
       ]
     },
     "Eight": {
-      "text": "Eight",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "340"
       ]
     },
     "Eve": {
-      "text": "Eve",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "91",
         "106",
@@ -316,16 +316,16 @@
       ]
     },
     "GAiA": {
-      "text": "GAiA",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "131",
         "388"
       ]
     },
     "Giga": {
-      "text": "Giga",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "26",
         "54",
@@ -336,43 +336,43 @@
       ]
     },
     "Giga \u0026 Mitchie M": {
-      "text": "Giga \u0026 Mitchie M",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "77"
       ]
     },
     "Giga、TeddyLoid": {
-      "text": "Giga \u0026 TeddyLoid",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "205"
       ]
     },
     "Giga＆TeddyLoid": {
-      "text": "Giga＆TeddyLoid",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "471"
       ]
     },
     "Gom, Oji": {
-      "text": "Gom, Oji",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "621"
       ]
     },
     "Gom, shito": {
-      "text": "Gom, shito",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "621"
       ]
     },
     "Guiano": {
-      "text": "Guiano",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "287",
         "495",
@@ -380,15 +380,15 @@
       ]
     },
     "Haruka": {
-      "text": "Haruka_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "501"
       ]
     },
     "Heavenz": {
-      "text": "Heavenz",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "294",
         "295",
@@ -397,8 +397,8 @@
       ]
     },
     "HoneyWorks": {
-      "text": "HoneyWorks",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "302",
         "374",
@@ -406,22 +406,22 @@
       ]
     },
     "Hylen": {
-      "text": "Hylen",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "363"
       ]
     },
     "HzEdge（クリスタルP）": {
-      "text": "HzEdge（Crystal-P）",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "693"
       ]
     },
     "Junky": {
-      "text": "Junky",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "41",
         "144",
@@ -431,29 +431,29 @@
       ]
     },
     "KIRA": {
-      "text": "KIRA_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "263"
       ]
     },
     "KOUICHI": {
-      "text": "KOUICHI",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "327"
       ]
     },
     "Kai": {
-      "text": "Kai",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "413"
       ]
     },
     "Kanaria": {
-      "text": "Kanaria",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "138",
         "231",
@@ -463,36 +463,36 @@
       ]
     },
     "Kei Suzuki/BIGHEAD": {
-      "text": "Kei Suzuki/BIGHEAD",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "318"
       ]
     },
     "Last Note.": {
-      "text": "Last Note.",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "354"
       ]
     },
     "LindaAI-CUE(BNSI)": {
-      "text": "LindaAI-CUE(BNSI)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "707"
       ]
     },
     "LonePi": {
-      "text": "LonePi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "630"
       ]
     },
     "MARETU": {
-      "text": "MARETU",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "344",
         "473",
@@ -500,8 +500,8 @@
       ]
     },
     "MIMI": {
-      "text": "MIMI",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "157",
         "417",
@@ -509,16 +509,16 @@
       ]
     },
     "Misumi": {
-      "text": "Misumi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "167",
         "373"
       ]
     },
     "Mitchie M": {
-      "text": "Mitchie M",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "11",
         "57",
@@ -529,29 +529,29 @@
       ]
     },
     "Mwk": {
-      "text": "Mwk",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "425"
       ]
     },
     "Naoki Itai(MUSIC FOR MUSIC)": {
-      "text": "Naoki Itai(MUSIC FOR MUSIC)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "199"
       ]
     },
     "Nem": {
-      "text": "Nem",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "346"
       ]
     },
     "Neru": {
-      "text": "Neru",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "21",
         "52",
@@ -562,15 +562,15 @@
       ]
     },
     "Neru \u0026 z’5": {
-      "text": "Neru \u0026 z’5",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "670"
       ]
     },
     "Numa": {
-      "text": "Numa",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "91",
         "106",
@@ -581,8 +581,8 @@
       ]
     },
     "OSTER project": {
-      "text": "OSTER project",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "36",
         "86",
@@ -594,8 +594,8 @@
       ]
     },
     "Omoi": {
-      "text": "Omoi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "3",
         "46",
@@ -603,8 +603,8 @@
       ]
     },
     "Orangestar": {
-      "text": "Orangestar",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "18",
         "97",
@@ -617,22 +617,22 @@
       ]
     },
     "Peg": {
-      "text": "Peg",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "316"
       ]
     },
     "Peter B, Ary W, Josh K, David M, \u0026 Stella M": {
-      "text": "Peter B, Ary W, Josh K, David M, \u0026 Stella M",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "153"
       ]
     },
     "Ponchi♪": {
-      "text": "Ponchi♪",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "274",
         "449",
@@ -641,8 +641,8 @@
       ]
     },
     "R Sound Design": {
-      "text": "R Sound Design",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "55",
         "262",
@@ -650,23 +650,23 @@
       ]
     },
     "Re:nG": {
-      "text": "Re:nG",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "283"
       ]
     },
     "Reol": {
-      "text": "Reol",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "26",
         "471"
       ]
     },
     "Rockwell": {
-      "text": "Rockwell",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "6",
         "18",
@@ -681,55 +681,55 @@
       ]
     },
     "Rockwell ": {
-      "text": "Rockwell",
-      "source": "unknown"
+      "text": "",
+      "source": "human"
     },
     "Rulmry.": {
-      "text": "Rulmry.",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "399"
       ]
     },
     "SAM（samfree）": {
-      "text": "SAM（samfree）",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "216"
       ]
     },
     "SAWTOWNE": {
-      "text": "SAWTOWNE",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "552"
       ]
     },
     "SEVENTHLINKS": {
-      "text": "SEVENTHLINKS",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "297"
       ]
     },
     "SLAVE.V-V-R": {
-      "text": "SLAVE.V-V-R",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "301",
         "430"
       ]
     },
     "STEAKA": {
-      "text": "STEAKA",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "647"
       ]
     },
     "Sakurai": {
-      "text": "Sakurai_",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "3",
         "46",
@@ -737,64 +737,64 @@
       ]
     },
     "Sakuzyo": {
-      "text": "Sakuzyo",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "671"
       ]
     },
     "Sasanomaly": {
-      "text": "Sasanomaly",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "149"
       ]
     },
     "Sena Kiryuin \u0026 SAWTOWNE": {
-      "text": "Sena Kiryuin \u0026 SAWTOWNE",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "552"
       ]
     },
     "Shu": {
-      "text": "Shu",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "496"
       ]
     },
     "Sohbana": {
-      "text": "Sohbana",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "406"
       ]
     },
     "Synthion": {
-      "text": "Synthion",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "420"
       ]
     },
     "T-POCKET": {
-      "text": "T-POCKET",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "306"
       ]
     },
     "TAKU INOUE、Numa": {
-      "text": "TAKU INOUE、Numa",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "188"
       ]
     },
     "TOKOTOKO": {
-      "text": "TOKOTOKO",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "193",
         "255",
@@ -802,30 +802,30 @@
       ]
     },
     "TOKOTOKO（西沢さんP）": {
-      "text": "TOKOTOKO（西泽P）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "320"
       ]
     },
     "TakoyakiKZY": {
-      "text": "TakoyakiKZY",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "468",
         "678"
       ]
     },
     "TeddyLoid": {
-      "text": "TeddyLoid_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "579"
       ]
     },
     "Twinfield": {
-      "text": "Twinfield_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "227",
         "462",
@@ -833,16 +833,16 @@
       ]
     },
     "YASUHIRO(康寛)": {
-      "text": "YASUHIRO(康宽)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "105",
         "240"
       ]
     },
     "ZUN（上海アリス幻樂団）": {
-      "text": "ZUN（上海爱丽丝幻乐团）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "501",
         "502",
@@ -853,23 +853,23 @@
       ]
     },
     "buzzG": {
-      "text": "buzzG",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "259",
         "534"
       ]
     },
     "colate": {
-      "text": "colate",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "362"
       ]
     },
     "cosMo@暴走P": {
-      "text": "cosMo@暴走P",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "49",
         "131",
@@ -883,15 +883,15 @@
       ]
     },
     "cosMo＠暴走P": {
-      "text": "cosMo＠暴走P",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "688"
       ]
     },
     "doriko": {
-      "text": "doriko",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "121",
         "383",
@@ -900,8 +900,8 @@
       ]
     },
     "emon(Tes.)": {
-      "text": "emon(Tes.)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "123",
         "194",
@@ -910,29 +910,29 @@
       ]
     },
     "emon(Tes.) \u0026 Rockwell": {
-      "text": "emon(Tes.) \u0026 Rockwell",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "92"
       ]
     },
     "emon(Tes.)・Tudiken": {
-      "text": "emon(Tes.)・Tudiken",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "209"
       ]
     },
     "gcmstyle（アンメルツP）": {
-      "text": "gcmstyle（AmemitsuP）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "370"
       ]
     },
     "halyosy": {
-      "text": "halyosy",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "50",
         "271",
@@ -944,44 +944,44 @@
       ]
     },
     "hinayukki@仕事してP": {
-      "text": "hinayukki@工作吧P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "403"
       ]
     },
     "ika_mo": {
-      "text": "ika_mo",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "124"
       ]
     },
     "inno": {
-      "text": "inno_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "637"
       ]
     },
     "iroha(sasaki)": {
-      "text": "iroha(sasaki)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "179"
       ]
     },
     "john": {
-      "text": "john",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "392",
         "649"
       ]
     },
     "jon-YAKITORY": {
-      "text": "jon-YAKITORY",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "217",
         "499",
@@ -989,16 +989,16 @@
       ]
     },
     "keeno": {
-      "text": "keeno",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "339",
         "500"
       ]
     },
     "kemu": {
-      "text": "kemu",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "135",
         "154",
@@ -1008,23 +1008,23 @@
       ]
     },
     "koyori": {
-      "text": "koyori_",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "74",
         "324"
       ]
     },
     "kuma(alfred)": {
-      "text": "kuma(alfred)_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "179"
       ]
     },
     "kz": {
-      "text": "kz",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "1",
         "44",
@@ -1032,15 +1032,15 @@
       ]
     },
     "malo": {
-      "text": "malo",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "470"
       ]
     },
     "mothy": {
-      "text": "mothy",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "190",
         "191",
@@ -1052,8 +1052,8 @@
       ]
     },
     "n-buna": {
-      "text": "n-buna",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "75",
         "218",
@@ -1063,37 +1063,37 @@
       ]
     },
     "n-buna、Orangestar": {
-      "text": "n-buna",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "614"
       ]
     },
     "n.k": {
-      "text": "n.k",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "625"
       ]
     },
     "niki": {
-      "text": "niki",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "497",
         "522"
       ]
     },
     "nogumi": {
-      "text": "nogumi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "292"
       ]
     },
     "nyanyannya（大天才P）": {
-      "text": "nyanyannya（大天才P）",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "28",
         "251",
@@ -1101,30 +1101,30 @@
       ]
     },
     "orange": {
-      "text": "orange_",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "104"
       ]
     },
     "otetsu": {
-      "text": "otetsu",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "261"
       ]
     },
     "picco": {
-      "text": "picco",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "428",
         "544"
       ]
     },
     "q*Left": {
-      "text": "q*Left",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "54",
         "83",
@@ -1135,8 +1135,8 @@
       ]
     },
     "r-906": {
-      "text": "r-906",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "401",
         "422",
@@ -1144,8 +1144,8 @@
       ]
     },
     "ryo": {
-      "text": "ryo_",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "47",
         "48",
@@ -1156,15 +1156,15 @@
       ]
     },
     "sabio/高村風太": {
-      "text": "sabio/高村风太",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "717"
       ]
     },
     "sasakure.UK": {
-      "text": "sasakure.UK",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "118",
         "127",
@@ -1177,50 +1177,50 @@
       ]
     },
     "sasakure.UK(Gt 佐々木秀尚 Ba 二家本亮介(有形ランペイジ))": {
-      "text": "sasakure.UK(Gt 佐佐木秀尚 Ba 二家本亮介(有形RAMPAGE))",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "249"
       ]
     },
     "sasakure.UK(Key 岸田勇気(有形ランペイジ))": {
-      "text": "sasakure.UK (Key 岸田勇气 (有形Rampage))",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "127"
       ]
     },
     "sasakure.UK＆DECO*27": {
-      "text": "sasakure.UK＆DECO*27",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "331"
       ]
     },
     "sezu": {
-      "text": "sezu",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "303"
       ]
     },
     "shikisai": {
-      "text": "shikisai_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "557"
       ]
     },
     "shu-t": {
-      "text": "shu-t",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "265"
       ]
     },
     "syudou": {
-      "text": "syudou_",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "62",
         "129",
@@ -1231,41 +1231,41 @@
       ]
     },
     "syudou・バルーン": {
-      "text": "syudou・Balloon",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "585"
       ]
     },
     "takamatt": {
-      "text": "takamatt",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "150"
       ]
     },
     "tepe": {
-      "text": "tepe",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "304",
         "578"
       ]
     },
     "tepe (OTOIRO) ": {
-      "text": "tepe (OTOIRO)",
-      "source": "unknown"
+      "text": "",
+      "source": "human"
     },
     "tepe(OTOIRO)": {
-      "text": "tepe(OTOIRO)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "463"
       ]
     },
     "wotaku": {
-      "text": "wotaku",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "272",
         "276",
@@ -1274,8 +1274,8 @@
       ]
     },
     "wowaka": {
-      "text": "wowaka",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "113",
         "114",
@@ -1285,72 +1285,72 @@
       ]
     },
     "yanagi": {
-      "text": "yanagi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "223"
       ]
     },
     "yuichi NAGAO": {
-      "text": "yuichi NAGAO",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "608"
       ]
     },
     "yukkedoluce": {
-      "text": "yukkedoluce",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "443"
       ]
     },
     "yuukiss": {
-      "text": "yuukiss_",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "13"
       ]
     },
     "¿?shimon": {
-      "text": "¿?shimon",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "540",
         "571"
       ]
     },
     "ЯIRE, Mitchie M": {
-      "text": "ЯIRE, Mitchie M",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "313"
       ]
     },
     "あばらや": {
-      "text": "Abaraya",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "638"
       ]
     },
     "いえぬ": {
-      "text": "いえぬ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "446"
       ]
     },
     "いのうつはSA": {
-      "text": "いのうつはSA",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "633"
       ]
     },
     "いよわ": {
-      "text": "いよわ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "308",
         "361",
@@ -1363,23 +1363,23 @@
       ]
     },
     "いるかアイス": {
-      "text": "Iruka Ice",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "128",
         "588"
       ]
     },
     "うたたP": {
-      "text": "UtataP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "279"
       ]
     },
     "かいりきベア": {
-      "text": "Kairiki Bear",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "145",
         "168",
@@ -1392,8 +1392,8 @@
       ]
     },
     "かめりあ": {
-      "text": "Camellia",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "433",
         "448",
@@ -1402,59 +1402,59 @@
       ]
     },
     "きくお": {
-      "text": "Kikuo",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "181"
       ]
     },
     "きさら": {
-      "text": "Kisara",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "380"
       ]
     },
     "くじら": {
-      "text": "Kujira",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "232",
         "418"
       ]
     },
     "こめだわら×R Sound Design": {
-      "text": "Komedawara × R Sound Design",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "404"
       ]
     },
     "さつき が てんこもり": {
-      "text": "Satsuki ga Tenkomori",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "43",
         "298"
       ]
     },
     "ざんぎ": {
-      "text": "ざんぎ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "655"
       ]
     },
     "しゃいと": {
-      "text": "Shaito",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "254"
       ]
     },
     "じん": {
-      "text": "Jin",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "64",
         "81",
@@ -1467,8 +1467,8 @@
       ]
     },
     "じーざす": {
-      "text": "Jesus",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "78",
         "146",
@@ -1477,23 +1477,23 @@
       ]
     },
     "すこっぷ": {
-      "text": "Scop",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "293",
         "442"
       ]
     },
     "すこやか大聖堂": {
-      "text": "すこやか大圣堂",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "215"
       ]
     },
     "すりぃ": {
-      "text": "Surii",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "84",
         "90",
@@ -1503,16 +1503,16 @@
       ]
     },
     "せきこみごはん": {
-      "text": "Sekikomigohan",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "197",
         "600"
       ]
     },
     "てにをは": {
-      "text": "teniwoha",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "170",
         "300",
@@ -1520,8 +1520,8 @@
       ]
     },
     "とあ": {
-      "text": "Toa",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "71",
         "116",
@@ -1529,45 +1529,45 @@
       ]
     },
     "ど～ぱみん": {
-      "text": "Dopamine",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "626"
       ]
     },
     "なきそ": {
-      "text": "Nakiso",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "455",
         "549"
       ]
     },
     "なきゃむりゃ": {
-      "text": "Nakyamurya",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "456"
       ]
     },
     "なちぴ": {
-      "text": "なちぴ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "720"
       ]
     },
     "なみぐる": {
-      "text": "Namiguru",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "379",
         "660"
       ]
     },
     "ぬゆり": {
-      "text": "nulut",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "69",
         "183",
@@ -1580,8 +1580,8 @@
       ]
     },
     "のぼる↑": {
-      "text": "Noboru↑",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "355",
         "635",
@@ -1589,15 +1589,15 @@
       ]
     },
     "のりぴー": {
-      "text": "のりぴー",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "177"
       ]
     },
     "はるまきごはん": {
-      "text": "Harumaki Gohan",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "70",
         "507",
@@ -1605,8 +1605,8 @@
       ]
     },
     "ひとしずく×やま△": {
-      "text": "Hitoshizuku×Yama△",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "278",
         "333",
@@ -1614,44 +1614,44 @@
       ]
     },
     "ひらぎ": {
-      "text": "Hiragi",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "639"
       ]
     },
     "ふじを": {
-      "text": "Fujiwo",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "376"
       ]
     },
     "ふわりP": {
-      "text": "ふわりP",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "493"
       ]
     },
     "ぽりふぉ": {
-      "text": "Polypho",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "212"
       ]
     },
     "まふまふ": {
-      "text": "Mafumafu",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "60",
         "61"
       ]
     },
     "まらしぃ": {
-      "text": "marasy",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "93",
         "224",
@@ -1659,22 +1659,22 @@
       ]
     },
     "まらしぃ、堀江晶太(kemu)": {
-      "text": "marasy、堀江晶太(kemu)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "224"
       ]
     },
     "まらしぃ＆じん": {
-      "text": "marasy＆jin",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "381"
       ]
     },
     "みきとP": {
-      "text": "MikitoP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "2",
         "45",
@@ -1685,37 +1685,37 @@
       ]
     },
     "みそみぃる": {
-      "text": "Misomyuru",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "449"
       ]
     },
     "むさぬりゆ": {
-      "text": "Musanuriyu",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "691"
       ]
     },
     "めろくる": {
-      "text": "Merokuru",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "338",
         "426"
       ]
     },
     "やいり": {
-      "text": "Yairi",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "351"
       ]
     },
     "ゆうゆ": {
-      "text": "Yuuyu",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "258",
         "372",
@@ -1723,30 +1723,30 @@
       ]
     },
     "ゆこぴ": {
-      "text": "Yukopi",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "432"
       ]
     },
     "ゆちゃP": {
-      "text": "YuchaP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "542"
       ]
     },
     "ゆよゆっぺ": {
-      "text": "Yuyoyuppe",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "85",
         "236"
       ]
     },
     "れるりり": {
-      "text": "Rerulili",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "201",
         "229",
@@ -1756,8 +1756,8 @@
       ]
     },
     "れをる": {
-      "text": "Reol",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "15",
         "109",
@@ -1765,37 +1765,37 @@
       ]
     },
     "ろくろ": {
-      "text": "Rokuro",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "378"
       ]
     },
     "アゴアニキ": {
-      "text": "Agoaniki",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "256"
       ]
     },
     "オゾン": {
-      "text": "Ozone",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "185"
       ]
     },
     "カルロス袴田(サイゼP)": {
-      "text": "カルロス袴田(Saize-P)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "206",
         "475"
       ]
     },
     "カンザキイオリ": {
-      "text": "神崎伊织",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "22",
         "409",
@@ -1803,30 +1803,30 @@
       ]
     },
     "ガルナ（オワタP）": {
-      "text": "Garuna（Owata-P）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "275",
         "303"
       ]
     },
     "キタニタツヤ": {
-      "text": "木谷龙也",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "133"
       ]
     },
     "キタニタツヤ / はるまきごはん": {
-      "text": "Kitani Tatsuya / 春卷饭",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "239"
       ]
     },
     "キノシタ": {
-      "text": "Kinoshita",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "122",
         "166",
@@ -1835,8 +1835,8 @@
       ]
     },
     "ギガ": {
-      "text": "Giga",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "15",
         "109",
@@ -1844,59 +1844,59 @@
       ]
     },
     "ギガ(バーチャル・シンガーver.)": {
-      "text": "Giga（虚拟歌手ver.）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "307"
       ]
     },
     "クワガタP": {
-      "text": "KuwagataP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "330"
       ]
     },
     "ゴジマジＰ": {
-      "text": "Gojimaji P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "480"
       ]
     },
     "ササノマリイ": {
-      "text": "sasanomaly",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "67",
         "716"
       ]
     },
     "サツキ": {
-      "text": "Satsuki",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "408",
         "531"
       ]
     },
     "シアン・キノ": {
-      "text": "Cyan Kino",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "359"
       ]
     },
     "シノ": {
-      "text": "Shino",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "137"
       ]
     },
     "ジミーサムP": {
-      "text": "JimmyThumbP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "96",
         "243",
@@ -1904,15 +1904,15 @@
       ]
     },
     "タケノコ少年": {
-      "text": "竹笋少年",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "165"
       ]
     },
     "ツミキ": {
-      "text": "tsumiki",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "277",
         "353",
@@ -1920,23 +1920,23 @@
       ]
     },
     "トラボルタ": {
-      "text": "Travolta",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "312"
       ]
     },
     "トーマ": {
-      "text": "Tohma",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "586",
         "595"
       ]
     },
     "ナナホシ管弦楽団": {
-      "text": "七星管弦乐团",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "264",
         "458",
@@ -1944,16 +1944,16 @@
       ]
     },
     "ナノウ": {
-      "text": "Nanou",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "66",
         "345"
       ]
     },
     "ナユタン星人": {
-      "text": "Nayutan星人",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "68",
         "99",
@@ -1965,8 +1965,8 @@
       ]
     },
     "ハチ": {
-      "text": "Hachi",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "219",
         "220",
@@ -1976,16 +1976,16 @@
       ]
     },
     "ハヤシケイ": {
-      "text": "Hayashi Kei",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "286",
         "642"
       ]
     },
     "バルーン": {
-      "text": "Balloon",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "19",
         "189",
@@ -1995,15 +1995,15 @@
       ]
     },
     "ビートまりお": {
-      "text": "Beat Mario",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "502"
       ]
     },
     "ビートまりお×まろん": {
-      "text": "Beat Mario×Maron",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "502",
         "503",
@@ -2012,44 +2012,44 @@
       ]
     },
     "ビートまりお×まろん、ARM (IOSYS)": {
-      "text": "beatMARIO×maron、ARM (IOSYS)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "624"
       ]
     },
     "ビートまりお×まろん、まらしぃ、Masayoshi Minoshima": {
-      "text": "beatMARIO×maron、marasy、Masayoshi Minoshima",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "501"
       ]
     },
     "ビートまりお×まろん、夕野ヨシミ (IOSYS)": {
-      "text": "ビートまりお×まろん、夕野良美 (IOSYS)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "624"
       ]
     },
     "ビートまりお×まろん、東京アクティブNEETs": {
-      "text": "Beat Mario×Maron、Tokyo Active NEETs",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "623"
       ]
     },
     "ピコン": {
-      "text": "Pikon",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "142",
         "200"
       ]
     },
     "ピノキオピー": {
-      "text": "PinocchioP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "51",
         "108",
@@ -2063,29 +2063,29 @@
       ]
     },
     "ピノキオピー x Rockwell": {
-      "text": "PinocchioP x Rockwell",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "412"
       ]
     },
     "フユウ": {
-      "text": "Fuyuu",
-      "source": "unknown",
+      "text": "\n",
+      "source": "human",
       "ids": [
         "656"
       ]
     },
     "フロクロ": {
-      "text": "フロクロ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "704"
       ]
     },
     "ポリスピカデリー": {
-      "text": "Police Piccadilly",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "156",
         "490",
@@ -2093,59 +2093,59 @@
       ]
     },
     "マイキP": {
-      "text": "MaikiP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "452"
       ]
     },
     "マサラダ": {
-      "text": "Masarada",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "509",
         "667"
       ]
     },
     "マツシタレオ": {
-      "text": "松下怜央",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "526"
       ]
     },
     "ムラタシユウ": {
-      "text": "村田紫羽",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "545"
       ]
     },
     "ヤスオ": {
-      "text": "Yasuo",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "454"
       ]
     },
     "ヤマギシコージ": {
-      "text": "Yamagishi Koji",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "569"
       ]
     },
     "ユジー": {
-      "text": "ユジー",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "107",
         "659"
       ]
     },
     "ユリイ・カノン": {
-      "text": "Yurii Canon",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "152",
         "211",
@@ -2154,29 +2154,29 @@
       ]
     },
     "ライブP": {
-      "text": "LiveP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "394"
       ]
     },
     "ラマーズＰ": {
-      "text": "LamazeP",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "341"
       ]
     },
     "ロシア民謡": {
-      "text": "俄罗斯民谣",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "627"
       ]
     },
     "ワンダフル☆オポチュニティ！": {
-      "text": "Wonderful☆Opportunity!",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "78",
         "146",
@@ -2185,50 +2185,50 @@
       ]
     },
     "一二三": {
-      "text": "一二三",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "375"
       ]
     },
     "世阿弥": {
-      "text": "世阿弥",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "708"
       ]
     },
     "亜沙": {
-      "text": "亚沙",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "591"
       ]
     },
     "伊東 健人": {
-      "text": "伊东 健人",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "161"
       ]
     },
     "佐藤原材料": {
-      "text": "佐藤原材料",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "332"
       ]
     },
     "傘村トータ（LIVE LAB.）": {
-      "text": "伞村Tota（LIVE LAB.）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "196"
       ]
     },
     "八王子P": {
-      "text": "八王子P",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "101",
         "281",
@@ -2237,44 +2237,44 @@
       ]
     },
     "八王子P / Giga": {
-      "text": "八王子P / Giga",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "83"
       ]
     },
     "八王子P/q*Left": {
-      "text": "八王子P/q*Left",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "281"
       ]
     },
     "加賀（ネギシャワーＰ）": {
-      "text": "加贺（NegishowerP）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "151",
         "517"
       ]
     },
     "南ノ南": {
-      "text": "南之南",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "328"
       ]
     },
     "卯花ロク": {
-      "text": "卯花Roku",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "427"
       ]
     },
     "原口沙輔": {
-      "text": "原口沙辅",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "483",
         "515",
@@ -2282,29 +2282,29 @@
       ]
     },
     "古川本舗": {
-      "text": "古川本铺",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "237"
       ]
     },
     "古川本舗・和音正人": {
-      "text": "古川本铺・和音正人",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "237"
       ]
     },
     "吉田ヨシユキ": {
-      "text": "吉田良行",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "532"
       ]
     },
     "吉田夜世": {
-      "text": "吉田夜世",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "504",
         "521",
@@ -2312,38 +2312,38 @@
       ]
     },
     "吐息.": {
-      "text": "吐息.",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "696"
       ]
     },
     "和田たけあき": {
-      "text": "和田武明",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "72",
         "257"
       ]
     },
     "和田たけあき(くらげP)": {
-      "text": "和田Takeaki（KurageP）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "88",
         "335"
       ]
     },
     "堀江 晶太(kemu)": {
-      "text": "堀江晶太(kemu)",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "574"
       ]
     },
     "堀江晶太(kemu)": {
-      "text": "堀江晶太(kemu)",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "76",
         "224",
@@ -2351,8 +2351,8 @@
       ]
     },
     "夏代孝明": {
-      "text": "夏代孝明",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "73",
         "130",
@@ -2360,23 +2360,23 @@
       ]
     },
     "夏代孝明・渡辺拓也": {
-      "text": "夏代孝明・渡边拓也",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "130"
       ]
     },
     "大沼パセリ": {
-      "text": "大沼Parsley",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "299",
         "572"
       ]
     },
     "大漠波新": {
-      "text": "大漠波新",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "467",
         "558",
@@ -2385,30 +2385,30 @@
       ]
     },
     "奏音69": {
-      "text": "奏音69",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "592"
       ]
     },
     "宮守文学": {
-      "text": "宫守文学",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "444",
         "553"
       ]
     },
     "小林オニキス": {
-      "text": "小林Onyx",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "556"
       ]
     },
     "岩見 陸": {
-      "text": "岩见 陆",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "264",
         "458",
@@ -2416,116 +2416,116 @@
       ]
     },
     "市瀬るぽ": {
-      "text": "市濑Lupo",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "82"
       ]
     },
     "帷子ゆき": {
-      "text": "帷子ゆき",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "283"
       ]
     },
     "平田義久": {
-      "text": "平田义久",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "519"
       ]
     },
     "想太": {
-      "text": "想太",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "120"
       ]
     },
     "打打だいず": {
-      "text": "打打Daizu",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "588"
       ]
     },
     "斜め上P": {
-      "text": "斜上P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "523"
       ]
     },
     "旅路": {
-      "text": "旅路",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "481"
       ]
     },
     "日向電工": {
-      "text": "日向电工",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "38"
       ]
     },
     "春野": {
-      "text": "春野",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "457"
       ]
     },
     "晴いちばん": {
-      "text": "晴Ichiban",
-      "source": "unknown",
+      "text": "晴Ichiba",
+      "source": "human",
       "ids": [
         "636"
       ]
     },
     "月詠み": {
-      "text": "月咏",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "211"
       ]
     },
     "有形ランペイジ": {
-      "text": "有形Rampage",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "226",
         "273"
       ]
     },
     "有機酸": {
-      "text": "有机酸",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "111",
         "180"
       ]
     },
     "村田祐一（LIVE LAB.）": {
-      "text": "村田祐一（LIVE LAB.）",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "196"
       ]
     },
     "柊キライ": {
-      "text": "柊Kirai",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "125",
         "260"
       ]
     },
     "柊マグネタイト": {
-      "text": "柊Magnetite",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "410",
         "525",
@@ -2534,67 +2534,67 @@
       ]
     },
     "柊マグネタイト / C'Na": {
-      "text": "柊Magnetite / C'Na",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "356"
       ]
     },
     "柊マグネタイト / 雪乃イト": {
-      "text": "柊Magnetite / 雪乃Ito",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "356"
       ]
     },
     "柊マグネタイト、C'Na": {
-      "text": "柊Magnetite、C'Na",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "410"
       ]
     },
     "栗山夕璃": {
-      "text": "栗山夕璃",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "397",
         "695"
       ]
     },
     "栗山夕璃（蜂屋ななし）": {
-      "text": "栗山夕璃（蜂屋Nanashi）",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "291"
       ]
     },
     "梅とら": {
-      "text": "梅とら",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "95",
         "421"
       ]
     },
     "棚橋 EDDY テルアキ": {
-      "text": "棚桥 EDDY 辉明",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "159",
         "270"
       ]
     },
     "椎乃味醂": {
-      "text": "椎乃味醂",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "416"
       ]
     },
     "椎名もた": {
-      "text": "椎名Mota",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "202",
         "214",
@@ -2603,89 +2603,89 @@
       ]
     },
     "水野あつ": {
-      "text": "水野Atsu",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "282",
         "644"
       ]
     },
     "水野あつ、雪乃イト": {
-      "text": "水野Atsu、雪乃Ito",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "282"
       ]
     },
     "水野悠良": {
-      "text": "水野悠良",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "177"
       ]
     },
     "沫尾": {
-      "text": "沫尾",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "594"
       ]
     },
     "海茶": {
-      "text": "海茶",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "461",
         "718"
       ]
     },
     "海茶、多良レイト": {
-      "text": "海茶、多良レイト",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "718"
       ]
     },
     "海茶・多良レイト": {
-      "text": "海茶・多良Late",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "461"
       ]
     },
     "渡辺拓也": {
-      "text": "渡边拓也",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "73",
         "130"
       ]
     },
     "瀬名航": {
-      "text": "濑名航",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "440"
       ]
     },
     "烏屋茶房": {
-      "text": "乌屋茶房",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "160",
         "610"
       ]
     },
     "無力P": {
-      "text": "无力P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "393"
       ]
     },
     "煮ル果実": {
-      "text": "煮果实",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "143",
         "203",
@@ -2695,8 +2695,8 @@
       ]
     },
     "牛肉": {
-      "text": "牛肉",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "195",
         "244",
@@ -2704,44 +2704,44 @@
       ]
     },
     "獅子志司": {
-      "text": "狮子志司",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "280",
         "322"
       ]
     },
     "田中B": {
-      "text": "田中B",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "645"
       ]
     },
     "目黒将司": {
-      "text": "目黑将司",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "648"
       ]
     },
     "真島ゆろ": {
-      "text": "真岛Yuro",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "400"
       ]
     },
     "石風呂": {
-      "text": "石风吕",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "546"
       ]
     },
     "稲葉曇": {
-      "text": "稻叶昙",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "435",
         "469",
@@ -2750,46 +2750,46 @@
       ]
     },
     "羽生まゐご": {
-      "text": "羽生迷子",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "245",
         "548"
       ]
     },
     "葵木ゴウ": {
-      "text": "葵木Gou",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "524"
       ]
     },
     "薄塩指数": {
-      "text": "薄盐指数",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "482",
         "498"
       ]
     },
     "藤原 基央": {
-      "text": "藤原基央",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "148",
         "184"
       ]
     },
     "藤原ハガネ": {
-      "text": "藤原Hagane",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "587"
       ]
     },
     "蝶々P": {
-      "text": "蝶蝶P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "155",
         "358",
@@ -2799,44 +2799,44 @@
       ]
     },
     "袖野あらわ": {
-      "text": "袖野あらわ",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "527"
       ]
     },
     "赤乃わい": {
-      "text": "赤乃Wai",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "314"
       ]
     },
     "遼遼": {
-      "text": "辽辽",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "267"
       ]
     },
     "針原翼（はりーP）": {
-      "text": "针原翼（HarryP）",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "159",
         "270"
       ]
     },
     "阿修": {
-      "text": "阿修",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "512"
       ]
     },
     "雄之助": {
-      "text": "雄之助",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "195",
         "244",
@@ -2845,29 +2845,29 @@
       ]
     },
     "雄之助 / CircusP": {
-      "text": "雄之助 / CircusP",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "464"
       ]
     },
     "雄之助、春野": {
-      "text": "雄之助、春野",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "457"
       ]
     },
     "雪乃イト": {
-      "text": "雪乃Ito",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "382"
       ]
     },
     "香椎モイミ": {
-      "text": "香椎Moimi",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "460",
         "466",
@@ -2876,30 +2876,30 @@
       ]
     },
     "駄菓子O型": {
-      "text": "駄菓子O型",
-      "source": "llm",
+      "text": "",
+      "source": "human",
       "ids": [
         "516"
       ]
     },
     "鬱P": {
-      "text": "郁P",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "387",
         "478"
       ]
     },
     "鳥居羊": {
-      "text": "鸟居羊",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "279"
       ]
     },
     "黒うさ": {
-      "text": "黑兔",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "110",
         "296",
@@ -2907,8 +2907,8 @@
       ]
     },
     "黒魔": {
-      "text": "黑魔",
-      "source": "unknown",
+      "text": "",
+      "source": "human",
       "ids": [
         "164"
       ]
