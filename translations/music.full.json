@@ -1207,8 +1207,8 @@
       ]
     },
     "shikisai": {
-      "text": "shikisai_",
-      "source": "unknown",
+      "text": "「shikisai」",
+      "source": "human",
       "ids": [
         "557"
       ]
@@ -1571,8 +1571,8 @@
       ]
     },
     "ぬゆり": {
-      "text": "nulut",
-      "source": "unknown",
+      "text": "「nulut」",
+      "source": "human",
       "ids": [
         "69",
         "183",
@@ -2211,8 +2211,8 @@
       ]
     },
     "伊東 健人": {
-      "text": "伊东 健人",
-      "source": "unknown",
+      "text": "「伊东 健人」",
+      "source": "human",
       "ids": [
         "161"
       ]
@@ -2365,8 +2365,8 @@
       ]
     },
     "夏代孝明・渡辺拓也": {
-      "text": "夏代孝明・渡边拓也",
-      "source": "unknown",
+      "text": "「夏代孝明」・「渡边拓也」",
+      "source": "human",
       "ids": [
         "130"
       ]
@@ -2608,8 +2608,8 @@
       ]
     },
     "水野あつ": {
-      "text": "水野Atsu",
-      "source": "unknown",
+      "text": "「水野Atsu」",
+      "source": "human",
       "ids": [
         "282",
         "644"
