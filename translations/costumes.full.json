@@ -4963,7 +4963,7 @@
   "name": {
     "39PUNK": {
       "text": "39PUNK",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "25001",
         "26001"
@@ -4971,833 +4971,833 @@
     },
     "=esprit": {
       "text": "=灵气",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "779001"
       ]
     },
     "ASTRO FES COSTUME（KAITO）": {
       "text": "ASTRO FES服装（KAITO）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "738001"
       ]
     },
     "ASTRO FES COSTUME（レン）": {
       "text": "ASTRO FES COSTUME（镜音连）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "737001"
       ]
     },
     "ASTRO FES COSTUME（冬弥）": {
       "text": "ASTRO FES服装（冬弥）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "740001"
       ]
     },
     "ASTRO FES COSTUME（司）": {
       "text": "太空节服装（司）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "741001"
       ]
     },
     "ASTRO FES COSTUME（彰人）": {
       "text": "ASTRO FES服装（彰人）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "739001"
       ]
     },
     "ASTRO FES COSTUME（類）": {
       "text": "ASTRO FES COSTUME（类）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "742001"
       ]
     },
     "Adorable steps": {
       "text": "萌动舞步",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "934001"
       ]
     },
     "Alive with music": {
       "text": "与音乐共存",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "462001"
       ]
     },
     "American casual": {
       "text": "美式休闲",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "446001"
       ]
     },
     "Attend Your Dream": {
       "text": "伴你之梦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "765001"
       ]
     },
     "Attend Your Future": {
       "text": "迈向未来",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "764001"
       ]
     },
     "Attract attention": {
       "text": "瞩目焦点",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "463001"
       ]
     },
     "Awesome Clover": {
       "text": "精彩三叶草",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "869001"
       ]
     },
     "Awesome Player": {
       "text": "Awesome  Player",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "651001"
       ]
     },
     "Awesome Ribbon": {
       "text": "绝赞缎带",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "870001"
       ]
     },
     "Awesome Star": {
       "text": "了不起的明星",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "868001"
       ]
     },
     "Awesome Wings": {
       "text": "威风之翼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "867001"
       ]
     },
     "Awesome vivid": {
       "text": "精彩活力",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "538001"
       ]
     },
     "BAD Argyle": {
       "text": "BAD 菱格纹",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "474001"
       ]
     },
     "BRILLIANT COWBOY!!": {
       "text": "闪耀牛仔！！",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "380001"
       ]
     },
     "Bear in pocket": {
       "text": "口袋里的熊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "703001"
       ]
     },
     "Beat Rider": {
       "text": "节奏骑士",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "340001"
       ]
     },
     "Become an ally": {
       "text": "坚定后盾",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "440001"
       ]
     },
     "Believe in・Style": {
       "text": "坚信・风格",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "155001"
       ]
     },
     "Biggest Bluff": {
       "text": "Biggest Bluff",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "838001"
       ]
     },
     "Bittersweet Guardian": {
       "text": "绽放的圆舞曲",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "929001"
       ]
     },
     "Bond of Sparkle": {
       "text": "闪耀之绊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "768001"
       ]
     },
     "Bond of belief": {
       "text": "信念之绊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "769001"
       ]
     },
     "Bond of flame": {
       "text": "火焰之绊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "770001"
       ]
     },
     "Bond of memory": {
       "text": "记忆的羁绊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "771001"
       ]
     },
     "Bright flame": {
       "text": "灿烂之火",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "680001"
       ]
     },
     "Brilliant Tender": {
       "text": "璀璨温柔",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "759001"
       ]
     },
     "Brush of Solitude": {
       "text": "孤独画笔",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "794001"
       ]
     },
     "Bビットボーイ": {
       "text": "B比特男孩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "943001"
       ]
     },
     "CHECK IT!!": {
       "text": "CHECK IT!!",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "871001"
       ]
     },
     "CHEERFUL PROJECT!!": {
       "text": "欢快计划！！",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "631001"
       ]
     },
     "CLOUDY magician": {
       "text": "阴云魔术师",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "552001"
       ]
     },
     "COOL SURVIVOR": {
       "text": "酷炫幸存者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "252001"
       ]
     },
     "Calm Rider": {
       "text": "沉稳骑手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "341001"
       ]
     },
     "Calm Wisdom": {
       "text": "Happy Anniversary Miku",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "908001"
       ]
     },
     "Casual Painter": {
       "text": "休闲画师",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "806001"
       ]
     },
     "Cat in pocket": {
       "text": "兜中猫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "705001"
       ]
     },
     "Cheer of neighbor": {
       "text": "邻里应援",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "813001"
       ]
     },
     "Cheerful Streamer": {
       "text": "开朗的主播",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "628001"
       ]
     },
     "Cherish regret": {
       "text": "怀抱悔恨",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "563001"
       ]
     },
     "Chill-Out Marine": {
       "text": "悠闲海洋",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "620001"
       ]
     },
     "Classical Blush": {
       "text": "古典羞涩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "846001"
       ]
     },
     "Classical Butterfly": {
       "text": "古典金斑蝶",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "485001"
       ]
     },
     "Classical Eyeshadow": {
       "text": "古典眼影",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "847001"
       ]
     },
     "Classical Gloss": {
       "text": "古典亮泽",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "845001"
       ]
     },
     "Classical Lipstick": {
       "text": "经典口红",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "844001"
       ]
     },
     "Classical Nails": {
       "text": "古典美甲",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "848001"
       ]
     },
     "Classical Perfume": {
       "text": "古典香氛",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "843001"
       ]
     },
     "Close to heart": {
       "text": "贴近心灵",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "439001"
       ]
     },
     "Code name: Joker": {
       "text": "代号：Joker",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "827001"
       ]
     },
     "Code name: Violet": {
       "text": "代号：紫罗兰",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "826001"
       ]
     },
     "Color the past": {
       "text": "染色往昔",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "562001"
       ]
     },
     "Colorful Bunny": {
       "text": "彩色兔兔",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "803001"
       ]
     },
     "Come to Life": {
       "text": "生机盎然",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "565001"
       ]
     },
     "Confidence suit": {
       "text": "自信西装",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "894001"
       ]
     },
     "Connect Hopeful Hour（メンズ）": {
       "text": "连结希望时刻（男款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "887033"
       ]
     },
     "Connect Hopeful Hour（レディース）": {
       "text": "连接希望时刻（女款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "886033"
       ]
     },
     "Connect Moonlight Dream（メンズ）": {
       "text": "连接月光之梦（男装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "818033"
       ]
     },
     "Connect Moonlight Dream（レディース）": {
       "text": "连接月光之梦（女装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "817097"
       ]
     },
     "Connect Rock'n Beat(メンズ)": {
-      "text": "Connect Rock'n Beat（男款）",
-      "source": "cn",
+      "text": "跟上摇滚节拍（男款）",
+      "source": "human",
       "ids": [
         "608033"
       ]
     },
     "Connect Rock'n Beat(レディース)": {
-      "text": "Connect Rock'n Beat（女款）",
-      "source": "cn",
+      "text": "跟上摇滚节拍（女款）",
+      "source": "human",
       "ids": [
         "607001"
       ]
     },
     "Connect Smileful Hour（メンズ）": {
       "text": "连结微笑时刻（男装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "889017"
       ]
     },
     "Connect Smileful Hour（レディース）": {
-      "text": "Connect Smileful Hour（女款）",
-      "source": "llm",
+      "text": "连结微笑时刻（女款）",
+      "source": "human",
       "ids": [
         "888081"
       ]
     },
     "Connect Street Beat(メンズ)": {
-      "text": "Connect Street Beat（男款）",
-      "source": "cn",
+      "text": "跟上摇滚节拍（男款）",
+      "source": "human",
       "ids": [
         "610001"
       ]
     },
     "Connect Street Beat(レディース)": {
-      "text": "Connect Street Beat（女款）",
-      "source": "cn",
+      "text": "跟上摇滚节拍（女款）",
+      "source": "human",
       "ids": [
         "609065"
       ]
     },
     "Connect Sunshine Dream（メンズ）": {
-      "text": "连结阳光之梦（男）",
-      "source": "llm",
+      "text": "连接阳光之梦（男款）",
+      "source": "human",
       "ids": [
         "820033"
       ]
     },
     "Connect Sunshine Dream（レディース）": {
-      "text": "Connect Sunshine Dream（女款）",
-      "source": "llm",
+      "text": "连接阳光之美（女款）",
+      "source": "human",
       "ids": [
         "819129"
       ]
     },
     "Cool New Colors": {
       "text": "酷炫新色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "451001"
       ]
     },
     "Cosmo Phone": {
       "text": "宇宙耳机",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "884001"
       ]
     },
     "Craving flame": {
       "text": "渴望之焰",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "679001"
       ]
     },
     "Crown Knight": {
       "text": "王冠骑士",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "22001"
       ]
     },
     "Cushy butler": {
       "text": "软绵绵执事",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "937001"
       ]
     },
     "D.C.Bad trip": {
       "text": "D.C.Bad trip",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "274001"
       ]
     },
     "D.C.Be help": {
       "text": "D.C.小帮手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "276001"
       ]
     },
     "D.C.Get close": {
       "text": "D.C.亲近",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "275001"
       ]
     },
     "DENIM\u0026MONO": {
-      "text": "丹宁与单色",
-      "source": "llm",
+      "text": "单色牛仔裤",
+      "source": "human",
       "ids": [
         "510001"
       ]
     },
     "Dance of freedom": {
       "text": "自由之舞",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "717001"
       ]
     },
     "Dance of pleasure": {
       "text": "愉悦之舞",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "719001"
       ]
     },
     "Dance of zeal": {
       "text": "热忱之舞",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "718001"
       ]
     },
     "Dark Embrace": {
       "text": "漆黑拥抱",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "775001"
       ]
     },
     "Detective Cat Robe": {
-      "text": "Detective Cat Robe",
-      "source": "llm",
+      "text": "侦探猫浴袍",
+      "source": "human",
       "ids": [
         "590001"
       ]
     },
     "Devil move heart": {
       "text": "恶魔动心",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "217001"
       ]
     },
     "Dilemma of seeker": {
       "text": "探索者的困境",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "811001"
       ]
     },
     "Don't give up・Style": {
-      "text": "Don't give up・Style",
-      "source": "llm",
+      "text": "永不言弃 · 风格",
+      "source": "human",
       "ids": [
         "154001"
       ]
     },
     "Drop sugar Tea party!": {
       "text": "糖果茶会！",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "556001"
       ]
     },
     "Dynamic-tone": {
       "text": "动感色调",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "290001"
       ]
     },
     "EVIL ONE": {
       "text": "EVIL ONE",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "163001"
       ]
     },
     "Easter・Bunny Boy": {
       "text": "复活节・兔男郎",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "235001"
       ]
     },
     "Echoes of Myself": {
       "text": "自我的回响",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "795001"
       ]
     },
     "Elegant Pirates": {
       "text": "优雅海侠",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "115001"
       ]
     },
     "Elysion Ange": {
-      "text": "Elysion Ange",
-      "source": "llm",
+      "text": "伊利西昂天使",
+      "source": "human",
       "ids": [
         "804001"
       ]
     },
     "Escape girl": {
       "text": "出逃少女",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "411001"
       ]
     },
     "Eternal Belief": {
       "text": "永恒信念",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "906001"
       ]
     },
     "FLAME OF ENDEAVOR": {
       "text": "奋发之火",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "487001"
       ]
     },
     "Fairlady Dress": {
       "text": "淑女礼服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "706001"
       ]
     },
     "Faith in Shadows": {
       "text": "影中信仰",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "792001"
       ]
     },
     "Fake Smile": {
       "text": "虚假笑容",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "839001"
       ]
     },
     "Fall Fun Steps": {
       "text": "快乐秋日步伐",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "486001"
       ]
     },
     "Fallen Kid": {
       "text": "颓废少女",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "374001"
       ]
     },
     "Fearless Clown": {
       "text": "无畏的小丑",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "381001"
       ]
     },
     "Fleek vivid": {
       "text": "鲜艳时髦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "537001"
       ]
     },
     "Flight Kid": {
       "text": "飞行少女",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "373001"
       ]
     },
     "Fluffy rabbit princess": {
       "text": "蓬松兔子公主",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "936001"
       ]
     },
     "Flutter of Butterflies": {
       "text": "蝴蝶迷踪",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "478033"
       ]
     },
     "Fresh Citrus Weekend": {
       "text": "清新柑橘周末",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "778001"
       ]
     },
     "GIFT-uniform": {
       "text": "礼物制服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "595001"
       ]
     },
     "Gentle Dog": {
       "text": "温顺狗",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "570001"
       ]
     },
     "Gentle steps": {
       "text": "温柔步伐",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "935001"
       ]
     },
     "Glamorous Peacock Ensemble": {
       "text": "华丽孔雀合奏",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "585001"
       ]
     },
     "Glamorous Peacock Suit": {
       "text": "华丽孔雀西装",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "586001"
       ]
     },
     "Go Frontier（メンズ）": {
-      "text": "Go Frontier（男款）",
-      "source": "llm",
+      "text": "开拓前沿（男装）",
+      "source": "human",
       "ids": [
         "927001"
       ]
     },
     "Go Frontier（レディース）": {
-      "text": "前进边境（女装）",
-      "source": "llm",
+      "text": "开拓前沿（女装）",
+      "source": "human",
       "ids": [
         "926001"
       ]
     },
     "HAPPY Flower": {
       "text": "快乐花朵",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "872001"
       ]
@@ -5811,21 +5811,21 @@
     },
     "Hamster in pocket": {
       "text": "口袋里的仓鼠",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "704001"
       ]
     },
     "Happy deliver": {
       "text": "快乐传递",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "444001"
       ]
     },
     "Hello! Cherry Blossom": {
       "text": "Hello! Cherry Blossom",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "767001"
       ]
@@ -5839,14 +5839,14 @@
     },
     "Honor Student": {
       "text": "优等生",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "750001"
       ]
     },
     "Hot New Colors": {
       "text": "流行新色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "450001"
       ]
@@ -5860,28 +5860,28 @@
     },
     "House Walker": {
       "text": "House漫步者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "298001"
       ]
     },
     "I'm a catch!!": {
       "text": "我钓到了！！",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "616001"
       ]
     },
     "Icy rose-lady": {
       "text": "冰之玫瑰淑女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "726001"
       ]
     },
     "Idol lover": {
       "text": "偶像爱好者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "814001"
       ]
@@ -5895,21 +5895,21 @@
     },
     "Innocent Streamer": {
       "text": "纯真的主播",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "629001"
       ]
     },
     "Insomnia Night": {
       "text": "不眠之夜",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "941001"
       ]
     },
     "Jumping life": {
       "text": "跳跃生活",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "626001"
       ]
@@ -5924,7 +5924,7 @@
     },
     "Kind Brother": {
       "text": "温柔兄长",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "566001"
       ]
@@ -5938,28 +5938,28 @@
     },
     "LOVE-uniform": {
       "text": "恋爱制服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "594001"
       ]
     },
     "Light steps": {
       "text": "轻盈脚步",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "933001"
       ]
     },
     "Lit vivid": {
-      "text": "Lit vivid",
-      "source": "llm",
+      "text": "生动鲜明",
+      "source": "human",
       "ids": [
         "535001"
       ]
     },
     "Livelylady Dress": {
       "text": "活泼淑女裙",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "707001"
       ]
@@ -5994,21 +5994,21 @@
     },
     "Loving Sunflower": {
       "text": "挚爱向日葵",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "271001"
       ]
     },
     "Lunatic Puppeteer": {
       "text": "疯狂的傀儡师",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "939001"
       ]
     },
     "MIKU MIKU POP!": {
       "text": "MIKU MIKU POP!",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "246001"
       ]
@@ -6036,28 +6036,28 @@
     },
     "Mellow Streamer": {
       "text": "柔和流光",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "630001"
       ]
     },
     "Melody Walker": {
       "text": "旋律行者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "296001"
       ]
     },
     "Melting Curse": {
       "text": "融化的诅咒",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "940001"
       ]
     },
     "Merry Bad Bride": {
       "text": "欢愉坏新娘",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "314001"
       ]
@@ -6078,14 +6078,14 @@
     },
     "Midnight calm": {
       "text": "午夜宁静",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "776001"
       ]
     },
     "Monotone city": {
       "text": "单色都市",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "686001"
       ]
@@ -6106,21 +6106,21 @@
     },
     "NEON Dr.": {
       "text": "霓虹医生",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "330001"
       ]
     },
     "NEON SINGER": {
       "text": "霓虹歌手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "331001"
       ]
     },
     "NEON Vo.": {
       "text": "霓虹主唱",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "329001"
       ]
@@ -6134,91 +6134,91 @@
     },
     "Night rose-queen": {
       "text": "暗夜玫瑰女王",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "725001"
       ]
     },
     "Noble Eternity": {
       "text": "高洁永恒",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "807001"
       ]
     },
     "Nussknacker": {
       "text": "胡桃夹子",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "339001"
       ]
     },
     "Ocean Captain": {
       "text": "海洋船长",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "619001"
       ]
     },
     "Old Days Boy": {
       "text": "昔日少年",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "272001"
       ]
     },
     "POPPIN' CUTE POLICE": {
       "text": "POPPIN' CUTE POLICE",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "648001"
       ]
     },
     "PURE FIGHTER": {
       "text": "纯粹战士",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "821001"
       ]
     },
     "PURE PUNCHER": {
       "text": "纯真击球手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "822001"
       ]
     },
     "PURE WATCHER": {
       "text": "纯净观测者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "823001"
       ]
     },
     "Papilionidae": {
       "text": "凤蝶",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "758001"
       ]
     },
     "Patrol Bear": {
       "text": "巡逻小熊",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "649001"
       ]
     },
     "Penguin lover": {
       "text": "企鹅爱好者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "815001"
       ]
     },
     "Permanent Spirit": {
       "text": "永恒精神",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "907001"
       ]
@@ -6232,21 +6232,21 @@
     },
     "Petit pas": {
       "text": "小小步履",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "832001"
       ]
     },
     "Petit souhait": {
       "text": "小小愿望",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "834001"
       ]
     },
     "Petite joie": {
       "text": "微小喜悦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "833001"
       ]
@@ -6260,21 +6260,21 @@
     },
     "Phantom thief": {
       "text": "怪盗",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "87001"
       ]
     },
     "Playing life": {
       "text": "演奏人生",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "627001"
       ]
     },
     "Pretty Lady": {
       "text": "俏丽淑女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "567001"
       ]
@@ -6288,14 +6288,14 @@
     },
     "Prismatic Blossom": {
       "text": "棱镜花开",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "751001"
       ]
     },
     "Prismatic Floret": {
       "text": "棱镜小花",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "752001"
       ]
@@ -6316,21 +6316,21 @@
     },
     "Pure Transparency": {
       "text": "纯粹透明",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "865001"
       ]
     },
     "Pure Walker": {
       "text": "纯粹行者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "297001"
       ]
     },
     "RAD ONEROAD": {
-      "text": "RAD唯一之路",
-      "source": "llm",
+      "text": "RAD单行道",
+      "source": "human",
       "ids": [
         "866001"
       ]
@@ -6344,28 +6344,28 @@
     },
     "ROOKIE SURVIVOR": {
       "text": "新手幸存者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "251001"
       ]
     },
     "ROSE/POMPADOUR": {
       "text": "玫瑰/庞巴度",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "899001"
       ]
     },
     "Ramble Rider": {
       "text": "漫步骑手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "342001"
       ]
     },
     "Real badass": {
       "text": "真正的硬汉",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "617001"
       ]
@@ -6386,28 +6386,28 @@
     },
     "Resolution suit": {
       "text": "决意西装",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "893001"
       ]
     },
     "Road to CHAMPION（メンズ）": {
       "text": "冠军之路（男款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "877001"
       ]
     },
     "Road to CHAMPION（レディース）": {
       "text": "冠军之路（女款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "876001"
       ]
     },
     "Rose Cage": {
       "text": "玫瑰之笼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "21001"
       ]
@@ -6421,7 +6421,7 @@
     },
     "Ruse Direction": {
       "text": "诡计导向",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "840001"
       ]
@@ -6434,15 +6434,15 @@
       ]
     },
     "SEKAI step wear": {
-      "text": "SEKAI步履装",
-      "source": "llm",
+      "text": " SEKAI step 服装",
+      "source": "human",
       "ids": [
         "257001"
       ]
     },
     "SMILE-uniform": {
       "text": "微笑制服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "593001"
       ]
@@ -6498,14 +6498,14 @@
     },
     "STEP-uniform": {
       "text": "STEP制服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "592001"
       ]
     },
     "SUMMER SPLASH！": {
       "text": "夏日水花！",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "437001"
       ]
@@ -6540,77 +6540,77 @@
     },
     "Shady rose-duke": {
       "text": "Shady rose-duke",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "727001"
       ]
     },
     "Sherlock Times": {
       "text": "夏洛克时代",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "591001"
       ]
     },
     "Shortcake*Gentleman": {
       "text": "草莓蛋糕*绅士",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "805001"
       ]
     },
     "Silent Devotion": {
       "text": "静默奉献",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "777001"
       ]
     },
     "Smashing vivid": {
       "text": "飒爽鲜活",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "536001"
       ]
     },
     "Smile deliver": {
       "text": "微笑传递",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "445001"
       ]
     },
     "Snow Fairy lover": {
       "text": "雪之精灵恋人",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "816001"
       ]
     },
     "Snowflake White Rabbit彡": {
       "text": "雪花白兔",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "355001"
       ]
     },
     "Soar high canary": {
       "text": "高飞的金丝雀",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "890001"
       ]
     },
     "Soft fur attendant": {
       "text": "毛茸茸皮毛侍从",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "938001"
       ]
     },
     "Song to taste.": {
       "text": "Song to taste.",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "105001"
       ]
@@ -6638,14 +6638,14 @@
     },
     "Soulful-tone": {
       "text": "灵魂音色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "289001"
       ]
     },
     "Sparkling life": {
       "text": "闪耀生活",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "625001"
       ]
@@ -6673,35 +6673,35 @@
     },
     "Star Player": {
       "text": "明星选手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "652001"
       ]
     },
     "Starry Ability": {
       "text": "星之才能",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "799001"
       ]
     },
     "Starry Core": {
       "text": "星光核心",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "798001"
       ]
     },
     "Starry Identity": {
       "text": "星空身份",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "796001"
       ]
     },
     "Starry Vigor": {
       "text": "繁星活力",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "797001"
       ]
@@ -6722,42 +6722,42 @@
     },
     "Stitch up Heart": {
       "text": "缝补之心",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "911001"
       ]
     },
     "Stunning lady": {
       "text": "惊艳淑女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "618001"
       ]
     },
     "Suave Resort Style": {
       "text": "优雅度假风",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "801001"
       ]
     },
     "Sugary Maid": {
       "text": "甜心女仆",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "930001"
       ]
     },
     "Summer Ribbon Style": {
       "text": "夏日缎带风格",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "800001"
       ]
     },
     "Summer time Flamingo": {
       "text": "夏日火烈鸟",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "269001"
       ]
@@ -6785,14 +6785,14 @@
     },
     "S×S": {
       "text": "S×S",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "398001"
       ]
     },
     "Tethered Calm": {
       "text": "维系的沉着",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "793001"
       ]
@@ -6834,14 +6834,14 @@
     },
     "Tight Player": {
       "text": "实力玩家",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "650001"
       ]
     },
     "Topgear-tone": {
       "text": "极速音调",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "288001"
       ]
@@ -6883,7 +6883,7 @@
     },
     "USAMIMI♡GAMERS": {
       "text": "兔耳♡游戏玩家",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "942001"
       ]
@@ -6897,91 +6897,91 @@
     },
     "Unchanged purity": {
       "text": "不变的纯真",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "731001"
       ]
     },
     "Unfailing kindness": {
       "text": "恒久仁慈",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "732001"
       ]
     },
     "Unshakable belief": {
       "text": "坚定信念",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "730001"
       ]
     },
     "V.B.S SURVIVOR": {
       "text": "V.B.S 幸存者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "250001"
       ]
     },
     "Vitality suit": {
       "text": "活力套装",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "895001"
       ]
     },
     "Vivid Argyle": {
       "text": "鲜艳菱格",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "473065"
       ]
     },
     "Vivid Bunny": {
       "text": "鲜艳兔兔",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "802001"
       ]
     },
     "Vivid New Colors": {
       "text": "鲜艳新色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "449001"
       ]
     },
     "Warming Cat": {
       "text": "暖心猫咪",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "534001"
       ]
     },
     "White Attractive": {
       "text": "白色魅力",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "760001"
       ]
     },
     "Wings of trust": {
       "text": "信任之翼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "891001"
       ]
     },
     "Wings of watch": {
       "text": "守护之翼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "892001"
       ]
     },
     "Witness of duel": {
       "text": "决斗的见证者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "589001"
       ]
@@ -7009,154 +7009,154 @@
     },
     "Worry of walker": {
       "text": "漫步者的忧虑",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "812001"
       ]
     },
     "Xylocopa": {
       "text": "木蜂",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "756001"
       ]
     },
     "Yearning flame": {
       "text": "憧憬之焰",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "681001"
       ]
     },
     "Youthful life": {
       "text": "青春生活",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "624001"
       ]
     },
     "bombyx mori": {
       "text": "家蚕",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "757001"
       ]
     },
     "city casual coffee": {
       "text": "城市休闲咖啡",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "791001"
       ]
     },
     "classical school girl": {
       "text": "古典校服少女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "749001"
       ]
     },
     "cosmic rhythm shooter": {
       "text": "宇宙节奏射手",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "188001"
       ]
     },
     "cozy time": {
       "text": "惬意时光",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "790001"
       ]
     },
     "crystal meteor(メンズ)": {
       "text": "水晶流星（男装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "856001"
       ]
     },
     "crystal meteor(レディース)": {
       "text": "水晶流星（女装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "855001"
       ]
     },
     "cute white kitty": {
       "text": "可爱白猫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "755001"
       ]
     },
     "cyber saver!": {
       "text": "赛博救星！",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "885001"
       ]
     },
     "day by denim": {
-      "text": "丹宁时光",
-      "source": "llm",
+      "text": "牛仔裤时光",
+      "source": "human",
       "ids": [
         "511001"
       ]
     },
     "dizzy trap": {
       "text": "眩晕陷阱",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "171001"
       ]
     },
     "duel of Growth": {
       "text": "成长的决斗",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "588001"
       ]
     },
     "duel of Revolt": {
       "text": "反叛决斗",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "587001"
       ]
     },
     "fairy tale princess": {
       "text": "童话公主",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "599001"
       ]
     },
     "fallin' fluff": {
       "text": "飘落绒毛",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "685001"
       ]
     },
     "flower champagne(メンズ)": {
       "text": "花之香槟（男装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "858001"
       ]
     },
     "flower champagne(レディース)": {
       "text": "繁花香槟（女）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "857001"
       ]
     },
     "girly spring flower": {
       "text": "少女春花",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "397001"
       ]
@@ -7169,43 +7169,43 @@
       ]
     },
     "heroic featherias (レディース)": {
-      "text": "heroic featherias（女）",
-      "source": "llm",
+      "text": "英勇羽翼（女）",
+      "source": "human",
       "ids": [
         "861001"
       ]
     },
     "heroic featherias(メンズ)": {
       "text": "英勇羽翼（男）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "862001"
       ]
     },
     "hope to believe": {
       "text": "相信希望",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "828001"
       ]
     },
     "hope to persevere": {
       "text": "坚持的希望",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "830001"
       ]
     },
     "hope to rise": {
-      "text": "hope to rise",
-      "source": "llm",
+      "text": "希望崛起",
+      "source": "human",
       "ids": [
         "829001"
       ]
     },
     "hope to strive": {
       "text": "奋斗的希望",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "831001"
       ]
@@ -7219,49 +7219,49 @@
     },
     "knitting colors": {
       "text": "编织色彩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "612001"
       ]
     },
     "lady in flowers": {
       "text": "花中淑女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "600001"
       ]
     },
     "lady of charming": {
       "text": "魅力淑女",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "601001"
       ]
     },
     "legendarily radiance(メンズ)": {
       "text": "传说光芒（男装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "860001"
       ]
     },
     "legendarily radiance(レディース)": {
-      "text": "传奇光辉（女装）",
-      "source": "llm",
+      "text": "传说光芒（女装）",
+      "source": "human",
       "ids": [
         "859001"
       ]
     },
     "mend a tear": {
       "text": "缝补泪痕",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "613001"
       ]
     },
     "mode parfum": {
       "text": "香氛风尚",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "413001"
       ]
@@ -7275,14 +7275,14 @@
     },
     "oversize･streeT": {
       "text": "廓形街头",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "632001"
       ]
     },
     "peppy abyssinian": {
       "text": "活泼阿比西尼亚",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "753001"
       ]
@@ -7296,105 +7296,105 @@
     },
     "pretty silver tabby": {
       "text": "俏皮银虎斑",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "754001"
       ]
     },
     "raise hearts voice": {
       "text": "振奋心声",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "763001"
       ]
     },
     "reminiscence echo": {
-      "text": "reminiscence echo",
-      "source": "llm",
+      "text": "追忆的回响",
+      "source": "human",
       "ids": [
         "729001"
       ]
     },
     "see-p-ta-ni-ka stars(メンズ)": {
       "text": "see-p-ta-ni-ka stars（男款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "854001"
       ]
     },
     "see-p-ta-ni-ka stars(レディース)": {
-      "text": "Sip-ta-ni-ka之星(女装)",
-      "source": "llm",
+      "text": "Sip-ta-ni-ka stars (女装)",
+      "source": "human",
       "ids": [
         "853001"
       ]
     },
     "shot": {
       "text": "瞬间",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "379001"
       ]
     },
     "sparkle of resolve": {
       "text": "决心的闪耀",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "604001"
       ]
     },
     "sparkle of smarts": {
       "text": "智慧火花",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "606001"
       ]
     },
     "sparkle of trust": {
       "text": "信任的闪耀",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "605001"
       ]
     },
     "stir hearts performance": {
       "text": "动人心弦的演出",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "761001"
       ]
     },
     "syzygy(メンズ)": {
       "text": "syzygy（男）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "864001"
       ]
     },
     "syzygy(レディース)": {
       "text": "syzygy（女）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "863001"
       ]
     },
     "touch hearts song": {
       "text": "触动心灵之歌",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "762001"
       ]
     },
     "turning purple": {
       "text": "渐变紫色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "611001"
       ]
     },
     "♡Sweet Little Soldier♡": {
-      "text": "♡甜美小战士♡",
-      "source": "llm",
+      "text": "♡甜蜜的小战士♡",
+      "source": "human",
       "ids": [
         "338001"
       ]
@@ -7422,14 +7422,14 @@
     },
     "おとぎ話の森コーデ（メンズ）": {
       "text": "童话森林套装（男款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "905001"
       ]
     },
     "おとぎ話の森コーデ（レディース）": {
       "text": "童话森林套装（女）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "904001"
       ]
@@ -7457,7 +7457,7 @@
     },
     "くちぱっち風ゆったりコーデ": {
       "text": "嘴巴奇风宽松穿搭",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "852001"
       ]
@@ -7520,14 +7520,14 @@
     },
     "ときめきトリップ": {
       "text": "悸动之旅",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "918001"
       ]
     },
     "どりぃみぃ・きゃっと☆彡": {
       "text": "梦幻小猫☆彡",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "842001"
       ]
@@ -7590,14 +7590,14 @@
     },
     "まめっち風ドットジャケット": {
       "text": "豆豆亲风点阵夹克",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "849001"
       ]
     },
     "みみっち風キュートパーカー": {
       "text": "萌耳风可爱连帽衫",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "850001"
       ]
@@ -7611,7 +7611,7 @@
     },
     "めめっち風ぐるぐるスタイル": {
       "text": "美美美风卷卷风格",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "851001"
       ]
@@ -7667,7 +7667,7 @@
     },
     "ゆめくいていぱー": {
       "text": "食梦貘",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "841001"
       ]
@@ -7716,14 +7716,14 @@
     },
     "アスピレエプロン": {
       "text": "憧憬围裙",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "881001"
       ]
     },
     "アップビート・ワーカー": {
       "text": "欢快劳动者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "809001"
       ]
@@ -7758,7 +7758,7 @@
     },
     "アフェクショネート・シンデレラ": {
       "text": "深情灰姑娘",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "786001"
       ]
@@ -7795,7 +7795,7 @@
     },
     "アンウェーバリング・マーチ": {
       "text": "坚定进行曲",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "875001"
       ]
@@ -7880,7 +7880,7 @@
     },
     "インサイト・ボディスーツ": {
       "text": "洞察连体服",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "903001"
       ]
@@ -7894,7 +7894,7 @@
     },
     "インベンティブ・ワーカー": {
       "text": "创意的劳动者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "808001"
       ]
@@ -8569,7 +8569,7 @@
     },
     "コージー・カラー": {
       "text": "舒适色彩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "879001"
       ]
@@ -8583,7 +8583,7 @@
     },
     "コーディアル・カラー": {
       "text": "诚挚色彩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "880001"
       ]
@@ -8946,7 +8946,7 @@
     },
     "ステッドファスト・シンデレラ": {
       "text": "坚定不移的辛德瑞拉",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "784001"
       ]
@@ -9165,14 +9165,14 @@
     },
     "ソートフル・マーチ": {
       "text": "体贴进行曲",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "874001"
       ]
     },
     "ソートフル・ワーカー": {
       "text": "体贴的劳动者",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "810001"
       ]
@@ -9645,7 +9645,7 @@
     },
     "ノーブル·シルエット": {
       "text": "高贵剪影",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "900001"
       ]
@@ -9715,14 +9715,14 @@
     },
     "ハレギサラブレイト（メンズ）": {
       "text": "盛装庆典（男款）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "917001"
       ]
     },
     "ハレギサラブレイト（レディース）": {
       "text": "盛装庆典（女装）",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "916001"
       ]
@@ -9743,7 +9743,7 @@
     },
     "ハーティー・オーバーオール": {
       "text": "诚挚背带裤",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "923001"
       ]
@@ -9862,7 +9862,7 @@
     },
     "パーシスタント・シンデレラ": {
       "text": "执着灰姑娘",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "785001"
       ]
@@ -10059,7 +10059,7 @@
     },
     "フェイスエプロン": {
       "text": "饰面围裙",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "882001"
       ]
@@ -10193,7 +10193,7 @@
     },
     "ブリッジ・カラー": {
       "text": "桥梁色彩",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "878001"
       ]
@@ -10401,7 +10401,7 @@
     },
     "ホワイトハート・ボディスーツ": {
       "text": "白心紧身衣",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "902001"
       ]
@@ -10578,7 +10578,7 @@
     },
     "メインテイン・チュチュ": {
       "text": "维护芭蕾裙",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "922001"
       ]
@@ -10812,7 +10812,7 @@
     },
     "リラクシー･ボタニカル": {
       "text": "休闲草本",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "931001"
       ]
@@ -10840,7 +10840,7 @@
     },
     "リンクト・マーチ": {
       "text": "连结进行曲",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "873001"
       ]
@@ -10889,7 +10889,7 @@
     },
     "レトロな本旅": {
       "text": "复古书香之旅",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "919001"
       ]
@@ -10917,28 +10917,28 @@
     },
     "レーヴ・デトワール": {
       "text": "繁星之梦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "780001"
       ]
     },
     "レーヴ・デ・スリアン": {
       "text": "微笑之梦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "781001"
       ]
     },
     "レーヴ・デ・トナリティ": {
       "text": "调性之梦",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "782001"
       ]
     },
     "レーヴ・デ・マジ": {
       "text": "梦幻魔法",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "783001"
       ]
@@ -11044,322 +11044,322 @@
     },
     "ヴェイルド・ボディスーツ": {
       "text": "面纱连体衣",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "901001"
       ]
     },
     "ヴェリティエプロン": {
       "text": "真理围裙",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "883001"
       ]
     },
     "不動のエナメルジャケット": {
       "text": "坚定不移的亮面夹克",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "265001"
       ]
     },
     "不図の落花": {
       "text": "不意之落花",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "677001"
       ]
     },
     "侍る白狐の衣": {
       "text": "侍奉白狐服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "351001"
       ]
     },
     "優麗のシリウス": {
       "text": "优丽的天狼星",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "897001"
       ]
     },
     "光射す庭の騎士装束": {
       "text": "流光庭院骑士装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "554001"
       ]
     },
     "初音ミク「マジカルミライ 2024」": {
       "text": "初音未来“魔法未来2024”",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "642033"
       ]
     },
     "初音ミク「マジカルミライ 2025」": {
       "text": "初音未来“魔法未来2025”",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "835033"
       ]
     },
     "古装参謀衣装": {
       "text": "古代谋士装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "247001"
       ]
     },
     "和風エレガントファッション": {
       "text": "日式优雅穿搭",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "530001"
       ]
     },
     "和風ロックファッション": {
       "text": "日式摇滚穿搭",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "529001"
       ]
     },
     "和風ロリータファッション": {
       "text": "日式洛丽塔穿搭",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "528001"
       ]
     },
     "地平望む猛炎": {
       "text": "眺望地平线的猛炎",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "787001"
       ]
     },
     "夏かし小旅行": {
       "text": "怀旧夏日小旅行",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "824001"
       ]
     },
     "夜を統べる星の王": {
       "text": "统领黑夜的星辰之王",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "499001"
       ]
     },
     "夜桜ノ纏": {
       "text": "夜樱缠纹",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "230001"
       ]
     },
     "夜空に輝くスタースーツ": {
       "text": "闪耀夜空星光服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "735001"
       ]
     },
     "夢見るペストリーシェフ": {
       "text": "梦想甜点师",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "509001"
       ]
     },
     "大人シック系ビターチョコレート": {
       "text": "成熟系苦巧克力",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "544001"
       ]
     },
     "太陽と月と星のカーニバル": {
       "text": "日月星辰嘉年华",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "476017"
       ]
     },
     "太陽と月と星のパレード": {
       "text": "日月星辰大巡游",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "475081"
       ]
     },
     "女領主の妖艶な装い": {
       "text": "女城主之妖艳装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "177153"
       ]
     },
     "妖椿鬼": {
       "text": "妖椿鬼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "327001"
       ]
     },
     "妖艶姐姐花衣": {
       "text": "妖艳美人花衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "249001"
       ]
     },
     "子ヤギさんのフリフリドレス": {
       "text": "小绵羊的蓬蓬裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "326001"
       ]
     },
     "安眠DreamingRibbon": {
       "text": "安眠睡梦蝴蝶结",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "130001"
       ]
     },
     "室咲きメロディー": {
       "text": "温室绽放的旋律",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "33001"
       ]
     },
     "小悪魔系スイートチョコレート": {
       "text": "小恶魔系甜巧克力",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "542001"
       ]
     },
     "希望のメッセンジャー": {
       "text": "希望的信使",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "125001"
       ]
     },
     "座敷童のセエラア": {
       "text": "座敷童子的水手服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "434001"
       ]
     },
     "庭園の麗しき薄花スタイル": {
       "text": "美丽庭院浅蓝连衣裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "527001"
       ]
     },
     "彷徨のステラ": {
       "text": "彷徨之星",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "896001"
       ]
     },
     "心赴くセットアップスタイル": {
       "text": "心驰神往穿搭",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "682001"
       ]
     },
     "心躍る乙女の羽衣": {
       "text": "雀跃少女的霓裳",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "392001"
       ]
     },
     "悠然のポラリス": {
       "text": "悠然北极星",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "898001"
       ]
     },
     "想いのオーバーレイテール": {
       "text": "心愿长燕尾服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "227001"
       ]
     },
     "想いのリアンモルソードレス": {
       "text": "心愿拼图礼服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "226001"
       ]
     },
     "想望のセーラー": {
       "text": "思慕水手服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "521001"
       ]
     },
     "愛のメッセンジャー": {
       "text": "爱的信使",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "124001"
       ]
     },
     "憩いのサロペットスタイル": {
       "text": "休憩工装裤",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "684001"
       ]
     },
     "扇動のセーラー": {
       "text": "鼓动水手服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "523001"
       ]
     },
     "扶翼のフェザー": {
       "text": "扶翼之羽",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "702001"
       ]
     },
     "揺れるエクリュールドレス": {
       "text": "摇曳闪光的连衣裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "264001"
       ]
     },
     "明ける空色のグラデーションドレス": {
       "text": "晨曦天色的渐变礼服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "109001"
       ]
     },
     "星夜の紬": {
       "text": "星夜之绸",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "23001",
         "24002"
@@ -11367,483 +11367,483 @@
     },
     "星追うロッカー・ラビット": {
       "text": "追逐繁星摇滚兔子装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "129001"
       ]
     },
     "春立つ乙女の羽衣": {
       "text": "立春少女的霓裳",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "390001"
       ]
     },
     "暁光仰ぐ紅炎": {
       "text": "仰望晓光的红炎",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "789001"
       ]
     },
     "曙香る乙女の羽衣": {
       "text": "黎明少女的霓裳",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "391001"
       ]
     },
     "月影ノ忍び": {
       "text": "月影忍者",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "369001"
       ]
     },
     "月想うアイドル・ラビット": {
       "text": "思恋月亮偶像兔子装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "128001"
       ]
     },
     "未設定": {
       "text": "未设置",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "1"
       ]
     },
     "流るる智の衣": {
       "text": "流动之智衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "622001"
       ]
     },
     "海辺のひまわり": {
       "text": "海边的向日葵",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "825001"
       ]
     },
     "涼む黄昏の纏": {
       "text": "清凉黄昏的庆典服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "119001"
       ]
     },
     "淡く揺れる騎士装束": {
       "text": "浅色飘逸骑士装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "553001"
       ]
     },
     "深憂のセーラー": {
       "text": "忧郁水手服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "522001"
       ]
     },
     "深淵に立つ騎士装束": {
       "text": "伫立深渊骑士装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "555001"
       ]
     },
     "清楚系ミルクチョコレート": {
       "text": "清纯系牛奶巧克力",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "543001"
       ]
     },
     "清風はためく羽衣": {
       "text": "清风飘扬羽衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "710001"
       ]
     },
     "漂泊する鬼人の衣": {
       "text": "漂泊鬼人之衣",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "914001"
       ]
     },
     "無言の贈花": {
       "text": "无言之赠花",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "678001"
       ]
     },
     "煌めきのワルツ": {
       "text": "闪耀华尔兹",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "696001"
       ]
     },
     "熟練商人の旅衣装": {
       "text": "资深商人的旅行装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "454001"
       ]
     },
     "燃える曙の纏": {
       "text": "燃烧破晓的庆典服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "118001"
       ]
     },
     "燃ゆる仁の衣": {
       "text": "燃烧之仁衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "621001"
       ]
     },
     "爛漫娘花衣": {
       "text": "烂漫女孩花衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "248001"
       ]
     },
     "狐狸の詰襟": {
       "text": "狐狸与貉的立领校服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "435001"
       ]
     },
     "瑞雲エレガントドレス": {
       "text": "旗袍",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "395001"
       ]
     },
     "瑞雲クラッシースタイル": {
       "text": "中式男装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "396002"
       ]
     },
     "生命のヘビーダンサー": {
       "text": "生命的肚皮舞者",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "712001"
       ]
     },
     "界世譚": {
       "text": "界世奇谭",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "292001"
       ]
     },
     "祈りのホーリードレス": {
       "text": "祈祷圣装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "387001"
       ]
     },
     "神之使": {
       "text": "神之使者",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "328001"
       ]
     },
     "笑顔溢れる鬼姫の衣": {
       "text": "笑容洋溢的鬼姬之衣",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "913001"
       ]
     },
     "紬音桜舞": {
       "text": "绸音樱舞",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "575001"
       ]
     },
     "絢爛華劇": {
       "text": "绚烂演出服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "546001"
       ]
     },
     "翔る龍神の衣": {
       "text": "飞天神龙服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "350001"
       ]
     },
     "聖夜の星明り": {
       "text": "圣夜的星光",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "909001"
       ]
     },
     "花咲く乙女の羽衣": {
       "text": "花开少女的霓裳",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "389001"
       ]
     },
     "花園の薔薇令嬢": {
       "text": "花园的蔷薇大小姐",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "412001"
       ]
     },
     "花錦": {
       "text": "花锦",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "368001"
       ]
     },
     "花開く夢編ニットスタイル": {
       "text": "花开梦想针织衫",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "526001"
       ]
     },
     "苦痛の綻花": {
       "text": "苦痛之绽花",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "676001"
       ]
     },
     "華劇装束・桜": {
       "text": "华剧装束·樱",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "233001"
       ]
     },
     "蝶たちのソワレ": {
       "text": "蝴蝶盛宴",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "545001"
       ]
     },
     "血塗られた狂気の装い": {
       "text": "染血的疯狂装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "176145"
       ]
     },
     "見習い魔導士のワンピース": {
       "text": "实习魔法师的连衣裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "453001"
       ]
     },
     "謹賀の装い(メンズ)": {
       "text": "贺年装（男款）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "57001"
       ]
     },
     "謹賀の装い(レディース)": {
       "text": "贺年装（女款）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "56001"
       ]
     },
     "豊穣のヘビーダンサー": {
       "text": "丰收的肚皮舞娘",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "711001"
       ]
     },
     "贈り物を包む兵士": {
       "text": "包装礼物的士兵",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "910001"
       ]
     },
     "赤ずきんのおでかけドレス": {
       "text": "小红帽的户外裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "324001"
       ]
     },
     "跳ねる狛犬の衣": {
       "text": "欢跃狛犬服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "352001"
       ]
     },
     "辰ジャンタイトスカート": {
       "text": "龙纹刺绣外套紧身裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "531001"
       ]
     },
     "辰スカスラックス": {
       "text": "龙纹刺绣外套休闲裤",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "532001"
       ]
     },
     "追想のカーネーションドレス": {
       "text": "追忆的康乃馨礼服",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "108001"
       ]
     },
     "雛人形メイド": {
       "text": "女儿节人偶女仆",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "291001"
       ]
     },
     "雨色": {
       "text": "雨色",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "603001"
       ]
     },
     "電華熊猫": {
       "text": "中华电子熊猫",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "123001"
       ]
     },
     "青の街のサマードレス": {
       "text": "蓝色街道的夏日长裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "110001"
       ]
     },
     "音鳴らすワンピーススタイル": {
       "text": "悦音连衣裙",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "683001"
       ]
     },
     "順風なびく羽衣": {
       "text": "顺风飘拂羽衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "708001"
       ]
     },
     "頑張り☆パティシエール": {
       "text": "勤劳☆糕点师",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "507001"
       ]
     },
     "願いのホーリーコート": {
       "text": "祈愿圣装",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "388001"
       ]
     },
     "風渡る朝焼けの装い(メンズ)": {
       "text": "风动朝霞（男款）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "657001"
       ]
     },
     "風渡る朝焼けの装い(レディース)": {
       "text": "风动朝霞（女款）",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "656001"
       ]
     },
     "風統べる蒼炎": {
       "text": "统御风之苍炎",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "788001"
       ]
     },
     "飛翔のフェザー": {
       "text": "翱翔之羽",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "700001"
       ]
     },
     "餓者髑髏を統べる者": {
-      "text": "The Gashadokuro Controller",
-      "source": "cn",
+      "text": "饥者统御骷髅者",
+      "source": "human",
       "ids": [
         "433001"
       ]
     },
     "香風そよぐ羽衣": {
       "text": "香风吹拂羽衣",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "709001"
       ]
     },
     "魔法少女☆フェニー・ザ・スマイル": {
       "text": "魔法少女☆笑脸菲尼",
-      "source": "llm",
+      "source": "human",
       "ids": [
         "912001"
       ]
     },
     "黎明のステップ": {
       "text": "黎明之步",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "714001"
       ]
     },
     "鼓舞のフェザー": {
       "text": "鼓舞之羽",
-      "source": "cn",
+      "source": "human",
       "ids": [
         "701001"
       ]
