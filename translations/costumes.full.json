@@ -5397,84 +5397,84 @@
       ]
     },
     "Connect Hopeful Hour（メンズ）": {
-      "text": "连结希望时刻（男款）",
+      "text": "连结希望时刻（男）",
       "source": "human",
       "ids": [
         "887033"
       ]
     },
     "Connect Hopeful Hour（レディース）": {
-      "text": "连接希望时刻（女款）",
+      "text": "连接希望时刻（女）",
       "source": "human",
       "ids": [
         "886033"
       ]
     },
     "Connect Moonlight Dream（メンズ）": {
-      "text": "连接月光之梦（男装）",
+      "text": "连接月光之梦（男）",
       "source": "human",
       "ids": [
         "818033"
       ]
     },
     "Connect Moonlight Dream（レディース）": {
-      "text": "连接月光之梦（女装）",
+      "text": "连接月光之梦（女）",
       "source": "human",
       "ids": [
         "817097"
       ]
     },
     "Connect Rock'n Beat(メンズ)": {
-      "text": "跟上摇滚节拍（男款）",
+      "text": "跟上摇滚节拍（男）",
       "source": "human",
       "ids": [
         "608033"
       ]
     },
     "Connect Rock'n Beat(レディース)": {
-      "text": "跟上摇滚节拍（女款）",
+      "text": "跟上摇滚节拍（女）",
       "source": "human",
       "ids": [
         "607001"
       ]
     },
     "Connect Smileful Hour（メンズ）": {
-      "text": "连结微笑时刻（男装）",
+      "text": "连结微笑时刻（男）",
       "source": "human",
       "ids": [
         "889017"
       ]
     },
     "Connect Smileful Hour（レディース）": {
-      "text": "连结微笑时刻（女款）",
+      "text": "连结微笑时刻（女）",
       "source": "human",
       "ids": [
         "888081"
       ]
     },
     "Connect Street Beat(メンズ)": {
-      "text": "跟上摇滚节拍（男款）",
+      "text": "跟上摇滚节拍（男）",
       "source": "human",
       "ids": [
         "610001"
       ]
     },
     "Connect Street Beat(レディース)": {
-      "text": "跟上摇滚节拍（女款）",
+      "text": "跟上摇滚节拍（女）",
       "source": "human",
       "ids": [
         "609065"
       ]
     },
     "Connect Sunshine Dream（メンズ）": {
-      "text": "连接阳光之梦（男款）",
+      "text": "连接阳光之梦（男）",
       "source": "human",
       "ids": [
         "820033"
       ]
     },
     "Connect Sunshine Dream（レディース）": {
-      "text": "连接阳光之美（女款）",
+      "text": "连接阳光之美（女）",
       "source": "human",
       "ids": [
         "819129"
@@ -5782,14 +5782,14 @@
       ]
     },
     "Go Frontier（メンズ）": {
-      "text": "开拓前沿（男装）",
+      "text": "开拓前沿（男）",
       "source": "human",
       "ids": [
         "927001"
       ]
     },
     "Go Frontier（レディース）": {
-      "text": "开拓前沿（女装）",
+      "text": "开拓前沿（女）",
       "source": "human",
       "ids": [
         "926001"
@@ -5965,7 +5965,7 @@
       ]
     },
     "Lo-fi Green": {
-      "text": "轻音海盐汽水·bilibili（男款）",
+      "text": "轻音海盐汽水·bilibili（男）",
       "source": "cn",
       "ids": [
         "932001"
@@ -6014,14 +6014,14 @@
       ]
     },
     "Magic Academy of Sekai(メンズ)": {
-      "text": "「世界」魔法学院（男款）",
+      "text": "「世界」魔法学院（男）",
       "source": "cn",
       "ids": [
         "394001"
       ]
     },
     "Magic Academy of Sekai(レディース)": {
-      "text": "「世界」魔法学院（女款）",
+      "text": "「世界」魔法学院（女）",
       "source": "cn",
       "ids": [
         "393001"
@@ -6063,14 +6063,14 @@
       ]
     },
     "Midnight Celebration Tea Party(メンズ)": {
-      "text": "Midnight Celebration Tea Party（男款）",
+      "text": "Midnight Celebration Tea Party（男）",
       "source": "cn",
       "ids": [
         "667033"
       ]
     },
     "Midnight Celebration Tea Party(レディース)": {
-      "text": "Midnight Celebration Tea Party（女款）",
+      "text": "Midnight Celebration Tea Party（女）",
       "source": "cn",
       "ids": [
         "666097"
@@ -6301,14 +6301,14 @@
       ]
     },
     "PunkyStarRider（メンズ）": {
-      "text": "PunkyStarRider（男款）",
+      "text": "PunkyStarRider（男）",
       "source": "cn",
       "ids": [
         "572001"
       ]
     },
     "PunkyStarRider（レディース）": {
-      "text": "PunkyStarRider（女款）",
+      "text": "PunkyStarRider（女）",
       "source": "cn",
       "ids": [
         "571001"
@@ -6371,14 +6371,14 @@
       ]
     },
     "Red step rabbit(メンズ)": {
-      "text": "Red step rabbit（男款）",
+      "text": "Red step rabbit（男）",
       "source": "cn",
       "ids": [
         "663001"
       ]
     },
     "Red step rabbit(レディース)": {
-      "text": "Red step rabbit（女款）",
+      "text": "Red step rabbit（女）",
       "source": "cn",
       "ids": [
         "662065"
@@ -6392,14 +6392,14 @@
       ]
     },
     "Road to CHAMPION（メンズ）": {
-      "text": "冠军之路（男款）",
+      "text": "冠军之路（男）",
       "source": "human",
       "ids": [
         "877001"
       ]
     },
     "Road to CHAMPION（レディース）": {
-      "text": "冠军之路（女款）",
+      "text": "冠军之路（女）",
       "source": "human",
       "ids": [
         "876001"
@@ -6616,14 +6616,14 @@
       ]
     },
     "Sonic Style(メンズ)": {
-      "text": "Sonic Style（男款）",
+      "text": "Sonic Style（男）",
       "source": "cn",
       "ids": [
         "222001"
       ]
     },
     "Sonic Style(レディース)": {
-      "text": "Sonic Style（女款）",
+      "text": "Sonic Style（女）",
       "source": "cn",
       "ids": [
         "221001"
@@ -6707,14 +6707,14 @@
       ]
     },
     "Starry night dance party!(メンズ)": {
-      "text": "Starry night dance party!（男款）",
+      "text": "Starry night dance party!（男）",
       "source": "cn",
       "ids": [
         "659033"
       ]
     },
     "Starry night dance party!(レディース)": {
-      "text": "Starry night dance party!（女款）",
+      "text": "Starry night dance party!（女）",
       "source": "cn",
       "ids": [
         "658001"
@@ -6770,14 +6770,14 @@
       ]
     },
     "Sweet \u0026 Rose(メンズ)": {
-      "text": "Sweet \u0026 Rose（男款）",
+      "text": "Sweet \u0026 Rose（男）",
       "source": "cn",
       "ids": [
         "661033"
       ]
     },
     "Sweet \u0026 Rose(レディース)": {
-      "text": "Sweet \u0026 Rose（女款）",
+      "text": "Sweet \u0026 Rose（女）",
       "source": "cn",
       "ids": [
         "660033"
@@ -6987,14 +6987,14 @@
       ]
     },
     "Wonderful Symphony(メンズ)": {
-      "text": "Wonderful Symphony（男款）",
+      "text": "Wonderful Symphony（男）",
       "source": "cn",
       "ids": [
         "665017"
       ]
     },
     "Wonderful Symphony(レディース)": {
-      "text": "Wonderful Symphony（女款）",
+      "text": "Wonderful Symphony（女）",
       "source": "cn",
       "ids": [
         "664081"
@@ -7071,14 +7071,14 @@
       ]
     },
     "crystal meteor(メンズ)": {
-      "text": "水晶流星（男装）",
+      "text": "水晶流星（男）",
       "source": "human",
       "ids": [
         "856001"
       ]
     },
     "crystal meteor(レディース)": {
-      "text": "水晶流星（女装）",
+      "text": "水晶流星（女）",
       "source": "human",
       "ids": [
         "855001"
@@ -7141,7 +7141,7 @@
       ]
     },
     "flower champagne(メンズ)": {
-      "text": "花之香槟（男装）",
+      "text": "花之香槟（男）",
       "source": "human",
       "ids": [
         "858001"
@@ -7239,14 +7239,14 @@
       ]
     },
     "legendarily radiance(メンズ)": {
-      "text": "传说光芒（男装）",
+      "text": "传说光芒（男）",
       "source": "human",
       "ids": [
         "860001"
       ]
     },
     "legendarily radiance(レディース)": {
-      "text": "传说光芒（女装）",
+      "text": "传说光芒（女）",
       "source": "human",
       "ids": [
         "859001"
@@ -7316,14 +7316,14 @@
       ]
     },
     "see-p-ta-ni-ka stars(メンズ)": {
-      "text": "see-p-ta-ni-ka stars（男款）",
+      "text": "see-p-ta-ni-ka stars（男）",
       "source": "human",
       "ids": [
         "854001"
       ]
     },
     "see-p-ta-ni-ka stars(レディース)": {
-      "text": "Sip-ta-ni-ka stars (女装)",
+      "text": "Sip-ta-ni-ka stars (女)",
       "source": "human",
       "ids": [
         "853001"
@@ -7421,7 +7421,7 @@
       ]
     },
     "おとぎ話の森コーデ（メンズ）": {
-      "text": "童话森林套装（男款）",
+      "text": "童话森林套装（男）",
       "source": "human",
       "ids": [
         "905001"
@@ -7617,14 +7617,14 @@
       ]
     },
     "もこもこスノーコート(メンズ)": {
-      "text": "毛绒御寒大衣（男款）",
+      "text": "毛绒御寒大衣（男）",
       "source": "cn",
       "ids": [
         "41001"
       ]
     },
     "もこもこスノーコート(レディース)": {
-      "text": "毛绒御寒大衣（女款）",
+      "text": "毛绒御寒大衣（女）",
       "source": "cn",
       "ids": [
         "40001"
@@ -8420,14 +8420,14 @@
       ]
     },
     "クリスマススタイル☆2020(メンズ)": {
-      "text": "圣诞装☆2025（男款）",
+      "text": "圣诞装☆2025（男）",
       "source": "cn",
       "ids": [
         "55001"
       ]
     },
     "クリスマススタイル☆2020(レディース)": {
-      "text": "圣诞装☆2025（女款）",
+      "text": "圣诞装☆2025（女）",
       "source": "cn",
       "ids": [
         "54001"
@@ -8638,14 +8638,14 @@
       ]
     },
     "サブカルボーイスタイル(メンズ)": {
-      "text": "亚文化男性风（男款）",
+      "text": "亚文化男性风（男）",
       "source": "cn",
       "ids": [
         "12001"
       ]
     },
     "サブカルボーイスタイル(レディース)": {
-      "text": "亚文化男性风（女款）",
+      "text": "亚文化男性风（女）",
       "source": "cn",
       "ids": [
         "11001"
@@ -9693,14 +9693,14 @@
       ]
     },
     "ハミングバード(メンズ)": {
-      "text": "蜂鸟（男款）",
+      "text": "蜂鸟（男）",
       "source": "cn",
       "ids": [
         "83001"
       ]
     },
     "ハミングバード(レディース)": {
-      "text": "蜂鸟（女款）",
+      "text": "蜂鸟（女）",
       "source": "cn",
       "ids": [
         "82001"
@@ -9714,14 +9714,14 @@
       ]
     },
     "ハレギサラブレイト（メンズ）": {
-      "text": "盛装庆典（男款）",
+      "text": "盛装庆典（男）",
       "source": "human",
       "ids": [
         "917001"
       ]
     },
     "ハレギサラブレイト（レディース）": {
-      "text": "盛装庆典（女装）",
+      "text": "盛装庆典（女）",
       "source": "human",
       "ids": [
         "916001"
@@ -10662,14 +10662,14 @@
       ]
     },
     "モーモー☆ニューイヤー(メンズ)": {
-      "text": "哞哞☆新年装（男款）",
+      "text": "哞哞☆新年装（男）",
       "source": "cn",
       "ids": [
         "59001"
       ]
     },
     "モーモー☆ニューイヤー(レディース)": {
-      "text": "哞哞☆新年装（女款）",
+      "text": "哞哞☆新年装（女）",
       "source": "cn",
       "ids": [
         "58001"
@@ -11534,7 +11534,7 @@
       ]
     },
     "瑞雲クラッシースタイル": {
-      "text": "中式男装",
+      "text": "中式男",
       "source": "human",
       "ids": [
         "396002"
@@ -11667,14 +11667,14 @@
       ]
     },
     "謹賀の装い(メンズ)": {
-      "text": "贺年装（男款）",
+      "text": "贺年装（男）",
       "source": "human",
       "ids": [
         "57001"
       ]
     },
     "謹賀の装い(レディース)": {
-      "text": "贺年装（女款）",
+      "text": "贺年装（女）",
       "source": "human",
       "ids": [
         "56001"
@@ -11786,14 +11786,14 @@
       ]
     },
     "風渡る朝焼けの装い(メンズ)": {
-      "text": "风动朝霞（男款）",
+      "text": "风动朝霞（男）",
       "source": "human",
       "ids": [
         "657001"
       ]
     },
     "風渡る朝焼けの装い(レディース)": {
-      "text": "风动朝霞（女款）",
+      "text": "风动朝霞（女）",
       "source": "human",
       "ids": [
         "656001"
