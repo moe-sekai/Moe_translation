@@ -646,14 +646,14 @@
     },
     "[1.5周年記念]★4メンバー1人確定プレミアムプレゼントガチャ": {
       "text": "[1.5周年纪念]必得1名★4成员特别礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "197"
       ]
     },
     "[1.5周年記念]カラフルフェスティバルガチャ": {
-      "text": "[1.5周年纪念]Colorful Festival 招募",
-      "source": "unknown",
+      "text": "[1.5周年纪念]Cfes招募",
+      "source": "human",
       "ids": [
         "198"
       ]
@@ -666,22 +666,22 @@
       ]
     },
     "[1周年記念]カラフルフェスティバルガチャ": {
-      "text": "[1周年纪念]Colorful Festival招募",
-      "source": "unknown",
+      "text": "[1周年纪念]Cfes招募",
+      "source": "human",
       "ids": [
         "125"
       ]
     },
     "[1周年記念]メモリアルセレクトガチャ": {
       "text": "[1周年纪念]纪念自选招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "124"
       ]
     },
     "[1回限定]4=1ガチャ": {
       "text": "[限购1次] 4=1招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "76"
       ]
@@ -695,7 +695,7 @@
     },
     "[1回限定]Rockin'Paradeガチャ": {
       "text": "[限购1次] Rockin' Parade招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "49"
       ]
@@ -709,28 +709,28 @@
     },
     "[1回限定]ここから羽ばたく天使ガチャ": {
       "text": "[限购1次] 从此处展翅的天使招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "64"
       ]
     },
     "[1回限定]ふわふわ☆ドリームランドガチャ": {
       "text": "[限购1次] 蓬松松☆梦幻乐园招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "57"
       ]
     },
     "[1回限定]ウェルカム♪不思議のセカイガチャ": {
       "text": "[限购1次]Welcome♪不思议世界招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "93"
       ]
     },
     "[1回限定]クラシカルメモリーガチャ": {
       "text": "[限购1次] 古典记忆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "46"
       ]
@@ -765,14 +765,14 @@
     },
     "[1回限定]フォレストフェアリーガチャ": {
       "text": "[限购1次] 森林仙子招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "83"
       ]
     },
     "[1回限定]ペンギンカフェへようこそ♪ガチャ": {
       "text": "[限购1次] 欢迎光临企鹅咖啡厅♪招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "86"
       ]
@@ -786,7 +786,7 @@
     },
     "[1回限定]ロマンティックブライドガチャ": {
       "text": "[限购1次] 浪漫新娘招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "90"
       ]
@@ -800,49 +800,49 @@
     },
     "[1回限定]光差すキャンバスガチャ": {
       "text": "[限购1次] 阳光照耀的画布招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "53"
       ]
     },
     "[1回限定]共に歩むクルーガチャ": {
       "text": "[限购1次] 并肩同行的伙伴招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "79"
       ]
     },
     "[1回限定]君と出会う桜の道ガチャ": {
       "text": "[限购1次] 与你相遇的樱花小径招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "69"
       ]
     },
     "[1回限定]天翔けるハッピーひな祭り☆ガチャ": {
       "text": "[限购1次] 飞向天空的快乐女儿节☆招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "61"
       ]
     },
     "[1回限定]小さな勇気、大きな一歩ガチャ": {
-      "text": "[限购1次] 小小的勇气，巨大的一步招募",
-      "source": "unknown",
+      "text": "[限购1次] 小小的勇气也能迈出巨大的一步招募",
+      "source": "human",
       "ids": [
         "40"
       ]
     },
     "[1回限定]秘密のドレスルームガチャ": {
       "text": "[限购1次] 秘密更衣室招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "73"
       ]
     },
     "[1回限定]雨降って、虹煌めくガチャ": {
       "text": "[限购1次] 雨过天晴，虹光闪耀招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "43"
       ]
@@ -856,14 +856,14 @@
     },
     "[2.5周年記念]★4メンバー1人確定プレミアムプレゼントガチャ": {
       "text": "[2.5周年纪念]必得1名★4成员高级礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "311"
       ]
     },
     "[2.5周年記念]カラフルフェスティバルガチャ": {
       "text": "[2.5周年纪念]多彩庆典招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "310"
       ]
@@ -1016,15 +1016,15 @@
       ]
     },
     "[25時、ナイトコードで。]プレミアムプレゼントガチャ": {
-      "text": "[25时，在Nightcord。]高级礼物招募",
-      "source": "unknown",
+      "text": "[25点，Nightcord见。]高级礼物招募",
+      "source": "human",
       "ids": [
         "131"
       ]
     },
     "[25時、ナイトコードで。]ワールドリンクイベントサポートガチャ": {
-      "text": "[25时，在Nightcord。]世界连结活动支援招募",
-      "source": "unknown",
+      "text": "[25点，Nightcord见。]世界连结活动支援招募",
+      "source": "human",
       "ids": [
         "747"
       ]
@@ -1080,7 +1080,7 @@
     },
     "[2周年記念]カラフルフェスティバルガチャ ドリームピック": {
       "text": "[2周年纪念]多彩庆典招募 Dream Pick",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "246"
       ]
@@ -1177,15 +1177,15 @@
       ]
     },
     "[4.5周年記念]セレクトリストガチャ LIMITED EDITION": {
-      "text": "[4.5周年纪念] 自选名单招募 LIMITED EDITION",
-      "source": "unknown",
+      "text": "[4.5周年纪念] 自选名单招募 期间限定卡版",
+      "source": "human",
       "ids": [
         "709"
       ]
     },
     "[4.5周年記念]ハートフルギフトガチャ": {
       "text": "[4.5周年纪念] 暖心礼物招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "710"
       ]
@@ -1268,8 +1268,8 @@
       ]
     },
     "[4周年記念]セレクトリストガチャ Limited Edition": {
-      "text": "[4周年纪念] 自选名单招募 Limited Edition",
-      "source": "unknown",
+      "text": "[4周年纪念] 自选名单招募 期间限定卡版",
+      "source": "human",
       "ids": [
         "588"
       ]
@@ -1345,8 +1345,8 @@
       ]
     },
     "[5周年記念]ブルームフェスティバルガチャ ゴールドフィーバー": {
-      "text": "[5周年纪念] 绽放庆典招募 黄金狂热",
-      "source": "unknown",
+      "text": "[5周年纪念] bfes招募 金色狂潮",
+      "source": "human",
       "ids": [
         "840"
       ]
@@ -1360,14 +1360,14 @@
     },
     "[5周年記念]メモリアルセレクトガチャ": {
       "text": "[5周年纪念] 纪念自选招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "833"
       ]
     },
     "[5周年記念]無料ガチャ": {
       "text": "[5周年纪念] 免费招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "834"
       ]
@@ -3638,7 +3638,7 @@
     },
     "¿幸福なバレリーナ?ガチャ": {
       "text": "¿幸福的芭蕾舞者?招募",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "891"
       ]
