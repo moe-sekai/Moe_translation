@@ -207,7 +207,7 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 
 	all := []struct {
 		category string
-		fn       func() (map[string]map[string]string, error)
+		fn       func() (map[string]map[string]string, TraceMap, error)
 	}{
 		{"cards", t.extractCards},
 		{"events", t.extractEvents},
@@ -226,12 +226,12 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 		stepNote := fmt.Sprintf("cn-sync %d/%d: %s", idx+1, len(all), item.category)
 		t.setRunningNote(stepNote)
 		fmt.Printf("[translate] %s started\n", stepNote)
-		fields, err := item.fn()
+		fields, trace, err := item.fn()
 		if err != nil {
 			runErr = fmt.Errorf("%s: %w", item.category, err)
 			return result, runErr
 		}
-		updated, err := t.applyCategoryCNOnly(item.category, fields)
+		updated, err := t.applyCategoryCNOnly(item.category, fields, trace)
 		if err != nil {
 			runErr = fmt.Errorf("apply %s: %w", item.category, err)
 			return result, runErr
@@ -641,7 +641,7 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText 
 	return nil
 }
 
-func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string) (int, error) {
+func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[string]string, trace TraceMap) (int, error) {
 	t.store.mu.Lock()
 
 	if t.store.data[category] == nil {
@@ -659,19 +659,67 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 			next := old
 			if cn != "" {
 				if has && old.Source == SourcePinned {
+					// Still merge trace IDs for pinned entries
+					if traceField := trace[field]; traceField != nil {
+						if ids := traceField[jp]; len(ids) > 0 {
+							mergeTraceIDs(&next, ids)
+							if !idsEqual(old.Ids, next.Ids) {
+								cat[field][jp] = next
+								updated++
+							}
+						}
+					}
 					continue
 				}
 				next.Text = cn
 				next.Source = SourceCN
 			} else {
 				if has && old.Text != "" {
+					// Still merge trace IDs for existing entries
+					if traceField := trace[field]; traceField != nil {
+						if ids := traceField[jp]; len(ids) > 0 {
+							mergeTraceIDs(&next, ids)
+							if !idsEqual(old.Ids, next.Ids) {
+								cat[field][jp] = next
+								updated++
+							}
+						}
+					}
 					continue
 				}
 				next.Text = ""
 				next.Source = SourceUnknown
 			}
-			if !has || old.Text != next.Text || old.Source != next.Source {
+			// Merge trace IDs for new/updated entries
+			if traceField := trace[field]; traceField != nil {
+				if ids := traceField[jp]; len(ids) > 0 {
+					mergeTraceIDs(&next, ids)
+				}
+			}
+			if !has || old.Text != next.Text || old.Source != next.Source || !idsEqual(old.Ids, next.Ids) {
 				cat[field][jp] = next
+				updated++
+			}
+		}
+	}
+
+	// Merge trace IDs for pre-existing entries not covered by fields mapping
+	for field, traceField := range trace {
+		if cat[field] == nil {
+			continue
+		}
+		for jp, ids := range traceField {
+			if len(ids) == 0 {
+				continue
+			}
+			entry, ok := cat[field][jp]
+			if !ok {
+				continue
+			}
+			oldIDs := entry.Ids
+			mergeTraceIDs(&entry, ids)
+			if !idsEqual(oldIDs, entry.Ids) {
+				cat[field][jp] = entry
 				updated++
 			}
 		}
@@ -686,6 +734,18 @@ func (t *Translator) applyCategoryCNOnly(category string, fields map[string]map[
 		t.store.NotifyChange()
 	}
 	return updated, nil
+}
+
+func idsEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i := range a {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func (t *Translator) saveCategoryLocked(category string, cat TranslationCategory) error {
@@ -780,146 +840,174 @@ func (t *Translator) fetchJSONURL(url string) (any, error) {
 	return parsed, nil
 }
 
-func (t *Translator) extractCards() (map[string]map[string]string, error) {
+func (t *Translator) extractCards() (map[string]map[string]string, TraceMap, error) {
 	jp, err := t.fetchMasterdata("cards.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cn, err := t.fetchMasterdata("cards.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnByID := byIntID(cn, "id")
 	out := map[string]map[string]string{"prefix": {}, "skillName": {}, "gachaPhrase": {}}
+	trace := newTraceMap("prefix", "skillName", "gachaPhrase")
 	for _, item := range jp {
 		id := getInt(item, "id")
 		cnItem := cnByID[id]
-		collectPair(out["prefix"], getString(item, "prefix"), getString(cnItem, "prefix"), true)
-		collectPair(out["skillName"], getString(item, "cardSkillName"), getString(cnItem, "cardSkillName"), true)
+		jpPrefix := getString(item, "prefix")
+		addTrace(trace, "prefix", jpPrefix, id)
+		collectPair(out["prefix"], jpPrefix, getString(cnItem, "prefix"), true)
+		jpSkill := getString(item, "cardSkillName")
+		addTrace(trace, "skillName", jpSkill, id)
+		collectPair(out["skillName"], jpSkill, getString(cnItem, "cardSkillName"), true)
 		phrase := getString(item, "gachaPhrase")
 		if phrase != "" && phrase != "-" {
+			addTrace(trace, "gachaPhrase", phrase, id)
 			collectPair(out["gachaPhrase"], phrase, getString(cnItem, "gachaPhrase"), true)
 		}
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractEvents() (map[string]map[string]string, error) {
+func (t *Translator) extractEvents() (map[string]map[string]string, TraceMap, error) {
 	return t.extractSimpleNameByID("events.json", "id", "name")
 }
 
-func (t *Translator) extractGacha() (map[string]map[string]string, error) {
+func (t *Translator) extractGacha() (map[string]map[string]string, TraceMap, error) {
 	return t.extractSimpleNameByID("gachas.json", "id", "name")
 }
 
-func (t *Translator) extractVirtualLive() (map[string]map[string]string, error) {
+func (t *Translator) extractVirtualLive() (map[string]map[string]string, TraceMap, error) {
 	return t.extractSimpleNameByID("virtualLives.json", "id", "name")
 }
 
-func (t *Translator) extractStickers() (map[string]map[string]string, error) {
+func (t *Translator) extractStickers() (map[string]map[string]string, TraceMap, error) {
 	return t.extractSimpleNameByID("stamps.json", "id", "name")
 }
 
-func (t *Translator) extractComics() (map[string]map[string]string, error) {
+func (t *Translator) extractComics() (map[string]map[string]string, TraceMap, error) {
 	jp, err := t.fetchMasterdata("tips.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cn, err := t.fetchMasterdata("tips.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnByID := byIntID(cn, "id")
 	out := map[string]map[string]string{"title": {}}
+	trace := newTraceMap("title")
 	for _, item := range jp {
 		if getString(item, "assetbundleName") == "" {
 			continue
 		}
 		id := getInt(item, "id")
-		collectPair(out["title"], getString(item, "title"), getString(cnByID[id], "title"), true)
+		jpTitle := getString(item, "title")
+		addTrace(trace, "title", jpTitle, id)
+		collectPair(out["title"], jpTitle, getString(cnByID[id], "title"), true)
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractMusic() (map[string]map[string]string, error) {
+func (t *Translator) extractMusic() (map[string]map[string]string, TraceMap, error) {
 	musics, err := t.fetchMasterdata("musics.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	vocals, _ := t.fetchMasterdata("musicVocals.json", "jp")
 	out := map[string]map[string]string{"title": {}, "artist": {}, "vocalCaption": {}}
+	trace := newTraceMap("title", "artist", "vocalCaption")
 	for _, m := range musics {
+		musicID := getInt(m, "id")
 		title := getString(m, "title")
 		if title != "" {
 			out["title"][title] = ""
+			addTrace(trace, "title", title, musicID)
 		}
 		for _, key := range []string{"lyricist", "composer", "arranger"} {
 			v := getString(m, key)
 			if v != "" && v != "-" {
 				out["artist"][v] = ""
+				addTrace(trace, "artist", v, musicID)
 			}
 		}
 	}
 	for _, v := range vocals {
+		vocalID := getInt(v, "id")
+		if vocalID == 0 {
+			vocalID = getInt(v, "musicId")
+		}
 		caption := getString(v, "caption")
 		if caption != "" {
 			out["vocalCaption"][caption] = ""
+			addTrace(trace, "vocalCaption", caption, vocalID)
 		}
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractMysekai() (map[string]map[string]string, error) {
+func (t *Translator) extractMysekai() (map[string]map[string]string, TraceMap, error) {
 	out := map[string]map[string]string{"fixtureName": {}, "flavorText": {}, "genre": {}, "tag": {}}
+	trace := newTraceMap("fixtureName", "flavorText", "genre", "tag")
 	jpFix, err := t.fetchMasterdata("mysekaiFixtures.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnFix, err := t.fetchMasterdata("mysekaiFixtures.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnFixByID := byIntID(cnFix, "id")
 	for _, f := range jpFix {
 		id := getInt(f, "id")
 		cnf := cnFixByID[id]
-		collectPair(out["fixtureName"], getString(f, "name"), getString(cnf, "name"), true)
-		collectPair(out["flavorText"], getString(f, "flavorText"), getString(cnf, "flavorText"), true)
+		jpName := getString(f, "name")
+		addTrace(trace, "fixtureName", jpName, id)
+		collectPair(out["fixtureName"], jpName, getString(cnf, "name"), true)
+		jpFlavor := getString(f, "flavorText")
+		addTrace(trace, "flavorText", jpFlavor, id)
+		collectPair(out["flavorText"], jpFlavor, getString(cnf, "flavorText"), true)
 	}
 
 	jpGenre, _ := t.fetchMasterdata("mysekaiFixtureMainGenres.json", "jp")
 	cnGenre, err := t.fetchMasterdata("mysekaiFixtureMainGenres.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnGenreByID := byIntID(cnGenre, "id")
 	for _, g := range jpGenre {
 		id := getInt(g, "id")
-		collectPair(out["genre"], getString(g, "name"), getString(cnGenreByID[id], "name"), true)
+		jpName := getString(g, "name")
+		addTrace(trace, "genre", jpName, id)
+		collectPair(out["genre"], jpName, getString(cnGenreByID[id], "name"), true)
 	}
 
 	jpTag, _ := t.fetchMasterdata("mysekaiFixtureTags.json", "jp")
 	cnTag, err := t.fetchMasterdata("mysekaiFixtureTags.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnTagByID := byIntID(cnTag, "id")
 	for _, g := range jpTag {
 		id := getInt(g, "id")
-		collectPair(out["tag"], getString(g, "name"), getString(cnTagByID[id], "name"), true)
+		jpName := getString(g, "name")
+		addTrace(trace, "tag", jpName, id)
+		collectPair(out["tag"], jpName, getString(cnTagByID[id], "name"), true)
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractCostumes() (map[string]map[string]string, error) {
+func (t *Translator) extractCostumes() (map[string]map[string]string, TraceMap, error) {
 	out := map[string]map[string]string{"name": {}, "colorName": {}, "designer": {}}
+	trace := newTraceMap("name", "colorName", "designer")
 	jpRaw, err := t.fetchJSONURL(jpMasterdataURL + "/snowy_costumes.json")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnRaw, err := t.fetchJSONURL(cnMasterdataURL + "/snowy_costumes.json")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	jpMap, _ := jpRaw.(map[string]any)
 	cnMap, _ := cnRaw.(map[string]any)
@@ -930,8 +1018,12 @@ func (t *Translator) extractCostumes() (map[string]map[string]string, error) {
 	for _, costume := range jpList {
 		id := getInt(costume, "id")
 		cnCostume := cnByID[id]
-		collectPair(out["name"], safeText(getString(costume, "name")), safeText(getString(cnCostume, "name")), true)
-		collectPair(out["designer"], safeText(getString(costume, "designer")), safeText(getString(cnCostume, "designer")), true)
+		jpName := safeText(getString(costume, "name"))
+		addTrace(trace, "name", jpName, id)
+		collectPair(out["name"], jpName, safeText(getString(cnCostume, "name")), true)
+		jpDesigner := safeText(getString(costume, "designer"))
+		addTrace(trace, "designer", jpDesigner, id)
+		collectPair(out["designer"], jpDesigner, safeText(getString(cnCostume, "designer")), true)
 
 		jpParts := toParts(costume["parts"])
 		cnParts := toParts(cnCostume["parts"])
@@ -945,49 +1037,54 @@ func (t *Translator) extractCostumes() (map[string]map[string]string, error) {
 				if jpColor == "" {
 					continue
 				}
+				addTrace(trace, "colorName", jpColor, id)
 				asset := getString(p, "assetbundleName")
 				cnColor := safeText(getString(cnPartByAsset[asset], "colorName"))
 				collectPair(out["colorName"], jpColor, cnColor, true)
 			}
 		}
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractCharacters() (map[string]map[string]string, error) {
+func (t *Translator) extractCharacters() (map[string]map[string]string, TraceMap, error) {
 	fields := []string{"hobby", "specialSkill", "favoriteFood", "hatedFood", "weak", "introduction"}
 	out := make(map[string]map[string]string, len(fields))
 	for _, f := range fields {
 		out[f] = map[string]string{}
 	}
+	trace := newTraceMap(fields...)
 	jp, err := t.fetchMasterdata("characterProfiles.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cn, err := t.fetchMasterdata("characterProfiles.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnByID := byIntID(cn, "characterId")
 	for _, profile := range jp {
 		id := getInt(profile, "characterId")
 		cnProfile := cnByID[id]
 		for _, field := range fields {
-			collectPair(out[field], safeText(getString(profile, field)), safeText(getString(cnProfile, field)), true)
+			jpText := safeText(getString(profile, field))
+			addTrace(trace, field, jpText, id)
+			collectPair(out[field], jpText, safeText(getString(cnProfile, field)), true)
 		}
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractUnits() (map[string]map[string]string, error) {
+func (t *Translator) extractUnits() (map[string]map[string]string, TraceMap, error) {
 	out := map[string]map[string]string{"unitName": {}, "profileSentence": {}}
+	trace := newTraceMap("unitName", "profileSentence")
 	jp, err := t.fetchMasterdata("unitProfiles.json", "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cn, err := t.fetchMasterdata("unitProfiles.json", "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnByUnit := map[string]map[string]any{}
 	for _, unit := range cn {
@@ -996,28 +1093,35 @@ func (t *Translator) extractUnits() (map[string]map[string]string, error) {
 	for _, unit := range jp {
 		id := getString(unit, "unit")
 		cnUnit := cnByUnit[id]
-		collectPair(out["unitName"], getString(unit, "unitName"), getString(cnUnit, "unitName"), true)
-		collectPair(out["profileSentence"], getString(unit, "profileSentence"), getString(cnUnit, "profileSentence"), true)
+		jpUnitName := getString(unit, "unitName")
+		addTraceStr(trace, "unitName", jpUnitName, id)
+		collectPair(out["unitName"], jpUnitName, getString(cnUnit, "unitName"), true)
+		jpSentence := getString(unit, "profileSentence")
+		addTraceStr(trace, "profileSentence", jpSentence, id)
+		collectPair(out["profileSentence"], jpSentence, getString(cnUnit, "profileSentence"), true)
 	}
-	return out, nil
+	return out, trace, nil
 }
 
-func (t *Translator) extractSimpleNameByID(fileName, idField, nameField string) (map[string]map[string]string, error) {
+func (t *Translator) extractSimpleNameByID(fileName, idField, nameField string) (map[string]map[string]string, TraceMap, error) {
 	jp, err := t.fetchMasterdata(fileName, "jp")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cn, err := t.fetchMasterdata(fileName, "cn")
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	cnByID := byIntID(cn, idField)
 	out := map[string]map[string]string{"name": {}}
+	trace := newTraceMap("name")
 	for _, item := range jp {
 		id := getInt(item, idField)
-		collectPair(out["name"], getString(item, nameField), getString(cnByID[id], nameField), true)
+		jpName := getString(item, nameField)
+		addTrace(trace, "name", jpName, id)
+		collectPair(out["name"], jpName, getString(cnByID[id], nameField), true)
 	}
-	return out, nil
+	return out, trace, nil
 }
 
 func (t *Translator) syncEventStoriesCNOnly() (int, error) {
@@ -1686,4 +1790,70 @@ func toParts(v any) map[string][]map[string]any {
 		res[k] = toMapSlice(raw)
 	}
 	return res
+}
+
+// ============================================================================
+// TraceMap — tracks which masterdata IDs reference each JP text
+// Mirrors translate.py's _add_trace / _merge_trace_ids logic
+// ============================================================================
+
+// TraceMap: field -> jpText -> []refID
+type TraceMap map[string]map[string][]string
+
+func newTraceMap(fields ...string) TraceMap {
+	tm := make(TraceMap, len(fields))
+	for _, f := range fields {
+		tm[f] = map[string][]string{}
+	}
+	return tm
+}
+
+func addTrace(trace TraceMap, field, jpText string, refID int) {
+	jpText = strings.TrimSpace(jpText)
+	if jpText == "" || refID == 0 {
+		return
+	}
+	if trace[field] == nil {
+		trace[field] = map[string][]string{}
+	}
+	ref := strconv.Itoa(refID)
+	for _, existing := range trace[field][jpText] {
+		if existing == ref {
+			return
+		}
+	}
+	trace[field][jpText] = append(trace[field][jpText], ref)
+}
+
+func addTraceStr(trace TraceMap, field, jpText, refID string) {
+	jpText = strings.TrimSpace(jpText)
+	refID = strings.TrimSpace(refID)
+	if jpText == "" || refID == "" {
+		return
+	}
+	if trace[field] == nil {
+		trace[field] = map[string][]string{}
+	}
+	for _, existing := range trace[field][jpText] {
+		if existing == refID {
+			return
+		}
+	}
+	trace[field][jpText] = append(trace[field][jpText], refID)
+}
+
+func mergeTraceIDs(entry *TranslationEntry, ids []string) {
+	if len(ids) == 0 {
+		return
+	}
+	existing := make(map[string]bool, len(entry.Ids))
+	for _, id := range entry.Ids {
+		existing[id] = true
+	}
+	for _, id := range ids {
+		if !existing[id] {
+			entry.Ids = append(entry.Ids, id)
+			existing[id] = true
+		}
+	}
 }
