@@ -4,8 +4,10 @@ import (
 	"bytes"
 	"compress/gzip"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -46,10 +48,11 @@ type TranslateStatus struct {
 }
 
 type TranslateResult struct {
-	Mode            string `json:"mode"`
-	Categories      int    `json:"categories"`
-	UpdatedEntries  int    `json:"updatedEntries"`
-	EventStoryFiles int    `json:"eventStoryFiles"`
+	Mode            string   `json:"mode"`
+	Categories      int      `json:"categories"`
+	UpdatedEntries  int      `json:"updatedEntries"`
+	EventStoryFiles int      `json:"eventStoryFiles"`
+	Skipped         []string `json:"skipped,omitempty"`
 }
 
 type AITranslateRequest struct {
@@ -123,6 +126,12 @@ type eventStoryFullEpisodePayload struct {
 type eventStoryFullDetail struct {
 	Meta     EventStoryMeta                          `json:"meta"`
 	Episodes map[string]eventStoryFullEpisodePayload `json:"episodes"`
+}
+
+type eventStoryTranslateTarget struct {
+	EpisodeNo string
+	EntryType string
+	JP        string
 }
 
 type localEventStoryState struct {
@@ -252,6 +261,11 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 		fmt.Printf("[translate] %s started\n", stepNote)
 		fields, trace, err := item.fn()
 		if err != nil {
+			if isTransientErr(err) {
+				fmt.Printf("[translate] %s skipped (transient error: %v)\n", stepNote, err)
+				result.Skipped = append(result.Skipped, item.category)
+				continue
+			}
 			runErr = fmt.Errorf("%s: %w", item.category, err)
 			return result, runErr
 		}
@@ -269,14 +283,20 @@ func (t *Translator) SyncCNOnly() (TranslateResult, error) {
 	fmt.Printf("[translate] cn-sync event stories started\n")
 	storyCount, err := t.syncEventStoriesCNOnly()
 	if err != nil {
-		runErr = err
-		return result, runErr
+		if isTransientErr(err) {
+			fmt.Printf("[translate] cn-sync event stories skipped (transient error: %v)\n", err)
+			result.Skipped = append(result.Skipped, "eventStories")
+		} else {
+			runErr = err
+			return result, runErr
+		}
+	} else {
+		result.EventStoryFiles = storyCount
+		if storyCount > 0 {
+			t.store.MarkExternalChange()
+		}
+		fmt.Printf("[translate] cn-sync event stories completed, files=%d\n", storyCount)
 	}
-	result.EventStoryFiles = storyCount
-	if storyCount > 0 {
-		t.store.MarkExternalChange()
-	}
-	fmt.Printf("[translate] cn-sync event stories completed, files=%d\n", storyCount)
 	return result, nil
 }
 
@@ -659,8 +679,8 @@ func (t *Translator) aiTranslateField(req AITranslateRequest) (AITranslateResult
 	return result, nil
 }
 
-// UpdateEventStoryLine updates a single line in an event story file.
-func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText, source string) error {
+// UpdateEventStoryLine updates a single title or line in an event story file.
+func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText, source, entryType string) error {
 	dir := filepath.Join(t.store.path, "eventStory")
 	path := eventStoryJSONPath(dir, eventID)
 	data, err := os.ReadFile(path)
@@ -687,31 +707,41 @@ func (t *Translator) UpdateEventStoryLine(eventID int, episodeNo, jpKey, cnText,
 	if !ok {
 		return fmt.Errorf("episode %s not found in event %d", episodeNo, eventID)
 	}
-	if _, exists := ep.TalkData[jpKey]; !exists {
-		return fmt.Errorf("key not found in episode %s", episodeNo)
-	}
 	fullEpisode, ok := fullDetail.Episodes[episodeNo]
 	if !ok {
 		return fmt.Errorf("episode %s not found in event %d full state", episodeNo, eventID)
-	}
-	lineEntry, exists := fullEpisode.TalkData[jpKey]
-	if !exists {
-		return fmt.Errorf("key not found in episode %s full state", episodeNo)
 	}
 	lineSource := normalizeEventStoryLineSource(source)
 	if lineSource == SourceUnknown {
 		lineSource = SourceHuman
 	}
-	ep.TalkData[jpKey] = cnText
+	normalizedEntryType := strings.TrimSpace(strings.ToLower(entryType))
+	lineEntry, exists := fullEpisode.TalkData[jpKey]
+	switch normalizedEntryType {
+	case "", "talk":
+		if _, exists := ep.TalkData[jpKey]; !exists {
+			return fmt.Errorf("key not found in episode %s", episodeNo)
+		}
+		if !exists {
+			return fmt.Errorf("key not found in episode %s full state", episodeNo)
+		}
+		ep.TalkData[jpKey] = cnText
+		lineEntry.Text = cnText
+		lineEntry.Source = lineSource
+		fullEpisode.TalkData[jpKey] = lineEntry
+	case "title":
+		ep.Title = cnText
+		fullEpisode.Title.Text = cnText
+		fullEpisode.Title.Source = lineSource
+	default:
+		return fmt.Errorf("unsupported event story entry type: %s", entryType)
+	}
 	detail.Episodes[episodeNo] = ep
-	lineEntry.Text = cnText
-	lineEntry.Source = lineSource
-	fullEpisode.TalkData[jpKey] = lineEntry
 	fullDetail.Episodes[episodeNo] = fullEpisode
 	now := time.Now().Unix()
 	detail.Meta.LastUpdated = now
 	fullDetail.Meta.LastUpdated = now
-	if allEventStoryTalkDataHuman(fullDetail) {
+	if allEventStoryContentHuman(fullDetail) {
 		promoteEventStoryFullDetailToHuman(&fullDetail)
 		detail.Meta.Source = SourceHuman
 	} else {
@@ -993,9 +1023,15 @@ func (t *Translator) loadOrBuildEventStoryFullDetail(dir string, eventID int, ba
 	return parseEventStoryFullDetail(raw, info.ModTime().Unix(), base)
 }
 
-func allEventStoryTalkDataHuman(detail eventStoryFullDetail) bool {
+func allEventStoryContentHuman(detail eventStoryFullDetail) bool {
 	total := 0
 	for _, episode := range detail.Episodes {
+		if strings.TrimSpace(episode.Title.Text) != "" {
+			total++
+			if normalizeEventStoryLineSource(episode.Title.Source) != SourceHuman {
+				return false
+			}
+		}
 		for _, line := range episode.TalkData {
 			total++
 			if normalizeEventStoryLineSource(line.Source) != SourceHuman {
@@ -1233,7 +1269,50 @@ func (t *Translator) fetchMasterdata(filename, server string) ([]map[string]any,
 	return out, nil
 }
 
+// isTransientErr returns true for network errors and 502/503/504 status codes
+// that are likely temporary and worth retrying.
+func isTransientErr(err error) bool {
+	if err == nil {
+		return false
+	}
+	s := err.Error()
+	// HTTP status codes that indicate upstream/temporary failures
+	for _, code := range []string{"http 502:", "http 503:", "http 504:"} {
+		if strings.Contains(s, code) {
+			return true
+		}
+	}
+	// net.Error (timeout, connection reset, etc.)
+	var netErr net.Error
+	if errors.As(err, &netErr) {
+		return true
+	}
+	return false
+}
+
 func (t *Translator) fetchJSONURL(url string) (any, error) {
+	const maxRetries = 2
+	var lastErr error
+	for attempt := range maxRetries + 1 {
+		result, err := t.fetchJSONURLOnce(url)
+		if err == nil {
+			return result, nil
+		}
+		lastErr = err
+		if !isTransientErr(err) {
+			return nil, err
+		}
+		if attempt < maxRetries {
+			delay := time.Duration(attempt+1) * 2 * time.Second
+			fmt.Printf("[translate] transient error (attempt %d/%d), retrying in %v: %v\n",
+				attempt+1, maxRetries+1, delay, err)
+			time.Sleep(delay)
+		}
+	}
+	return nil, lastErr
+}
+
+func (t *Translator) fetchJSONURLOnce(url string) (any, error) {
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
@@ -1842,7 +1921,20 @@ func (t *Translator) fillEventStoriesJPPending(jpStories []map[string]any, start
 		if eventID < startEventID {
 			continue
 		}
-		if _, exists := localStates[eventID]; exists {
+		if state, exists := localStates[eventID]; exists {
+			if state.Source == "jp_pending" && !state.PreserveLocal {
+				translated, autoErr := t.autoTranslateEventStory(dir, eventID)
+				if autoErr != nil {
+					fmt.Printf("[translate] auto-ai event story retry pending for event %d: %v\n", eventID, autoErr)
+				} else if translated > 0 {
+					state.Source = SourceLLM
+					state.IsLLM = true
+					state.HasCompanion = true
+					localStates[eventID] = state
+					processed++
+					fmt.Printf("[translate] auto-ai event story retry completed for event %d: translated=%d\n", eventID, translated)
+				}
+			}
 			continue
 		}
 
@@ -1855,10 +1947,114 @@ func (t *Translator) fillEventStoriesJPPending(jpStories []map[string]any, start
 		if err := t.writeEventStoryFile(dir, eventID, "jp_pending", episodes); err != nil {
 			return processed, scenarioErrors, err
 		}
-		localStates[eventID] = localEventStoryState{EventID: eventID, Source: "jp_pending"}
+		state := localEventStoryState{EventID: eventID, Source: "jp_pending"}
+		translated, autoErr := t.autoTranslateEventStory(dir, eventID)
+		if autoErr != nil {
+			fmt.Printf("[translate] auto-ai event story pending retry for event %d: %v\n", eventID, autoErr)
+		} else if translated > 0 {
+			state.Source = SourceLLM
+			state.IsLLM = true
+			state.HasCompanion = true
+			fmt.Printf("[translate] auto-ai event story completed for event %d: translated=%d\n", eventID, translated)
+		}
+		localStates[eventID] = state
 		processed++
 	}
 	return processed, scenarioErrors, nil
+}
+
+func (t *Translator) autoTranslateEventStory(dir string, eventID int) (int, error) {
+	provider := strings.ToLower(strings.TrimSpace(t.cfg.LLMType))
+	if provider == "" {
+		provider = "gemini"
+	}
+	if provider != "gemini" && provider != "openai" {
+		return 0, fmt.Errorf("unsupported provider: %s", provider)
+	}
+
+	path := eventStoryJSONPath(dir, eventID)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return 0, err
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return 0, err
+	}
+	detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
+		return 0, err
+	}
+	if normalizeEventStoryStorySource(detail.Meta.Source) != "jp_pending" {
+		return 0, nil
+	}
+	fullDetail, err := t.loadOrBuildEventStoryFullDetail(dir, eventID, detail)
+	if err != nil {
+		return 0, err
+	}
+
+	targets := collectEventStoryTranslateTargets(detail, fullDetail)
+	if len(targets) == 0 {
+		return 0, nil
+	}
+
+	texts := make([]string, 0, len(targets))
+	for _, target := range targets {
+		texts = append(texts, target.JP)
+	}
+	translated, err := t.callLLM(provider, texts)
+	if err != nil {
+		return 0, err
+	}
+
+	translatedCount := 0
+	for idx, target := range targets {
+		if idx >= len(translated) {
+			break
+		}
+		cn := strings.TrimSpace(translated[idx])
+		if cn == "" {
+			continue
+		}
+		episode := detail.Episodes[target.EpisodeNo]
+		fullEpisode := fullDetail.Episodes[target.EpisodeNo]
+		switch target.EntryType {
+		case "title":
+			episode.Title = cn
+			fullEpisode.Title.Text = cn
+			fullEpisode.Title.Source = SourceLLM
+		case "talk":
+			episode.TalkData[target.JP] = cn
+			line := fullEpisode.TalkData[target.JP]
+			line.Text = cn
+			line.Source = SourceLLM
+			fullEpisode.TalkData[target.JP] = line
+		default:
+			continue
+		}
+		detail.Episodes[target.EpisodeNo] = episode
+		fullDetail.Episodes[target.EpisodeNo] = fullEpisode
+		translatedCount++
+	}
+	if translatedCount == 0 {
+		return 0, nil
+	}
+
+	now := time.Now().Unix()
+	storySource := "jp_pending"
+	if translatedCount == len(targets) {
+		storySource = SourceLLM
+	}
+	detail.Meta.Source = storySource
+	detail.Meta.Version = "1.0"
+	detail.Meta.LastUpdated = now
+	fullDetail.Meta.Source = storySource
+	fullDetail.Meta.Version = "1.0"
+	fullDetail.Meta.LastUpdated = now
+	if err := writeEventStoryDetailFiles(dir, eventID, detail, fullDetail); err != nil {
+		return 0, err
+	}
+	return translatedCount, nil
 }
 
 func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]eventStoryEpisodePayload, int) {
@@ -1928,6 +2124,87 @@ func (t *Translator) writeEventStoryFile(dir string, eventID int, source string,
 	}
 	outPath := filepath.Join(dir, fmt.Sprintf("event_%d.json", eventID))
 	return writeAtomic(outPath, b)
+}
+
+func writeEventStoryDetailFiles(dir string, eventID int, detail EventStoryDetail, fullDetail eventStoryFullDetail) error {
+	mainPath := eventStoryJSONPath(dir, eventID)
+	fullPath := eventStoryFullJSONPath(dir, eventID)
+	originalMainData, err := os.ReadFile(mainPath)
+	if err != nil {
+		return err
+	}
+	originalFullData, originalFullErr := os.ReadFile(fullPath)
+	fullExisted := originalFullErr == nil
+
+	mainOut, err := json.MarshalIndent(detail, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := writeAtomic(mainPath, mainOut); err != nil {
+		return err
+	}
+	fullOut, err := json.MarshalIndent(fullDetail, "", "  ")
+	if err != nil {
+		_ = writeAtomic(mainPath, originalMainData)
+		return err
+	}
+	if err := writeAtomic(fullPath, fullOut); err != nil {
+		rollbackErr := writeAtomic(mainPath, originalMainData)
+		if rollbackErr != nil {
+			return fmt.Errorf("write event story full sidecar: %w (rollback failed: %v)", err, rollbackErr)
+		}
+		if fullExisted {
+			_ = writeAtomic(fullPath, originalFullData)
+		}
+		return err
+	}
+	return nil
+}
+
+func collectEventStoryTranslateTargets(detail EventStoryDetail, fullDetail eventStoryFullDetail) []eventStoryTranslateTarget {
+	episodeNos := make([]string, 0, len(detail.Episodes))
+	for episodeNo := range detail.Episodes {
+		episodeNos = append(episodeNos, episodeNo)
+	}
+	sort.Slice(episodeNos, func(i, j int) bool {
+		left, leftErr := strconv.Atoi(episodeNos[i])
+		right, rightErr := strconv.Atoi(episodeNos[j])
+		if leftErr == nil && rightErr == nil {
+			return left < right
+		}
+		return episodeNos[i] < episodeNos[j]
+	})
+
+	targets := make([]eventStoryTranslateTarget, 0)
+	for _, episodeNo := range episodeNos {
+		episode := detail.Episodes[episodeNo]
+		fullEpisode := fullDetail.Episodes[episodeNo]
+		titleSource := normalizeEventStoryLineSource(fullEpisode.Title.Source)
+		if titleSource != SourceHuman && titleSource != SourcePinned && titleSource != SourceCN {
+			titleJP := strings.TrimSpace(episode.Title)
+			if titleJP != "" && !(titleSource == SourceLLM && strings.TrimSpace(fullEpisode.Title.Text) != "") {
+				targets = append(targets, eventStoryTranslateTarget{EpisodeNo: episodeNo, EntryType: "title", JP: titleJP})
+			}
+		}
+
+		keys := make([]string, 0, len(episode.TalkData))
+		for jp := range episode.TalkData {
+			keys = append(keys, jp)
+		}
+		sort.Strings(keys)
+		for _, jp := range keys {
+			line := fullEpisode.TalkData[jp]
+			source := normalizeEventStoryLineSource(line.Source)
+			if source == SourceHuman || source == SourcePinned || source == SourceCN {
+				continue
+			}
+			if source == SourceLLM && strings.TrimSpace(line.Text) != "" {
+				continue
+			}
+			targets = append(targets, eventStoryTranslateTarget{EpisodeNo: episodeNo, EntryType: "talk", JP: jp})
+		}
+	}
+	return targets
 }
 
 func (t *Translator) callLLM(provider string, texts []string) ([]string, error) {

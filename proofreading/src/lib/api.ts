@@ -215,11 +215,11 @@ export async function getEventStory(eventId: number) {
 }
 
 export async function updateEventStoryLine(
-    eventId: number, episodeNo: string, jpKey: string, cnText: string, source = "human"
+    eventId: number, episodeNo: string, jpKey: string, cnText: string, source = "human", entryType: "talk" | "title" = "talk"
 ) {
     return apiFetch<{ status: string }>("/event-story/update", {
         method: "PUT",
-        body: JSON.stringify({ eventId, episodeNo, jpKey, cnText, source }),
+        body: JSON.stringify({ eventId, episodeNo, jpKey, cnText, source, entryType }),
     });
 }
 

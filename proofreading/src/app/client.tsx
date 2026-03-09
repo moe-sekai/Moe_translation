@@ -37,6 +37,7 @@ const SOURCE_LABELS: Record<string, string> = {
 };
 
 const SOURCE_BASE = (process.env.NEXT_PUBLIC_PJSK_BASE || "https://pjsk.moe").replace(/\/+$/, "");
+const EVENT_STORY_TITLE_MARKER = "__title__";
 
 function normalizeEventStorySource(source: string | undefined): string {
     switch ((source || "").trim().toLowerCase()) {
@@ -62,6 +63,13 @@ function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
     Object.entries(detail.episodes)
         .sort((a, b) => Number(a[0]) - Number(b[0]))
         .forEach(([episodeNo, ep]) => {
+            if ((ep.title || "").trim() !== "") {
+                entries.push({
+                    key: `${episodeNo}|${EVENT_STORY_TITLE_MARKER}|${ep.title}`,
+                    text: ep.title,
+                    source: ep.titleSource || storySource,
+                });
+            }
             Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
                 entries.push({
                     key: `${episodeNo}|${jp}`,
@@ -71,6 +79,32 @@ function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
             });
         });
     return entries;
+}
+
+function parseEventStoryEntryKey(key: string): { episodeNo: string; entryType: "title" | "talk"; originalText: string } {
+    const parts = key.split("|");
+    const episodeNo = parts[0] || "";
+    if (parts[1] === EVENT_STORY_TITLE_MARKER) {
+        return {
+            episodeNo,
+            entryType: "title",
+            originalText: parts.slice(2).join("|") || "[章节标题]",
+        };
+    }
+    return {
+        episodeNo,
+        entryType: "talk",
+        originalText: parts.slice(1).join("|"),
+    };
+}
+
+function getEventStoryEntryLabel(key: string): string {
+    const parsed = parseEventStoryEntryKey(key);
+    return parsed.entryType === "title" ? `[章节标题] ${parsed.originalText}` : parsed.originalText;
+}
+
+function getEventStoryEntrySearchText(entry: TranslationEntry): string {
+    return `${getEventStoryEntryLabel(entry.key)}\n${entry.text}`.toLowerCase();
 }
 
 const DETAIL_BUILDERS: Record<string, (id: string) => string> = {
@@ -245,8 +279,12 @@ export default function ProofreadingClient() {
     const filteredEntries = useMemo(() => {
         if (!searchQuery) return entries;
         const q = searchQuery.toLowerCase();
-        return entries.filter(e => e.key.toLowerCase().includes(q) || e.text.toLowerCase().includes(q));
-    }, [entries, searchQuery]);
+        return entries.filter(e =>
+            selectedCategory === "eventStory"
+                ? getEventStoryEntrySearchText(e).includes(q)
+                : e.key.toLowerCase().includes(q) || e.text.toLowerCase().includes(q)
+        );
+    }, [entries, searchQuery, selectedCategory]);
 
     const selectedEntry = useMemo(
         () => filteredEntries.find(e => e.key === selectedKey) ?? null,
@@ -538,21 +576,27 @@ export default function ProofreadingClient() {
         savingRef.current = true;
         try {
             if (selectedCategory === "eventStory") {
-                const parts = selectedKey.split("|");
-                const episodeNo = parts[0];
-                const jp = parts.slice(1).join("|");
-                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue, "human");
+                const parsed = parseEventStoryEntryKey(selectedKey);
+                await updateEventStoryLine(Number(selectedField), parsed.episodeNo, parsed.entryType === "title" ? "" : parsed.originalText, editValue, "human", parsed.entryType);
             } else {
                 await updateEntry(selectedCategory, selectedField, selectedKey, editValue, "human");
             }
             setEntries(prev => prev.map(e => {
                 if (e.key !== selectedKey) return e;
+                const parsed = selectedCategory === "eventStory" ? parseEventStoryEntryKey(e.key) : null;
                 return {
                     ...e,
+                    key: parsed?.entryType === "title" ? `${parsed.episodeNo}|${EVENT_STORY_TITLE_MARKER}|${editValue}` : e.key,
                     text: editValue,
                     source: "human",
                 };
             }));
+            if (selectedCategory === "eventStory") {
+                const parsed = parseEventStoryEntryKey(selectedKey);
+                if (parsed.entryType === "title") {
+                    setSelectedKey(`${parsed.episodeNo}|${EVENT_STORY_TITLE_MARKER}|${editValue}`);
+                }
+            }
             clearDraft(selectedKey);
         } catch {
             showToast("自动保存失败，内容已本地暂存", "err");
@@ -583,14 +627,22 @@ export default function ProofreadingClient() {
 
         try {
             if (selectedCategory === "eventStory") {
-                const parts = selectedKey.split("|");
-                const episodeNo = parts[0];
-                const jp = parts.slice(1).join("|");
-                await updateEventStoryLine(Number(selectedField), episodeNo, jp, editValue, src);
+                const parsed = parseEventStoryEntryKey(selectedKey);
+                await updateEventStoryLine(Number(selectedField), parsed.episodeNo, parsed.entryType === "title" ? "" : parsed.originalText, editValue, src, parsed.entryType);
 
                 setEntries(prev => prev.map(e =>
-                    e.key === selectedKey ? { ...e, text: editValue, source: src } : e
+                    e.key === selectedKey
+                        ? {
+                            ...e,
+                            key: parsed.entryType === "title" ? `${parsed.episodeNo}|${EVENT_STORY_TITLE_MARKER}|${editValue}` : e.key,
+                            text: editValue,
+                            source: src,
+                        }
+                        : e
                 ));
+                if (parsed.entryType === "title") {
+                    setSelectedKey(`${parsed.episodeNo}|${EVENT_STORY_TITLE_MARKER}|${editValue}`);
+                }
                 clearDraft(selectedKey);
                 showToast("剧情翻译已保存", "ok");
             } else {
@@ -1037,17 +1089,17 @@ export default function ProofreadingClient() {
                             {/* Proofreading Panel */}
                             {selectedEntry && (
                                 <div className="proof-panel">
-                                    <div className="proof-original">
-                                        <label>日文原文</label>
-                                        <div className="proof-jp">
-                                            {selectedCategory === "eventStory" ? selectedEntry.key.split("|").slice(1).join("|") : selectedEntry.key}
-                                        </div>
-                                        {selectedCategory === "eventStory" && (
-                                            <div style={{ fontSize: "0.85em", color: "var(--text-secondary)", marginTop: "4px" }}>
-                                                [第 {selectedEntry.key.split("|")[0]} 章]
+                                        <div className="proof-original">
+                                            <label>日文原文</label>
+                                            <div className="proof-jp">
+                                            {selectedCategory === "eventStory" ? getEventStoryEntryLabel(selectedEntry.key) : selectedEntry.key}
                                             </div>
-                                        )}
-                                    </div>
+                                            {selectedCategory === "eventStory" && (
+                                                <div style={{ fontSize: "0.85em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                                [第 {parseEventStoryEntryKey(selectedEntry.key).episodeNo} 章]
+                                                </div>
+                                            )}
+                                        </div>
                                     <div className="proof-edit">
                                         <div className="proof-edit-header">
                                             <label>
@@ -1078,9 +1130,6 @@ export default function ProofreadingClient() {
                                         />
                                         <div className="proof-actions">
                                             <button className="btn-save" onClick={() => handleSave()}>✓ 保存并下一条</button>
-                                            {selectedCategory === "eventStory" && (
-                                                <button className="btn-pinned" onClick={handlePromoteCurrentEventStoryHuman}>🪄 整篇标记人工</button>
-                                            )}
                                             {selectedCategory !== "eventStory" && (
                                                 <button className="btn-pinned" onClick={() => handleSave("pinned")}>🔒 锁定保存</button>
                                             )}
@@ -1135,6 +1184,15 @@ export default function ProofreadingClient() {
                                                 >
                                                     [切换快捷键]
                                                 </button>
+                                                {selectedCategory === "eventStory" && (
+                                                    <button
+                                                        style={{ background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '0.75rem', marginRight: '0.5rem', padding: 0 }}
+                                                        onClick={() => void handlePromoteCurrentEventStoryHuman()}
+                                                        title="将当前活动剧情所有标题和台词标记为人工"
+                                                    >
+                                                        [整篇标记人工]
+                                                    </button>
+                                                )}
                                                 保存: <kbd>{saveShortcut === "shift-enter" ? "Shift+Enter" : "Enter"}</kbd> &nbsp;
                                                 <kbd>Ctrl/Cmd+↑↓</kbd> 切换 <kbd>Esc</kbd> 取消
                                             </div>
@@ -1223,10 +1281,10 @@ export default function ProofreadingClient() {
                                                             </select>
                                                         </td>
                                                         <td><div className="jp-text">
-                                                            {selectedCategory === "eventStory" ? entry.key.split("|").slice(1).join("|") : entry.key}
+                                                            {selectedCategory === "eventStory" ? getEventStoryEntryLabel(entry.key) : entry.key}
                                                             {selectedCategory === "eventStory" && (
                                                                 <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
-                                                                    第 {entry.key.split("|")[0]} 章
+                                                                    第 {parseEventStoryEntryKey(entry.key).episodeNo} 章
                                                                 </div>
                                                             )}
                                                         </div></td>

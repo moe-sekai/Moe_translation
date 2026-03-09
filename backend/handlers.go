@@ -324,6 +324,7 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 		JpKey     string `json:"jpKey"`
 		CnText    string `json:"cnText"`
 		Source    string `json:"source"`
+		EntryType string `json:"entryType"`
 	}
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
@@ -334,11 +335,15 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 		return
 	}
 	user := r.Header.Get("X-Username")
-	if err := h.translator.UpdateEventStoryLine(req.EventID, req.EpisodeNo, req.JpKey, req.CnText, req.Source); err != nil {
+	if err := h.translator.UpdateEventStoryLine(req.EventID, req.EpisodeNo, req.JpKey, req.CnText, req.Source, req.EntryType); err != nil {
 		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
 		return
 	}
-	fmt.Printf("[edit-story] event%d/ep%s: %q -> %q (%s) by %s\n", req.EventID, req.EpisodeNo, req.JpKey, req.CnText, req.Source, user)
+	entryType := req.EntryType
+	if entryType == "" {
+		entryType = "talk"
+	}
+	fmt.Printf("[edit-story] event%d/ep%s/%s: %q -> %q (%s) by %s\n", req.EventID, req.EpisodeNo, entryType, req.JpKey, req.CnText, req.Source, user)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
 }
