@@ -5250,7 +5250,7 @@
       ]
     },
     "Calm Wisdom": {
-      "text": "Happy Anniversary Miku",
+      "text": "\n",
       "source": "human",
       "ids": [
         "908001"
@@ -5965,8 +5965,8 @@
       ]
     },
     "Lo-fi Green": {
-      "text": "轻音海盐汽水·bilibili（男）",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "932001"
       ]
@@ -7400,8 +7400,8 @@
       ]
     },
     "いたずらな小鬼の衣": {
-      "text": "Happy Anniversary MEIKO",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "915001"
       ]
@@ -7694,8 +7694,8 @@
       ]
     },
     "アクティブ・オーバーオール": {
-      "text": "Happy Anniversary Luka",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "924001"
       ]
@@ -7907,8 +7907,8 @@
       ]
     },
     "ウィッシュ・チュチュ": {
-      "text": "Happy Anniversary Len",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "921001"
       ]
@@ -7998,8 +7998,8 @@
       ]
     },
     "エフォートレス・オーバーオール": {
-      "text": "Happy Anniversary KAITO",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "925001"
       ]
@@ -10563,8 +10563,8 @@
       ]
     },
     "ミラージュ・チュチュ": {
-      "text": "Happy Anniversary Rin",
-      "source": "cn",
+      "text": "",
+      "source": "human",
       "ids": [
         "920001"
       ]
