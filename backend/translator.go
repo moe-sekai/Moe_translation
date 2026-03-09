@@ -1,6 +1,7 @@
 package backend
 
 import (
+	"bufio"
 	"bytes"
 	"compress/gzip"
 	"encoding/json"
@@ -176,7 +177,7 @@ func NewTranslator(store *Store, cfg TranslatorConfig) *Translator {
 	}
 	return &Translator{
 		store:  store,
-		client: &http.Client{Timeout: 40 * time.Second},
+		client: &http.Client{Timeout: 180 * time.Second},
 		cfg:    cfg,
 	}
 }
@@ -2725,34 +2726,57 @@ func (t *Translator) callOpenAI(prompt string) (string, error) {
 		"model":       t.cfg.OpenAIModel,
 		"messages":    []map[string]string{{"role": "user", "content": prompt}},
 		"temperature": 0.3,
+		"stream":      true,
 	}
 	body, _ := json.Marshal(payload)
 	req, _ := http.NewRequest(http.MethodPost, url, bytes.NewReader(body))
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+t.cfg.OpenAIAPIKey)
+	req.Header.Set("Accept", "text/event-stream")
 	resp, err := t.client.Do(req)
 	if err != nil {
 		return "", err
 	}
 	defer resp.Body.Close()
-	raw, _ := io.ReadAll(resp.Body)
 	if resp.StatusCode != http.StatusOK {
+		raw, _ := io.ReadAll(resp.Body)
 		return "", fmt.Errorf("openai http %d: %s", resp.StatusCode, string(raw))
 	}
-	var result struct {
-		Choices []struct {
-			Message struct {
-				Content string `json:"content"`
-			} `json:"message"`
-		} `json:"choices"`
+	// 流式读取 SSE 事件，拼接 delta content
+	var sb strings.Builder
+	scanner := bufio.NewScanner(resp.Body)
+	scanner.Buffer(make([]byte, 0, 64*1024), 1024*1024)
+	for scanner.Scan() {
+		line := scanner.Text()
+		if !strings.HasPrefix(line, "data: ") {
+			continue
+		}
+		data := strings.TrimPrefix(line, "data: ")
+		if data == "[DONE]" {
+			break
+		}
+		var chunk struct {
+			Choices []struct {
+				Delta struct {
+					Content string `json:"content"`
+				} `json:"delta"`
+			} `json:"choices"`
+		}
+		if err := json.Unmarshal([]byte(data), &chunk); err != nil {
+			continue
+		}
+		if len(chunk.Choices) > 0 {
+			sb.WriteString(chunk.Choices[0].Delta.Content)
+		}
 	}
-	if err := json.Unmarshal(raw, &result); err != nil {
-		return "", err
+	if err := scanner.Err(); err != nil {
+		return "", fmt.Errorf("openai stream read error: %w", err)
 	}
-	if len(result.Choices) == 0 {
-		return "", fmt.Errorf("openai returned empty choices")
+	content := sb.String()
+	if content == "" {
+		return "", fmt.Errorf("openai returned empty content from stream")
 	}
-	return result.Choices[0].Message.Content, nil
+	return content, nil
 }
 
 func buildXMLInput(texts []string) string {
