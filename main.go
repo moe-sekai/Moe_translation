@@ -39,7 +39,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	llmType := envOr("LLM_TYPE", "gemini")
+	llmType := envOr("LLM_TYPE", "openai")
 	upstreamRepo := envOr("UPSTREAM_REPO", "Team-Haruki/haruki-sekai-master")
 	upstreamBranch := envOr("UPSTREAM_BRANCH", "main")
 	schedulerEnabled := envOr("TRANSLATE_SCHEDULER_ENABLED", "true") == "true"

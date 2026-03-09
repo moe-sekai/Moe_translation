@@ -5,7 +5,7 @@ import {
     getToken, setToken, clearToken, getUsername, setUsername,
     login, getCategories, getEntries, updateEntry, pushToHub, pullLatestBackup, getPushStatus,
     triggerAITranslateAll, getEventStories, getEventStory, runCNSync, getTranslateStatus,
-    updateEventStoryLine, promoteEventStoryHuman,
+    updateEventStoryLine, promoteEventStoryHuman, retryEventStorySync,
     type CategoryInfo, type TranslationEntry, type PushStatus,
     type EventStorySummary, type EventStoryDetail, type TranslateStatusResponse,
 } from "@/lib/api";
@@ -251,7 +251,7 @@ export default function ProofreadingClient() {
     const syncingCNRef = useRef(false);
 
     // AI translation
-    const [aiProvider, setAIProvider] = useState<"gemini" | "openai">("gemini");
+    const [aiProvider, setAIProvider] = useState<"gemini" | "openai">("openai");
     const [aiTranslating, setAITranslating] = useState(false);
     const aiTranslatingRef = useRef(false);
     const [translateStatus, setTranslateStatus] = useState<TranslateStatusResponse | null>(null);
@@ -264,6 +264,7 @@ export default function ProofreadingClient() {
 
     // Event story block
     const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
+    const [retryingEventStory, setRetryingEventStory] = useState(false);
 
     // Sidebar (mobile)
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -698,6 +699,28 @@ export default function ProofreadingClient() {
 	        savingRef.current = false;
 	    }
     }, [autoSaveCurrent, selectedCategory, selectedField, showToast]);
+
+    const handleRetryEventStory = useCallback(async () => {
+        if (retryingEventStory || selectedCategory !== "eventStory" || !selectedField) return;
+        setRetryingEventStory(true);
+        try {
+            const result = await retryEventStorySync(Number(selectedField));
+            // Reload the event story data
+            const detail = await getEventStory(Number(selectedField));
+            const newEntries = buildEventStoryEntries(detail);
+            setEntries(newEntries);
+            const stories = await getEventStories();
+            setEventStories(stories);
+            const msg = `重新获取完成: ${result.episodes} 章节, 来源=${result.source}` +
+                (result.translated ? `, 翻译=${result.translated}条` : "") +
+                (result.fetchErrors ? `, ${result.fetchErrors}个获取失败` : "");
+            showToast(msg, "ok");
+        } catch (err) {
+            showToast(err instanceof Error ? err.message : "重新获取失败", "err");
+        } finally {
+            setRetryingEventStory(false);
+        }
+    }, [retryingEventStory, selectedCategory, selectedField, showToast]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
         if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
@@ -1191,6 +1214,16 @@ export default function ProofreadingClient() {
                                                         title="将当前活动剧情所有标题和台词标记为人工"
                                                     >
                                                         [整篇标记人工]
+                                                    </button>
+                                                )}
+                                                {selectedCategory === "eventStory" && (
+                                                    <button
+                                                        style={{ background: 'none', border: 'none', color: retryingEventStory ? 'var(--text-secondary)' : '#e67e22', cursor: retryingEventStory ? 'wait' : 'pointer', fontSize: '0.75rem', marginRight: '0.5rem', padding: 0 }}
+                                                        onClick={() => void handleRetryEventStory()}
+                                                        disabled={retryingEventStory}
+                                                        title="重新从远程获取该活动的剧情数据（修复章节缺失/内容不完整）"
+                                                    >
+                                                        {retryingEventStory ? "[重新获取中...]" : "[🔄 重新获取剧情]"}
                                                     </button>
                                                 )}
                                                 保存: <kbd>{saveShortcut === "shift-enter" ? "Shift+Enter" : "Enter"}</kbd> &nbsp;

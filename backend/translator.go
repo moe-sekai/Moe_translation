@@ -20,10 +20,11 @@ import (
 )
 
 const (
-	jpMasterdataURL = "https://sekaimaster.exmeaning.com/master"
-	cnMasterdataURL = "https://sekaimaster-cn.exmeaning.com/master"
-	jpAssetsURL     = "https://snowyassets.exmeaning.com/ondemand"
-	cnAssetsURL     = "https://sekai-assets-bdf29c81.seiunx.net/cn-assets/ondemand"
+	jpMasterdataURL      = "https://sekaimaster.exmeaning.com/master"
+	cnMasterdataURL      = "https://sekaimaster-cn.exmeaning.com/master"
+	jpAssetsURL          = "https://snowyassets.exmeaning.com/ondemand"
+	jpAssetsFallbackURL  = "https://assets.unipjsk.com/ondemand"
+	cnAssetsURL          = "https://sekai-assets-bdf29c81.seiunx.net/cn-assets/ondemand"
 )
 
 const gameContextPrompt = "你是一个专业的游戏翻译器，专门翻译《世界计划 彩色舞台 feat. 初音未来》(Project SEKAI) 游戏内容。\n请将以下XML格式的日文文本翻译成简体中文。\n请只返回<translations>...</translations>，每条使用 <t id=\"N\">文本</t>。\n"
@@ -1312,6 +1313,66 @@ func (t *Translator) fetchJSONURL(url string) (any, error) {
 	return nil, lastErr
 }
 
+// fetchJPAssetJSON fetches a JP asset JSON by path (e.g. "event_story/.../scenario/xxx").
+// It tries the primary jpAssetsURL first; on failure it falls back to jpAssetsFallbackURL.
+func (t *Translator) fetchJPAssetJSON(assetPath string) (any, error) {
+	primaryURL := fmt.Sprintf("%s/%s.json", jpAssetsURL, assetPath)
+	result, err := t.fetchJSONURL(primaryURL)
+	if err == nil {
+		return result, nil
+	}
+	fallbackURL := fmt.Sprintf("%s/%s.json", jpAssetsFallbackURL, assetPath)
+	fmt.Printf("[translate] JP asset primary failed (%v), trying fallback: %s\n", err, fallbackURL)
+	result, fallbackErr := t.fetchJSONURL(fallbackURL)
+	if fallbackErr != nil {
+		return nil, fmt.Errorf("primary: %w; fallback: %v", err, fallbackErr)
+	}
+	return result, nil
+}
+
+// fetchJPScenarioJSON fetches a JP scenario asset and validates that TalkData is present.
+// If the primary source returns data with empty/missing TalkData, it falls back to the
+// backup source before giving up — this handles cases where the primary CDN has incomplete data.
+func (t *Translator) fetchJPScenarioJSON(assetPath string) (any, error) {
+	primaryURL := fmt.Sprintf("%s/%s.json", jpAssetsURL, assetPath)
+	result, err := t.fetchJSONURL(primaryURL)
+	if err == nil {
+		if scenarioHasTalkData(result) {
+			return result, nil
+		}
+		// Primary returned OK but TalkData is empty/missing — treat as incomplete
+		fmt.Printf("[translate] JP scenario primary returned empty TalkData, trying fallback: %s\n", assetPath)
+	} else {
+		fmt.Printf("[translate] JP scenario primary failed (%v), trying fallback: %s\n", err, assetPath)
+	}
+
+	fallbackURL := fmt.Sprintf("%s/%s.json", jpAssetsFallbackURL, assetPath)
+	fallbackResult, fallbackErr := t.fetchJSONURL(fallbackURL)
+	if fallbackErr != nil {
+		// Both sources failed; if primary at least returned something, use it
+		if err == nil && result != nil {
+			fmt.Printf("[translate] JP scenario fallback also failed, using primary incomplete data: %s\n", assetPath)
+			return result, nil
+		}
+		return nil, fmt.Errorf("primary: %w; fallback: %v", err, fallbackErr)
+	}
+	return fallbackResult, nil
+}
+
+// scenarioHasTalkData checks whether a scenario JSON contains non-empty TalkData.
+func scenarioHasTalkData(data any) bool {
+	m, ok := data.(map[string]any)
+	if !ok {
+		return false
+	}
+	td, ok := m["TalkData"]
+	if !ok {
+		return false
+	}
+	arr, ok := td.([]any)
+	return ok && len(arr) > 0
+}
+
 func (t *Translator) fetchJSONURLOnce(url string) (any, error) {
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
@@ -1860,7 +1921,7 @@ func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (m
 			continue
 		}
 		scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
-		jpScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", jpAssetsURL, scenarioPath))
+		jpScenario, err := t.fetchJPScenarioJSON(scenarioPath)
 		if err != nil {
 			errs++
 			continue
@@ -2071,7 +2132,7 @@ func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]
 		}
 		title := strings.TrimSpace(getString(ep, "title"))
 		scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
-		jpScenario, err := t.fetchJSONURL(fmt.Sprintf("%s/%s.json", jpAssetsURL, scenarioPath))
+		jpScenario, err := t.fetchJPScenarioJSON(scenarioPath)
 		if err != nil {
 			errs++
 			if title != "" {
@@ -2159,6 +2220,117 @@ func writeEventStoryDetailFiles(dir string, eventID int, detail EventStoryDetail
 		return err
 	}
 	return nil
+}
+
+// RetryEventStorySync re-fetches and rebuilds the event story for a single event.
+// It tries CN official data first; if unavailable, falls back to JP pending + auto LLM translate.
+// Unlike the normal sync, this ignores the local state and always overwrites.
+func (t *Translator) RetryEventStorySync(eventID int) (map[string]any, error) {
+	if err := t.markStart("retry-event-story"); err != nil {
+		return nil, err
+	}
+	var runErr error
+	defer func() {
+		note := fmt.Sprintf("retry event story %d complete", eventID)
+		if runErr != nil {
+			note = fmt.Sprintf("retry event story %d failed", eventID)
+		}
+		t.markEnd(note, runErr)
+	}()
+
+	result, err := t.retryEventStorySyncInner(eventID)
+	if err != nil {
+		runErr = err
+	}
+	return result, err
+}
+
+func (t *Translator) retryEventStorySyncInner(eventID int) (map[string]any, error) {
+	dir := filepath.Join(t.store.path, "eventStory")
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return nil, err
+	}
+
+	// Fetch masterdata
+	jpStories, err := t.fetchMasterdata("eventStories.json", "jp")
+	if err != nil {
+		return nil, fmt.Errorf("fetch JP eventStories: %w", err)
+	}
+	cnStories, err := t.fetchMasterdata("eventStories.json", "cn")
+	if err != nil {
+		return nil, fmt.Errorf("fetch CN eventStories: %w", err)
+	}
+	cnEvents, err := t.fetchMasterdata("events.json", "cn")
+	if err != nil {
+		return nil, fmt.Errorf("fetch CN events: %w", err)
+	}
+
+	// Find the JP story for this event
+	var jpStory map[string]any
+	for _, s := range jpStories {
+		if getInt(s, "eventId") == eventID {
+			jpStory = s
+			break
+		}
+	}
+	if jpStory == nil {
+		return nil, fmt.Errorf("event %d not found in JP eventStories", eventID)
+	}
+
+	cnStoryByEvent := byIntID(cnStories, "eventId")
+	cnEventSet := map[int]bool{}
+	for _, e := range cnEvents {
+		cnEventSet[getInt(e, "id")] = true
+	}
+
+	result := map[string]any{"eventId": eventID}
+
+	// Try CN official first
+	if cnEventSet[eventID] {
+		if cnStory := cnStoryByEvent[eventID]; cnStory != nil {
+			episodes, hasTalkData, _, errs := t.buildOfficialCNEpisodes(jpStory, cnStory)
+			if errs == 0 && hasTalkData {
+				if err := t.writeEventStoryFile(dir, eventID, "official_cn", episodes); err != nil {
+					return nil, err
+				}
+				result["source"] = "official_cn"
+				result["episodes"] = len(episodes)
+				fmt.Printf("[retry-event-story] event %d: wrote official_cn (%d episodes)\n", eventID, len(episodes))
+				return result, nil
+			}
+			if errs > 0 {
+				fmt.Printf("[retry-event-story] event %d: CN scenario fetch had %d errors, falling back to JP\n", eventID, errs)
+			}
+		}
+	}
+
+	// Fallback: JP pending + auto LLM translate
+	episodes, errs := t.buildJPPendingEpisodes(jpStory)
+	if len(episodes) == 0 {
+		return nil, fmt.Errorf("event %d: no episodes could be fetched (errors=%d)", eventID, errs)
+	}
+
+	if err := t.writeEventStoryFile(dir, eventID, "jp_pending", episodes); err != nil {
+		return nil, err
+	}
+	result["source"] = "jp_pending"
+	result["episodes"] = len(episodes)
+	result["fetchErrors"] = errs
+
+	// Try auto LLM translate
+	translated, autoErr := t.autoTranslateEventStory(dir, eventID)
+	if autoErr != nil {
+		fmt.Printf("[retry-event-story] event %d: auto-translate failed: %v\n", eventID, autoErr)
+		result["translateError"] = autoErr.Error()
+	} else if translated > 0 {
+		result["source"] = "llm"
+		result["translated"] = translated
+		fmt.Printf("[retry-event-story] event %d: auto-translated %d lines\n", eventID, translated)
+	}
+
+	fmt.Printf("[retry-event-story] event %d: wrote %s (%d episodes, %d fetch errors)\n",
+		eventID, result["source"], len(episodes), errs)
+	return result, nil
 }
 
 func collectEventStoryTranslateTargets(detail EventStoryDetail, fullDetail eventStoryFullDetail) []eventStoryTranslateTarget {

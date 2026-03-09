@@ -229,3 +229,10 @@ export async function promoteEventStoryHuman(eventId: number) {
         body: JSON.stringify({ eventId }),
     });
 }
+
+export async function retryEventStorySync(eventId: number) {
+    return apiFetch<{ eventId: number; source: string; episodes: number; translated?: number; fetchErrors?: number; translateError?: string }>("/event-story/retry", {
+        method: "POST",
+        body: JSON.stringify({ eventId }),
+    });
+}

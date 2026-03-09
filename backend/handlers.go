@@ -39,6 +39,7 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/event-stories", h.requireAuth(h.handleEventStories))
 	mux.HandleFunc("/api/event-story", h.requireAuth(h.handleEventStory))
 	mux.HandleFunc("/api/event-story/update", h.requireAuth(h.handleUpdateEventStory))
+	mux.HandleFunc("/api/event-story/retry", h.requireAuth(h.handleRetryEventStory))
 	mux.HandleFunc("/api/event-story/promote-human", h.requireAuth(h.handlePromoteEventStoryHuman))
 }
 
@@ -346,6 +347,38 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 	fmt.Printf("[edit-story] event%d/ep%s/%s: %q -> %q (%s) by %s\n", req.EventID, req.EpisodeNo, entryType, req.JpKey, req.CnText, req.Source, user)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{"status": "ok"})
+}
+
+func (h *Handler) handleRetryEventStory(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req struct {
+		EventID int `json:"eventId"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	if req.EventID <= 0 {
+		http.Error(w, `{"error":"eventId is required"}`, http.StatusBadRequest)
+		return
+	}
+	user := r.Header.Get("X-Username")
+	fmt.Printf("[retry-event-story] requested by %s for event %d\n", user, req.EventID)
+	result, err := h.translator.RetryEventStorySync(req.EventID)
+	if err != nil {
+		if isAlreadyRunningError(err) {
+			http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusConflict)
+			return
+		}
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	fmt.Printf("[retry-event-story] completed by %s for event %d\n", user, req.EventID)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
 }
 
 func (h *Handler) handlePromoteEventStoryHuman(w http.ResponseWriter, r *http.Request) {
