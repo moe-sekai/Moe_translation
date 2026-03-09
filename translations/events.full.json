@@ -294,6 +294,13 @@
         "103"
       ]
     },
+    "Open up new horizons！": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "198"
+      ]
+    },
     "Our Golden Days": {
       "text": "我们的黄金岁月",
       "source": "human",
@@ -674,7 +681,7 @@
     },
     "そして、針は動き出す": {
       "text": "于是，指针开始转动",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "165"
       ]
@@ -729,8 +736,8 @@
       ]
     },
     "ほどけぬ明日に手を伸ばして": {
-      "text": "向无法解开的明日伸出双手",
-      "source": "human",
+      "text": "向无法解开的明天伸手",
+      "source": "cn",
       "ids": [
         "177"
       ]
@@ -939,8 +946,8 @@
       ]
     },
     "交わる色はあの日のままに": {
-      "text": "交汇的色彩一如往昔",
-      "source": "human",
+      "text": "交织的色彩一如当初",
+      "source": "cn",
       "ids": [
         "183"
       ]
@@ -1009,8 +1016,8 @@
       ]
     },
     "君と繋ぐHeart Beat": {
-      "text": "与你相连的心跳",
-      "source": "human",
+      "text": "与你相连的Heart Beat",
+      "source": "cn",
       "ids": [
         "182"
       ]
@@ -1170,8 +1177,8 @@
       ]
     },
     "泡沫に抱かれて": {
-      "text": "沉溺于泡沫之中",
-      "source": "human",
+      "text": "置身于泡沫的环绕",
+      "source": "cn",
       "ids": [
         "170"
       ]

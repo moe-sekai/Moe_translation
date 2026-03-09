@@ -330,8 +330,8 @@
       ]
     },
     "Let's play with catsガチャ": {
-      "text": "Let's play with cats招募 「猫混」",
-      "source": "human",
+      "text": "Let's play with cats招募",
+      "source": "cn",
       "ids": [
         "696"
       ]
@@ -2739,7 +2739,8 @@
       "text": "[复刻]in my fairy tale招募",
       "source": "human",
       "ids": [
-        "750"
+        "750",
+        "919"
       ]
     },
     "[復刻]あなたに届け♡Live Streamingガチャ": {
@@ -2899,6 +2900,13 @@
       "ids": [
         "237",
         "512"
+      ]
+    },
+    "[復刻]果てなき護るための戦いガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "918"
       ]
     },
     "[復刻]永久に響く鐘の音の下でガチャ": {
@@ -4082,6 +4090,13 @@
       "source": "human",
       "ids": [
         "66"
+      ]
+    },
+    "バックステージの秘密ガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "917"
       ]
     },
     "バーチャル・シンガー限定ガチャ": {

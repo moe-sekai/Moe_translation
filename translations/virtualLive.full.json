@@ -51,218 +51,368 @@
     },
     "5th Anniversary Special Message（KAITO）": {
       "text": "5周年纪念特别留言（KAITO）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "425"
       ]
     },
     "5th Anniversary Special Message（MEIKO）": {
       "text": "5周年纪念特别留言（MEIKO）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "424"
       ]
     },
     "5th Anniversary Special Message（えむ）": {
       "text": "5周年特别致辞（笑梦）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "413"
       ]
     },
     "5th Anniversary Special Message（こはね）": {
       "text": "5周年特别致辞（心羽）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "408"
       ]
     },
     "5th Anniversary Special Message（まふゆ）": {
       "text": "5周年纪念特别留言（真冬）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "417"
       ]
     },
     "5th Anniversary Special Message（みのり）": {
       "text": "5周年特别致辞（实乃里）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "404"
       ]
     },
     "5th Anniversary Special Message（ミク）": {
       "text": "5周年纪念特别留言（未来）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "420"
       ]
     },
     "5th Anniversary Special Message（リン）": {
       "text": "5周年纪念特别留言（铃）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "421"
       ]
     },
     "5th Anniversary Special Message（ルカ）": {
       "text": "5周年纪念特别留言（流歌）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "423"
       ]
     },
     "5th Anniversary Special Message（レン）": {
       "text": "5周年纪念特别留言（连）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "422"
       ]
     },
     "5th Anniversary Special Message（一歌）": {
       "text": "5周年特别致辞（一歌）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "400"
       ]
     },
     "5th Anniversary Special Message（冬弥）": {
       "text": "5周年特别致辞（冬弥）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "411"
       ]
     },
     "5th Anniversary Special Message（司）": {
       "text": "5周年特别致辞（司）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "412"
       ]
     },
     "5th Anniversary Special Message（咲希）": {
       "text": "5周年特别致辞（咲希）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "401"
       ]
     },
     "5th Anniversary Special Message（奏）": {
       "text": "5周年纪念特别留言（奏）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "416"
       ]
     },
     "5th Anniversary Special Message（寧々）": {
       "text": "5周年特别致辞（宁宁）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "414"
       ]
     },
     "5th Anniversary Special Message（彰人）": {
       "text": "5周年特别致辞（彰人）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "410"
       ]
     },
     "5th Anniversary Special Message（志歩）": {
       "text": "5周年特别致辞（志步）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "403"
       ]
     },
     "5th Anniversary Special Message（愛莉）": {
       "text": "5周年特别致辞（爱莉）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "406"
       ]
     },
     "5th Anniversary Special Message（杏）": {
       "text": "5周年特别致辞（杏）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "409"
       ]
     },
     "5th Anniversary Special Message（瑞希）": {
       "text": "5周年纪念特别留言（瑞希）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "419"
       ]
     },
     "5th Anniversary Special Message（穂波）": {
       "text": "5周年特别致辞（穗波）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "402"
       ]
     },
     "5th Anniversary Special Message（絵名）": {
       "text": "5周年纪念特别留言（绘名）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "418"
       ]
     },
     "5th Anniversary Special Message（遥）": {
       "text": "5周年特别致辞（遥）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "405"
       ]
     },
     "5th Anniversary Special Message（雫）": {
       "text": "5周年特别致辞（雫）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "407"
       ]
     },
     "5th Anniversary Special Message（類）": {
       "text": "5周年特别致辞（类）",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "415"
       ]
     },
     "5周年記念スペシャルライブ": {
       "text": "5周年纪念特别演唱会",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "426"
       ]
     },
-    "Aim higher and higher！ アフターライブ": "{'text': '志存高远！', 'source': 'human', 'ids': ['169']} 后日谈·演唱会",
-    "All ways Jump! with you アフターライブ": "{'text': '始终与你一同Jump！', 'source': 'human', 'ids': ['176']} 后日谈·演唱会",
-    "Awakening Beat アフターライブ": "{'text': '觉醒的节拍', 'source': 'human', 'ids': ['28']} 后日谈·演唱会",
-    "BREAK DOWN THE WALL アフターライブ": "{'text': '冲破高墙', 'source': 'human', 'ids': ['118']} 后日谈·演唱会",
-    "BURN MY SOUL アフターライブ": "{'text': '燃烧我魂', 'source': 'human', 'ids': ['109']} 后日谈·演唱会",
-    "Bout for Beside You アフターライブ": "{'text': '与你相伴的对决', 'source': 'human', 'ids': ['37']} 后日谈·演唱会",
-    "CHANGE！えむは王女さま！？ アフターライブ": "{'text': 'CHANGE！笑梦竟然是公主殿下！？', 'source': 'human', 'ids': ['196']} 后日谈·演唱会",
-    "Cast Spell on You アフターライブ": "{'text': '为你施加魔法', 'source': 'human', 'ids': ['52']} 后日谈·演唱会",
-    "Chase my IDEAL IDOL！ アフターライブ": "{'text': '追逐我的理想偶像！', 'source': 'human', 'ids': ['138']} 后日谈·演唱会",
-    "Cheer with my Heart! アフターライブ": "{'text': '用我的心去应援！', 'source': 'human', 'ids': ['168']} 后日谈·演唱会",
-    "Choices for the future アフターライブ": "{'text': '未来的抉择', 'source': 'human', 'ids': ['164']} 后日谈·演唱会",
-    "Color of Myself！ アフターライブ": "{'text': 'Color of Myself!', 'source': 'cn', 'ids': ['11']} 后日谈·演唱会",
-    "Colors of Pure Sense アフターライブ": "{'text': '纯真感性之色', 'source': 'human', 'ids': ['184']} 后日谈·演唱会",
-    "Competitive fire！ アフターライブ": "{'text': '竞争之火！', 'source': 'human', 'ids': ['175']} 后日谈·演唱会",
-    "Connect hearts message アフターライブ": "{'text': '连结心灵的信息', 'source': 'human', 'ids': ['159']} 后日谈·演唱会",
-    "Dear my fellows アフターライブ": "{'text': '致我的伙伴们', 'source': 'human', 'ids': ['167']} 后日谈·演唱会",
-    "Deep Dark For Light アフターライブ": "{'text': '深邃黑暗为光明', 'source': 'human', 'ids': ['178']} 后日谈·演唱会",
-    "Deeper and deeper アフターライブ": "{'text': '愈发深处', 'source': 'human', 'ids': ['172']} 后日谈·演唱会",
-    "Don't lose faith! アフターライブ": "{'text': '莫失信念！', 'source': 'human', 'ids': ['69']} 后日谈·演唱会",
-    "Echo my melody アフターライブ": "{'text': '回响我的旋律', 'source': 'human', 'ids': ['76']} 后日谈·演唱会",
-    "Find A Way Out アフターライブ": "{'text': '寻觅出路', 'source': 'human', 'ids': ['79']} 后日谈·演唱会",
-    "Find the dream view アフターライブ": "{'text': '寻找梦想的风景', 'source': 'human', 'ids': ['162']} 后日谈·演唱会",
-    "GO ALL OUT アフターライブ": "{'text': '全力以赴', 'source': 'human', 'ids': ['193']} 后日谈·演唱会",
-    "Get over it. アフターライブ": "{'text': '跨越难关', 'source': 'human', 'ids': ['91']} 后日谈·演唱会",
-    "Grow glorious glow アフターライブ": "{'text': '孕育辉煌光芒', 'source': 'human', 'ids': ['151']} 后日谈·演唱会",
+    "Aim higher and higher！ アフターライブ": {
+      "text": "Aim higher and higher！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "380"
+      ]
+    },
+    "All ways Jump! with you アフターライブ": {
+      "text": "All ways Jump! with you 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "393"
+      ]
+    },
+    "Awakening Beat アフターライブ": {
+      "text": "Awakening Beat 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "83"
+      ]
+    },
+    "BREAK DOWN THE WALL アフターライブ": {
+      "text": "BREAK DOWN THE WALL 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "278"
+      ]
+    },
+    "BURN MY SOUL アフターライブ": {
+      "text": "BURN MY SOUL 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "258"
+      ]
+    },
+    "Bout for Beside You アフターライブ": {
+      "text": "Bout for Beside You 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "100"
+      ]
+    },
+    "CHANGE！えむは王女さま！？ アフターライブ": {
+      "text": "CHANGE！笑梦竟然是公主殿下！？ 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "456"
+      ]
+    },
+    "Cast Spell on You アフターライブ": {
+      "text": "Cast Spell on You 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "137"
+      ]
+    },
+    "Chase my IDEAL IDOL！ アフターライブ": {
+      "text": "Chase my IDEAL IDOL！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "317"
+      ]
+    },
+    "Cheer with my Heart! アフターライブ": {
+      "text": "Cheer with my Heart! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "379"
+      ]
+    },
+    "Choices for the future アフターライブ": {
+      "text": "Choices for the future 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "372"
+      ]
+    },
+    "Color of Myself！ アフターライブ": {
+      "text": "Color of Myself! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "52"
+      ]
+    },
+    "Colors of Pure Sense アフターライブ": {
+      "text": "纯真感性之色 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "433"
+      ]
+    },
+    "Competitive fire！ アフターライブ": {
+      "text": "Competitive fire！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "391"
+      ]
+    },
+    "Connect hearts message アフターライブ": {
+      "text": "Connect hearts message 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "364"
+      ]
+    },
+    "Dear my fellows アフターライブ": {
+      "text": "Dear my fellows 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "377"
+      ]
+    },
+    "Deep Dark For Light アフターライブ": {
+      "text": "Deep Dark For Light 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "397"
+      ]
+    },
+    "Deeper and deeper アフターライブ": {
+      "text": "Deeper and deeper 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "385"
+      ]
+    },
+    "Don't lose faith! アフターライブ": {
+      "text": "Don't lose faith! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "171"
+      ]
+    },
+    "Echo my melody アフターライブ": {
+      "text": "Echo my melody 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "186"
+      ]
+    },
+    "Find A Way Out アフターライブ": {
+      "text": "Find A Way Out 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "190"
+      ]
+    },
+    "Find the dream view アフターライブ": {
+      "text": "Find the dream view 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "369"
+      ]
+    },
+    "GO ALL OUT アフターライブ": {
+      "text": "全力以赴 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "449"
+      ]
+    },
+    "Get over it. アフターライブ": {
+      "text": "Get over it. 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "222"
+      ]
+    },
+    "Grow glorious glow アフターライブ": {
+      "text": "Grow glorious glow 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "341"
+      ]
+    },
     "HAPPY ANNIVERSARYライブ KAITO 2021": {
       "text": "HAPPY ANNIVERSARY演唱会 KAITO",
       "source": "cn",
@@ -300,7 +450,7 @@
     },
     "HAPPY ANNIVERSARYライブ KAITO 2026": {
       "text": "HAPPY ANNIVERSARY演唱会 KAITO 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "454"
       ]
@@ -342,7 +492,7 @@
     },
     "HAPPY ANNIVERSARYライブ MEIKO 2025": {
       "text": "HAPPY ANNIVERSARY演唱会 MEIKO 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "434"
       ]
@@ -376,8 +526,8 @@
       ]
     },
     "HAPPY ANNIVERSARYライブ ミク 2025": {
-      "text": "HAPPY ANNIVERSARY演唱会 初音未来 2025",
-      "source": "human",
+      "text": "HAPPY ANNIVERSARY演唱会 未来2026",
+      "source": "cn",
       "ids": [
         "396"
       ]
@@ -419,7 +569,7 @@
     },
     "HAPPY ANNIVERSARYライブ リン 2025": {
       "text": "HAPPY ANNIVERSARY演唱会 铃 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "442"
       ]
@@ -461,7 +611,7 @@
     },
     "HAPPY ANNIVERSARYライブ ルカ 2026": {
       "text": "HAPPY ANNIVERSARY演唱会 流歌 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "451"
       ]
@@ -503,7 +653,7 @@
     },
     "HAPPY ANNIVERSARYライブ レン 2025": {
       "text": "HAPPY ANNIVERSARY演唱会 连 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "443"
       ]
@@ -537,8 +687,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ えむ 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 笑梦 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 笑梦2026",
+      "source": "cn",
       "ids": [
         "398"
       ]
@@ -580,7 +730,7 @@
     },
     "HAPPY BIRTHDAYライブ こはね 2026": {
       "text": "HAPPY BIRTHDAY演唱会 心羽 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "457"
       ]
@@ -622,7 +772,7 @@
     },
     "HAPPY BIRTHDAYライブ まふゆ 2026": {
       "text": "HAPPY BIRTHDAY演唱会 真冬 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "450"
       ]
@@ -691,8 +841,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 一歌 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 一歌 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 一歌2026",
+      "source": "cn",
       "ids": [
         "392"
       ]
@@ -726,8 +876,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 冬弥 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 冬弥 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 冬弥2026",
+      "source": "cn",
       "ids": [
         "378"
       ]
@@ -761,8 +911,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 司 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 司 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 司2026",
+      "source": "cn",
       "ids": [
         "376"
       ]
@@ -796,8 +946,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 咲希 2025": {
-      "text": "HAPPY BIRTHDAY 演唱会 咲希 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 咲希 2026",
+      "source": "cn",
       "ids": [
         "375"
       ]
@@ -839,7 +989,7 @@
     },
     "HAPPY BIRTHDAYライブ 奏 2026": {
       "text": "HAPPY BIRTHDAY演唱会 奏 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "453"
       ]
@@ -873,8 +1023,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 寧々 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 宁宁 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 宁宁2026",
+      "source": "cn",
       "ids": [
         "387"
       ]
@@ -916,7 +1066,7 @@
     },
     "HAPPY BIRTHDAYライブ 彰人 2025": {
       "text": "HAPPY BIRTHDAY演唱会 彰人 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "435"
       ]
@@ -958,7 +1108,7 @@
     },
     "HAPPY BIRTHDAYライブ 志歩 2026": {
       "text": "HAPPY BIRTHDAY演唱会 志步 2026",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "446"
       ]
@@ -1027,8 +1177,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 杏 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 杏 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 杏2026",
+      "source": "cn",
       "ids": [
         "390"
       ]
@@ -1062,8 +1212,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 瑞希 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 瑞希 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 瑞希2026",
+      "source": "cn",
       "ids": [
         "394"
       ]
@@ -1105,7 +1255,7 @@
     },
     "HAPPY BIRTHDAYライブ 穂波 2025": {
       "text": "HAPPY BIRTHDAY演唱会 穗波 202",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "431"
       ]
@@ -1182,7 +1332,7 @@
     },
     "HAPPY BIRTHDAYライブ 遥 2025": {
       "text": "HAPPY BIRTHDAY演唱会 遥 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "428"
       ]
@@ -1224,7 +1374,7 @@
     },
     "HAPPY BIRTHDAYライブ 雫 2025": {
       "text": "HAPPY BIRTHDAY演唱会 雫 2025",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "439"
       ]
@@ -1258,96 +1408,607 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 類 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 类 2025",
-      "source": "human",
+      "text": "HAPPY BIRTHDAY演唱会 类2026",
+      "source": "cn",
       "ids": [
         "382"
       ]
     },
-    "Happy Enjoy Music！ アフターライブ": "{'text': '快乐享受音乐！', 'source': 'human', 'ids': ['147']} 后日谈·演唱会",
-    "Kick it up a notch アフターライブ": "{'text': '更上一层楼', 'source': 'human', 'ids': ['86']} 后日谈·演唱会",
-    "Knock the Future!! アフターライブ": "{'text': '敲响未来！！', 'source': 'human', 'ids': ['34']} 后日谈·演唱会",
-    "Knowing the Unseen アフターライブ": "{'text': '洞悉无形', 'source': 'human', 'ids': ['127']} 后日谈·演唱会",
-    "Lead to shine more アフターライブ": "{'text': '引导更闪耀的光芒', 'source': 'human', 'ids': ['133']} 后日谈·演唱会",
-    "Legend still vivid アフターライブ": "{'text': '传奇依然鲜活', 'source': 'human', 'ids': ['49']} 后日谈·演唱会",
-    "Let's study hard！ アフターライブ": "{'text': '努力学习吧！', 'source': 'human', 'ids': ['107']} 后日谈·演唱会",
-    "Light Up the Fire アフターライブ": "{'text': '点燃心火', 'source': 'human', 'ids': ['97']} 后日谈·演唱会",
-    "Link the Beats！ アフターライブ": "{'text': '连接节拍！', 'source': 'human', 'ids': ['179']} 后日谈·演唱会",
-    "Little Bravers！ アフターライブ": "{'text': '小小勇者们！', 'source': 'human', 'ids': ['83']} 后日谈·演唱会",
-    "Live with memories アフターライブ": "{'text': '伴随回忆而生', 'source': 'human', 'ids': ['56']} 后日谈·演唱会",
-    "MOREMOREMakingXmas アフターライブ": "{'text': 'MORE MORE 圣诞制作', 'source': 'human', 'ids': ['43']} 后日谈·演唱会",
-    "Never Give Up Cooking！ アフターライブ": "{'text': '绝不认输的料理！', 'source': 'human', 'ids': ['87']} 后日谈·演唱会",
-    "No seek No find アフターライブ": "{'text': '无求无获', 'source': 'human', 'ids': ['65']} 后日谈·演唱会",
-    "OVER RAD SQUAD!! アフターライブ": "{'text': '超越RAD小队！！', 'source': 'human', 'ids': ['135']} 后日谈·演唱会",
-    "On Your Feet アフターライブ": "{'text': '伫立于此', 'source': 'human', 'ids': ['103']} 后日谈·演唱会",
-    "Our Golden Days アフターライブ": "{'text': '我们的黄金岁月', 'source': 'human', 'ids': ['181']} 后日谈·演唱会",
-    "Overcome one's limits アフターライブ": "{'text': '超越极限', 'source': 'human', 'ids': ['187']} 后日谈·演唱会",
-    "POP IN MY HEART!! アフターライブ": "{'text': '跃动我心！！', 'source': 'human', 'ids': ['46']} 后日谈·演唱会",
-    "Parallel Harmonies アフターライブ": "{'text': '并行的和声', 'source': 'human', 'ids': ['128']} 后日谈·演唱会",
-    "Path made by faith アフターライブ": "{'text': '信念之路', 'source': 'human', 'ids': ['195']} 后日谈·演唱会",
-    "Period of NOCTURNE アフターライブ": "{'text': '夜曲之刻', 'source': 'human', 'ids': ['12']} 后日谈·演唱会",
-    "Re-tie Friendship アフターライブ": "{'text': '重系友谊之绊', 'source': 'human', 'ids': ['92']} 后日谈·演唱会",
-    "Rekindle the flame アフターライブ": "{'text': '重燃火焰', 'source': 'human', 'ids': ['146']} 后日谈·演唱会",
-    "Resonate with you アフターライブ": "{'text': '与你共鸣', 'source': 'human', 'ids': ['20']} 后日谈·演唱会",
-    "Revival my dream アフターライブ": "{'text': '重燃的梦想', 'source': 'cn', 'ids': ['38']} 后日谈·演唱会",
-    "Rise and Strive アフターライブ": "{'text': '奋起拼搏', 'source': 'human', 'ids': ['157']} 后日谈·演唱会",
-    "Rise as ONE！ アフターライブ": "{'text': '齐心协力！', 'source': 'human', 'ids': ['126']} 后日谈·演唱会",
-    "STEP by STEP！ アフターライブ": "{'text': '步步向前！', 'source': 'human', 'ids': ['98']} 后日谈·演唱会",
-    "STRAY BAD DOG アフターライブ": "{'text': '迷途恶犬', 'source': 'human', 'ids': ['21']} 后日谈·演唱会",
-    "Same Dreams,Same Colors アフターライブ": "{'text': '同梦同色', 'source': 'human', 'ids': ['44']} 后日谈·演唱会",
-    "Show your shine アフターライブ": "{'text': '展现你的光芒', 'source': 'human', 'ids': ['155']} 后日谈·演唱会",
-    "Special present for YOU！ アフターライブ": "{'text': '给你的特别礼物！', 'source': 'human', 'ids': ['152']} 后日谈·演唱会",
-    "Stick to your faith アフターライブ": "{'text': '坚守信念', 'source': 'human', 'ids': ['110']} 后日谈·演唱会",
-    "THE POWER OF UNITY アフターライブ": "{'text': '团结的力量', 'source': 'human', 'ids': ['59']} 后日谈·演唱会",
-    "Take the Best Shot！ アフターライブ": "{'text': '拍下最美的一瞬！', 'source': 'human', 'ids': ['120']} 后日谈·演唱会",
-    "The Power Of Regret アフターライブ": "{'text': '悔恨的力量', 'source': 'human', 'ids': ['149']} 后日谈·演唱会",
-    "The Vivid Old Tale アフターライブ": "{'text': '鲜活的旧日往事', 'source': 'human', 'ids': ['64']} 后日谈·演唱会",
-    "The first concerto アフターライブ": "{'text': '第一协奏曲', 'source': 'human', 'ids': ['125']} 后日谈·演唱会",
-    "This moment with you！ アフターライブ": "{'text': '与你共度的这一刻！', 'source': 'human', 'ids': ['143']} 后日谈·演唱会",
-    "Time to take off！ アフターライブ": "{'text': '起飞时刻！', 'source': 'human', 'ids': ['154']} 后日谈·演唱会",
-    "Turning Pain into Drive アフターライブ": "{'text': '化痛苦为动力', 'source': 'human', 'ids': ['163']} 后日谈·演唱会",
-    "Unfading wishing アフターライブ": "{'text': '永不褪色的心愿', 'source': 'human', 'ids': ['153']} 后日谈·演唱会",
-    "Unnamed Harmony アフターライブ": "{'text': '无名和弦', 'source': 'human', 'ids': ['27']} 后日谈·演唱会",
-    "Unreliable Notes アフターライブ": "{'text': '游移不定的音符', 'source': 'human', 'ids': ['161']} 后日谈·演唱会",
-    "Unsteady, still steady step アフターライブ": "{'text': '摇曳却坚定的步伐', 'source': 'human', 'ids': ['173']} 后日谈·演唱会",
-    "Walk on and on アフターライブ": "{'text': '步履不停', 'source': 'human', 'ids': ['71']} 后日谈·演唱会",
-    "Whip the wimp girl!! アフターライブ": "{'text': '鞭策胆怯少女！！', 'source': 'human', 'ids': ['129']} 后日谈·演唱会",
-    "You are my HERO!! アフターライブ": "{'text': '你是我的英雄！！', 'source': 'human', 'ids': ['160']} 后日谈·演唱会",
-    "close game/OFFLINE アフターライブ": "{'text': '紧凑对局/OFFLINE', 'source': 'human', 'ids': ['66']} 后日谈·演唱会",
-    "ordinary,yet special us アフターライブ": "{'text': '平凡而又特别的我们', 'source': 'human', 'ids': ['171']} 后日谈·演唱会",
-    "perspective for smile アフターライブ": "{'text': '笑容的视角', 'source': 'human', 'ids': ['131']} 后日谈·演唱会",
-    "start rolling! stars' crossing アフターライブ": "{'text': '开始转动！星辰交汇', 'source': 'human', 'ids': ['174']} 后日谈·演唱会",
-    "あたしたちのハッピーエンド アフターライブ": "{'text': '我们的圆满结局', 'source': 'cn', 'ids': ['104']} 后日谈·演唱会",
-    "あっちこっち飼育員体験！ アフターライブ": "{'text': '东奔西走的饲养员体验！', 'source': 'cn', 'ids': ['115']} 后日谈·演唱会",
-    "あの日、奏でた音色を アフターライブ": "{'text': '将那天，演奏的音乐', 'source': 'cn', 'ids': ['116']} 后日谈·演唱会",
-    "あの日、空は遠かった アフターライブ": "{'text': '那一天，天空遥不可及', 'source': 'cn', 'ids': ['50']} 后日谈·演唱会",
-    "あの日の夢の、彼方向こうへ アフターライブ": "{'text': '昨日梦想的延续', 'source': 'cn', 'ids': ['78']} 后日谈·演唱会",
-    "あの日見た夜空は、いつかの未来へ アフターライブ": "{'text': '那天仰望的夜空，将通向我们的未来', 'source': 'cn', 'ids': ['137']} 后日谈·演唱会",
-    "いつか、絶望の底から アフターライブ": "{'text': '总有一天，会从绝望的深渊', 'source': 'cn', 'ids': ['47']} 后日谈·演唱会",
-    "いつか、背中あわせのリリックを アフターライブ": "{'text': '总有一天为你献上心连心的抒情诗', 'source': 'cn', 'ids': ['6']} 后日谈·演唱会",
-    "いつか花咲くステージへ アフターライブ": "{'text': '总有一日，登上鲜花盛放的舞台', 'source': 'cn', 'ids': ['130']} 后日谈·演唱会",
-    "お悩み聞かせて！わくわくピクニック アフターライブ": "{'text': '让我分担你的烦恼！心跳雀跃的郊游', 'source': 'cn', 'ids': ['22']} 后日谈·演唱会",
-    "お縄を頂戴！？天馬捕物帳 アフターライブ": "{'text': '捉拿归案？！天马捕物帐', 'source': 'cn', 'ids': ['136']} 后日谈·演唱会",
-    "きっと最高のsummer！ アフターライブ": "{'text': '这一定是最棒的summer！', 'source': 'cn', 'ids': ['30']} 后日谈·演唱会",
-    "ここからRE:START！ アフターライブ": "{'text': '此时此地再次启程！', 'source': 'cn', 'ids': ['5']} 后日谈·演唱会",
-    "このひと針に想いを込めて アフターライブ": "{'text': '在这针线中寄托心意', 'source': 'cn', 'ids': ['156']} 后日谈·演唱会",
-    "この物語は希望をのせて アフターライブ": "{'text': '载满希望的故事', 'source': 'human', 'ids': ['190']} 后日谈·演唱会",
-    "この祭に 夕闇色も アフターライブ": "{'text': '逢此庆典 暮色亦染', 'source': 'cn', 'ids': ['72']} 后日谈·演唱会",
-    "そして、針は動き出す アフターライブ": "{'text': '于是，指针开始转动', 'source': 'human', 'ids': ['165']} 后日谈·演唱会",
-    "そしていま、リボンを結んで アフターライブ": "{'text': '现在再次绑上蝴蝶结', 'source': 'cn', 'ids': ['68']} 后日谈·演唱会",
-    "その手導くぬくもりは アフターライブ": "{'text': '那双手所引向的温暖', 'source': 'cn', 'ids': ['111']} 后日谈·演唱会",
-    "つなぐPainful Hope アフターライブ": "{'text': '连接Painful Hope', 'source': 'cn', 'ids': ['57']} 后日谈·演唱会",
-    "つなぐ、星の歌 アフターライブ": "{'text': '相联的，星星之歌', 'source': 'cn', 'ids': ['101']} 后日谈·演唱会",
-    "ともに、トゥルールートを目指して アフターライブ": "{'text': '共同向着真理之路前进', 'source': 'human', 'ids': ['189']} 后日谈·演唱会",
-    "ふたり、月うさぎ アフターライブ": "{'text': '两人与月兔', 'source': 'cn', 'ids': ['33']} 后日谈·演唱会",
-    "ほどかれた糸のその先に アフターライブ": "{'text': '解开的心结之后', 'source': 'cn', 'ids': ['85']} 后日谈·演唱会",
-    "ほどけぬ明日に手を伸ばして アフターライブ": "{'text': '向无法解开的明日伸出双手', 'source': 'human', 'ids': ['177']} 后日谈·演唱会",
-    "また、木の葉の色づく頃に アフターライブ": "{'text': '又到秋叶染色之时', 'source': 'cn', 'ids': ['148']} 后日谈·演唱会",
-    "まばゆい光のステージで アフターライブ": "{'text': '在璀璨耀眼的舞台上', 'source': 'cn', 'ids': ['55']} 后日谈·演唱会",
-    "みんなでエンジョイ！スポジョイパーク アフターライブ": "{'text': '大家一起欢享！SPOJOYPARK', 'source': 'cn', 'ids': ['63']} 后日谈·演唱会",
-    "みんなで配信♡WEDDING LIVE！ アフターライブ": "{'text': '大家来直播♡WEDDING LIVE！', 'source': 'cn', 'ids': ['132']} 后日谈·演唱会",
-    "わんだほら～！？な肝だめし！ アフターライブ": "{'text': 'Wonderhorror～？！的试胆！', 'source': 'cn', 'ids': ['141']} 后日谈·演唱会",
-    "イミシブル・ディスコード アフターライブ": "{'text': '难以弥合·分歧', 'source': 'cn', 'ids': ['89']} 后日谈·演唱会",
+    "Happy Enjoy Music！ アフターライブ": {
+      "text": "Happy Enjoy Music！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "334"
+      ]
+    },
+    "Kick it up a notch アフターライブ": {
+      "text": "Kick it up a notch 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "213"
+      ]
+    },
+    "Knock the Future!! アフターライブ": {
+      "text": "Knock the Future!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "95"
+      ]
+    },
+    "Knowing the Unseen アフターライブ": {
+      "text": "Knowing the Unseen 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "295"
+      ]
+    },
+    "Lead to shine more アフターライブ": {
+      "text": "Lead to shine more 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "307"
+      ]
+    },
+    "Legend still vivid アフターライブ": {
+      "text": "Legend still vivid 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "131"
+      ]
+    },
+    "Let's study hard！ アフターライブ": {
+      "text": "Let's study hard！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "254"
+      ]
+    },
+    "Light Up the Fire アフターライブ": {
+      "text": "Light Up the Fire 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "234"
+      ]
+    },
+    "Link the Beats！ アフターライブ": {
+      "text": "Link the Beats！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "399"
+      ]
+    },
+    "Little Bravers！ アフターライブ": {
+      "text": "Little Bravers！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "204"
+      ]
+    },
+    "Live with memories アフターライブ": {
+      "text": "Live with memories 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "145"
+      ]
+    },
+    "MOREMOREMakingXmas アフターライブ": {
+      "text": "MOREMOREMakingXmas 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "111"
+      ]
+    },
+    "Never Give Up Cooking！ アフターライブ": {
+      "text": "Never Give Up Cooking！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "214"
+      ]
+    },
+    "No seek No find アフターライブ": {
+      "text": "No seek No find 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "162"
+      ]
+    },
+    "OVER RAD SQUAD!! アフターライブ": {
+      "text": "OVER RAD SQUAD!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "311"
+      ]
+    },
+    "On Your Feet アフターライブ": {
+      "text": "On Your Feet 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "247"
+      ]
+    },
+    "Open up new horizons！ アフターライブ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "459"
+      ]
+    },
+    "Our Golden Days アフターライブ": {
+      "text": "我们的黄金岁月 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "427"
+      ]
+    },
+    "Overcome one's limits アフターライブ": {
+      "text": "超越极限 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "437"
+      ]
+    },
+    "POP IN MY HEART!! アフターライブ": {
+      "text": "POP IN MY HEART!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "125"
+      ]
+    },
+    "Parallel Harmonies アフターライブ": {
+      "text": "Parallel Harmonies 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "297"
+      ]
+    },
+    "Path made by faith アフターライブ": {
+      "text": "信念之路 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "455"
+      ]
+    },
+    "Period of NOCTURNE アフターライブ": {
+      "text": "Period of NOCTURNE 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "55"
+      ]
+    },
+    "Re-tie Friendship アフターライブ": {
+      "text": "Re-tie Friendship 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "224"
+      ]
+    },
+    "Rekindle the flame アフターライブ": {
+      "text": "Rekindle the flame 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "331"
+      ]
+    },
+    "Resonate with you アフターライブ": {
+      "text": "Resonate with you 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "69"
+      ]
+    },
+    "Revival my dream アフターライブ": {
+      "text": "重燃的梦想 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "101"
+      ]
+    },
+    "Rise and Strive アフターライブ": {
+      "text": "Rise and Strive 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "361"
+      ]
+    },
+    "Rise as ONE！ アフターライブ": {
+      "text": "Rise as ONE！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "294"
+      ]
+    },
+    "STEP by STEP！ アフターライブ": {
+      "text": "STEP by STEP！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "235"
+      ]
+    },
+    "STRAY BAD DOG アフターライブ": {
+      "text": "STRAY BAD DOG 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "71"
+      ]
+    },
+    "Same Dreams,Same Colors アフターライブ": {
+      "text": "Same Dreams,Same Colors 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "113"
+      ]
+    },
+    "Show your shine アフターライブ": {
+      "text": "Show your shine 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "351"
+      ]
+    },
+    "Special present for YOU！ アフターライブ": {
+      "text": "Special present for YOU！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "342"
+      ]
+    },
+    "Stick to your faith アフターライブ": {
+      "text": "Stick to your faith 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "259"
+      ]
+    },
+    "THE POWER OF UNITY アフターライブ": {
+      "text": "THE POWER OF UNITY 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "151"
+      ]
+    },
+    "Take the Best Shot！ アフターライブ": {
+      "text": "Take the Best Shot！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "282"
+      ]
+    },
+    "The Power Of Regret アフターライブ": {
+      "text": "The Power Of Regret 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "338"
+      ]
+    },
+    "The Vivid Old Tale アフターライブ": {
+      "text": "The Vivid Old Tale 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "160"
+      ]
+    },
+    "The first concerto アフターライブ": {
+      "text": "The first concerto 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "293"
+      ]
+    },
+    "This moment with you！ アフターライブ": {
+      "text": "This moment with you！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "326"
+      ]
+    },
+    "Time to take off！ アフターライブ": {
+      "text": "Time to take off！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "350"
+      ]
+    },
+    "Turning Pain into Drive アフターライブ": {
+      "text": "Turning Pain into Drive 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "371"
+      ]
+    },
+    "Unfading wishing アフターライブ": {
+      "text": "Unfading wishing 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "348"
+      ]
+    },
+    "Unnamed Harmony アフターライブ": {
+      "text": "Unnamed Harmony 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "81"
+      ]
+    },
+    "Unreliable Notes アフターライブ": {
+      "text": "Unreliable Notes 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "368"
+      ]
+    },
+    "Unsteady, still steady step アフターライブ": {
+      "text": "Unsteady, still steady step 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "386"
+      ]
+    },
+    "Walk on and on アフターライブ": {
+      "text": "Walk on and on 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "174"
+      ]
+    },
+    "Whip the wimp girl!! アフターライブ": {
+      "text": "Whip the wimp girl!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "299"
+      ]
+    },
+    "You are my HERO!! アフターライブ": {
+      "text": "You are my HERO!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "366"
+      ]
+    },
+    "close game/OFFLINE アフターライブ": {
+      "text": "close game/OFFLINE 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "164"
+      ]
+    },
+    "ordinary,yet special us アフターライブ": {
+      "text": "ordinary,yet special us 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "383"
+      ]
+    },
+    "perspective for smile アフターライブ": {
+      "text": "perspective for smile 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "303"
+      ]
+    },
+    "start rolling! stars' crossing アフターライブ": {
+      "text": "start rolling! stars' crossing 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "389"
+      ]
+    },
+    "あたしたちのハッピーエンド アフターライブ": {
+      "text": "我们的圆满结局 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "248"
+      ]
+    },
+    "あっちこっち飼育員体験！ アフターライブ": {
+      "text": "东奔西走的饲养员体验！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "269"
+      ]
+    },
+    "あの日、奏でた音色を アフターライブ": {
+      "text": "将那天，演奏的音乐 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "270"
+      ]
+    },
+    "あの日、空は遠かった アフターライブ": {
+      "text": "那一天，天空遥不可及 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "134"
+      ]
+    },
+    "あの日の夢の、彼方向こうへ アフターライブ": {
+      "text": "昨日梦想的延续 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "188"
+      ]
+    },
+    "あの日見た夜空は、いつかの未来へ アフターライブ": {
+      "text": "那天仰望的夜空，将通向我们的未来 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "314"
+      ]
+    },
+    "いつか、絶望の底から アフターライブ": {
+      "text": "总有一天，会从绝望的深渊 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "126"
+      ]
+    },
+    "いつか、背中あわせのリリックを アフターライブ": {
+      "text": "总有一天为你献上心连心的抒情诗 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "38"
+      ]
+    },
+    "いつか花咲くステージへ アフターライブ": {
+      "text": "总有一日，登上鲜花盛放的舞台 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "301"
+      ]
+    },
+    "お悩み聞かせて！わくわくピクニック アフターライブ": {
+      "text": "让我分担你的烦恼！心跳雀跃的郊游 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "73"
+      ]
+    },
+    "お縄を頂戴！？天馬捕物帳 アフターライブ": {
+      "text": "捉拿归案？！天马捕物帐 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "313"
+      ]
+    },
+    "きっと最高のsummer！ アフターライブ": {
+      "text": "这一定是最棒的summer！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "87"
+      ]
+    },
+    "ここからRE:START！ アフターライブ": {
+      "text": "此时此地再次启程！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "37"
+      ]
+    },
+    "このひと針に想いを込めて アフターライブ": {
+      "text": "在这针线中寄托心意 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "357"
+      ]
+    },
+    "この物語は希望をのせて アフターライブ": {
+      "text": "载满希望的故事 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "441"
+      ]
+    },
+    "この祭に 夕闇色も アフターライブ": {
+      "text": "逢此庆典 暮色亦染 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "175"
+      ]
+    },
+    "そして、針は動き出す アフターライブ": {
+      "text": "于是，指针开始转动 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "374"
+      ]
+    },
+    "そしていま、リボンを結んで アフターライブ": {
+      "text": "现在再次绑上蝴蝶结 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "167"
+      ]
+    },
+    "その手導くぬくもりは アフターライブ": {
+      "text": "那双手所引向的温暖 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "262"
+      ]
+    },
+    "つなぐPainful Hope アフターライブ": {
+      "text": "连接Painful Hope 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "147"
+      ]
+    },
+    "つなぐ、星の歌 アフターライブ": {
+      "text": "相联的，星星之歌 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "242"
+      ]
+    },
+    "ともに、トゥルールートを目指して アフターライブ": {
+      "text": "共同向着真理之路前进 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "440"
+      ]
+    },
+    "ふたり、月うさぎ アフターライブ": {
+      "text": "两人与月兔 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "93"
+      ]
+    },
+    "ほどかれた糸のその先に アフターライブ": {
+      "text": "解开的心结之后 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "210"
+      ]
+    },
+    "ほどけぬ明日に手を伸ばして アフターライブ": {
+      "text": "向无法解开的明天伸手 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "395"
+      ]
+    },
+    "また、木の葉の色づく頃に アフターライブ": {
+      "text": "又到秋叶染色之时 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "336"
+      ]
+    },
+    "まばゆい光のステージで アフターライブ": {
+      "text": "在璀璨耀眼的舞台上 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "143"
+      ]
+    },
+    "みんなでエンジョイ！スポジョイパーク アフターライブ": {
+      "text": "大家一起欢享！SPOJOYPARK 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "158"
+      ]
+    },
+    "みんなで配信♡WEDDING LIVE！ アフターライブ": {
+      "text": "大家来直播♡WEDDING LIVE！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "305"
+      ]
+    },
+    "わんだほら～！？な肝だめし！ アフターライブ": {
+      "text": "Wonderhorror～？！的试胆！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "323"
+      ]
+    },
+    "イミシブル・ディスコード アフターライブ": {
+      "text": "难以弥合·分歧 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "219"
+      ]
+    },
     "ウェルカムライブ 25時、ナイトコードで。": {
       "text": "迎新演唱会 25点，Nightcord见。",
       "source": "cn",
@@ -1444,11 +2105,41 @@
         "346"
       ]
     },
-    "カナリアは窮境に歌う アフターライブ": "{'text': '金丝雀于绝境中高歌', 'source': 'cn', 'ids': ['95']} 后日谈·演唱会",
-    "カーテンコールに惜別を アフターライブ": "{'text': '惜别谢幕', 'source': 'cn', 'ids': ['74']} 后日谈·演唱会",
-    "カーネーション・リコレクション アフターライブ": "{'text': '珍藏在心中的康乃馨', 'source': 'cn', 'ids': ['26']} 后日谈·演唱会",
-    "キミと、セカイの始まりで アフターライブ": "{'text': '和你在「世界」的起点', 'source': 'cn', 'ids': ['140']} 后日谈·演唱会",
-    "キャンドルの香りは思い出と共に アフターライブ": "{'text': '蜡烛的芬芳萦绕于往昔的回忆', 'source': 'cn', 'ids': ['84']} 后日谈·演唱会",
+    "カナリアは窮境に歌う アフターライブ": {
+      "text": "金丝雀于绝境中高歌 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "231"
+      ]
+    },
+    "カーテンコールに惜別を アフターライブ": {
+      "text": "惜别谢幕 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "180"
+      ]
+    },
+    "カーネーション・リコレクション アフターライブ": {
+      "text": "珍藏在心中的康乃馨 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "79"
+      ]
+    },
+    "キミと、セカイの始まりで アフターライブ": {
+      "text": "和你在「世界」的起点 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "320"
+      ]
+    },
+    "キャンドルの香りは思い出と共に アフターライブ": {
+      "text": "蜡烛的芬芳萦绕于往昔的回忆 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "208"
+      ]
+    },
     "クリスマス2020ライブ": {
       "text": "圣诞节2021演唱会",
       "source": "cn",
@@ -1486,77 +2177,77 @@
     },
     "コネクトライブ 25時、ナイトコードで。 1st moment": {
       "text": "Connect Live 25点，Nightcord见。 1st moment",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "238"
       ]
     },
     "コネクトライブ 25時、ナイトコードで。×バーチャル・シンガー Dreamscape": {
-      "text": "Connect Live 25点，Nightcord见×虚拟歌手 Dreamscape",
-      "source": "human",
+      "text": "连线演唱会 25点，Nightcord见。×虚拟歌手 Dreamscape",
+      "source": "cn",
       "ids": [
         "388"
       ]
     },
     "コネクトライブ 2nd ANNIVERSARY SPECIAL STAGE": {
       "text": "Connect Live 2nd ANNIVERSARY SPECIAL STAGE",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "176"
       ]
     },
     "コネクトライブ 3rd ANNIVERSARY Memorial Stage": {
       "text": "Connect Live 3rd ANNIVERSARY Memorial Stage",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "256"
       ]
     },
     "コネクトライブ 4th ANNIVERSARY Brilliant Stage": {
       "text": "Connect Live 4th ANNIVERSARY Brilliant Stage",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "327"
       ]
     },
-    "コネクトライブ Leo/need & Vivid BAD SQUAD　Resonance Beats!!": {
-      "text": "Connect Live Leo/need & Vivid BAD SQUAD Resonance Beats!!",
-      "source": "human",
+    "コネクトライブ Leo/need \u0026 Vivid BAD SQUAD　Resonance Beats!!": {
+      "text": "Connect Live Leo/need \u0026 Vivid BAD SQUAD Resonance Beats!!",
+      "source": "unknown",
       "ids": [
         "306"
       ]
     },
     "コネクトライブ Leo/need 1st SPARKLE": {
       "text": "Connect Live Leo/need 1st SPARKLE",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "230"
       ]
     },
     "コネクトライブ MORE MORE JUMP！ 1st JUMPIN！": {
       "text": "Connect Live MORE MORE JUMP！ 1st JUMPIN！",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "220"
       ]
     },
     "コネクトライブ MORE MORE JUMP！× ワンダーランズ×ショウタイム わん！もあ！HAPPY TIME": {
       "text": "Connect Live MORE MORE JUMP！× Wonderlands×Showtime One！More！HAPPY TIME",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "432"
       ]
     },
     "コネクトライブ Vivid BAD SQUAD 1st CRASH": {
       "text": "Connect Live Vivid BAD SQUAD 1st CRASH",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "154"
       ]
     },
     "コネクトライブ テクニカルテスト": {
       "text": "Connect Live 技术测试",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "170",
         "177",
@@ -1566,45 +2257,81 @@
     },
     "コネクトライブ リハーサル公演": {
       "text": "Connect Live 彩排公演",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "112"
       ]
     },
     "コネクトライブ ワンダーランズ×ショウタイム 1st STORIES": {
       "text": "Connect Live Wonderlands×Showtime 1st STORIES",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "244"
       ]
     },
     "コネクトライブ 特別版 プロジェクトセカイ×あんさんぶるスターズ！！Ensemble in SEKAI DAY1": {
       "text": "Connect Live 特别版 世界计划×偶像梦幻祭！！Ensemble in SEKAI DAY1",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "355"
       ]
     },
     "コネクトライブ 特別版 プロジェクトセカイ×あんさんぶるスターズ！！Ensemble in SEKAI DAY2": {
       "text": "Connect Live 特别版 世界计划×偶像梦幻祭！！Ensemble in SEKAI DAY2",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "356"
       ]
     },
     "コネクトライブ 特別版 プロジェクトセカイ×あんさんぶるスターズ！！Ensemble in SEKAI プレライブ": {
       "text": "Connect Live 特别版 世界计划×偶像梦幻祭！！Ensemble in SEKAI 前置LIVE",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "354"
       ]
     },
-    "シークレット・ディスタンス アフターライブ": "{'text': 'Secret Distance', 'source': 'cn', 'ids': ['19']} 后日谈·演唱会",
-    "スクランブル・ファンフェスタ！ アフターライブ": "{'text': '缤纷粉丝节！', 'source': 'cn', 'ids': ['36']} 后日谈·演唱会",
-    "スマイルオブドリーマー アフターライブ": "{'text': '梦想家的笑容', 'source': 'cn', 'ids': ['15']} 后日谈·演唱会",
-    "セカイに響け！Your Song アフターライブ": "{'text': '响彻「世界」！Your Song', 'source': 'cn', 'ids': ['105']} 后日谈·演唱会",
-    "セカイの桜、つながる想い アフターライブ": "{'text': '「世界」之樱，相连的心愿', 'source': 'cn', 'ids': ['54']} 后日谈·演唱会",
-    "ドタバタ cafe ●REC!! アフターライブ": "{'text': '手忙脚乱cafe ●REC!!', 'source': 'cn', 'ids': ['102']} 后日谈·演唱会",
+    "シークレット・ディスタンス アフターライブ": {
+      "text": "Secret Distance 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "67"
+      ]
+    },
+    "スクランブル・ファンフェスタ！ アフターライブ": {
+      "text": "缤纷粉丝节！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "99"
+      ]
+    },
+    "スマイルオブドリーマー アフターライブ": {
+      "text": "梦想家的笑容 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "61"
+      ]
+    },
+    "セカイに響け！Your Song アフターライブ": {
+      "text": "响彻「世界」！Your Song 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "251"
+      ]
+    },
+    "セカイの桜、つながる想い アフターライブ": {
+      "text": "「世界」之樱，相连的心愿 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "141"
+      ]
+    },
+    "ドタバタ cafe ●REC!! アフターライブ": {
+      "text": "手忙脚乱 cafe ●REC!! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "245"
+      ]
+    },
     "ハッピーニューイヤー2022ライブ 25時、ナイトコードで。": {
       "text": "HAPPY NEW YEAR 2023 演唱会25点，Nightcord见。",
       "source": "cn",
@@ -1691,19 +2418,25 @@
     },
     "ハッピーニューイヤー2026ライブ前編": {
       "text": "2026新年快乐演唱会 前篇",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "444"
       ]
     },
     "ハッピーニューイヤー2026ライブ後編": {
       "text": "2026新年快乐演唱会 后篇",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "447"
       ]
     },
-    "ハッピー・ラブリー・エブリデイ！ アフターライブ": "{'text': 'Happy lovely everyday!', 'source': 'cn', 'ids': ['31']} 后日谈·演唱会",
+    "ハッピー・ラブリー・エブリデイ！ アフターライブ": {
+      "text": "Happy lovely everyday! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "89"
+      ]
+    },
     "ハロウィン2020ライブ": {
       "text": "2021万圣节演唱会",
       "source": "cn",
@@ -1739,8 +2472,20 @@
         "333"
       ]
     },
-    "ハロー・グッド・デイ！ アフターライブ": "{'text': 'Hello·Good·Day！', 'source': 'cn', 'ids': ['108']} 后日谈·演唱会",
-    "バディ・ファニー・スペンドタイム♪ アフターライブ": "{'text': '搭档·趣事·欢乐时刻♪', 'source': 'cn', 'ids': ['41']} 后日谈·演唱会",
+    "ハロー・グッド・デイ！ アフターライブ": {
+      "text": "Hello·Good·Day！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "255"
+      ]
+    },
+    "バディ・ファニー・スペンドタイム♪ アフターライブ": {
+      "text": "搭档·趣事·欢乐时刻♪ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "108"
+      ]
+    },
     "バレンタイン2021ライブ": {
       "text": "情人节2022演唱会",
       "source": "cn",
@@ -1811,12 +2556,48 @@
         "365"
       ]
     },
-    "ボクのあしあと キミのゆくさき アフターライブ": "{'text': '我的足迹 你的止境', 'source': 'cn', 'ids': ['39']} 后日谈·演唱会",
-    "ボク達の生存逃走 アフターライブ": "{'text': '我们为了生存而逃避', 'source': 'cn', 'ids': ['93']} 后日谈·演唱会",
-    "マーメイドにあこがれて アフターライブ": "{'text': '对美人鱼充满憧憬', 'source': 'cn', 'ids': ['32']} 后日谈·演唱会",
-    "リラックスティータイム アフターライブ": "{'text': 'Relax Teatime', 'source': 'cn', 'ids': ['123']} 后日谈·演唱会",
-    "ワンダーマジカルショウタイム！ アフターライブ": "{'text': '奇幻魔法表演时间！', 'source': 'cn', 'ids': ['25']} 后日谈·演唱会",
-    "一期一会な百鬼夜行！？ アフターライブ": "{'text': '一期一会的百鬼夜行？！', 'source': 'cn', 'ids': ['99']} 后日谈·演唱会",
+    "ボクのあしあと キミのゆくさき アフターライブ": {
+      "text": "我的足迹 你的止境 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "104"
+      ]
+    },
+    "ボク達の生存逃走 アフターライブ": {
+      "text": "我们为了生存而逃避 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "226"
+      ]
+    },
+    "マーメイドにあこがれて アフターライブ": {
+      "text": "对美人鱼充满憧憬 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "90"
+      ]
+    },
+    "リラックスティータイム アフターライブ": {
+      "text": "Relax Teatime 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "288"
+      ]
+    },
+    "ワンダーマジカルショウタイム！ アフターライブ": {
+      "text": "奇幻魔法表演时间！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "78"
+      ]
+    },
+    "一期一会な百鬼夜行！？ アフターライブ": {
+      "text": "一期一会的百鬼夜行？！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "237"
+      ]
+    },
     "七夕2021ライブ": {
       "text": "七夕2022演唱会",
       "source": "cn",
@@ -1846,69 +2627,369 @@
       ]
     },
     "七夕2025ライブ": {
-      "text": "七夕2025演唱会",
-      "source": "human",
+      "text": "七夕2026演唱会",
+      "source": "cn",
       "ids": [
         "384"
       ]
     },
-    "交わる旋律 灯るぬくもり アフターライブ": "{'text': '交织的旋律 点亮的温暖', 'source': 'cn', 'ids': ['42']} 后日谈·演唱会",
-    "交わる色はあの日のままに アフターライブ": "{'text': '交汇的色彩一如往昔', 'source': 'human', 'ids': ['183']} 后日谈·演唱会",
-    "交響する街の片隅で アフターライブ": "{'text': '在乐声共鸣的街角', 'source': 'cn', 'ids': ['90']} 后日谈·演唱会",
-    "仮面の私にさよならを アフターライブ": "{'text': '向戴着面具的我告别', 'source': 'cn', 'ids': ['100']} 后日谈·演唱会",
-    "仰ぐ夜空に、星は紛れて アフターライブ": "{'text': '仰望夜空，繁星隐匿其中', 'source': 'human', 'ids': ['188']} 后日谈·演唱会",
-    "傷だらけの手で、私達は アフターライブ": "{'text': '用我们，布满伤痕的双手', 'source': 'cn', 'ids': ['150']} 后日谈·演唱会",
-    "全力！ワンダーハロウィン！ アフターライブ": "{'text': '全力以赴！奇幻万圣节！', 'source': 'cn', 'ids': ['3']} 后日谈·演唱会",
-    "刻まれた傷は、やがて アフターライブ": "{'text': '刻下的伤痕，总有一天', 'source': 'cn', 'ids': ['122']} 后日谈·演唱会",
-    "君が主役の物語を アフターライブ": "{'text': '以你为主角的故事', 'source': 'cn', 'ids': ['113']} 后日谈·演唱会",
-    "君と歌う、桜舞う世界で アフターライブ": "{'text': '在樱花烂漫的世界中与你高歌', 'source': 'cn', 'ids': ['18']} 后日谈·演唱会",
-    "君と紡ぐPrecious memories アフターライブ": "{'text': '和你创造的Precious memories', 'source': 'cn', 'ids': ['106']} 后日谈·演唱会",
-    "君と繋ぐHeart Beat アフターライブ": "{'text': '与你相连的心跳', 'source': 'human', 'ids': ['182']} 后日谈·演唱会",
-    "囚われのマリオネット アフターライブ": "{'text': '被囚禁的提线木偶', 'source': 'cn', 'ids': ['2']} 后日谈·演唱会",
-    "変わらぬあたたかさの隣で アフターライブ": "{'text': '在不变的温暖旁', 'source': 'cn', 'ids': ['117']} 后日谈·演唱会",
-    "夏祭り、鳴り響く音は アフターライブ": "{'text': '夏日庆典，那响彻云霄的声音', 'source': 'cn', 'ids': ['29']} 后日谈·演唱会",
-    "夢の途中、輝く星たちへ アフターライブ": "{'text': '梦想的旅途，奔向闪耀的群星', 'source': 'cn', 'ids': ['82']} 后日谈·演唱会",
-    "天の果てのフェニックスへ アフターライブ": "{'text': '追寻翱翔于天际的凤凰', 'source': 'cn', 'ids': ['88']} 后日谈·演唱会",
-    "天馬さんちのひな祭り アフターライブ": "{'text': '天马家的女儿节', 'source': 'cn', 'ids': ['16']} 后日谈·演唱会",
-    "好きを描いて♪レインボーキャンバス アフターライブ": "{'text': '绘出自我♪RAINBOW CANVAS', 'source': 'cn', 'ids': ['70']} 后日谈·演唱会",
-    "導く勇気、優しさを胸に アフターライブ": "{'text': '勇敢引导，温柔在心', 'source': 'cn', 'ids': ['121']} 后日谈·演唱会",
-    "届け！HOPEFUL STAGE♪ アフターライブ": "{'text': '传递心声！充满希望的舞台♪', 'source': 'cn', 'ids': ['17']} 后日谈·演唱会",
-    "弓引け、白の世界で アフターライブ": "{'text': '在纯白世界拉弓引箭', 'source': 'cn', 'ids': ['80']} 后日谈·演唱会",
-    "怪盗紳士のハラハラ！？ホワイトデー アフターライブ": "{'text': '慌慌张张？！怪盗绅士的白色情人节', 'source': 'cn', 'ids': ['51']} 后日谈·演唱会",
-    "悪夢の庭を歌い明かして アフターライブ": "{'text': '唱彻噩梦之庭', 'source': 'human', 'ids': ['197']} 后日谈·演唱会",
-    "想いをのせて！Dream Stage アフターライブ": "{'text': '承载心愿！Dream Stage', 'source': 'cn', 'ids': ['144']} 后日谈·演唱会",
-    "拝啓、あの頃のわたしへ アフターライブ": "{'text': '致过去的我', 'source': 'cn', 'ids': ['73']} 后日谈·演唱会",
-    "揺るがぬ想い、今言葉にして アフターライブ": "{'text': '矢志不摇的心愿，此刻以话语传达', 'source': 'cn', 'ids': ['40']} 后日谈·演唱会",
-    "揺れるまま、でも君は前へ アフターライブ": "{'text': '即使摇摆不定，但毅然勇往直前', 'source': 'cn', 'ids': ['10']} 后日谈·演唱会",
-    "新年言祝ぐ、祈りの舞 アフターライブ": "{'text': '贺岁新年，祈愿之舞', 'source': 'human', 'ids': ['191']} 后日谈·演唱会",
-    "新春！ 獅子舞ロボのお正月ショー！ アフターライブ": "{'text': '新春！舞狮机器人的新年演出！', 'source': 'cn', 'ids': ['81']} 后日谈·演唱会",
-    "昔日のRead-aloud アフターライブ": "{'text': '昔日的Read-aloud', 'source': 'cn', 'ids': ['158']} 后日谈·演唱会",
-    "星を目指して、ヨーソロー！ アフターライブ": "{'text': '向着星星，启航！', 'source': 'cn', 'ids': ['124']} 后日谈·演唱会",
-    "最高のクランクアップ！ アフターライブ": "{'text': '最棒的杀青！', 'source': 'cn', 'ids': ['114']} 后日谈·演唱会",
-    "水底に影を探して アフターライブ": "{'text': '水底寻影', 'source': 'cn', 'ids': ['112']} 后日谈·演唱会",
-    "泡沫に抱かれて アフターライブ": "{'text': '沉溺于泡沫之中', 'source': 'human', 'ids': ['170']} 后日谈·演唱会",
-    "満たされないペイルカラー アフターライブ": "{'text': '饱和不了的黯淡色彩', 'source': 'cn', 'ids': ['14']} 后日谈·演唱会",
-    "灯のミラージュ アフターライブ": "{'text': '光之幻影', 'source': 'cn', 'ids': ['35']} 后日谈·演唱会",
-    "灯を手繰りよせて アフターライブ": "{'text': '揽灯近前', 'source': 'cn', 'ids': ['134']} 后日谈·演唱会",
-    "白熱！神高応援団！ アフターライブ": "{'text': '白热！神高应援团！', 'source': 'cn', 'ids': ['58']} 后日谈·演唱会",
-    "祈りの先 願う明日は アフターライブ": "{'text': '祈愿的未来 憧憬的明天', 'source': 'cn', 'ids': ['45']} 后日谈·演唱会",
-    "秘密の♡バレンタイン大作戦！ アフターライブ": "{'text': '秘密♡情人节大作战！', 'source': 'cn', 'ids': ['48']} 后日谈·演唱会",
-    "空白のキャンバスに描く私は アフターライブ": "{'text': '在空白的画布上描绘自我', 'source': 'cn', 'ids': ['53']} 后日谈·演唱会",
+    "交わる旋律 灯るぬくもり アフターライブ": {
+      "text": "交织的旋律 点亮的温暖 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "109"
+      ]
+    },
+    "交わる色はあの日のままに アフターライブ": {
+      "text": "交汇的色彩一如往昔 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "430"
+      ]
+    },
+    "交響する街の片隅で アフターライブ": {
+      "text": "在乐声共鸣的街角 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "221"
+      ]
+    },
+    "仮面の私にさよならを アフターライブ": {
+      "text": "向戴着面具的我告别 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "240"
+      ]
+    },
+    "仰ぐ夜空に、星は紛れて アフターライブ": {
+      "text": "仰望夜空，繁星隐匿其中 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "438"
+      ]
+    },
+    "傷だらけの手で、私達は アフターライブ": {
+      "text": "用我们，布满伤痕的双手 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "339"
+      ]
+    },
+    "全力！ワンダーハロウィン！ アフターライブ": {
+      "text": "全力以赴！奇幻万圣节！后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "13"
+      ]
+    },
+    "刻まれた傷は、やがて アフターライブ": {
+      "text": "刻下的伤痕，总有一天 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "287"
+      ]
+    },
+    "君が主役の物語を アフターライブ": {
+      "text": "以你为主角的故事 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "266"
+      ]
+    },
+    "君と歌う、桜舞う世界で アフターライブ": {
+      "text": "在樱花烂漫的世界中与你高歌 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "66"
+      ]
+    },
+    "君と紡ぐPrecious memories アフターライブ": {
+      "text": "和你创造的Precious memories 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "253"
+      ]
+    },
+    "君と繋ぐHeart Beat アフターライブ": {
+      "text": "与你相连的心跳 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "429"
+      ]
+    },
+    "囚われのマリオネット アフターライブ": {
+      "text": "被囚禁的提线木偶 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "10"
+      ]
+    },
+    "変わらぬあたたかさの隣で アフターライブ": {
+      "text": "在不变的温暖旁 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "275"
+      ]
+    },
+    "夏祭り、鳴り響く音は アフターライブ": {
+      "text": "夏日庆典，那响彻云霄的声音 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "85"
+      ]
+    },
+    "夢の途中、輝く星たちへ アフターライブ": {
+      "text": "梦想的旅途，奔向闪耀的群星 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "203"
+      ]
+    },
+    "天の果てのフェニックスへ アフターライブ": {
+      "text": "追寻翱翔于天际的凤凰 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "216"
+      ]
+    },
+    "天馬さんちのひな祭り アフターライブ": {
+      "text": "天马家的女儿节 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "62"
+      ]
+    },
+    "好きを描いて♪レインボーキャンバス アフターライブ": {
+      "text": "绘出自我♪RAINBOW CANVAS 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "173"
+      ]
+    },
+    "導く勇気、優しさを胸に アフターライブ": {
+      "text": "勇敢引导，温柔在心 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "284"
+      ]
+    },
+    "届け！HOPEFUL STAGE♪ アフターライブ": {
+      "text": "传递心声！充满希望的舞台♪ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "65"
+      ]
+    },
+    "弓引け、白の世界で アフターライブ": {
+      "text": "在纯白世界拉弓引箭 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "191"
+      ]
+    },
+    "怪盗紳士のハラハラ！？ホワイトデー アフターライブ": {
+      "text": "慌慌张张？！怪盗绅士的白色情人节 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "135"
+      ]
+    },
+    "悪夢の庭を歌い明かして アフターライブ": {
+      "text": "唱彻噩梦之庭 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "458"
+      ]
+    },
+    "想いをのせて！Dream Stage アフターライブ": {
+      "text": "承载心愿！Dream Stage 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "329"
+      ]
+    },
+    "拝啓、あの頃のわたしへ アフターライブ": {
+      "text": "致过去的我 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "179"
+      ]
+    },
+    "揺るがぬ想い、今言葉にして アフターライブ": {
+      "text": "矢志不摇的心愿，此刻以话语传达 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "107"
+      ]
+    },
+    "揺れるまま、でも君は前へ アフターライブ": {
+      "text": "即使摇摆不定，但毅然勇往直前 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "51"
+      ]
+    },
+    "新年言祝ぐ、祈りの舞 アフターライブ": {
+      "text": "贺岁新年，祈愿之舞 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "445"
+      ]
+    },
+    "新春！ 獅子舞ロボのお正月ショー！ アフターライブ": {
+      "text": "新春！舞狮机器人的新年演出！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "196"
+      ]
+    },
+    "昔日のRead-aloud アフターライブ": {
+      "text": "昔日的Read-aloud 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "362"
+      ]
+    },
+    "星を目指して、ヨーソロー！ アフターライブ": {
+      "text": "向着星星，启航！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "290"
+      ]
+    },
+    "最高のクランクアップ！ アフターライブ": {
+      "text": "最棒的杀青！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "267"
+      ]
+    },
+    "水底に影を探して アフターライブ": {
+      "text": "水底寻影 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "264"
+      ]
+    },
+    "泡沫に抱かれて アフターライブ": {
+      "text": "置身于泡沫的环绕 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "381"
+      ]
+    },
+    "満たされないペイルカラー アフターライブ": {
+      "text": "饱和不了的黯淡色彩 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "59"
+      ]
+    },
+    "灯のミラージュ アフターライブ": {
+      "text": "光之幻影 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "96"
+      ]
+    },
+    "灯を手繰りよせて アフターライブ": {
+      "text": "揽灯近前 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "308"
+      ]
+    },
+    "白熱！神高応援団！ アフターライブ": {
+      "text": "白热！神高应援团！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "149"
+      ]
+    },
+    "祈りの先 願う明日は アフターライブ": {
+      "text": "祈愿的未来憧憬的明天 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "118"
+      ]
+    },
+    "秘密の♡バレンタイン大作戦！ アフターライブ": {
+      "text": "秘密♡情人节大作战！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "129"
+      ]
+    },
+    "空白のキャンバスに描く私は アフターライブ": {
+      "text": "在空白的画布上描绘自我 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "140"
+      ]
+    },
     "第2回 コネクトライブ リハーサル公演": {
       "text": "第2届 Connect Live 彩排公演",
-      "source": "human",
+      "source": "unknown",
       "ids": [
         "142"
       ]
     },
-    "粉砕せよ！アンヴァレンタインの復讐 アフターライブ": "{'text': '粉碎吧！安瓦伦丁的复仇', 'source': 'human', 'ids': ['194']} 后日谈·演唱会",
-    "純白の貴方へ、誓いの歌を！ アフターライブ": "{'text': '为纯白的你唱响誓言之歌！', 'source': 'cn', 'ids': ['24']} 后日谈·演唱会",
-    "絶体絶命！？アイランドパニック！ アフターライブ": "{'text': '危在旦夕？！无人岛绝处逢生！', 'source': 'cn', 'ids': ['62']} 后日谈·演唱会",
-    "絶叫！？ オオカミの森へようこそ！ アフターライブ": "{'text': '尖叫？！欢迎来到大灰狼森林', 'source': 'cn', 'ids': ['75']} 后日谈·演唱会",
-    "聖なる夜に、この歌声を アフターライブ": "{'text': '让歌声响彻，神圣之夜', 'source': 'cn', 'ids': ['8']} 后日谈·演唱会",
-    "船出の前のワンデイトリップ アフターライブ": "{'text': '启航前的一日游', 'source': 'cn', 'ids': ['94']} 后日谈·演唱会",
-    "荊棘の道は何処へ アフターライブ": "{'text': '荆棘之路通往何处', 'source': 'cn', 'ids': ['145']} 后日谈·演唱会",
-    "覚めない幻想をノックして アフターライブ": "{'text': '敲响永不觉醒的幻想', 'source': 'human', 'ids': ['192']} 后日谈·演唱会",
+    "粉砕せよ！アンヴァレンタインの復讐 アフターライブ": {
+      "text": "粉碎吧！安瓦伦丁的复仇 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "452"
+      ]
+    },
+    "純白の貴方へ、誓いの歌を！ アフターライブ": {
+      "text": "为纯白的你唱响誓言之歌！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "77"
+      ]
+    },
+    "絶体絶命！？アイランドパニック！ アフターライブ": {
+      "text": "危在旦夕？！无人岛绝处逢生！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "156"
+      ]
+    },
+    "絶叫！？ オオカミの森へようこそ！ アフターライブ": {
+      "text": "尖叫？！欢迎来到大灰狼森林！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "183"
+      ]
+    },
+    "聖なる夜に、この歌声を アフターライブ": {
+      "text": "让歌声响彻，神圣之夜 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "40"
+      ]
+    },
+    "船出の前のワンデイトリップ アフターライブ": {
+      "text": "启航前的一日游 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "228"
+      ]
+    },
+    "荊棘の道は何処へ アフターライブ": {
+      "text": "荆棘之路通往何处 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "330"
+      ]
+    },
+    "覚めない幻想をノックして アフターライブ": {
+      "text": "敲响永不觉醒的幻想 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "448"
+      ]
+    },
     "記念ライブ 25時、ナイトコードで。": {
       "text": "纪念演唱会 25点，Nightcord见。",
       "source": "cn",
@@ -1958,16 +3039,82 @@
         "7"
       ]
     },
-    "超克のプロタゴニスタ アフターライブ": "{'text': '超越自我的主人公', 'source': 'human', 'ids': ['185']} 后日谈·演唱会",
-    "迷い子の手を引く、そのさきは アフターライブ": "{'text': '牵起迷失的孩子，前方等待的是', 'source': 'cn', 'ids': ['61']} 后日谈·演唱会",
-    "逆光のレンズフレア アフターライブ": "{'text': '背光的镜头光晕', 'source': 'cn', 'ids': ['119']} 后日谈·演唱会",
-    "鍛えてFLY！Muscle Training！ アフターライブ": "{'text': '锻炼后FLY！Muscle Training！', 'source': 'cn', 'ids': ['142']} 后日谈·演唱会",
-    "隣に立つ、優しいあなたへ アフターライブ": "{'text': '给在我身边温柔的你', 'source': 'cn', 'ids': ['96']} 后日谈·演唱会",
-    "雨上がりの一番星 アフターライブ": "{'text': '雨过天晴的启明星', 'source': 'cn', 'ids': ['1']} 后日谈·演唱会",
-    "青空に願うユア・ハピネス！ アフターライブ": "{'text': '向晴空许愿Your Happiness!', 'source': 'cn', 'ids': ['60']} 后日谈·演唱会",
-    "青空の先、輝きを追いかけて アフターライブ": "{'text': '在蓝天下追逐光芒', 'source': 'cn', 'ids': ['67']} 后日谈·演唱会",
-    "頑張るあなたにBreak Time！ アフターライブ": "{'text': '为努力的你营造闲暇时光！', 'source': 'cn', 'ids': ['23']} 后日谈·演唱会",
-    "願いは、いつか朝をこえて アフターライブ": "{'text': '祈愿，终有一天跨越黎明', 'source': 'cn', 'ids': ['77']} 后日谈·演唱会",
-    "鳴らせビューティフルサウンド！ アフターライブ": "{'text': '奏响美妙乐音！', 'source': 'cn', 'ids': ['139']} 后日谈·演唱会"
+    "超克のプロタゴニスタ アフターライブ": {
+      "text": "超越自我的主人公 后日谈·演唱会",
+      "source": "unknown",
+      "ids": [
+        "436"
+      ]
+    },
+    "迷い子の手を引く、そのさきは アフターライブ": {
+      "text": "牵起迷失的孩子，前方等待的是 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "155"
+      ]
+    },
+    "逆光のレンズフレア アフターライブ": {
+      "text": "背光的镜头光晕 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "279"
+      ]
+    },
+    "鍛えてFLY！Muscle Training！ アフターライブ": {
+      "text": "锻炼后FLY！Muscle Training！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "325"
+      ]
+    },
+    "隣に立つ、優しいあなたへ アフターライブ": {
+      "text": "给在我身边温柔的你 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "233"
+      ]
+    },
+    "雨上がりの一番星 アフターライブ": {
+      "text": "雨过天晴的启明星 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "9"
+      ]
+    },
+    "青空に願うユア・ハピネス！ アフターライブ": {
+      "text": "向晴空许愿Your Happiness! 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "153"
+      ]
+    },
+    "青空の先、輝きを追いかけて アフターライブ": {
+      "text": "在蓝天下追逐光芒 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "166"
+      ]
+    },
+    "頑張るあなたにBreak Time！ アフターライブ": {
+      "text": "为努力的你营造闲暇时光！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "75"
+      ]
+    },
+    "願いは、いつか朝をこえて アフターライブ": {
+      "text": "祈愿，终有一天跨越黎明 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "187"
+      ]
+    },
+    "鳴らせビューティフルサウンド！ アフターライブ": {
+      "text": "奏响美妙乐音！ 后日谈·演唱会",
+      "source": "cn",
+      "ids": [
+        "318"
+      ]
+    }
   }
 }
