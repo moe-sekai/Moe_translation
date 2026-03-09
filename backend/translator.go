@@ -514,8 +514,9 @@ func (t *Translator) GetEventStory(eventID int) (EventStoryDetail, error) {
 	return detail, nil
 }
 
-// AITranslateAll iterates all loaded categories and fields,
-// translating entries that have no translation (empty text, source unknown/llm).
+// AITranslateAll translates missing event story lines using LLM.
+// It scans all event story files and fills in untranslated entries
+// (jp_pending or llm with empty text).
 func (t *Translator) AITranslateAll(provider string) (AITranslateAllResult, error) {
 	if err := t.markStart("ai-translate-all"); err != nil {
 		return AITranslateAllResult{}, err
@@ -533,37 +534,38 @@ func (t *Translator) AITranslateAll(provider string) (AITranslateAllResult, erro
 		return result, runErr
 	}
 
-	// Collect all category/field pairs
-	t.store.mu.RLock()
-	type catField struct {
-		category string
-		field    string
-	}
-	var pairs []catField
-	for catName, cat := range t.store.data {
-		for fieldName := range cat {
-			pairs = append(pairs, catField{catName, fieldName})
+	dir := filepath.Join(t.store.path, "eventStory")
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return result, nil
 		}
+		runErr = err
+		return result, runErr
 	}
-	t.store.mu.RUnlock()
 
-	for _, cf := range pairs {
-		req := AITranslateRequest{
-			Category: cf.category,
-			Field:    cf.field,
-			Provider: provider,
-			Limit:    200,
+	for _, entry := range entries {
+		if entry.IsDir() || !strings.HasPrefix(entry.Name(), "event_") || !strings.HasSuffix(entry.Name(), ".json") {
+			continue
 		}
-		// Call ManualAITranslate but reset running state first
-		// We do inline logic instead to avoid markStart conflict
-		sub, err := t.aiTranslateField(req)
+		if strings.Contains(entry.Name(), ".full.") {
+			continue
+		}
+		idText := strings.TrimSuffix(strings.TrimPrefix(entry.Name(), "event_"), ".json")
+		eventID, err := strconv.Atoi(idText)
+		if err != nil || eventID <= 0 {
+			continue
+		}
+
+		translated, candidates, err := t.aiTranslateEventStory(dir, eventID, provider)
 		result.TotalFields++
-		result.TotalCandidates += sub.Candidates
-		result.TotalTranslated += sub.Translated
-		result.TotalSkipped += sub.SkippedExisting
+		result.TotalCandidates += candidates
+		result.TotalTranslated += translated
 		if err != nil {
 			result.Errors++
-			fmt.Printf("[ai-all] error on %s/%s: %v\n", cf.category, cf.field, err)
+			fmt.Printf("[ai-all] error on event %d: %v\n", eventID, err)
+		} else if translated > 0 {
+			fmt.Printf("[ai-all] event %d: translated %d/%d\n", eventID, translated, candidates)
 		}
 	}
 
@@ -2022,6 +2024,102 @@ func (t *Translator) fillEventStoriesJPPending(jpStories []map[string]any, start
 		processed++
 	}
 	return processed, scenarioErrors, nil
+}
+
+// aiTranslateEventStory translates missing lines in an event story file.
+// Unlike autoTranslateEventStory, it works on any source (not just jp_pending),
+// skipping only official_cn/human/pinned stories.
+// Returns (translatedCount, candidateCount, error).
+func (t *Translator) aiTranslateEventStory(dir string, eventID int, provider string) (int, int, error) {
+	path := eventStoryJSONPath(dir, eventID)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return 0, 0, err
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		return 0, 0, err
+	}
+	detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
+		return 0, 0, err
+	}
+
+	// Skip stories that are already fully translated by official/human sources
+	src := normalizeEventStoryStorySource(detail.Meta.Source)
+	if src == "official_cn" || src == SourceHuman || src == SourcePinned {
+		return 0, 0, nil
+	}
+
+	fullDetail, err := t.loadOrBuildEventStoryFullDetail(dir, eventID, detail)
+	if err != nil {
+		return 0, 0, err
+	}
+
+	targets := collectEventStoryTranslateTargets(detail, fullDetail)
+	if len(targets) == 0 {
+		return 0, 0, nil
+	}
+
+	texts := make([]string, 0, len(targets))
+	for _, target := range targets {
+		texts = append(texts, target.JP)
+	}
+
+	translated, err := t.callLLM(provider, texts)
+	if err != nil {
+		return 0, len(targets), err
+	}
+
+	translatedCount := 0
+	for idx, target := range targets {
+		if idx >= len(translated) {
+			break
+		}
+		cn := strings.TrimSpace(translated[idx])
+		if cn == "" {
+			continue
+		}
+		episode := detail.Episodes[target.EpisodeNo]
+		fullEpisode := fullDetail.Episodes[target.EpisodeNo]
+		switch target.EntryType {
+		case "title":
+			episode.Title = cn
+			fullEpisode.Title.Text = cn
+			fullEpisode.Title.Source = SourceLLM
+		case "talk":
+			episode.TalkData[target.JP] = cn
+			line := fullEpisode.TalkData[target.JP]
+			line.Text = cn
+			line.Source = SourceLLM
+			fullEpisode.TalkData[target.JP] = line
+		default:
+			continue
+		}
+		detail.Episodes[target.EpisodeNo] = episode
+		fullDetail.Episodes[target.EpisodeNo] = fullEpisode
+		translatedCount++
+	}
+
+	if translatedCount == 0 {
+		return 0, len(targets), nil
+	}
+
+	now := time.Now().Unix()
+	newSource := SourceLLM
+	if translatedCount < len(targets) && src == "jp_pending" {
+		newSource = "jp_pending"
+	}
+	detail.Meta.Source = newSource
+	detail.Meta.Version = "1.0"
+	detail.Meta.LastUpdated = now
+	fullDetail.Meta.Source = newSource
+	fullDetail.Meta.Version = "1.0"
+	fullDetail.Meta.LastUpdated = now
+	if err := writeEventStoryDetailFiles(dir, eventID, detail, fullDetail); err != nil {
+		return 0, len(targets), err
+	}
+	return translatedCount, len(targets), nil
 }
 
 func (t *Translator) autoTranslateEventStory(dir string, eventID int) (int, error) {

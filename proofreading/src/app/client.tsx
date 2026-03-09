@@ -849,17 +849,13 @@ export default function ProofreadingClient() {
         setAITranslating(true);
         try {
             const result = await triggerAITranslateAll(aiProvider);
-            showToast(`AI全局完成: ${result.totalTranslated}/${result.totalCandidates} (${result.totalFields} 字段)`, "ok");
-            // Refresh current entries if viewing something
-            if (selectedCategory && selectedField) {
-                const data = await getEntries(selectedCategory, selectedField, sourceFilter || undefined);
-                const order: Record<string, number> = { unknown: 0, llm: 1, human: 2, pinned: 3, cn: 4 };
-                data.sort((a, b) => {
-                    const diff = (order[a.source] ?? 5) - (order[b.source] ?? 5);
-                    if (diff !== 0) return diff;
-                    return a.key.localeCompare(b.key, undefined, { numeric: true });
-                });
-                setEntries(mergeEntriesWithDrafts(data, drafts));
+            showToast(`AI剧情翻译完成: ${result.totalTranslated}/${result.totalCandidates} (${result.totalFields} 个活动)`, "ok");
+            // Refresh event stories list and current view
+            const stories = await getEventStories();
+            setEventStories(stories);
+            if (selectedCategory === "eventStory" && selectedField) {
+                const detail = await getEventStory(Number(selectedField));
+                setEntries(mergeEntriesWithDrafts(buildEventStoryEntries(detail), drafts));
             }
         } catch (err) {
             const message = err instanceof Error ? err.message : "AI翻译失败";
@@ -1052,7 +1048,7 @@ export default function ProofreadingClient() {
                             </summary>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.4rem' }}>
                                 <button className="btn-ai-all" onClick={handleAITranslateAll} disabled={aiTranslating || syncingCN || pullingBackup || backendTranslatorRunning || backendSchedulerRunning}>
-                                    {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 一键AI补充缺失字段"}
+                                    {(aiTranslating || backendTranslatorRunning) ? "AI翻译中..." : "🤖 AI补充活动剧情缺失翻译"}
                                 </button>
                                 <div className="theme-container" style={{ margin: 0 }}>
                                     <span>AI提供方</span>
