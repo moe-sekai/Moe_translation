@@ -5,7 +5,7 @@ import {
     getToken, setToken, clearToken, getUsername, setUsername,
     login, getCategories, getEntries, updateEntry, pushToHub, pullLatestBackup, getPushStatus,
     triggerAITranslateAll, getEventStories, getEventStory, runCNSync, getTranslateStatus,
-    updateEventStoryLine, promoteEventStoryHuman, retryEventStorySync,
+    updateEventStoryLine, promoteEventStoryHuman, retryEventStorySync, reorderEventStory,
     type CategoryInfo, type TranslationEntry, type PushStatus,
     type EventStorySummary, type EventStoryDetail, type TranslateStatusResponse,
 } from "@/lib/api";
@@ -70,10 +70,15 @@ function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
                     source: ep.titleSource || storySource,
                 });
             }
-            Object.entries(ep.talkData || {}).forEach(([jp, cn]) => {
+            const talkData = ep.talkData || {};
+            const keys = ep.talkOrder && ep.talkOrder.length > 0
+                ? [...ep.talkOrder, ...Object.keys(talkData).filter(k => !ep.talkOrder!.includes(k))]
+                : Object.keys(talkData);
+            keys.forEach(jp => {
+                if (!(jp in talkData)) return;
                 entries.push({
                     key: `${episodeNo}|${jp}`,
-                    text: cn,
+                    text: talkData[jp],
                     source: ep.talkSources?.[jp] || storySource,
                 });
             });
@@ -265,6 +270,7 @@ export default function ProofreadingClient() {
     // Event story block
     const [eventStories, setEventStories] = useState<EventStorySummary[]>([]);
     const [retryingEventStory, setRetryingEventStory] = useState(false);
+    const [reorderingEventStory, setReorderingEventStory] = useState(false);
 
     // Sidebar (mobile)
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -721,6 +727,24 @@ export default function ProofreadingClient() {
             setRetryingEventStory(false);
         }
     }, [retryingEventStory, selectedCategory, selectedField, showToast]);
+
+    const handleReorderEventStory = useCallback(async () => {
+        if (reorderingEventStory || selectedCategory !== "eventStory" || !selectedField) return;
+        setReorderingEventStory(true);
+        try {
+            const result = await reorderEventStory(Number(selectedField));
+            const detail = await getEventStory(Number(selectedField));
+            const newEntries = buildEventStoryEntries(detail);
+            setEntries(newEntries);
+            const msg = `重排序完成: ${result.episodes} 章节已按剧情顺序排列` +
+                (result.fetchErrors ? `, ${result.fetchErrors}个获取失败` : "");
+            showToast(msg, "ok");
+        } catch (err) {
+            showToast(err instanceof Error ? err.message : "重排序失败", "err");
+        } finally {
+            setReorderingEventStory(false);
+        }
+    }, [reorderingEventStory, selectedCategory, selectedField, showToast]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
         if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
@@ -1220,6 +1244,16 @@ export default function ProofreadingClient() {
                                                         title="重新从远程获取该活动的剧情数据（修复章节缺失/内容不完整）"
                                                     >
                                                         {retryingEventStory ? "[重新获取中...]" : "[🔄 重新获取剧情]"}
+                                                    </button>
+                                                )}
+                                                {selectedCategory === "eventStory" && (
+                                                    <button
+                                                        style={{ background: 'none', border: 'none', color: reorderingEventStory ? 'var(--text-secondary)' : '#3498db', cursor: reorderingEventStory ? 'wait' : 'pointer', fontSize: '0.75rem', marginRight: '0.5rem', padding: 0 }}
+                                                        onClick={() => void handleReorderEventStory()}
+                                                        disabled={reorderingEventStory}
+                                                        title="按剧情原始顺序重新排列对话（不影响已有翻译）"
+                                                    >
+                                                        {reorderingEventStory ? "[重排序中...]" : "[📋 重排序对话]"}
                                                     </button>
                                                 )}
                                                 保存: <kbd>{saveShortcut === "shift-enter" ? "Shift+Enter" : "Enter"}</kbd> &nbsp;

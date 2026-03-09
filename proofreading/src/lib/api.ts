@@ -83,6 +83,7 @@ export interface EventStoryDetail {
         titleSource?: string;
         talkData: Record<string, string>;
         talkSources?: Record<string, string>;
+        talkOrder?: string[];
     }>;
 }
 
@@ -232,6 +233,13 @@ export async function promoteEventStoryHuman(eventId: number) {
 
 export async function retryEventStorySync(eventId: number) {
     return apiFetch<{ eventId: number; source: string; episodes: number; translated?: number; fetchErrors?: number; translateError?: string }>("/event-story/retry", {
+        method: "POST",
+        body: JSON.stringify({ eventId }),
+    });
+}
+
+export async function reorderEventStory(eventId: number) {
+    return apiFetch<{ status: string; episodes: number; fetchErrors?: number }>("/event-story/reorder", {
         method: "POST",
         body: JSON.stringify({ eventId }),
     });

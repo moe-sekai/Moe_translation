@@ -40,6 +40,7 @@ func (h *Handler) RegisterRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("/api/event-story", h.requireAuth(h.handleEventStory))
 	mux.HandleFunc("/api/event-story/update", h.requireAuth(h.handleUpdateEventStory))
 	mux.HandleFunc("/api/event-story/retry", h.requireAuth(h.handleRetryEventStory))
+	mux.HandleFunc("/api/event-story/reorder", h.requireAuth(h.handleReorderEventStory))
 	mux.HandleFunc("/api/event-story/promote-human", h.requireAuth(h.handlePromoteEventStoryHuman))
 }
 
@@ -377,6 +378,38 @@ func (h *Handler) handleRetryEventStory(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 	fmt.Printf("[retry-event-story] completed by %s for event %d\n", user, req.EventID)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+
+func (h *Handler) handleReorderEventStory(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, `{"error":"method not allowed"}`, http.StatusMethodNotAllowed)
+		return
+	}
+	var req struct {
+		EventID int `json:"eventId"`
+	}
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
+		return
+	}
+	if req.EventID <= 0 {
+		http.Error(w, `{"error":"eventId is required"}`, http.StatusBadRequest)
+		return
+	}
+	user := r.Header.Get("X-Username")
+	fmt.Printf("[reorder-event-story] requested by %s for event %d\n", user, req.EventID)
+	result, err := h.translator.ReorderEventStory(req.EventID)
+	if err != nil {
+		if isAlreadyRunningError(err) {
+			http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusConflict)
+			return
+		}
+		http.Error(w, fmt.Sprintf(`{"error":"%s"}`, err), http.StatusInternalServerError)
+		return
+	}
+	fmt.Printf("[reorder-event-story] completed by %s for event %d\n", user, req.EventID)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)
 }

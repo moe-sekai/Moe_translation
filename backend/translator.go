@@ -100,6 +100,7 @@ type EventStoryEpisode struct {
 	TitleSource string            `json:"titleSource,omitempty"`
 	TalkData    map[string]string `json:"talkData"`
 	TalkSources map[string]string `json:"talkSources,omitempty"`
+	TalkOrder   []string          `json:"talkOrder,omitempty"`
 }
 
 type EventStoryDetail struct {
@@ -111,6 +112,7 @@ type eventStoryEpisodePayload struct {
 	ScenarioID string            `json:"scenarioId"`
 	Title      string            `json:"title"`
 	TalkData   map[string]string `json:"talkData"`
+	TalkOrder  []string          `json:"talkOrder,omitempty"`
 }
 
 type eventStoryLinePayload struct {
@@ -857,6 +859,7 @@ func parseEventStoryDetail(raw []byte, fallbackLastUpdated int64) (EventStoryDet
 			ScenarioID: episode.ScenarioID,
 			Title:      episode.Title,
 			TalkData:   episode.TalkData,
+			TalkOrder:  episode.TalkOrder,
 		}
 	}
 	if len(episodes) == 0 {
@@ -1937,16 +1940,26 @@ func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (m
 		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
 		cnTalk := toMapSlice(asMap(cnScenario)["TalkData"])
 		talkData := map[string]string{}
+		var talkOrder []string
+		seen := map[string]bool{}
 		for i := 0; i < len(jpTalk) && i < len(cnTalk); i++ {
 			jpBody := strings.TrimSpace(getString(jpTalk[i], "Body"))
 			cnBody := strings.TrimSpace(getString(cnTalk[i], "Body"))
 			if jpBody != "" && cnBody != "" && jpBody != cnBody {
 				talkData[jpBody] = cnBody
+				if !seen[jpBody] {
+					talkOrder = append(talkOrder, jpBody)
+					seen[jpBody] = true
+				}
 			}
 			jpName := strings.TrimSpace(getString(jpTalk[i], "WindowDisplayName"))
 			cnName := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
 			if jpName != "" && cnName != "" && jpName != cnName {
 				talkData[jpName] = cnName
+				if !seen[jpName] {
+					talkOrder = append(talkOrder, jpName)
+					seen[jpName] = true
+				}
 			}
 		}
 
@@ -1970,6 +1983,7 @@ func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (m
 			ScenarioID: scenarioID,
 			Title:      cnTitle,
 			TalkData:   talkData,
+			TalkOrder:  talkOrder,
 		}
 	}
 
@@ -2245,14 +2259,24 @@ func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]
 
 		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
 		talkData := map[string]string{}
+		var talkOrder []string
+		seen := map[string]bool{}
 		for _, talk := range jpTalk {
 			jpBody := strings.TrimSpace(getString(talk, "Body"))
 			if jpBody != "" {
 				talkData[jpBody] = ""
+				if !seen[jpBody] {
+					talkOrder = append(talkOrder, jpBody)
+					seen[jpBody] = true
+				}
 			}
 			jpName := strings.TrimSpace(getString(talk, "WindowDisplayName"))
 			if jpName != "" {
 				talkData[jpName] = ""
+				if !seen[jpName] {
+					talkOrder = append(talkOrder, jpName)
+					seen[jpName] = true
+				}
 			}
 		}
 		if len(talkData) == 0 && title == "" {
@@ -2262,6 +2286,7 @@ func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]
 			ScenarioID: scenarioID,
 			Title:      title,
 			TalkData:   talkData,
+			TalkOrder:  talkOrder,
 		}
 	}
 
@@ -2431,6 +2456,134 @@ func (t *Translator) retryEventStorySyncInner(eventID int) (map[string]any, erro
 	return result, nil
 }
 
+// ReorderEventStory re-fetches the remote scenario data to obtain the original
+// TalkData order, then updates the local talkOrder field for each episode
+// without modifying any existing translations.
+func (t *Translator) ReorderEventStory(eventID int) (map[string]any, error) {
+	if err := t.markStart("reorder-event-story"); err != nil {
+		return nil, err
+	}
+	var runErr error
+	defer func() {
+		note := fmt.Sprintf("reorder event story %d complete", eventID)
+		if runErr != nil {
+			note = fmt.Sprintf("reorder event story %d failed", eventID)
+		}
+		t.markEnd(note, runErr)
+	}()
+
+	dir := filepath.Join(t.store.path, "eventStory")
+	path := eventStoryJSONPath(dir, eventID)
+	data, err := os.ReadFile(path)
+	if err != nil {
+		runErr = err
+		return nil, fmt.Errorf("read event story file: %w", err)
+	}
+	info, err := os.Stat(path)
+	if err != nil {
+		runErr = err
+		return nil, err
+	}
+	detail, err := parseEventStoryDetail(data, info.ModTime().Unix())
+	if err != nil {
+		runErr = err
+		return nil, fmt.Errorf("parse event story: %w", err)
+	}
+
+	// Fetch JP masterdata to get assetbundleName and episode scenarioIds
+	jpStories, err := t.fetchMasterdata("eventStories.json", "jp")
+	if err != nil {
+		runErr = err
+		return nil, fmt.Errorf("fetch JP eventStories: %w", err)
+	}
+	var jpStory map[string]any
+	for _, s := range jpStories {
+		if getInt(s, "eventId") == eventID {
+			jpStory = s
+			break
+		}
+	}
+	if jpStory == nil {
+		runErr = fmt.Errorf("event %d not found in JP eventStories", eventID)
+		return nil, runErr
+	}
+
+	asset := getString(jpStory, "assetbundleName")
+	jpEpisodes := toMapSlice(jpStory["eventStoryEpisodes"])
+
+	reordered := 0
+	fetchErrors := 0
+	for _, ep := range jpEpisodes {
+		epNo := strconv.Itoa(getInt(ep, "episodeNo"))
+		scenarioID := getString(ep, "scenarioId")
+		if scenarioID == "" {
+			continue
+		}
+		localEp, exists := detail.Episodes[epNo]
+		if !exists || len(localEp.TalkData) == 0 {
+			continue
+		}
+
+		scenarioPath := fmt.Sprintf("event_story/%s/scenario/%s", asset, scenarioID)
+		jpScenario, fetchErr := t.fetchJPScenarioJSON(scenarioPath)
+		if fetchErr != nil {
+			fetchErrors++
+			fmt.Printf("[reorder-event-story] event %d ep %s: fetch scenario failed: %v\n", eventID, epNo, fetchErr)
+			continue
+		}
+
+		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
+		var talkOrder []string
+		seen := map[string]bool{}
+		for _, talk := range jpTalk {
+			jpBody := strings.TrimSpace(getString(talk, "Body"))
+			if jpBody != "" {
+				if _, ok := localEp.TalkData[jpBody]; ok && !seen[jpBody] {
+					talkOrder = append(talkOrder, jpBody)
+					seen[jpBody] = true
+				}
+			}
+			jpName := strings.TrimSpace(getString(talk, "WindowDisplayName"))
+			if jpName != "" {
+				if _, ok := localEp.TalkData[jpName]; ok && !seen[jpName] {
+					talkOrder = append(talkOrder, jpName)
+					seen[jpName] = true
+				}
+			}
+		}
+		// Append any local keys not found in remote (preserve them at the end)
+		for k := range localEp.TalkData {
+			if !seen[k] {
+				talkOrder = append(talkOrder, k)
+				seen[k] = true
+			}
+		}
+
+		localEp.TalkOrder = talkOrder
+		detail.Episodes[epNo] = localEp
+		reordered++
+	}
+
+	// Write back the updated detail (preserving all translations)
+	mainOut, err := json.MarshalIndent(detail, "", "  ")
+	if err != nil {
+		runErr = err
+		return nil, err
+	}
+	mainPath := eventStoryJSONPath(dir, eventID)
+	if err := writeAtomic(mainPath, mainOut); err != nil {
+		runErr = err
+		return nil, err
+	}
+
+	fmt.Printf("[reorder-event-story] event %d: reordered %d episodes (%d fetch errors)\n", eventID, reordered, fetchErrors)
+	return map[string]any{
+		"status":      "ok",
+		"episodes":    reordered,
+		"fetchErrors": fetchErrors,
+	}, nil
+}
+
 func collectEventStoryTranslateTargets(detail EventStoryDetail, fullDetail eventStoryFullDetail) []eventStoryTranslateTarget {
 	episodeNos := make([]string, 0, len(detail.Episodes))
 	for episodeNo := range detail.Episodes {
@@ -2482,6 +2635,7 @@ func (t *Translator) callLLM(provider string, texts []string) ([]string, error) 
 		return []string{}, nil
 	}
 	prompt := gameContextPrompt + buildXMLInput(texts)
+	var lastErr error
 	for attempt := 1; attempt <= 3; attempt++ {
 		var content string
 		var err error
@@ -2493,21 +2647,27 @@ func (t *Translator) callLLM(provider string, texts []string) ([]string, error) 
 		default:
 			return nil, fmt.Errorf("unsupported provider: %s", provider)
 		}
-		if err == nil {
-			parsed := parseXMLTranslations(content, len(texts))
-			nonEmpty := 0
-			for _, s := range parsed {
-				if strings.TrimSpace(s) != "" {
-					nonEmpty++
-				}
-			}
-			if len(parsed) == len(texts) || nonEmpty >= len(texts)/2 {
-				return parsed, nil
+		if err != nil {
+			lastErr = err
+			fmt.Printf("[llm] %s attempt %d/3 failed: %v\n", provider, attempt, err)
+			time.Sleep(time.Duration(attempt) * time.Second)
+			continue
+		}
+		parsed := parseXMLTranslations(content, len(texts))
+		nonEmpty := 0
+		for _, s := range parsed {
+			if strings.TrimSpace(s) != "" {
+				nonEmpty++
 			}
 		}
+		if len(parsed) == len(texts) || nonEmpty >= len(texts)/2 {
+			return parsed, nil
+		}
+		lastErr = fmt.Errorf("parse incomplete: got %d non-empty out of %d expected", nonEmpty, len(texts))
+		fmt.Printf("[llm] %s attempt %d/3: %v\n", provider, attempt, lastErr)
 		time.Sleep(time.Duration(attempt) * time.Second)
 	}
-	return nil, fmt.Errorf("llm translation failed after retries")
+	return nil, fmt.Errorf("llm translation failed after 3 retries (provider=%s, texts=%d): %v", provider, len(texts), lastErr)
 }
 
 func (t *Translator) callGemini(prompt string) (string, error) {
