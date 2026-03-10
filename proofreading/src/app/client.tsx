@@ -747,11 +747,23 @@ export default function ProofreadingClient() {
     }, [reorderingEventStory, selectedCategory, selectedField, showToast]);
 
     const handleSourceChange = useCallback(async (key: string, newSource: string) => {
-        if (!selectedCategory || !selectedField || selectedCategory === "eventStory") return;
+        if (!selectedCategory || !selectedField) return;
         const entry = entries.find(e => e.key === key);
         if (!entry) return;
         try {
-            await updateEntry(selectedCategory, selectedField, key, entry.text, newSource);
+            if (selectedCategory === "eventStory") {
+                const parsed = parseEventStoryEntryKey(key);
+                await updateEventStoryLine(
+                    Number(selectedField),
+                    parsed.episodeNo,
+                    parsed.entryType === "title" ? "" : parsed.originalText,
+                    entry.text,
+                    newSource,
+                    parsed.entryType
+                );
+            } else {
+                await updateEntry(selectedCategory, selectedField, key, entry.text, newSource);
+            }
             setEntries(prev => prev.map(e => e.key === key ? { ...e, source: newSource } : e));
             showToast(`来源已改为「${SOURCE_LABELS[newSource] || newSource}」`, "ok");
         } catch (err) {
