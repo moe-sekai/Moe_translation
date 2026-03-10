@@ -2685,8 +2685,14 @@ func (t *Translator) callGemini(prompt string) (string, error) {
 			"responseMimeType": "text/plain",
 		},
 	}
-	body, _ := json.Marshal(payload)
-	req, _ := http.NewRequest(http.MethodPost, url, bytes.NewReader(body))
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return "", fmt.Errorf("failed to marshal payload: %w", err)
+	}
+	req, err := http.NewRequest(http.MethodPost, url, bytes.NewReader(body))
+	if err != nil {
+		return "", fmt.Errorf("failed to create request: %w", err)
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("x-goog-api-key", t.cfg.GeminiAPIKey)
 	resp, err := t.client.Do(req)
@@ -2694,7 +2700,10 @@ func (t *Translator) callGemini(prompt string) (string, error) {
 		return "", err
 	}
 	defer resp.Body.Close()
-	raw, _ := io.ReadAll(resp.Body)
+	raw, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", fmt.Errorf("failed to read response body: %w", err)
+	}
 	if resp.StatusCode != http.StatusOK {
 		return "", fmt.Errorf("gemini http %d: %s", resp.StatusCode, string(raw))
 	}
@@ -2728,8 +2737,14 @@ func (t *Translator) callOpenAI(prompt string) (string, error) {
 		"temperature": 0.3,
 		"stream":      true,
 	}
-	body, _ := json.Marshal(payload)
-	req, _ := http.NewRequest(http.MethodPost, url, bytes.NewReader(body))
+	body, err := json.Marshal(payload)
+	if err != nil {
+		return "", fmt.Errorf("failed to marshal payload: %w", err)
+	}
+	req, err := http.NewRequest(http.MethodPost, url, bytes.NewReader(body))
+	if err != nil {
+		return "", fmt.Errorf("failed to create request: %w", err)
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+t.cfg.OpenAIAPIKey)
 	req.Header.Set("Accept", "text/event-stream")

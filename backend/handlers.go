@@ -332,8 +332,13 @@ func (h *Handler) handleUpdateEventStory(w http.ResponseWriter, r *http.Request)
 		http.Error(w, `{"error":"invalid body"}`, http.StatusBadRequest)
 		return
 	}
-	if req.EventID <= 0 || req.EpisodeNo == "" || req.JpKey == "" {
-		http.Error(w, `{"error":"eventId, episodeNo, jpKey are required"}`, http.StatusBadRequest)
+	// For title entries, jpKey can be empty; for talk entries, jpKey is required
+	if req.EventID <= 0 || req.EpisodeNo == "" {
+		http.Error(w, `{"error":"eventId, episodeNo are required"}`, http.StatusBadRequest)
+		return
+	}
+	if req.EntryType != "title" && req.JpKey == "" {
+		http.Error(w, `{"error":"jpKey is required for talk entries"}`, http.StatusBadRequest)
 		return
 	}
 	user := r.Header.Get("X-Username")
