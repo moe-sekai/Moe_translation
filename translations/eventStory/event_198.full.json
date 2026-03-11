@@ -2,259 +2,259 @@
   "meta": {
     "source": "llm",
     "version": "1.0",
-    "last_updated": 1773073935
+    "last_updated": 1773216266
   },
   "episodes": {
     "1": {
       "scenarioId": "event_198_01",
       "title": {
         "text": "新工作",
-        "source": "llm"
+        "source": "human"
       },
       "talkData": {
         "——はい、もしもし？": {
           "text": "——喂，请问是哪位？",
-          "source": "llm"
+          "source": "human"
         },
         "——はいっ！\nよろしくお願いします！": {
           "text": "——是！\n请多多指教！",
-          "source": "llm"
+          "source": "human"
         },
         "——わかりました！\nいい会場がないか探しておきます": {
           "text": "——明白了！\n我会找找看有没有合适的场地的",
-          "source": "llm"
+          "source": "human"
         },
         "——以上が、MORE MORE JUMP！宛ての新規依頼です": {
           "text": "——以上就是发给MORE MORE JUMP！的新委托",
-          "source": "llm"
+          "source": "human"
         },
         "……あら？　斎藤さんからだわ": {
           "text": "……哎呀？是斋藤先生打来的",
-          "source": "llm"
+          "source": "human"
         },
         "……本当は、ライブもできたらいいんだけどな": {
           "text": "……其实，要是也能办演唱会就好了啊",
-          "source": "llm"
+          "source": "human"
         },
         "……見てて元気になる、か": {
           "text": "……看着就能让人打起精神，吗",
-          "source": "llm"
+          "source": "human"
         },
         "『……連続ドラマの、出演依頼です』": {
           "text": "『……是连续剧的出演邀约』",
-          "source": "llm"
+          "source": "human"
         },
         "『あの、“謎解きカフェタイム”から！』": {
           "text": "『就是那个，《解谜咖啡时光》！』",
-          "source": "llm"
+          "source": "human"
         },
         "『は、はい。実はさっき、\n愛莉ちゃん宛てに仕事の依頼があって——』": {
           "text": "『是、是的。其实刚才，\n收到了给爱莉小姐的工作委托——』",
-          "source": "llm"
+          "source": "human"
         },
         "『愛莉ちゃん？　斎藤です！\nオフの日にすみません……！』": {
           "text": "『爱莉小姐？我是斋藤！\n休息日打扰了真是不好意思……！』",
-          "source": "llm"
+          "source": "human"
         },
         "あ……！　\nこれからLUMINAグランプリの決勝ステージもあるし、\nすぐには難しいってわかってるんですけど……！": {
           "text": "啊……！\n接下来还有LUMINA大奖赛的决赛舞台，\n我知道现在可能很难立刻安排……！",
-          "source": "llm"
+          "source": "human"
         },
         "あと、個人への依頼もかなり数が増えてきたので、\n個別に資料をまとめてみました": {
           "text": "另外，个人委托的数量也增加了不少，\n所以我把资料分别汇总了一下",
-          "source": "llm"
+          "source": "human"
         },
         "ありがとうございます、斎藤さん": {
           "text": "谢谢你，斋藤先生",
-          "source": "llm"
+          "source": "human"
         },
         "あ～！　MORE MORE JUMP！だ！": {
           "text": "啊～！是MORE MORE JUMP！！",
-          "source": "llm"
+          "source": "human"
         },
         "いいよ。ホント最近、\nMORE MORE JUMP！にハマってるよね": {
-          "text": "好啊。你最近真的\n很迷MORE MORE JUMP！呢",
-          "source": "llm"
+          "text": "好啊。你最近真的\n很着迷MORE MORE JUMP！呢",
+          "source": "human"
         },
         "いいんですか？": {
           "text": "可以吗？",
-          "source": "llm"
+          "source": "human"
         },
         "うん！": {
           "text": "嗯！",
-          "source": "llm"
+          "source": "human"
         },
         "え——？": {
           "text": "诶——？",
-          "source": "llm"
+          "source": "human"
         },
         "えっ……！？": {
           "text": "诶……！？",
-          "source": "llm"
+          "source": "human"
         },
         "えへへ……。\nなんだか見てて元気になるんだよね～": {
           "text": "嘿嘿……\n总觉得看着她们就能让人打起精神呢～",
-          "source": "llm"
+          "source": "human"
         },
         "お仕事が、こんなにたくさん……！": {
           "text": "工作居然有这么多……！",
-          "source": "llm"
+          "source": "human"
         },
         "ここまで私達を応援してくれたみんなに、\n感謝の気持ちを伝えたいものね": {
           "text": "毕竟想向一直以来支持我们的大家，\n传达感谢的心情呢",
-          "source": "llm"
+          "source": "human"
         },
         "そうだね。スケジュールの調整は必要だけど……\nもらった仕事は、大切にこなそう": {
           "text": "是啊。虽然需要调整日程……\n但收到的工作，我们要认真地完成",
-          "source": "llm"
+          "source": "human"
         },
         "そうね。わたしも同じ気持ちだわ": {
           "text": "是啊。我也深有同感",
-          "source": "llm"
+          "source": "human"
         },
         "そう！　決勝ステージに出るグループのポスターが、\nシブヤのあちこちに貼ってあるんだって！": {
           "text": "没错！听说参加决赛舞台的组合海报，\n贴满了涩谷的各个角落呢！",
-          "source": "llm"
+          "source": "human"
         },
         "それにしても、随分慌ててるわね。\n何かあった？": {
           "text": "不过，你看起来挺慌张的呢。\n发生什么事了吗？",
-          "source": "llm"
+          "source": "human"
         },
         "だから、そういうイベントをできたら\nいいなって思ってたんです": {
           "text": "所以，我一直在想如果能举办\n那样的活动就好了",
-          "source": "llm"
+          "source": "human"
         },
         "だと思うわ。\n……一時期、仕事がゼロだったことを思うと\nここまで来たのかってしみじみしちゃうわね": {
           "text": "我想也是。\n……回想起曾经一度完全没有工作的时候，\n真的会感慨我们居然已经走到这一步了呢",
-          "source": "llm"
+          "source": "human"
         },
         "ねえ、ポスターの前で写真撮って、写真！": {
           "text": "呐，在海报前帮我拍张照，拍照！",
-          "source": "llm"
+          "source": "human"
         },
         "ほんとだ！　もしかして、LUMINAグランプリのやつ？": {
           "text": "真的耶！难道是LUMINA大奖赛的那个？",
-          "source": "llm"
+          "source": "human"
         },
         "みのり": {
           "text": "实乃理",
-          "source": "llm"
+          "source": "human"
         },
         "みのり……": {
           "text": "实乃理……",
-          "source": "llm"
+          "source": "human"
         },
         "よし、これで買い忘れはないわね！": {
           "text": "好，这样要买的东西就没落下了！",
-          "source": "llm"
+          "source": "human"
         },
         "わたし宛てに？\n……どんな仕事なの？": {
           "text": "给我的？\n……是什么样的工作？",
-          "source": "llm"
+          "source": "human"
         },
         "フリップボードに、カラーペン、\n飾りつけのシールとマスキングテープ……": {
           "text": "展示板、彩色笔、\n装饰用的贴纸和纸胶带……",
-          "source": "llm"
+          "source": "human"
         },
         "ライブ、ですか？": {
           "text": "演唱会，吗？",
-          "source": "llm"
+          "source": "human"
         },
         "大丈夫よ。\nもう用事も終わったところだし": {
           "text": "没关系。\n我这边事情也刚办完",
-          "source": "llm"
+          "source": "human"
         },
         "愛莉": {
           "text": "爱莉",
-          "source": "llm"
+          "source": "human"
         },
         "探してすぐ見つかるものじゃないので、\n完全にタイミングと運次第ですが——\nまずは、チャレンジしてみましょう": {
           "text": "因为场地不是想找就能立刻找到的，\n完全要看时机和运气——\n总之，先尝试一下吧",
-          "source": "llm"
+          "source": "human"
         },
         "斎藤": {
           "text": "斋藤",
-          "source": "llm"
+          "source": "human"
         },
         "最近、応援してくれるファンのみんなと\n直接会えることがあんまりなかったから……": {
           "text": "因为最近没什么机会\n能和支持我们的粉丝们直接见面……",
-          "source": "llm"
+          "source": "human"
         },
         "有名な企業からの依頼も多いわね……。\nこれも、LUMINAグランプリのおかげかしら": {
           "text": "也有很多来自知名企业的委托呢……。\n这也是多亏了LUMINA大奖赛吧",
-          "source": "llm"
+          "source": "human"
         },
         "皆さんのやりたいことをサポートするのが、\nマネージャーの役目ですから！": {
           "text": "支持大家想做的事情，\n就是经纪人的职责所在！",
-          "source": "llm"
+          "source": "human"
         },
         "見て見て、このポスター！\nすっごい可愛くない！？": {
-          "text": "看你看你，这张海报！\n是不是超级可爱！？",
-          "source": "llm"
+          "text": "快看快看，这张海报！\n是不是超级可爱！？",
+          "source": "human"
         },
         "通行人A": {
           "text": "路人A",
-          "source": "llm"
+          "source": "human"
         },
         "通行人B": {
           "text": "路人B",
-          "source": "llm"
+          "source": "human"
         },
         "遥": {
           "text": "遥",
-          "source": "llm"
+          "source": "human"
         },
         "雫": {
           "text": "雫",
-          "source": "llm"
+          "source": "human"
         },
         "（……そういえば、そろそろ\nお披露目されるって話だったわね）": {
           "text": "（……说起来，差不多是\n该公开的时候了呢）",
-          "source": "llm"
+          "source": "human"
         },
         "（こういうの、嬉しいわね）": {
           "text": "（这种感觉，真让人开心呢）",
-          "source": "llm"
+          "source": "human"
         },
         "（そうだ！　久しぶりのオフだし\n最近話題になってるカフェにでも寄って——）": {
-          "text": "（对了！难得休息，\n顺便去最近很有话题度的咖啡厅坐坐吧——）",
-          "source": "llm"
+          "text": "（对了！难得休息，\n顺便去最近很火的咖啡厅坐坐吧——）",
+          "source": "human"
         },
         "（それに——新しい仕事もね）": {
           "text": "（而且——还有新工作呢）",
-          "source": "llm"
+          "source": "human"
         },
         "（それにしても——）": {
           "text": "（不过话说回来——）",
-          "source": "llm"
+          "source": "human"
         },
         "（わたし達は、目の前の仕事を精一杯頑張らないとね！）": {
           "text": "（我们也必须全力以赴完成眼前的每一项工作才行呢！）",
-          "source": "llm"
+          "source": "human"
         },
         "（オフの日に電話なんて珍しいわね……。\nもしかして、何か急ぎの用事かしら？）": {
           "text": "（休息日打电话过来还真少见呢……。\n难道是有什么急事吗？）",
-          "source": "llm"
+          "source": "human"
         },
         "（グランプリの予選が終わってからも、\nチャンネルの登録者数は少しずつ増え続けてるし……）": {
           "text": "（大奖赛预赛结束之后，\n频道的订阅人数也在一点点持续增长……）",
-          "source": "llm"
+          "source": "human"
         },
         "（ライブの件は、斎藤さんに任せるとして……）": {
           "text": "（演唱会的事就交给斋藤先生，至于我……）",
-          "source": "llm"
+          "source": "human"
         },
         "（前より、わたし達の名前を\n知ってくれてる人が増えた気がするわ）": {
           "text": "（感觉比起以前，\n知道我们名字的人变多了呢）",
-          "source": "llm"
+          "source": "human"
         },
         "（変装してるからバレないでしょうけど、ドキッとしちゃったわ）": {
           "text": "（虽然乔装过了应该不会被认出来，但还是吓了一跳呢）",
-          "source": "llm"
+          "source": "human"
         },
         "（次の配信に使う小道具の買い出しは済んだけど……\n思ったより早く終わったわね）": {
-          "text": "（下次直播要用的小道具已经买好了……\n比想象中结束得还要早呢）",
-          "source": "llm"
+          "text": "（下次直播用的道具都买齐了……\n比预想的要快呢）",
+          "source": "human"
         }
       }
     },
@@ -262,7 +262,7 @@
       "scenarioId": "event_198_02",
       "title": {
         "text": "选角的理由",
-        "source": "llm"
+        "source": "human"
       },
       "talkData": {
         "——愛莉ちゃん、依頼の話を聞いてすぐに\n原作の漫画を全巻買いに行ったんですよね": {
