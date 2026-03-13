@@ -1149,8 +1149,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 愛莉 2026": {
-      "text": "",
-      "source": "unknown",
+      "text": "HAPPY BIRTHDAY演唱会 爱莉 2026",
+      "source": "human",
       "ids": [
         "460"
       ]
@@ -1261,8 +1261,8 @@
       ]
     },
     "HAPPY BIRTHDAYライブ 穂波 2025": {
-      "text": "HAPPY BIRTHDAY演唱会 穗波 202",
-      "source": "unknown",
+      "text": "HAPPY BIRTHDAY演唱会 穗波 2025",
+      "source": "human",
       "ids": [
         "431"
       ]
