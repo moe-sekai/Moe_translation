@@ -96,12 +96,13 @@ type EventStoryMeta struct {
 }
 
 type EventStoryEpisode struct {
-	ScenarioID  string            `json:"scenarioId"`
-	Title       string            `json:"title"`
-	TitleSource string            `json:"titleSource,omitempty"`
-	TalkData    map[string]string `json:"talkData"`
-	TalkSources map[string]string `json:"talkSources,omitempty"`
-	TalkOrder   []string          `json:"talkOrder,omitempty"`
+	ScenarioID   string            `json:"scenarioId"`
+	Title        string            `json:"title"`
+	TitleSource  string            `json:"titleSource,omitempty"`
+	TalkData     map[string]string `json:"talkData"`
+	TalkSources  map[string]string `json:"talkSources,omitempty"`
+	TalkOrder    []string          `json:"talkOrder,omitempty"`
+	SpeakerNames map[string]string `json:"speakerNames,omitempty"`
 }
 
 type EventStoryDetail struct {
@@ -110,10 +111,11 @@ type EventStoryDetail struct {
 }
 
 type eventStoryEpisodePayload struct {
-	ScenarioID string            `json:"scenarioId"`
-	Title      string            `json:"title"`
-	TalkData   map[string]string `json:"talkData"`
-	TalkOrder  []string          `json:"talkOrder,omitempty"`
+	ScenarioID   string            `json:"scenarioId"`
+	Title        string            `json:"title"`
+	TalkData     map[string]string `json:"talkData"`
+	TalkOrder    []string          `json:"talkOrder,omitempty"`
+	SpeakerNames map[string]string `json:"speakerNames,omitempty"`
 }
 
 type eventStoryLinePayload struct {
@@ -1938,31 +1940,38 @@ func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (m
 			continue
 		}
 
-		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
-		cnTalk := toMapSlice(asMap(cnScenario)["TalkData"])
-		talkData := map[string]string{}
-		var talkOrder []string
-		seen := map[string]bool{}
-		for i := 0; i < len(jpTalk) && i < len(cnTalk); i++ {
-			jpBody := strings.TrimSpace(getString(jpTalk[i], "Body"))
-			cnBody := strings.TrimSpace(getString(cnTalk[i], "Body"))
-			if jpBody != "" && cnBody != "" && jpBody != cnBody {
-				talkData[jpBody] = cnBody
-				if !seen[jpBody] {
-					talkOrder = append(talkOrder, jpBody)
-					seen[jpBody] = true
-				}
+	jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
+	cnTalk := toMapSlice(asMap(cnScenario)["TalkData"])
+	talkData := map[string]string{}
+	speakerNames := map[string]string{}
+	var talkOrder []string
+	seen := map[string]bool{}
+	for i := 0; i < len(jpTalk) && i < len(cnTalk); i++ {
+		jpBody := strings.TrimSpace(getString(jpTalk[i], "Body"))
+		cnBody := strings.TrimSpace(getString(cnTalk[i], "Body"))
+		cnSpeaker := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
+		
+		if jpBody != "" && cnBody != "" && jpBody != cnBody {
+			talkData[jpBody] = cnBody
+			if !seen[jpBody] {
+				talkOrder = append(talkOrder, jpBody)
+				seen[jpBody] = true
 			}
-			jpName := strings.TrimSpace(getString(jpTalk[i], "WindowDisplayName"))
-			cnName := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
-			if jpName != "" && cnName != "" && jpName != cnName {
-				talkData[jpName] = cnName
-				if !seen[jpName] {
-					talkOrder = append(talkOrder, jpName)
-					seen[jpName] = true
-				}
+			// Store speaker name for this dialogue line
+			if cnSpeaker != "" {
+				speakerNames[jpBody] = cnSpeaker
 			}
 		}
+		jpName := strings.TrimSpace(getString(jpTalk[i], "WindowDisplayName"))
+		cnName := strings.TrimSpace(getString(cnTalk[i], "WindowDisplayName"))
+		if jpName != "" && cnName != "" && jpName != cnName {
+			talkData[jpName] = cnName
+			if !seen[jpName] {
+				talkOrder = append(talkOrder, jpName)
+				seen[jpName] = true
+			}
+		}
+	}
 
 		cnTitle := strings.TrimSpace(getString(cnByEp[epNo], "title"))
 		jpTitle := strings.TrimSpace(getString(ep, "title"))
@@ -1980,12 +1989,13 @@ func (t *Translator) buildOfficialCNEpisodes(jpStory, cnStory map[string]any) (m
 			continue
 		}
 
-		episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
-			ScenarioID: scenarioID,
-			Title:      cnTitle,
-			TalkData:   talkData,
-			TalkOrder:  talkOrder,
-		}
+	episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
+		ScenarioID:   scenarioID,
+		Title:        cnTitle,
+		TalkData:     talkData,
+		TalkOrder:    talkOrder,
+		SpeakerNames: speakerNames,
+	}
 	}
 
 	return episodes, hasTalkData, hasTitleOnly, errs
@@ -2258,37 +2268,44 @@ func (t *Translator) buildJPPendingEpisodes(jpStory map[string]any) (map[string]
 			continue
 		}
 
-		jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
-		talkData := map[string]string{}
-		var talkOrder []string
-		seen := map[string]bool{}
-		for _, talk := range jpTalk {
-			jpBody := strings.TrimSpace(getString(talk, "Body"))
-			if jpBody != "" {
-				talkData[jpBody] = ""
-				if !seen[jpBody] {
-					talkOrder = append(talkOrder, jpBody)
-					seen[jpBody] = true
-				}
+	jpTalk := toMapSlice(asMap(jpScenario)["TalkData"])
+	talkData := map[string]string{}
+	speakerNames := map[string]string{}
+	var talkOrder []string
+	seen := map[string]bool{}
+	for _, talk := range jpTalk {
+		jpBody := strings.TrimSpace(getString(talk, "Body"))
+		jpSpeaker := strings.TrimSpace(getString(talk, "WindowDisplayName"))
+		if jpBody != "" {
+			talkData[jpBody] = ""
+			if !seen[jpBody] {
+				talkOrder = append(talkOrder, jpBody)
+				seen[jpBody] = true
 			}
-			jpName := strings.TrimSpace(getString(talk, "WindowDisplayName"))
-			if jpName != "" {
-				talkData[jpName] = ""
-				if !seen[jpName] {
-					talkOrder = append(talkOrder, jpName)
-					seen[jpName] = true
-				}
+			// Store speaker name for this dialogue line
+			if jpSpeaker != "" {
+				speakerNames[jpBody] = jpSpeaker
 			}
 		}
-		if len(talkData) == 0 && title == "" {
-			continue
+		jpName := strings.TrimSpace(getString(talk, "WindowDisplayName"))
+		if jpName != "" {
+			talkData[jpName] = ""
+			if !seen[jpName] {
+				talkOrder = append(talkOrder, jpName)
+				seen[jpName] = true
+			}
 		}
-		episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
-			ScenarioID: scenarioID,
-			Title:      title,
-			TalkData:   talkData,
-			TalkOrder:  talkOrder,
-		}
+	}
+	if len(talkData) == 0 && title == "" {
+		continue
+	}
+	episodes[strconv.Itoa(epNo)] = eventStoryEpisodePayload{
+		ScenarioID:   scenarioID,
+		Title:        title,
+		TalkData:     talkData,
+		TalkOrder:    talkOrder,
+		SpeakerNames: speakerNames,
+	}
 	}
 
 	return episodes, errs

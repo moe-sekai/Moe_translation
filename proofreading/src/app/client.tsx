@@ -71,6 +71,7 @@ function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
                 });
             }
             const talkData = ep.talkData || {};
+            const speakerNames = ep.speakerNames || {};
             const keys = ep.talkOrder && ep.talkOrder.length > 0
                 ? [...ep.talkOrder, ...Object.keys(talkData).filter(k => !ep.talkOrder!.includes(k))]
                 : Object.keys(talkData);
@@ -80,6 +81,7 @@ function buildEventStoryEntries(detail: EventStoryDetail): TranslationEntry[] {
                     key: `${episodeNo}|${jp}`,
                     text: talkData[jp],
                     source: ep.talkSources?.[jp] || storySource,
+                    speakerName: speakerNames[jp],
                 });
             });
         });
@@ -1144,17 +1146,22 @@ export default function ProofreadingClient() {
                             {/* Proofreading Panel */}
                             {selectedEntry && (
                                 <div className="proof-panel">
-                                        <div className="proof-original">
-                                            <label>日文原文</label>
-                                            <div className="proof-jp">
-                                            {selectedCategory === "eventStory" ? getEventStoryEntryLabel(selectedEntry.key) : selectedEntry.key}
+                                    <div className="proof-original">
+                                        <label>日文原文</label>
+                                        <div className="proof-jp">
+                                        {selectedEntry.speakerName && (
+                                            <div style={{ fontSize: "0.9em", color: "var(--accent)", fontWeight: "600", marginBottom: "4px" }}>
+                                                {selectedEntry.speakerName}
                                             </div>
-                                            {selectedCategory === "eventStory" && (
-                                                <div style={{ fontSize: "0.85em", color: "var(--text-secondary)", marginTop: "4px" }}>
-                                                [第 {parseEventStoryEntryKey(selectedEntry.key).episodeNo} 章]
-                                                </div>
-                                            )}
+                                        )}
+                                        {selectedCategory === "eventStory" ? getEventStoryEntryLabel(selectedEntry.key) : selectedEntry.key}
                                         </div>
+                                        {selectedCategory === "eventStory" && (
+                                            <div style={{ fontSize: "0.85em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                            [第 {parseEventStoryEntryKey(selectedEntry.key).episodeNo} 章]
+                                            </div>
+                                        )}
+                                    </div>
                                     <div className="proof-edit">
                                         <div className="proof-edit-header">
                                             <label>
@@ -1355,14 +1362,19 @@ export default function ProofreadingClient() {
                                                                 ))}
                                                             </select>
                                                         </td>
-                                                        <td><div className="jp-text">
-                                                            {selectedCategory === "eventStory" ? getEventStoryEntryLabel(entry.key) : entry.key}
-                                                            {selectedCategory === "eventStory" && (
-                                                                <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
-                                                                    第 {parseEventStoryEntryKey(entry.key).episodeNo} 章
-                                                                </div>
-                                                            )}
-                                                        </div></td>
+                                                    <td><div className="jp-text">
+                                                        {entry.speakerName && (
+                                                            <div style={{ fontSize: "0.85em", color: "var(--accent)", fontWeight: "600", marginBottom: "2px" }}>
+                                                                {entry.speakerName}
+                                                            </div>
+                                                        )}
+                                                        {selectedCategory === "eventStory" ? getEventStoryEntryLabel(entry.key) : entry.key}
+                                                        {selectedCategory === "eventStory" && (
+                                                            <div style={{ fontSize: "0.75em", color: "var(--text-secondary)", marginTop: "4px" }}>
+                                                                第 {parseEventStoryEntryKey(entry.key).episodeNo} 章
+                                                            </div>
+                                                        )}
+                                                    </div></td>
                                                         <td><div className="cn-text">{entry.text}</div></td>
                                                     </tr>
                                                 );

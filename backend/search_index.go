@@ -204,6 +204,7 @@ func (b *SearchIndexBuilder) build(reason string) {
 
 	// Music (priority 2)
 	musics, err := b.fetchMasterdataArray("musics.json", "jp")
+	musicTrans := b.snapshotCategory("music")
 	if err != nil {
 		fmt.Printf("[search-index] musics fetch failed: %v\n", err)
 	} else {
@@ -214,7 +215,12 @@ func (b *SearchIndexBuilder) build(reason string) {
 				continue
 			}
 			id := asInt(music["id"])
-			index = append(index, searchIndexEntry{ID: id, N: title, G: "music"})
+			entry := searchIndexEntry{ID: id, N: title, G: "music"}
+			cn := getCN(musicTrans, "title", title)
+			if cn != "" && cn != title {
+				entry.CN = cn
+			}
+			index = append(index, entry)
 		}
 	}
 

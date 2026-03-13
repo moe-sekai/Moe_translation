@@ -27,6 +27,7 @@ export interface TranslationEntry {
     text: string;
     source: string;
     ids?: string[];
+    speakerName?: string;
 }
 
 export interface PushStatus {
@@ -84,6 +85,7 @@ export interface EventStoryDetail {
         talkData: Record<string, string>;
         talkSources?: Record<string, string>;
         talkOrder?: string[];
+        speakerNames?: Record<string, string>;
     }>;
 }
 
