@@ -5262,7 +5262,7 @@
       ]
     },
     "Calm Wisdom": {
-      "text": "\n",
+      "text": "Happy Anniversary Miku",
       "source": "human",
       "ids": [
         "908001"
@@ -5906,8 +5906,8 @@
       ]
     },
     "Innocent Plaid": {
-      "text": "纯真格纹",
-      "source": "human",
+      "text": "",
+      "source": "unknown",
       "ids": [
         "946001"
       ]
@@ -5984,8 +5984,8 @@
       ]
     },
     "Lo-fi Green": {
-      "text": "Lo-fi Green",
-      "source": "human",
+      "text": "轻音海盐汽水·bilibili（男）",
+      "source": "cn",
       "ids": [
         "932001"
       ]
@@ -6012,8 +6012,8 @@
       ]
     },
     "Lovely Plaid": {
-      "text": "可爱格纹",
-      "source": "human",
+      "text": "",
+      "source": "unknown",
       "ids": [
         "944001"
       ]
@@ -6810,8 +6810,8 @@
       ]
     },
     "Sweet Plaid": {
-      "text": "甜美格纹",
-      "source": "human",
+      "text": "",
+      "source": "unknown",
       "ids": [
         "945001"
       ]
@@ -7433,8 +7433,8 @@
       ]
     },
     "いたずらな小鬼の衣": {
-      "text": "顽皮小鬼的衣裳",
-      "source": "human",
+      "text": "Happy Anniversary MEIKO",
+      "source": "cn",
       "ids": [
         "915001"
       ]
@@ -7727,8 +7727,8 @@
       ]
     },
     "アクティブ・オーバーオール": {
-      "text": "活动型连体裤",
-      "source": "human",
+      "text": "Happy Anniversary Luka",
+      "source": "cn",
       "ids": [
         "924001"
       ]
@@ -7940,8 +7940,8 @@
       ]
     },
     "ウィッシュ・チュチュ": {
-      "text": "许愿芭蕾舞裙",
-      "source": "human",
+      "text": "Happy Anniversary Len",
+      "source": "cn",
       "ids": [
         "921001"
       ]
@@ -8031,8 +8031,8 @@
       ]
     },
     "エフォートレス・オーバーオール": {
-      "text": "轻松连体裤",
-      "source": "human",
+      "text": "Happy Anniversary KAITO",
+      "source": "cn",
       "ids": [
         "925001"
       ]
@@ -8045,8 +8045,8 @@
       ]
     },
     "エンカレッジ・マーチング": {
-      "text": "鼓励行进",
-      "source": "human",
+      "text": "Eencourage Marching",
+      "source": "cn",
       "ids": [
         "457001"
       ]
@@ -8186,8 +8186,8 @@
       ]
     },
     "カプテイヴィング・ブリリアンス": {
-      "text": "迷人的光芒",
-      "source": "human",
+      "text": "Captivating Brilliance",
+      "source": "cn",
       "ids": [
         "672001"
       ]
@@ -10596,8 +10596,8 @@
       ]
     },
     "ミラージュ・チュチュ": {
-      "text": "幻影芭蕾舞裙",
-      "source": "human",
+      "text": "Happy Anniversary Rin",
+      "source": "cn",
       "ids": [
         "920001"
       ]
