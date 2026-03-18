@@ -5262,7 +5262,7 @@
       ]
     },
     "Calm Wisdom": {
-      "text": "Happy Anniversary Miku",
+      "text": "沉稳的智慧",
       "source": "human",
       "ids": [
         "908001"
@@ -7433,8 +7433,8 @@
       ]
     },
     "いたずらな小鬼の衣": {
-      "text": "Happy Anniversary MEIKO",
-      "source": "cn",
+      "text": "调皮小鬼的衣裳",
+      "source": "pinned",
       "ids": [
         "915001"
       ]
@@ -7727,8 +7727,8 @@
       ]
     },
     "アクティブ・オーバーオール": {
-      "text": "Happy Anniversary Luka",
-      "source": "cn",
+      "text": "运动连体裤",
+      "source": "pinned",
       "ids": [
         "924001"
       ]
@@ -7940,8 +7940,8 @@
       ]
     },
     "ウィッシュ・チュチュ": {
-      "text": "Happy Anniversary Len",
-      "source": "cn",
+      "text": "希望的芭蕾舞裙",
+      "source": "pinned",
       "ids": [
         "921001"
       ]
@@ -8031,8 +8031,8 @@
       ]
     },
     "エフォートレス・オーバーオール": {
-      "text": "Happy Anniversary KAITO",
-      "source": "cn",
+      "text": "effortless 连体裤",
+      "source": "pinned",
       "ids": [
         "925001"
       ]
@@ -10596,8 +10596,8 @@
       ]
     },
     "ミラージュ・チュチュ": {
-      "text": "Happy Anniversary Rin",
-      "source": "cn",
+      "text": "幻影芭蕾裙",
+      "source": "pinned",
       "ids": [
         "920001"
       ]
