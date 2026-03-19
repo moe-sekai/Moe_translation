@@ -8297,8 +8297,8 @@
       ]
     },
     "お気に入りの服": {
-      "text": "",
-      "source": "unknown",
+      "text": "心爱的衣服",
+      "source": "human",
       "ids": [
         "1358"
       ]
@@ -10253,8 +10253,8 @@
       ]
     },
     "ミクとだからわかること": {
-      "text": "",
-      "source": "unknown",
+      "text": "只有和MIKU在一起才明白的事",
+      "source": "human",
       "ids": [
         "1359"
       ]
@@ -13093,15 +13093,15 @@
       ]
     },
     "服作り奮闘中": {
-      "text": "",
-      "source": "unknown",
+      "text": "紧锣密鼓地制作服装",
+      "source": "human",
       "ids": [
         "1356"
       ]
     },
     "朝日とココア": {
-      "text": "",
-      "source": "unknown",
+      "text": "晨曦与热可可",
+      "source": "human",
       "ids": [
         "1357"
       ]
@@ -13723,8 +13723,8 @@
       ]
     },
     "珍しいふたりで": {
-      "text": "",
-      "source": "unknown",
+      "text": "难得的二人时光",
+      "source": "human",
       "ids": [
         "1360"
       ]
