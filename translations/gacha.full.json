@@ -163,7 +163,7 @@
     },
     "Dream a Wonder Dreamガチャ": {
       "text": "Dream a Wonder Dream招募",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "733"
       ]
@@ -443,7 +443,7 @@
     },
     "Papilio Vinculatusガチャ": {
       "text": "Papilio Vinculatus招募",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "725"
       ]
@@ -1184,8 +1184,8 @@
       ]
     },
     "[4.5周年記念]ハートフルギフトガチャ": {
-      "text": "[4.5周年纪念] 暖心礼物招募",
-      "source": "human",
+      "text": "[1周年纪念]温馨礼物招募",
+      "source": "cn",
       "ids": [
         "710"
       ]
@@ -1562,8 +1562,8 @@
       ]
     },
     "[Vivid BAD SQUAD]ワールドリンクイベントサポートガチャ": {
-      "text": "[Vivid BAD SQUAD] World Link 活动支援招募",
-      "source": "human",
+      "text": "[Vivid BAD SQUAD]连接世界活动支援招募",
+      "source": "cn",
       "ids": [
         "712"
       ]
@@ -1804,8 +1804,8 @@
       ]
     },
     "[天馬司]HAPPY BIRTHDAY2025ガチャ": {
-      "text": "[天马司]HAPPY BIRTHDAY 2025招募",
-      "source": "human",
+      "text": "[天马司]HAPPY BIRTHDAY 2026招募",
+      "source": "cn",
       "ids": [
         "736"
       ]
@@ -1832,8 +1832,8 @@
       ]
     },
     "[天馬咲希]HAPPY BIRTHDAY2025ガチャ": {
-      "text": "[天马咲希]HAPPY BIRTHDAY 2025招募",
-      "source": "human",
+      "text": "[天马咲希]HAPPY BIRTHDAY 2026招募",
+      "source": "cn",
       "ids": [
         "728"
       ]
@@ -2192,8 +2192,8 @@
       ]
     },
     "[復刻][天馬司]HAPPY BIRTHDAY2024ガチャ": {
-      "text": "[复刻][天马司]HAPPY BIRTHDAY 2024招募",
-      "source": "human",
+      "text": "[复刻][天马司]HAPPY BIRTHDAY 2025招募",
+      "source": "cn",
       "ids": [
         "737"
       ]
@@ -2216,8 +2216,8 @@
       ]
     },
     "[復刻][天馬咲希]HAPPY BIRTHDAY2024ガチャ": {
-      "text": "[复刻][天马咲希]HAPPY BIRTHDAY 2024招募",
-      "source": "human",
+      "text": "[复刻][天马咲希]HAPPY BIRTHDAY 2025招募",
+      "source": "cn",
       "ids": [
         "729"
       ]
@@ -2847,7 +2847,7 @@
       ]
     },
     "[復刻]君に叫ぶ青き声ガチャ": {
-      "text": "[回响]向你呼喊的蓝色之声招募",
+      "text": "[复刻]向你呼喊的蓝色之声招募",
       "source": "cn",
       "ids": [
         "331",
@@ -2895,7 +2895,7 @@
       ]
     },
     "[復刻]月夜の晩のシスター・ラビッツガチャ": {
-      "text": "[回响]月色下的兔子姐妹招募",
+      "text": "[复刻]月色下的兔子姐妹招募",
       "source": "cn",
       "ids": [
         "237",
