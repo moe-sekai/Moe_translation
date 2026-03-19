@@ -5086,7 +5086,7 @@
     },
     "Awaiting Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "949001"
       ]
@@ -5765,7 +5765,7 @@
     },
     "Flutter Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "947001"
       ]
@@ -6571,7 +6571,7 @@
     },
     "Seeking Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "948001"
       ]
