@@ -2,7 +2,7 @@
   "meta": {
     "source": "human",
     "version": "1.0",
-    "last_updated": 1774079588
+    "last_updated": 1774088923
   },
   "episodes": {
     "1": {
@@ -1581,7 +1581,7 @@
     "6": {
       "scenarioId": "event_199_06",
       "title": {
-        "text": "两边都全力以赴",
+        "text": "追求更完美的杰作！",
         "source": "human"
       },
       "talkData": {
