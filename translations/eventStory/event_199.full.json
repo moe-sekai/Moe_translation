@@ -2,7 +2,7 @@
   "meta": {
     "source": "human",
     "version": "1.0",
-    "last_updated": 1774096917
+    "last_updated": 1774151545
   },
   "episodes": {
     "1": {
@@ -891,7 +891,7 @@
     "4": {
       "scenarioId": "event_199_04",
       "title": {
-        "text": "「同伴」",
+        "text": "「同类」",
         "source": "human"
       },
       "talkData": {
