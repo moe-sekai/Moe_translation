@@ -555,7 +555,7 @@
     },
     "Starry-eyed Princessガチャ": {
       "text": "Starry-eyed Princess招募",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "740"
       ]
@@ -1293,6 +1293,41 @@
       "source": "cn",
       "ids": [
         "589"
+      ]
+    },
+    "[5.5周年記念]1/3セレクトリストガチャ LIMITED EDITION": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "926"
+      ]
+    },
+    "[5.5周年記念]セレクトキャラクターガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "924"
+      ]
+    },
+    "[5.5周年記念]ブルームフェスティバルガチャ ドリームピック": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "923"
+      ]
+    },
+    "[5.5周年記念]プレミアムプレゼントガチャ セレクトキャラクター": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "925"
+      ]
+    },
+    "[5.5周年記念]無料ガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "927"
       ]
     },
     "[5周年記念]1/3セレクトリストガチャ LIMITED EDITION": {
@@ -2592,7 +2627,7 @@
       ]
     },
     "[復刻][花里みのり]HAPPY BIRTHDAY2023ガチャ": {
-      "text": "[回响][花里实乃理]HAPPY BIRTHDAY Stamp招募",
+      "text": "[复刻][花里实乃理]HAPPY BIRTHDAY Stamp招募",
       "source": "cn",
       "ids": [
         "494",
@@ -2607,7 +2642,7 @@
       ]
     },
     "[復刻][花里みのり]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][花里实乃理]HAPPY BIRTHDAY Flower招募",
+      "text": "[复刻][花里实乃理]HAPPY BIRTHDAY Flower招募",
       "source": "cn",
       "ids": [
         "320",
@@ -2696,8 +2731,8 @@
       ]
     },
     "[復刻][青柳冬弥]HAPPY BIRTHDAY2024ガチャ": {
-      "text": "[复刻][青柳冬弥]HAPPY BIRTHDAY 2024招募",
-      "source": "human",
+      "text": "[复刻][青柳冬弥]HAPPY BIRTHDAY 2025招募",
+      "source": "cn",
       "ids": [
         "742"
       ]
@@ -3589,8 +3624,8 @@
       ]
     },
     "[青柳冬弥]HAPPY BIRTHDAY2025ガチャ": {
-      "text": "[青柳冬弥]HAPPY BIRTHDAY 2025招募",
-      "source": "human",
+      "text": "[青柳冬弥]HAPPY BIRTHDAY 2026招募",
+      "source": "cn",
       "ids": [
         "741"
       ]
@@ -3968,7 +4003,8 @@
         "865",
         "887",
         "902",
-        "916"
+        "916",
+        "929"
       ]
     },
     "カラフルフェスティバルガチャ": {
@@ -4643,6 +4679,13 @@
       "source": "human",
       "ids": [
         "466"
+      ]
+    },
+    "絡繰るは誰人の指ガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "928"
       ]
     },
     "絶望の雨すら笑ってガチャ": {
