@@ -5138,7 +5138,7 @@
     },
     "Awaiting Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "949001"
       ]
@@ -5340,8 +5340,8 @@
       ]
     },
     "Caramel trail♪": {
-      "text": "",
-      "source": "unknown",
+      "text": "焦糖小径♪",
+      "source": "human",
       "ids": [
         "957001"
       ]
@@ -5824,7 +5824,7 @@
     },
     "Flutter Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "947001"
       ]
@@ -6630,7 +6630,7 @@
     },
     "Seeking Coat": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "948001"
       ]
@@ -7077,8 +7077,8 @@
       ]
     },
     "Wanderlust Camper": {
-      "text": "",
-      "source": "unknown",
+      "text": "旅游热露营者",
+      "source": "human",
       "ids": [
         "958001"
       ]
@@ -7175,15 +7175,15 @@
       ]
     },
     "bubble♥ice cream（メンズ）": {
-      "text": "",
-      "source": "unknown",
+      "text": "泡泡♥冰淇淋（男款）",
+      "source": "human",
       "ids": [
         "956001"
       ]
     },
     "bubble♥ice cream（レディース）": {
-      "text": "",
-      "source": "unknown",
+      "text": "泡泡♥冰淇淋（女款）",
+      "source": "human",
       "ids": [
         "955001"
       ]
@@ -11280,8 +11280,8 @@
       ]
     },
     "哂うは錬者": {
-      "text": "",
-      "source": "unknown",
+      "text": "孤高炼金师之傲笑",
+      "source": "human",
       "ids": [
         "954001"
       ]
@@ -11504,8 +11504,8 @@
       ]
     },
     "操るは絡狂う者": {
-      "text": "",
-      "source": "unknown",
+      "text": "操纵者乃纠葛之木偶",
+      "source": "human",
       "ids": [
         "952001"
       ]
@@ -11575,8 +11575,8 @@
       ]
     },
     "氷狐深美のドレス": {
-      "text": "",
-      "source": "unknown",
+      "text": "冰狐深美的礼服",
+      "source": "human",
       "ids": [
         "950001"
       ]
@@ -11743,8 +11743,8 @@
       ]
     },
     "糸翅晴空のドレス": {
-      "text": "",
-      "source": "unknown",
+      "text": "丝翅晴空的礼服",
+      "source": "human",
       "ids": [
         "951001"
       ]
@@ -11883,8 +11883,8 @@
       ]
     },
     "躍るは宴者": {
-      "text": "",
-      "source": "unknown",
+      "text": "起舞者乃赴宴之伶",
+      "source": "human",
       "ids": [
         "953001"
       ]
