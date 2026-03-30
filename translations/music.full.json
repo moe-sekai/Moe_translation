@@ -3516,7 +3516,7 @@
     },
     "Nyanyanyanyanyanyanya!": {
       "text": "",
-      "source": "unknown",
+      "source": "human",
       "ids": [
         "713"
       ]
@@ -3704,8 +3704,8 @@
       ]
     },
     "T氏の話を信じるな": {
-      "text": "",
-      "source": "unknown",
+      "text": "不要听那姓T的话",
+      "source": "human",
       "ids": [
         "727"
       ]
@@ -3956,8 +3956,8 @@
       ]
     },
     "あいしていたのに": {
-      "text": "",
-      "source": "unknown",
+      "text": "明明曾爱着你",
+      "source": "human",
       "ids": [
         "721"
       ]
@@ -5153,8 +5153,8 @@
       ]
     },
     "ダイダイダイダイダイキライ": {
-      "text": "",
-      "source": "unknown",
+      "text": "超级超级超级超级超级讨厌\n",
+      "source": "human",
       "ids": [
         "722"
       ]
@@ -5643,8 +5643,8 @@
       ]
     },
     "フロイライン＝オジョウサマ": {
-      "text": "",
-      "source": "unknown",
+      "text": "Fräulein=大小姐",
+      "source": "human",
       "ids": [
         "714"
       ]
@@ -6168,8 +6168,8 @@
       ]
     },
     "ワンダーラスト": {
-      "text": "",
-      "source": "unknown",
+      "text": "Wanderlast",
+      "source": "human",
       "ids": [
         "711"
       ]
@@ -6315,8 +6315,8 @@
       ]
     },
     "傀儡のうつつ": {
-      "text": "",
-      "source": "unknown",
+      "text": "傀儡的现实",
+      "source": "human",
       "ids": [
         "735"
       ]
