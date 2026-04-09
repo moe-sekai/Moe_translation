@@ -5149,8 +5149,8 @@
       ]
     },
     "Awaiting Coat": {
-      "text": "",
-      "source": "unknown",
+      "text": "Awaiting Coat",
+      "source": "human",
       "ids": [
         "949001"
       ]
@@ -5765,8 +5765,8 @@
       ]
     },
     "Eyes on peak": {
-      "text": "",
-      "source": "unknown",
+      "text": "聚焦于巅峰",
+      "source": "human",
       "ids": [
         "960001"
       ]
@@ -5842,8 +5842,8 @@
       ]
     },
     "Flutter Coat": {
-      "text": "",
-      "source": "unknown",
+      "text": "Flutter Coat",
+      "source": "human",
       "ids": [
         "947001"
       ]
@@ -6067,8 +6067,8 @@
       ]
     },
     "Leave a mark": {
-      "text": "",
-      "source": "unknown",
+      "text": "留下印记",
+      "source": "human",
       "ids": [
         "959001"
       ]
@@ -6655,8 +6655,8 @@
       ]
     },
     "Seeking Coat": {
-      "text": "",
-      "source": "unknown",
+      "text": "Seeking Coat",
+      "source": "human",
       "ids": [
         "948001"
       ]
@@ -6816,8 +6816,8 @@
       ]
     },
     "Spit raw truth": {
-      "text": "",
-      "source": "unknown",
+      "text": "直言不讳",
+      "source": "human",
       "ids": [
         "961001"
       ]
