@@ -469,6 +469,13 @@
         "489"
       ]
     },
+    "Proof the REDガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "930"
+      ]
+    },
     "Punk Night TOKYOガチャ": {
       "text": "Punk Night TOKYO招募",
       "source": "human",
@@ -2070,6 +2077,13 @@
         "575"
       ]
     },
+    "[復刻]Living With Musicガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "934"
+      ]
+    },
     "[復刻]Night sweet mealガチャ": {
       "text": "[复刻]Night sweet meal招募",
       "source": "human",
@@ -2798,7 +2812,8 @@
       "text": "[复刻] 鬼怪满满的假期！ 招募",
       "source": "human",
       "ids": [
-        "808"
+        "808",
+        "935"
       ]
     },
     "[復刻]ひらひらたゆたう乙女ガチャ": {
@@ -3483,11 +3498,25 @@
         "716"
       ]
     },
+    "[花里みのり]HAPPY BIRTHDAY2026ガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "931"
+      ]
+    },
     "[花里みのり]HAPPY BIRTHDAYガチャ": {
       "text": "[花里實乃理]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "202"
+      ]
+    },
+    "[花里みのり]HAPPY BIRTHDAYメモリーズガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "932"
       ]
     },
     "[草薙寧々]HAPPY BIRTHDAY2023ガチャ": {
@@ -4282,6 +4311,13 @@
       "source": "human",
       "ids": [
         "877"
+      ]
+    },
+    "ワールドリンクイベント Part1 サポートガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "933"
       ]
     },
     "交わるせかいのアンサンブルガチャ": {
