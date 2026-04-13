@@ -434,7 +434,15 @@
       "text": "",
       "source": "unknown",
       "ids": [
-        "263"
+        "263",
+        "679"
+      ]
+    },
+    "KIRA, monii, Johnny R": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "679"
       ]
     },
     "KOUICHI": {
@@ -567,6 +575,13 @@
       "source": "unknown",
       "ids": [
         "670"
+      ]
+    },
+    "Noz.": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "710"
       ]
     },
     "Numa": {
@@ -756,6 +771,13 @@
       "source": "unknown",
       "ids": [
         "552"
+      ]
+    },
+    "Sena Kiryuin, monii, KIRA": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "679"
       ]
     },
     "Shu": {
@@ -3113,6 +3135,13 @@
       "source": "human",
       "ids": [
         "408"
+      ]
+    },
+    "CRASH THE PARTY": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "679"
       ]
     },
     "CR詠ZY": {
@@ -5731,6 +5760,13 @@
       "source": "human",
       "ids": [
         "508"
+      ]
+    },
+    "ヘッジホッグ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "710"
       ]
     },
     "ベノム": {
@@ -8667,7 +8703,9 @@
         "1774",
         "1775",
         "1780",
-        "1785"
+        "1785",
+        "1792",
+        "1793"
       ]
     },
     "バーチャル・シンガーver.": {
@@ -9338,7 +9376,9 @@
         "1271",
         "1278",
         "1279",
-        "1284"
+        "1284",
+        "1236",
+        "1267"
       ]
     },
     "ワンダーランズ×ショウタイム ver.": {
