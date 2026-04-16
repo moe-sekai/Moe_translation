@@ -3138,8 +3138,8 @@
       ]
     },
     "CRASH THE PARTY": {
-      "text": "",
-      "source": "unknown",
+      "text": "CRASH THE PARTY",
+      "source": "human",
       "ids": [
         "679"
       ]
@@ -5763,8 +5763,8 @@
       ]
     },
     "ヘッジホッグ": {
-      "text": "",
-      "source": "unknown",
+      "text": "刺猬",
+      "source": "human",
       "ids": [
         "710"
       ]
@@ -6351,7 +6351,7 @@
       ]
     },
     "傀儡のうつつ": {
-      "text": "傀儡的现实",
+      "text": "傀儡的现世",
       "source": "human",
       "ids": [
         "735"
