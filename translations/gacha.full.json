@@ -401,7 +401,7 @@
     },
     "Night's Treasureガチャ": {
       "text": "Night's Treasure招募",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "749"
       ]
@@ -649,6 +649,13 @@
       "source": "cn",
       "ids": [
         "348"
+      ]
+    },
+    "YELL of Messengersガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "937"
       ]
     },
     "[1.5周年記念]★4メンバー1人確定プレミアムプレゼントガチャ": {
@@ -2528,7 +2535,7 @@
       ]
     },
     "[復刻][東雲絵名]HAPPY BIRTHDAY2023ガチャ": {
-      "text": "[回响][东云绘名]HAPPY BIRTHDAY Stamp招募",
+      "text": "[复刻][东云绘名]HAPPY BIRTHDAY Stamp招募",
       "source": "cn",
       "ids": [
         "501",
@@ -2543,7 +2550,7 @@
       ]
     },
     "[復刻][東雲絵名]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][东云绘名]HAPPY BIRTHDAY Flower招募",
+      "text": "[复刻][东云绘名]HAPPY BIRTHDAY Flower招募",
       "source": "cn",
       "ids": [
         "324",
@@ -3344,11 +3351,25 @@
         "721"
       ]
     },
+    "[東雲絵名]HAPPY BIRTHDAY2026ガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "939"
+      ]
+    },
     "[東雲絵名]HAPPY BIRTHDAYガチャ": {
       "text": "[東雲繪名]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "204"
+      ]
+    },
+    "[東雲絵名]HAPPY BIRTHDAYメモリーズガチャ": {
+      "text": "",
+      "source": "unknown",
+      "ids": [
+        "940"
       ]
     },
     "[桃井愛莉]HAPPY BIRTHDAY2023ガチャ": {
@@ -4175,7 +4196,8 @@
         "663",
         "745",
         "849",
-        "900"
+        "900",
+        "938"
       ]
     },
     "ハーフアニバーサリー記念カラフルフェスティバルガチャ": {
