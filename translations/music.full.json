@@ -3811,8 +3811,8 @@
       ]
     },
     "Who?": {
-      "text": "",
-      "source": "unknown",
+      "text": "Who?",
+      "source": "human",
       "ids": [
         "680"
       ]
@@ -6738,8 +6738,8 @@
       ]
     },
     "導火愛": {
-      "text": "",
-      "source": "unknown",
+      "text": "导火爱",
+      "source": "human",
       "ids": [
         "737"
       ]

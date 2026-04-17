@@ -652,8 +652,8 @@
       ]
     },
     "YELL of Messengersガチャ": {
-      "text": "",
-      "source": "unknown",
+      "text": "信使的呼唤招募",
+      "source": "human",
       "ids": [
         "937"
       ]
@@ -3352,8 +3352,8 @@
       ]
     },
     "[東雲絵名]HAPPY BIRTHDAY2026ガチャ": {
-      "text": "",
-      "source": "unknown",
+      "text": "[东云绘名]HAPPY BIRTHDAY 2026招募",
+      "source": "human",
       "ids": [
         "939"
       ]
@@ -3366,8 +3366,8 @@
       ]
     },
     "[東雲絵名]HAPPY BIRTHDAYメモリーズガチャ": {
-      "text": "",
-      "source": "unknown",
+      "text": "[东云绘名]HAPPY BIRTHDAY 纪念招募",
+      "source": "human",
       "ids": [
         "940"
       ]
