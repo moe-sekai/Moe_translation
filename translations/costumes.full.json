@@ -5981,8 +5981,8 @@
       ]
     },
     "Hope Cheer": {
-      "text": "",
-      "source": "unknown",
+      "text": "Hope Cheer",
+      "source": "human",
       "ids": [
         "964001"
       ]
@@ -6108,8 +6108,8 @@
       ]
     },
     "Link Cheer": {
-      "text": "",
-      "source": "unknown",
+      "text": "Link Cheer",
+      "source": "human",
       "ids": [
         "963001"
       ]
@@ -6556,8 +6556,8 @@
       ]
     },
     "Relief Cheer": {
-      "text": "",
-      "source": "unknown",
+      "text": "Relief Cheer",
+      "source": "human",
       "ids": [
         "966001"
       ]
@@ -6759,8 +6759,8 @@
       ]
     },
     "Smile Cheer": {
-      "text": "",
-      "source": "unknown",
+      "text": "Smile Cheer",
+      "source": "human",
       "ids": [
         "965001"
       ]
@@ -7193,8 +7193,8 @@
       ]
     },
     "Wish Cheer": {
-      "text": "",
-      "source": "unknown",
+      "text": "Wish Cheer",
+      "source": "human",
       "ids": [
         "962001"
       ]
