@@ -85,8 +85,8 @@
       ]
     },
     "Another sparkle Starsガチャ": {
-      "text": "Another sparkle Stars 招募",
-      "source": "human",
+      "text": "Another sparkle Stars招募",
+      "source": "cn",
       "ids": [
         "757"
       ]
@@ -124,6 +124,13 @@
       "source": "human",
       "ids": [
         "226"
+      ]
+    },
+    "Cherished memoriesガチャ": {
+      "text": "珍视的回忆招募",
+      "source": "human",
+      "ids": [
+        "941"
       ]
     },
     "Colorful Paintガチャ": {
@@ -1752,8 +1759,8 @@
       ]
     },
     "[ワンダーランズ×ショウタイム]ワールドリンクイベントサポートガチャ": {
-      "text": "[Wonderlands×Showtime]世界连结活动支援招募",
-      "source": "human",
+      "text": "[Wonderlands×Showtime]连接世界活动支援招募",
+      "source": "cn",
       "ids": [
         "726"
       ]
@@ -1887,11 +1894,25 @@
         "728"
       ]
     },
+    "[天馬咲希]HAPPY BIRTHDAY2026ガチャ": {
+      "text": "[天马咲希]HAPPY BIRTHDAY 2026招募",
+      "source": "human",
+      "ids": [
+        "943"
+      ]
+    },
     "[天馬咲希]HAPPY BIRTHDAYガチャ": {
       "text": "[天馬咲希]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "206"
+      ]
+    },
+    "[天馬咲希]HAPPY BIRTHDAYメモリーズガチャ": {
+      "text": "[天马咲希]HAPPY BIRTHDAY 纪念招募",
+      "source": "human",
+      "ids": [
+        "944"
       ]
     },
     "[宵崎奏]HAPPY BIRTHDAY2023ガチャ": {
@@ -2021,7 +2042,7 @@
       ]
     },
     "[復刻]Before the stormガチャ": {
-      "text": "[回响]Before the storm招募",
+      "text": "[复刻]Before the storm招募",
       "source": "cn",
       "ids": [
         "373",
@@ -2247,7 +2268,7 @@
       ]
     },
     "[復刻][天馬司]HAPPY BIRTHDAY2023ガチャ": {
-      "text": "[回响][天马司]HAPPY BIRTHDAY Stamp招募",
+      "text": "[复刻][天马司]HAPPY BIRTHDAY Stamp招募",
       "source": "cn",
       "ids": [
         "514",
@@ -2262,7 +2283,7 @@
       ]
     },
     "[復刻][天馬司]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][天马司]HAPPY BIRTHDAY Flower招募",
+      "text": "[复刻][天马司]HAPPY BIRTHDAY Flower招募",
       "source": "cn",
       "ids": [
         "333",
@@ -2271,7 +2292,7 @@
       ]
     },
     "[復刻][天馬咲希]HAPPY BIRTHDAY2023ガチャ": {
-      "text": "[回响][天马咲希]HAPPY BIRTHDAY Stamp招募",
+      "text": "[复刻][天马咲希]HAPPY BIRTHDAY Stamp招募",
       "source": "cn",
       "ids": [
         "507",
@@ -2286,7 +2307,7 @@
       ]
     },
     "[復刻][天馬咲希]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][天马咲希]HAPPY BIRTHDAY Flower招募",
+      "text": "[复刻][天马咲希]HAPPY BIRTHDAY Flower招募",
       "source": "cn",
       "ids": [
         "329",
@@ -2639,14 +2660,14 @@
       ]
     },
     "[復刻][神代類]HAPPY BIRTHDAY2024ガチャ": {
-      "text": "[复刻] [神代类] HAPPY BIRTHDAY 2024 招募",
-      "source": "human",
+      "text": "[回响][神代类]HAPPY BIRTHDAY 2025招募",
+      "source": "cn",
       "ids": [
         "754"
       ]
     },
     "[復刻][神代類]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][神代类]HAPPY BIRTHDAY Flower招募",
+      "text": "[回响][神代类]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "344",
@@ -2751,7 +2772,7 @@
       ]
     },
     "[復刻][青柳冬弥]HAPPY BIRTHDAY2023ガチャ": {
-      "text": "[回响][青柳冬弥]HAPPY BIRTHDAY Stamp招募",
+      "text": "[复刻][青柳冬弥]HAPPY BIRTHDAY Stamp招募",
       "source": "cn",
       "ids": [
         "518",
@@ -2766,7 +2787,7 @@
       ]
     },
     "[復刻][青柳冬弥]HAPPY BIRTHDAYガチャ": {
-      "text": "[回响][青柳冬弥]HAPPY BIRTHDAY Flower招募",
+      "text": "[复刻][青柳冬弥]HAPPY BIRTHDAY Flower招募",
       "source": "cn",
       "ids": [
         "336",
@@ -3043,7 +3064,7 @@
       ]
     },
     "[復刻]願う新春の乙女ガチャ": {
-      "text": "[回响]新年祈愿的少女招募",
+      "text": "[复刻]新春祈愿的少女招募",
       "source": "cn",
       "ids": [
         "284",
@@ -3499,8 +3520,8 @@
       ]
     },
     "[神代類]HAPPY BIRTHDAY2025ガチャ": {
-      "text": "[神代类] HAPPY BIRTHDAY 2025 招募",
-      "source": "human",
+      "text": "[神代类]HAPPY BIRTHDAY 2026招募",
+      "source": "cn",
       "ids": [
         "753"
       ]
@@ -4068,7 +4089,8 @@
         "887",
         "902",
         "916",
-        "929"
+        "929",
+        "942"
       ]
     },
     "カラフルフェスティバルガチャ": {
@@ -4769,7 +4791,7 @@
     },
     "罪の回顧録ガチャ": {
       "text": "罪之回忆录招募",
-      "source": "human",
+      "source": "cn",
       "ids": [
         "159"
       ]
