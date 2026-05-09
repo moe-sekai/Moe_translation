@@ -931,6 +931,13 @@
         "376"
       ]
     },
+    "HAPPY BIRTHDAYライブ 司 2026": {
+      "text": "HAPPY BIRTHDAY演唱会 天马司 2026",
+      "source": "human",
+      "ids": [
+        "470"
+      ]
+    },
     "HAPPY BIRTHDAYライブ 咲希 2021": {
       "text": "HAPPY BIRTHDAY演唱会 咲希",
       "source": "cn",
@@ -1692,6 +1699,13 @@
       "source": "cn",
       "ids": [
         "342"
+      ]
+    },
+    "Stay solid, No fold アフターライブ": {
+      "text": "保持坚定，绝不妥协 后日谈·演唱会",
+      "source": "human",
+      "ids": [
+        "469"
       ]
     },
     "Stick to your faith アフターライブ": {

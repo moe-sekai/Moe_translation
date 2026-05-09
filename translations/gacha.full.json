@@ -1582,6 +1582,13 @@
         "779"
       ]
     },
+    "[Parallel Paaaarty!!!! 開催記念]プレミアムプレゼントガチャ": {
+      "text": "[Parallel Paaaarty!!!! 举办纪念]高级礼物招募",
+      "source": "human",
+      "ids": [
+        "947"
+      ]
+    },
     "[RESONANCE BEATS!! 開催記念] プレミアムプレゼントガチャ Leo/need EDITION": {
       "text": "[RESONANCE BEATS!!举办纪念] 高级礼物招募 Leo/need EDITION",
       "source": "cn",
@@ -1866,11 +1873,25 @@
         "736"
       ]
     },
+    "[天馬司]HAPPY BIRTHDAY2026ガチャ": {
+      "text": "[天马司]HAPPY BIRTHDAY 2026招募",
+      "source": "human",
+      "ids": [
+        "950"
+      ]
+    },
     "[天馬司]HAPPY BIRTHDAYガチャ": {
       "text": "[天馬司]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "209"
+      ]
+    },
+    "[天馬司]HAPPY BIRTHDAYメモリーズガチャ": {
+      "text": "[天马司]HAPPY BIRTHDAY纪念招募",
+      "source": "human",
+      "ids": [
+        "951"
       ]
     },
     "[天馬咲希]HAPPY BIRTHDAY2023ガチャ": {
@@ -2119,6 +2140,13 @@
         "907"
       ]
     },
+    "[復刻]Papilio Vinculatusガチャ": {
+      "text": "Papilio Vinculatus招募",
+      "source": "human",
+      "ids": [
+        "948"
+      ]
+    },
     "[復刻]Play with dogsガチャ": {
       "text": "[复刻]Play with dogs招募 「狗混」",
       "source": "human",
@@ -2162,7 +2190,8 @@
       "text": "[复刻] Talent Blooms 招募",
       "source": "human",
       "ids": [
-        "843"
+        "843",
+        "949"
       ]
     },
     "[復刻]That flower, once moreガチャ": {
@@ -4344,15 +4373,15 @@
       ]
     },
     "ワールドコスチュームガチャ vol.1": {
-      "text": "世界服装招募 vol.1",
-      "source": "human",
+      "text": "WORLD COSTUME招募 vol.1",
+      "source": "cn",
       "ids": [
         "759"
       ]
     },
     "ワールドコスチュームガチャ vol.2": {
-      "text": "世界服装招募 vol.2",
-      "source": "human",
+      "text": "WORLD COSTUME招募 vol.2",
+      "source": "cn",
       "ids": [
         "760"
       ]
@@ -4376,6 +4405,13 @@
       "source": "human",
       "ids": [
         "933"
+      ]
+    },
+    "ワールドリンクイベント Part2 サポートガチャ": {
+      "text": "「wl3」连接世界活动 第二章 支援招募",
+      "source": "human",
+      "ids": [
+        "946"
       ]
     },
     "交わるせかいのアンサンブルガチャ": {
@@ -4934,6 +4970,13 @@
       "source": "cn",
       "ids": [
         "165"
+      ]
+    },
+    "風運ぶ青の歌ガチャ": {
+      "text": "随风而来的蓝色之歌招募",
+      "source": "human",
+      "ids": [
+        "945"
       ]
     },
     "魅惑のトロピカルリゾートガチャ": {
