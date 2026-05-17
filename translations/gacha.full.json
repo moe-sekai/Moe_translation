@@ -644,6 +644,13 @@
         "803"
       ]
     },
+    "Vie for the Titleガチャ": {
+      "text": "勇夺头衔招募",
+      "source": "human",
+      "ids": [
+        "952"
+      ]
+    },
     "Welcome to diner!!ガチャ": {
       "text": "Welcome to diner!!招募",
       "source": "human",
@@ -3744,11 +3751,25 @@
         "741"
       ]
     },
+    "[青柳冬弥]HAPPY BIRTHDAY2026ガチャ": {
+      "text": "[青柳冬弥]HAPPY BIRTHDAY 2026招募",
+      "source": "human",
+      "ids": [
+        "953"
+      ]
+    },
     "[青柳冬弥]HAPPY BIRTHDAYガチャ": {
       "text": "[青柳冬彌]HAPPY BIRTHDAY招募",
       "source": "cn",
       "ids": [
         "211"
+      ]
+    },
+    "[青柳冬弥]HAPPY BIRTHDAYメモリーズガチャ": {
+      "text": "[青柳冬弥]HAPPY BIRTHDAY 纪念招募",
+      "source": "human",
+      "ids": [
+        "954"
       ]
     },
     "[鳳えむ]HAPPY BIRTHDAY2023ガチャ": {
@@ -4215,7 +4236,8 @@
         "688",
         "758",
         "863",
-        "912"
+        "912",
+        "955"
       ]
     },
     "ナイツ・オブ・ホワイトガチャ": {
